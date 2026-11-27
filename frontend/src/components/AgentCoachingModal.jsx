@@ -90,7 +90,7 @@ export default function AgentCoachingModal({ call, onClose }) {
       style={{
         position: "fixed",
         inset: 0,
-        background: "rgba(0,0,0,0.85)",
+        background: "rgba(4, 11, 24, 0.88)",
         backdropFilter: "blur(6px)",
         display: "flex",
         alignItems: "center",
@@ -103,8 +103,8 @@ export default function AgentCoachingModal({ call, onClose }) {
         style={{
           width: 880,
           maxHeight: "90vh",
-          background: "#09090b",
-          border: "1px solid #27272a",
+          background: "#0b1d3e",
+          border: "1px solid rgba(96, 165, 250, 0.28)",
           borderRadius: 12,
           padding: 24,
           display: "flex",
@@ -117,24 +117,24 @@ export default function AgentCoachingModal({ call, onClose }) {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", color: "#a1a1aa", textTransform: "uppercase" }}>
+              <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", color: "#bae6fd", textTransform: "uppercase" }}>
                 Qalyzer v2.0 Coaching Engine
               </span>
-              <span style={{ background: "#18181b", border: "1px solid #27272a", borderRadius: 4, fontSize: 10, padding: "2px 6px", color: "#ffffff", fontFamily: "JetBrains Mono" }}>
+              <span style={{ background: "#0f2752", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 4, fontSize: 10, padding: "2px 6px", color: "#ffffff", fontFamily: "JetBrains Mono" }}>
                 Side-by-Side Review
               </span>
             </div>
             <div style={{ fontSize: 18, fontWeight: 700, fontFamily: "Space Grotesk", marginTop: 4 }}>
               "What Could Have Been Done Better" Coaching Analysis
             </div>
-            <div style={{ fontSize: 12, color: "#71717a", marginTop: 2 }}>
+            <div style={{ fontSize: 12, color: "#7dd3fc", marginTop: 2 }}>
               Interaction #{callId.slice(0, 8)} | Agent: <strong>{agentName}</strong> | Score: <strong>{call?.score || 85}%</strong>
             </div>
           </div>
 
           <button
             onClick={onClose}
-            style={{ background: "none", border: "none", color: "#71717a", cursor: "pointer" }}
+            style={{ background: "none", border: "none", color: "#7dd3fc", cursor: "pointer" }}
           >
             <X size={20} />
           </button>
@@ -142,7 +142,7 @@ export default function AgentCoachingModal({ call, onClose }) {
 
         {/* Feedback loop notification */}
         {dispatchSuccess && (
-          <div style={{ background: "#18181b", border: "1px solid #ffffff", borderRadius: 6, padding: "10px 14px", marginBottom: 14, fontSize: 12.5, display: "flex", alignItems: "center", gap: 8 }}>
+          <div style={{ background: "#0f2752", border: "1px solid #ffffff", borderRadius: 6, padding: "10px 14px", marginBottom: 14, fontSize: 12.5, display: "flex", alignItems: "center", gap: 8 }}>
             <CheckCircle2 size={16} /> {dispatchSuccess}
           </div>
         )}
@@ -153,7 +153,7 @@ export default function AgentCoachingModal({ call, onClose }) {
             <div
               key={idx}
               style={{
-                background: "#121215",
+                background: "#08162d",
                 border: "1px solid #1f1f23",
                 borderRadius: 8,
                 padding: 16,
@@ -164,8 +164,8 @@ export default function AgentCoachingModal({ call, onClose }) {
                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                   <span
                     style={{
-                      background: "#18181b",
-                      border: "1px solid #27272a",
+                      background: "#0f2752",
+                      border: "1px solid rgba(96, 165, 250, 0.28)",
                       color: "#ffffff",
                       fontSize: 10.5,
                       fontWeight: 700,
@@ -180,7 +180,7 @@ export default function AgentCoachingModal({ call, onClose }) {
                   <span
                     style={{
                       background: "#ffffff",
-                      color: "#000000",
+                      color: "#08162d",
                       fontSize: 10.5,
                       fontWeight: 700,
                       textTransform: "uppercase",
@@ -192,21 +192,21 @@ export default function AgentCoachingModal({ call, onClose }) {
                   </span>
                 </div>
 
-                <span style={{ fontSize: 11, color: "#a1a1aa" }}>
+                <span style={{ fontSize: 11, color: "#bae6fd" }}>
                   Missed Opportunity Turn #{m.turn_index || idx + 1}
                 </span>
               </div>
 
               {/* Missed Opportunity Summary */}
-              <div style={{ fontSize: 12, color: "#a1a1aa", marginBottom: 12, background: "#09090b", border: "1px solid #27272a", padding: 8, borderRadius: 6 }}>
+              <div style={{ fontSize: 12, color: "#bae6fd", marginBottom: 12, background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.28)", padding: 8, borderRadius: 6 }}>
                 <strong>Issue Detected:</strong> {m.missed_opportunity}
               </div>
 
               {/* Side-by-Side Comparison */}
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                 {/* Left: What Agent Said */}
-                <div style={{ background: "#09090b", border: "1px solid #27272a", borderRadius: 6, padding: 12 }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", color: "#a1a1aa", marginBottom: 6 }}>
+                <div style={{ background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: 12 }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", color: "#bae6fd", marginBottom: 6 }}>
                     What The Agent Said:
                   </div>
                   <div style={{ fontSize: 12.5, color: "#ffffff", lineHeight: 1.5, fontStyle: "italic" }}>
@@ -215,7 +215,7 @@ export default function AgentCoachingModal({ call, onClose }) {
                 </div>
 
                 {/* Right: Ideal Script Rewrite */}
-                <div style={{ background: "#18181b", border: "1px solid #ffffff", borderRadius: 6, padding: 12 }}>
+                <div style={{ background: "#0f2752", border: "1px solid #ffffff", borderRadius: 6, padding: 12 }}>
                   <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", color: "#ffffff", marginBottom: 6, display: "flex", alignItems: "center", gap: 6 }}>
                     <Sparkles size={13} /> Ideal SOP Script Rewrite:
                   </div>
@@ -226,7 +226,7 @@ export default function AgentCoachingModal({ call, onClose }) {
               </div>
 
               {/* Coaching Rationale */}
-              <div style={{ marginTop: 10, fontSize: 11.5, color: "#71717a" }}>
+              <div style={{ marginTop: 10, fontSize: 11.5, color: "#7dd3fc" }}>
                 <strong>Coaching Rationale:</strong> {m.coaching_rationale}
               </div>
             </div>
@@ -234,15 +234,15 @@ export default function AgentCoachingModal({ call, onClose }) {
         </div>
 
         {/* 1-Click Micro-Coaching Dispatch Loop */}
-        <div style={{ borderTop: "1px solid #27272a", paddingTop: 16, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <div style={{ borderTop: "1px solid rgba(96, 165, 250, 0.28)", paddingTop: 16, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <span style={{ fontSize: 12, color: "#a1a1aa" }}>Deliver Micro-Coaching Digest via:</span>
+            <span style={{ fontSize: 12, color: "#bae6fd" }}>Deliver Micro-Coaching Digest via:</span>
             <select
               value={dispatchChannel}
               onChange={(e) => setDispatchChannel(e.target.value)}
               style={{
-                background: "#121215",
-                border: "1px solid #27272a",
+                background: "#08162d",
+                border: "1px solid rgba(96, 165, 250, 0.28)",
                 borderRadius: 6,
                 color: "#ffffff",
                 fontSize: 12,
@@ -260,8 +260,8 @@ export default function AgentCoachingModal({ call, onClose }) {
             <button
               onClick={onClose}
               style={{
-                background: "#121215",
-                border: "1px solid #27272a",
+                background: "#08162d",
+                border: "1px solid rgba(96, 165, 250, 0.28)",
                 color: "#ffffff",
                 borderRadius: 6,
                 padding: "8px 14px",
@@ -277,7 +277,7 @@ export default function AgentCoachingModal({ call, onClose }) {
               disabled={dispatching}
               style={{
                 background: "#ffffff",
-                color: "#000000",
+                color: "#08162d",
                 border: "none",
                 borderRadius: 6,
                 padding: "8px 16px",

@@ -20,9 +20,15 @@ export default function HomePageCMSModule() {
 
   async function loadCMS() {
     setLoading(true);
+    setErrorMsg("");
     try {
       const res = await homeCmsApi.getAdmin();
-      if (res.data) setCms(res.data);
+      const payload = res?.data || res;
+      if (payload && (payload.hero || payload.about || payload.features)) {
+        setCms(payload);
+      } else {
+        setErrorMsg("Unable to parse Home Page CMS configuration from server.");
+      }
     } catch (err) {
       setErrorMsg(err.message || "Failed to load Home Page CMS configuration");
     } finally {
@@ -46,11 +52,26 @@ export default function HomePageCMSModule() {
     }
   }
 
-  if (loading || !cms) {
+  if (loading) {
     return (
       <div style={{ padding: 40, textAlign: "center", color: "#ffffff" }}>
         <RefreshCw size={24} className="spin" style={{ marginBottom: 12, color: "#38bdf8" }} />
         <div>Loading Home Page CMS Editor...</div>
+      </div>
+    );
+  }
+
+  if (!cms) {
+    return (
+      <div style={{ padding: 40, textAlign: "center", color: "#ffffff", background: "#0b1d3e", borderRadius: 12, border: "1px solid rgba(239, 68, 68, 0.35)" }}>
+        <AlertCircle size={28} color="#f87171" style={{ marginBottom: 12 }} />
+        <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 8 }}>{errorMsg || "Could not load Home Page CMS Editor"}</div>
+        <button
+          onClick={loadCMS}
+          style={{ background: "#0284c7", color: "#ffffff", border: "none", borderRadius: 8, padding: "9px 18px", fontSize: 13, fontWeight: 600, cursor: "pointer" }}
+        >
+          Retry Loading CMS
+        </button>
       </div>
     );
   }

@@ -40,8 +40,8 @@ export default function SalesForecastingWidget() {
   return (
     <div
       style={{
-        background: "#09090b",
-        border: "1px solid #27272a",
+        background: "#0b1d3e",
+        border: "1px solid rgba(96, 165, 250, 0.28)",
         borderRadius: 10,
         padding: 20,
         color: "#ffffff",
@@ -52,17 +52,17 @@ export default function SalesForecastingWidget() {
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", color: "#a1a1aa", textTransform: "uppercase" }}>
+            <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", color: "#bae6fd", textTransform: "uppercase" }}>
               Stage 2 Intelligence
             </span>
-            <span style={{ background: "#18181b", border: "1px solid #27272a", borderRadius: 4, fontSize: 10, padding: "2px 6px", color: "#ffffff", fontFamily: "JetBrains Mono" }}>
+            <span style={{ background: "#0f2752", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 4, fontSize: 10, padding: "2px 6px", color: "#ffffff", fontFamily: "JetBrains Mono" }}>
               Qalyzer v2.0
             </span>
           </div>
           <div style={{ fontSize: 18, fontWeight: 700, fontFamily: "Space Grotesk", marginTop: 2, display: "flex", alignItems: "center", gap: 8 }}>
             <TrendingUp size={18} /> AI Sales & Conversion Forecasting
           </div>
-          <div style={{ fontSize: 12, color: "#71717a", marginTop: 2 }}>
+          <div style={{ fontSize: 12, color: "#7dd3fc", marginTop: 2 }}>
             Real-time pipeline win-probabilities extracted from conversation buying signals.
           </div>
         </div>
@@ -71,8 +71,8 @@ export default function SalesForecastingWidget() {
           onClick={loadForecasting}
           disabled={loading}
           style={{
-            background: "#121215",
-            border: "1px solid #27272a",
+            background: "#08162d",
+            border: "1px solid rgba(96, 165, 250, 0.28)",
             borderRadius: 6,
             color: "#ffffff",
             padding: "6px 12px",
@@ -89,29 +89,29 @@ export default function SalesForecastingWidget() {
 
       {/* Top Aggregates Ribbon */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 12, marginBottom: 18 }}>
-        <div style={{ background: "#121215", border: "1px solid #1f1f23", borderRadius: 8, padding: 14 }}>
-          <div style={{ fontSize: 11, color: "#a1a1aa", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 4 }}>
+        <div style={{ background: "#08162d", border: "1px solid #1f1f23", borderRadius: 8, padding: 14 }}>
+          <div style={{ fontSize: 11, color: "#bae6fd", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 4 }}>
             Projected Pipeline Value
           </div>
           <div style={{ fontSize: 24, fontWeight: 800, fontFamily: "JetBrains Mono", color: "#ffffff" }}>
             ₹{totalRevenue.toLocaleString()}
           </div>
-          <div style={{ fontSize: 11, color: "#71717a", marginTop: 4 }}>
+          <div style={{ fontSize: 11, color: "#7dd3fc", marginTop: 4 }}>
             Across {data?.totalDeals || 14} verified account interactions
           </div>
         </div>
 
-        <div style={{ background: "#121215", border: "1px solid #1f1f23", borderRadius: 8, padding: 14 }}>
-          <div style={{ fontSize: 11, color: "#a1a1aa", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 4 }}>
+        <div style={{ background: "#08162d", border: "1px solid #1f1f23", borderRadius: 8, padding: 14 }}>
+          <div style={{ fontSize: 11, color: "#bae6fd", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 4 }}>
             Average Win Probability
           </div>
           <div style={{ fontSize: 24, fontWeight: 800, fontFamily: "JetBrains Mono", color: "#ffffff", display: "flex", alignItems: "center", gap: 8 }}>
             {avgWinProb}%
-            <span style={{ fontSize: 12, fontWeight: 500, color: avgWinProb >= 65 ? "#ffffff" : "#a1a1aa" }}>
+            <span style={{ fontSize: 12, fontWeight: 500, color: avgWinProb >= 65 ? "#ffffff" : "#bae6fd" }}>
               ({avgWinProb >= 70 ? "Strong Momentum" : "Stable"})
             </span>
           </div>
-          <div style={{ fontSize: 11, color: "#71717a", marginTop: 4 }}>
+          <div style={{ fontSize: 11, color: "#7dd3fc", marginTop: 4 }}>
             Calculated via conversation progression velocity
           </div>
         </div>
@@ -123,8 +123,8 @@ export default function SalesForecastingWidget() {
         <button
           onClick={() => { setSelectedBucket("commit"); setExpandedDeal(null); }}
           style={{
-            background: selectedBucket === "commit" ? "#18181b" : "#121215",
-            border: selectedBucket === "commit" ? "2px solid #ffffff" : "1px solid #27272a",
+            background: selectedBucket === "commit" ? "#0f2752" : "#08162d",
+            border: selectedBucket === "commit" ? "2px solid #ffffff" : "1px solid rgba(96, 165, 250, 0.28)",
             borderRadius: 8,
             padding: "12px 14px",
             textAlign: "left",
@@ -141,7 +141,7 @@ export default function SalesForecastingWidget() {
           <div style={{ fontSize: 20, fontWeight: 800, fontFamily: "JetBrains Mono" }}>
             ₹{buckets.commit.revenue.toLocaleString()}
           </div>
-          <div style={{ fontSize: 11, color: "#a1a1aa", marginTop: 2 }}>
+          <div style={{ fontSize: 11, color: "#bae6fd", marginTop: 2 }}>
             {buckets.commit.count} deals | High intent & budget verified
           </div>
         </button>
@@ -150,8 +150,8 @@ export default function SalesForecastingWidget() {
         <button
           onClick={() => { setSelectedBucket("best_case"); setExpandedDeal(null); }}
           style={{
-            background: selectedBucket === "best_case" ? "#18181b" : "#121215",
-            border: selectedBucket === "best_case" ? "2px solid #ffffff" : "1px solid #27272a",
+            background: selectedBucket === "best_case" ? "#0f2752" : "#08162d",
+            border: selectedBucket === "best_case" ? "2px solid #ffffff" : "1px solid rgba(96, 165, 250, 0.28)",
             borderRadius: 8,
             padding: "12px 14px",
             textAlign: "left",
@@ -168,7 +168,7 @@ export default function SalesForecastingWidget() {
           <div style={{ fontSize: 20, fontWeight: 800, fontFamily: "JetBrains Mono" }}>
             ₹{buckets.best_case.revenue.toLocaleString()}
           </div>
-          <div style={{ fontSize: 11, color: "#a1a1aa", marginTop: 2 }}>
+          <div style={{ fontSize: 11, color: "#bae6fd", marginTop: 2 }}>
             {buckets.best_case.count} deals | Active objection handling
           </div>
         </button>
@@ -177,8 +177,8 @@ export default function SalesForecastingWidget() {
         <button
           onClick={() => { setSelectedBucket("at_risk"); setExpandedDeal(null); }}
           style={{
-            background: selectedBucket === "at_risk" ? "#18181b" : "#121215",
-            border: selectedBucket === "at_risk" ? "2px solid #ffffff" : "1px solid #27272a",
+            background: selectedBucket === "at_risk" ? "#0f2752" : "#08162d",
+            border: selectedBucket === "at_risk" ? "2px solid #ffffff" : "1px solid rgba(96, 165, 250, 0.28)",
             borderRadius: 8,
             padding: "12px 14px",
             textAlign: "left",
@@ -195,19 +195,19 @@ export default function SalesForecastingWidget() {
           <div style={{ fontSize: 20, fontWeight: 800, fontFamily: "JetBrains Mono" }}>
             ₹{buckets.at_risk.revenue.toLocaleString()}
           </div>
-          <div style={{ fontSize: 11, color: "#a1a1aa", marginTop: 2 }}>
+          <div style={{ fontSize: 11, color: "#bae6fd", marginTop: 2 }}>
             {buckets.at_risk.count} deals | Needs coaching intervention
           </div>
         </button>
       </div>
 
       {/* Deal Pipeline Inspection */}
-      <div style={{ background: "#121215", border: "1px solid #1f1f23", borderRadius: 8, padding: 14 }}>
+      <div style={{ background: "#08162d", border: "1px solid #1f1f23", borderRadius: 8, padding: 14 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
           <div style={{ fontSize: 13, fontWeight: 600, color: "#ffffff", display: "flex", alignItems: "center", gap: 6 }}>
             <BarChart3 size={15} /> Active Leads in {currentBucketData.label} Bucket
           </div>
-          <span style={{ fontSize: 11, color: "#a1a1aa", fontFamily: "JetBrains Mono" }}>
+          <span style={{ fontSize: 11, color: "#bae6fd", fontFamily: "JetBrains Mono" }}>
             Showing {currentBucketData.deals?.length || 0} accounts
           </span>
         </div>
@@ -231,8 +231,8 @@ export default function SalesForecastingWidget() {
                 <div
                   key={deal.id || idx}
                   style={{
-                    background: "#09090b",
-                    border: "1px solid #27272a",
+                    background: "#0b1d3e",
+                    border: "1px solid rgba(96, 165, 250, 0.28)",
                     borderRadius: 6,
                     padding: 12,
                     cursor: "pointer",
@@ -245,7 +245,7 @@ export default function SalesForecastingWidget() {
                       <span
                         style={{
                           background: "#ffffff",
-                          color: "#000000",
+                          color: "#08162d",
                           borderRadius: 4,
                           fontSize: 10,
                           fontWeight: 700,
@@ -259,7 +259,7 @@ export default function SalesForecastingWidget() {
                         <div style={{ fontSize: 13, fontWeight: 600, color: "#ffffff" }}>
                           {deal.lead_identifier || `Lead #${deal.id.slice(0, 8)}`}
                         </div>
-                        <div style={{ fontSize: 11, color: "#71717a" }}>
+                        <div style={{ fontSize: 11, color: "#7dd3fc" }}>
                           Stage: {deal.deal_stage || "Discovery"} | Intent: {deal.purchase_intent || "MEDIUM"}
                         </div>
                       </div>
@@ -269,7 +269,7 @@ export default function SalesForecastingWidget() {
                       <div style={{ fontSize: 14, fontWeight: 700, fontFamily: "JetBrains Mono", color: "#ffffff" }}>
                         ₹{Number(deal.projected_revenue || 0).toLocaleString()}
                       </div>
-                      <div style={{ fontSize: 10, color: deal.budget_confirmed ? "#ffffff" : "#71717a" }}>
+                      <div style={{ fontSize: 10, color: deal.budget_confirmed ? "#ffffff" : "#7dd3fc" }}>
                         {deal.budget_confirmed ? "✓ Budget Confirmed" : "○ Budget Unconfirmed"}
                       </div>
                     </div>
@@ -277,19 +277,19 @@ export default function SalesForecastingWidget() {
 
                   {/* Expanded Stage 2 Buying Signals Detail */}
                   {isExpanded && (
-                    <div style={{ marginTop: 12, paddingTop: 10, borderTop: "1px solid #27272a", fontSize: 11.5, color: "#a1a1aa" }}>
+                    <div style={{ marginTop: 12, paddingTop: 10, borderTop: "1px solid rgba(96, 165, 250, 0.28)", fontSize: 11.5, color: "#bae6fd" }}>
                       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
                         <div>
                           <span style={{ color: "#ffffff", fontWeight: 600 }}>Competitors Mentioned:</span>
                           <div style={{ marginTop: 4, display: "flex", flexWrap: "wrap", gap: 4 }}>
                             {competitorList.length > 0 ? (
                               competitorList.map((comp, cIdx) => (
-                                <span key={cIdx} style={{ background: "#18181b", border: "1px solid #27272a", padding: "2px 6px", borderRadius: 4, color: "#ffffff", fontSize: 10.5 }}>
+                                <span key={cIdx} style={{ background: "#0f2752", border: "1px solid rgba(96, 165, 250, 0.28)", padding: "2px 6px", borderRadius: 4, color: "#ffffff", fontSize: 10.5 }}>
                                   {comp}
                                 </span>
                               ))
                             ) : (
-                              <span style={{ color: "#71717a", fontStyle: "italic" }}>None detected</span>
+                              <span style={{ color: "#7dd3fc", fontStyle: "italic" }}>None detected</span>
                             )}
                           </div>
                         </div>
@@ -299,12 +299,12 @@ export default function SalesForecastingWidget() {
                           <div style={{ marginTop: 4, display: "flex", flexWrap: "wrap", gap: 4 }}>
                             {objectionList.length > 0 ? (
                               objectionList.map((obj, oIdx) => (
-                                <span key={oIdx} style={{ background: "#18181b", border: "1px solid #27272a", padding: "2px 6px", borderRadius: 4, color: "#ffffff", fontSize: 10.5 }}>
+                                <span key={oIdx} style={{ background: "#0f2752", border: "1px solid rgba(96, 165, 250, 0.28)", padding: "2px 6px", borderRadius: 4, color: "#ffffff", fontSize: 10.5 }}>
                                   {obj}
                                 </span>
                               ))
                             ) : (
-                              <span style={{ color: "#71717a", fontStyle: "italic" }}>No pricing resistance</span>
+                              <span style={{ color: "#7dd3fc", fontStyle: "italic" }}>No pricing resistance</span>
                             )}
                           </div>
                         </div>
@@ -316,7 +316,7 @@ export default function SalesForecastingWidget() {
             })}
           </div>
         ) : (
-          <div style={{ padding: "24px 0", textAlign: "center", color: "#71717a", fontSize: 12 }}>
+          <div style={{ padding: "24px 0", textAlign: "center", color: "#7dd3fc", fontSize: 12 }}>
             No deals currently categorized in {currentBucketData.label}. As calls are audited, Stage 2 AI extracts intent signals automatically.
           </div>
         )}

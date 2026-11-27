@@ -32,7 +32,7 @@ export default function CloudflareDatabaseModule() {
             <Database size={22} style={{ color: "#ffffff" }} />
             Cloudflare D1 Relational DB & R2 Object Storage
           </div>
-          <div style={{ fontSize: 13, color: "#a1a1aa", marginTop: 4 }}>
+          <div style={{ fontSize: 13, color: "#bae6fd", marginTop: 4 }}>
             Segregated database architecture: Primary DB for Auth/Users + Cloudflare Edge D1/R2 for Application Data.
           </div>
         </div>
@@ -45,7 +45,7 @@ export default function CloudflareDatabaseModule() {
             alignItems: "center",
             gap: 6,
             background: "#ffffff",
-            color: "#000000",
+            color: "#08162d",
             border: "none",
             borderRadius: 7,
             padding: "8px 16px",
@@ -61,22 +61,22 @@ export default function CloudflareDatabaseModule() {
       {/* Architecture Separation Diagram */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 16 }}>
         {/* PostgreSQL Auth DB Card */}
-        <div style={{ background: "#09090b", border: "1px solid #27272a", borderRadius: 12, padding: 20 }}>
+        <div style={{ background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 12, padding: 20 }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 15, fontWeight: 700, fontFamily: "Space Grotesk" }}>
               <Shield size={18} /> Authentication & User Database
             </div>
-            <span style={{ fontSize: 10.5, background: "#18181b", color: "#ffffff", border: "1px solid #ffffff", padding: "2px 8px", borderRadius: 10, fontWeight: 700 }}>
+            <span style={{ fontSize: 10.5, background: "#0f2752", color: "#ffffff", border: "1px solid #ffffff", padding: "2px 8px", borderRadius: 10, fontWeight: 700 }}>
               POSTGRESQL / SUPABASE
             </span>
           </div>
 
-          <div style={{ fontSize: 12, color: "#a1a1aa", lineHeight: 1.5, marginBottom: 14 }}>
+          <div style={{ fontSize: 12, color: "#bae6fd", lineHeight: 1.5, marginBottom: 14 }}>
             Designated <strong>exclusively</strong> for user authentication, passwords, administrative controls, and session validation.
           </div>
 
-          <div style={{ background: "#121215", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
-            <div style={{ fontSize: 11, color: "#71717a", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
+          <div style={{ background: "#08162d", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
+            <div style={{ fontSize: 11, color: "#7dd3fc", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
               Restricted Tables:
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 4, fontSize: 12, fontFamily: "JetBrains Mono" }}>
@@ -89,22 +89,22 @@ export default function CloudflareDatabaseModule() {
         </div>
 
         {/* Cloudflare D1 Card */}
-        <div style={{ background: "#09090b", border: "1px solid #ffffff", borderRadius: 12, padding: 20 }}>
+        <div style={{ background: "#0b1d3e", border: "1px solid #ffffff", borderRadius: 12, padding: 20 }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 15, fontWeight: 700, fontFamily: "Space Grotesk" }}>
               <Database size={18} /> Cloudflare D1 Operational DB
             </div>
-            <span style={{ fontSize: 10.5, background: "#ffffff", color: "#000000", padding: "2px 8px", borderRadius: 10, fontWeight: 700 }}>
+            <span style={{ fontSize: 10.5, background: "#ffffff", color: "#08162d", padding: "2px 8px", borderRadius: 10, fontWeight: 700 }}>
               {d1Status}
             </span>
           </div>
 
-          <div style={{ fontSize: 12, color: "#a1a1aa", lineHeight: 1.5, marginBottom: 14 }}>
+          <div style={{ fontSize: 12, color: "#bae6fd", lineHeight: 1.5, marginBottom: 14 }}>
             Serverless SQLite-powered distributed relational database for all high-volume operational and analytics data.
           </div>
 
-          <div style={{ background: "#121215", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
-            <div style={{ fontSize: 11, color: "#71717a", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
+          <div style={{ background: "#08162d", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
+            <div style={{ fontSize: 11, color: "#7dd3fc", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
               Migrated Application Tables:
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 4, fontSize: 12, fontFamily: "JetBrains Mono" }}>
@@ -117,22 +117,22 @@ export default function CloudflareDatabaseModule() {
         </div>
 
         {/* Cloudflare R2 Card */}
-        <div style={{ background: "#09090b", border: "1px solid #27272a", borderRadius: 12, padding: 20 }}>
+        <div style={{ background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 12, padding: 20 }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 15, fontWeight: 700, fontFamily: "Space Grotesk" }}>
               <HardDrive size={18} /> Cloudflare R2 Object Storage
             </div>
-            <span style={{ fontSize: 10.5, background: "#18181b", color: "#ffffff", border: "1px solid #27272a", padding: "2px 8px", borderRadius: 10, fontWeight: 700 }}>
+            <span style={{ fontSize: 10.5, background: "#0f2752", color: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.28)", padding: "2px 8px", borderRadius: 10, fontWeight: 700 }}>
               S3-COMPATIBLE
             </span>
           </div>
 
-          <div style={{ fontSize: 12, color: "#a1a1aa", lineHeight: 1.5, marginBottom: 14 }}>
+          <div style={{ fontSize: 12, color: "#bae6fd", lineHeight: 1.5, marginBottom: 14 }}>
             High-throughput, zero-egress fee binary asset storage for audio calls, transcripts, SOP PDFs, and reports.
           </div>
 
-          <div style={{ background: "#121215", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
-            <div style={{ fontSize: 11, color: "#71717a", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
+          <div style={{ background: "#08162d", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
+            <div style={{ fontSize: 11, color: "#7dd3fc", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
               Stored Object Buckets:
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 4, fontSize: 12, fontFamily: "JetBrains Mono" }}>
@@ -146,12 +146,12 @@ export default function CloudflareDatabaseModule() {
       </div>
 
       {/* Migration & Setup Toolkit */}
-      <div style={{ background: "#09090b", border: "1px solid #27272a", borderRadius: 12, padding: 20 }}>
+      <div style={{ background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 12, padding: 20 }}>
         <div style={{ fontSize: 15, fontWeight: 600, fontFamily: "Space Grotesk", marginBottom: 12, display: "flex", alignItems: "center", gap: 8 }}>
           <Terminal size={16} /> Cloudflare D1 Migration & Provisioning CLI
         </div>
 
-        <div style={{ fontSize: 12.5, color: "#a1a1aa", marginBottom: 16 }}>
+        <div style={{ fontSize: 12.5, color: "#bae6fd", marginBottom: 16 }}>
           Run the automated database migration script to extract application tables from PostgreSQL and seed Cloudflare D1:
         </div>
 
@@ -174,13 +174,13 @@ export default function CloudflareDatabaseModule() {
               cmd: "npx wrangler r2 bucket create auditai-recordings-storage",
             },
           ].map((step, idx) => (
-            <div key={idx} style={{ background: "#121215", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
-              <div style={{ fontSize: 11.5, color: "#a1a1aa", marginBottom: 6 }}>{step.label}</div>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "#000000", border: "1px solid #27272a", borderRadius: 6, padding: "8px 12px" }}>
+            <div key={idx} style={{ background: "#08162d", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
+              <div style={{ fontSize: 11.5, color: "#bae6fd", marginBottom: 6 }}>{step.label}</div>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "#08162d", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 12px" }}>
                 <code style={{ fontSize: 12, fontFamily: "JetBrains Mono", color: "#ffffff" }}>{step.cmd}</code>
                 <button
                   onClick={() => copyText(`step-${idx}`, step.cmd)}
-                  style={{ background: "transparent", border: "none", color: "#a1a1aa", cursor: "pointer", display: "flex", alignItems: "center", gap: 4, fontSize: 11 }}
+                  style={{ background: "transparent", border: "none", color: "#bae6fd", cursor: "pointer", display: "flex", alignItems: "center", gap: 4, fontSize: 11 }}
                 >
                   {copied === `step-${idx}` ? <Check size={12} color="#ffffff" /> : <Copy size={12} />}
                   {copied === `step-${idx}` ? "Copied" : "Copy"}

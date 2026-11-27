@@ -176,7 +176,7 @@ export default function AdminUsersModule({ currentUser }) {
             <Shield size={22} style={{ color: "#ffffff" }} />
             User Management & Login Controls
           </div>
-          <div style={{ fontSize: 13, color: "#a1a1aa", marginTop: 4 }}>
+          <div style={{ fontSize: 13, color: "#bae6fd", marginTop: 4 }}>
             Full administrative authority over client access, credential management, and real-time login gating.
           </div>
         </div>
@@ -188,8 +188,8 @@ export default function AdminUsersModule({ currentUser }) {
               display: "flex",
               alignItems: "center",
               gap: 6,
-              background: "#121215",
-              border: "1px solid #27272a",
+              background: "#08162d",
+              border: "1px solid rgba(96, 165, 250, 0.28)",
               borderRadius: 7,
               padding: "8px 14px",
               color: "#ffffff",
@@ -207,7 +207,7 @@ export default function AdminUsersModule({ currentUser }) {
               alignItems: "center",
               gap: 6,
               background: "#ffffff",
-              color: "#000000",
+              color: "#08162d",
               border: "none",
               borderRadius: 7,
               padding: "8px 16px",
@@ -223,51 +223,51 @@ export default function AdminUsersModule({ currentUser }) {
 
       {/* Notifications */}
       {successMsg && (
-        <div style={{ background: "#18181b", border: "1px solid #ffffff", borderRadius: 8, padding: "10px 14px", fontSize: 12.5, display: "flex", alignItems: "center", gap: 8 }}>
+        <div style={{ background: "#0f2752", border: "1px solid #ffffff", borderRadius: 8, padding: "10px 14px", fontSize: 12.5, display: "flex", alignItems: "center", gap: 8 }}>
           <CheckCircle2 size={15} style={{ color: "#ffffff" }} /> {successMsg}
         </div>
       )}
       {error && (
-        <div style={{ background: "#18181b", border: "1px solid #52525b", borderRadius: 8, padding: "10px 14px", fontSize: 12.5, display: "flex", alignItems: "center", gap: 8 }}>
+        <div style={{ background: "#0f2752", border: "1px solid #52525b", borderRadius: 8, padding: "10px 14px", fontSize: 12.5, display: "flex", alignItems: "center", gap: 8 }}>
           <AlertCircle size={15} style={{ color: "#ffffff" }} /> {error}
         </div>
       )}
 
       {/* Stats Cards */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: 14 }}>
-        <div style={{ background: "#09090b", border: "1px solid #27272a", borderRadius: 10, padding: 16 }}>
-          <div style={{ fontSize: 12, color: "#a1a1aa", textTransform: "uppercase", letterSpacing: 0.5 }}>Total Accounts</div>
+        <div style={{ background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 10, padding: 16 }}>
+          <div style={{ fontSize: 12, color: "#bae6fd", textTransform: "uppercase", letterSpacing: 0.5 }}>Total Accounts</div>
           <div style={{ fontSize: 26, fontWeight: 700, fontFamily: "Space Grotesk", marginTop: 4 }}>{users.length}</div>
-          <div style={{ fontSize: 11, color: "#71717a", marginTop: 4 }}>Admin & Client accounts</div>
+          <div style={{ fontSize: 11, color: "#7dd3fc", marginTop: 4 }}>Admin & Client accounts</div>
         </div>
 
-        <div style={{ background: "#09090b", border: "1px solid #27272a", borderRadius: 10, padding: 16 }}>
-          <div style={{ fontSize: 12, color: "#a1a1aa", textTransform: "uppercase", letterSpacing: 0.5 }}>Login Permitted</div>
+        <div style={{ background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 10, padding: 16 }}>
+          <div style={{ fontSize: 12, color: "#bae6fd", textTransform: "uppercase", letterSpacing: 0.5 }}>Login Permitted</div>
           <div style={{ fontSize: 26, fontWeight: 700, fontFamily: "Space Grotesk", marginTop: 4, color: "#ffffff" }}>{activeCount}</div>
-          <div style={{ fontSize: 11, color: "#71717a", marginTop: 4 }}>Active and verified sessions</div>
+          <div style={{ fontSize: 11, color: "#7dd3fc", marginTop: 4 }}>Active and verified sessions</div>
         </div>
 
-        <div style={{ background: "#09090b", border: "1px solid #27272a", borderRadius: 10, padding: 16 }}>
-          <div style={{ fontSize: 12, color: "#a1a1aa", textTransform: "uppercase", letterSpacing: 0.5 }}>Access Revoked</div>
+        <div style={{ background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 10, padding: 16 }}>
+          <div style={{ fontSize: 12, color: "#bae6fd", textTransform: "uppercase", letterSpacing: 0.5 }}>Access Revoked</div>
           <div style={{ fontSize: 26, fontWeight: 700, fontFamily: "Space Grotesk", marginTop: 4, color: "#d4d4d8" }}>{disabledCount}</div>
-          <div style={{ fontSize: 11, color: "#71717a", marginTop: 4 }}>Disabled by Administrator</div>
+          <div style={{ fontSize: 11, color: "#7dd3fc", marginTop: 4 }}>Disabled by Administrator</div>
         </div>
 
-        <div style={{ background: "#09090b", border: "1px solid #27272a", borderRadius: 10, padding: 16 }}>
-          <div style={{ fontSize: 12, color: "#a1a1aa", textTransform: "uppercase", letterSpacing: 0.5 }}>Pending Approval</div>
-          <div style={{ fontSize: 26, fontWeight: 700, fontFamily: "Space Grotesk", marginTop: 4, color: "#a1a1aa" }}>{pendingCount}</div>
-          <div style={{ fontSize: 11, color: "#71717a", marginTop: 4 }}>Awaiting admin activation</div>
+        <div style={{ background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 10, padding: 16 }}>
+          <div style={{ fontSize: 12, color: "#bae6fd", textTransform: "uppercase", letterSpacing: 0.5 }}>Pending Approval</div>
+          <div style={{ fontSize: 26, fontWeight: 700, fontFamily: "Space Grotesk", marginTop: 4, color: "#bae6fd" }}>{pendingCount}</div>
+          <div style={{ fontSize: 11, color: "#7dd3fc", marginTop: 4 }}>Awaiting admin activation</div>
         </div>
       </div>
 
       {/* Login Policy & Governance Bar */}
-      <div style={{ background: "#09090b", border: "1px solid #27272a", borderRadius: 12, padding: 18 }}>
+      <div style={{ background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 12, padding: 18 }}>
         <div style={{ fontSize: 15, fontWeight: 600, fontFamily: "Space Grotesk", marginBottom: 12, display: "flex", alignItems: "center", gap: 8 }}>
           <Lock size={15} /> System-Wide Login Security Controls
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 14 }}>
-          <div style={{ background: "#121215", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
+          <div style={{ background: "#08162d", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
             <label style={{ display: "flex", alignItems: "center", justifyContent: "space-between", cursor: "pointer", fontSize: 12 }}>
               <span>Require Admin Approval for Signups</span>
               <input
@@ -277,12 +277,12 @@ export default function AdminUsersModule({ currentUser }) {
                 style={{ cursor: "pointer", accentColor: "#ffffff" }}
               />
             </label>
-            <div style={{ fontSize: 11, color: "#71717a", marginTop: 4 }}>
+            <div style={{ fontSize: 11, color: "#7dd3fc", marginTop: 4 }}>
               New clients cannot log in until approved
             </div>
           </div>
 
-          <div style={{ background: "#121215", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
+          <div style={{ background: "#08162d", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
             <label style={{ display: "flex", alignItems: "center", justifyContent: "space-between", cursor: "pointer", fontSize: 12 }}>
               <span>Allow Client Self-Registration</span>
               <input
@@ -292,12 +292,12 @@ export default function AdminUsersModule({ currentUser }) {
                 style={{ cursor: "pointer", accentColor: "#ffffff" }}
               />
             </label>
-            <div style={{ fontSize: 11, color: "#71717a", marginTop: 4 }}>
+            <div style={{ fontSize: 11, color: "#7dd3fc", marginTop: 4 }}>
               Clients can submit access requests
             </div>
           </div>
 
-          <div style={{ background: "#121215", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
+          <div style={{ background: "#08162d", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span style={{ fontSize: 12 }}>Max Failed Attempts</span>
               <input
@@ -306,15 +306,15 @@ export default function AdminUsersModule({ currentUser }) {
                 max="20"
                 value={controls.max_login_attempts}
                 onChange={(e) => setControls({ ...controls, max_login_attempts: parseInt(e.target.value) || 5 })}
-                style={{ width: 60, background: "#18181b", border: "1px solid #27272a", borderRadius: 4, color: "#ffffff", padding: "3px 6px", fontSize: 12 }}
+                style={{ width: 60, background: "#0f2752", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 4, color: "#ffffff", padding: "3px 6px", fontSize: 12 }}
               />
             </div>
-            <div style={{ fontSize: 11, color: "#71717a", marginTop: 4 }}>
+            <div style={{ fontSize: 11, color: "#7dd3fc", marginTop: 4 }}>
               Lockout triggered after failed tries
             </div>
           </div>
 
-          <div style={{ background: "#121215", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
+          <div style={{ background: "#08162d", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span style={{ fontSize: 12 }}>Lockout Duration (Mins)</span>
               <input
@@ -323,10 +323,10 @@ export default function AdminUsersModule({ currentUser }) {
                 max="120"
                 value={controls.lockout_minutes}
                 onChange={(e) => setControls({ ...controls, lockout_minutes: parseInt(e.target.value) || 15 })}
-                style={{ width: 60, background: "#18181b", border: "1px solid #27272a", borderRadius: 4, color: "#ffffff", padding: "3px 6px", fontSize: 12 }}
+                style={{ width: 60, background: "#0f2752", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 4, color: "#ffffff", padding: "3px 6px", fontSize: 12 }}
               />
             </div>
-            <div style={{ fontSize: 11, color: "#71717a", marginTop: 4 }}>
+            <div style={{ fontSize: 11, color: "#7dd3fc", marginTop: 4 }}>
               Automatic unlock time window
             </div>
           </div>
@@ -338,7 +338,7 @@ export default function AdminUsersModule({ currentUser }) {
             disabled={controlsSaving}
             style={{
               background: "#ffffff",
-              color: "#000000",
+              color: "#08162d",
               border: "none",
               borderRadius: 6,
               padding: "7px 16px",
@@ -353,13 +353,13 @@ export default function AdminUsersModule({ currentUser }) {
       </div>
 
       {/* User Directory Table */}
-      <div style={{ background: "#09090b", border: "1px solid #27272a", borderRadius: 12, padding: 18 }}>
+      <div style={{ background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 12, padding: 18 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14, flexWrap: "wrap", gap: 10 }}>
           <div style={{ fontSize: 15, fontWeight: 600, fontFamily: "Space Grotesk" }}>
             Registered Users & Login Privileges
           </div>
           <div style={{ position: "relative", width: 260 }}>
-            <Search size={14} style={{ position: "absolute", left: 10, top: 9, color: "#71717a" }} />
+            <Search size={14} style={{ position: "absolute", left: 10, top: 9, color: "#7dd3fc" }} />
             <input
               type="text"
               value={search}
@@ -367,8 +367,8 @@ export default function AdminUsersModule({ currentUser }) {
               placeholder="Search user or email..."
               style={{
                 width: "100%",
-                background: "#121215",
-                border: "1px solid #27272a",
+                background: "#08162d",
+                border: "1px solid rgba(96, 165, 250, 0.28)",
                 borderRadius: 6,
                 padding: "6px 10px 6px 30px",
                 color: "#ffffff",
@@ -382,7 +382,7 @@ export default function AdminUsersModule({ currentUser }) {
         <div style={{ overflowX: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12.5 }}>
             <thead>
-              <tr style={{ borderBottom: "1px solid #27272a", color: "#a1a1aa", textAlign: "left" }}>
+              <tr style={{ borderBottom: "1px solid rgba(96, 165, 250, 0.28)", color: "#bae6fd", textAlign: "left" }}>
                 <th style={{ padding: "10px 12px" }}>User</th>
                 <th style={{ padding: "10px 12px" }}>Role</th>
                 <th style={{ padding: "10px 12px" }}>Status</th>
@@ -399,11 +399,11 @@ export default function AdminUsersModule({ currentUser }) {
                 const isPending = u.status === "PENDING_APPROVAL";
 
                 return (
-                  <tr key={u.id} style={{ borderBottom: "1px solid #18181b" }}>
+                  <tr key={u.id} style={{ borderBottom: "1px solid #0f2752" }}>
                     <td style={{ padding: "12px" }}>
                       <div style={{ fontWeight: 600, color: "#ffffff" }}>{u.full_name || "Enterprise User"}</div>
-                      <div style={{ fontSize: 11.5, color: "#a1a1aa", fontFamily: "JetBrains Mono" }}>{u.email}</div>
-                      {u.company && <div style={{ fontSize: 11, color: "#71717a" }}>{u.company}</div>}
+                      <div style={{ fontSize: 11.5, color: "#bae6fd", fontFamily: "JetBrains Mono" }}>{u.email}</div>
+                      {u.company && <div style={{ fontSize: 11, color: "#7dd3fc" }}>{u.company}</div>}
                     </td>
 
                     <td style={{ padding: "12px" }}>
@@ -416,9 +416,9 @@ export default function AdminUsersModule({ currentUser }) {
                           fontWeight: 700,
                           textTransform: "uppercase",
                           letterSpacing: 0.5,
-                          background: isAdmin ? "#ffffff" : "#18181b",
-                          color: isAdmin ? "#000000" : "#a1a1aa",
-                          border: `1px solid ${isAdmin ? "#ffffff" : "#27272a"}`,
+                          background: isAdmin ? "#ffffff" : "#0f2752",
+                          color: isAdmin ? "#08162d" : "#bae6fd",
+                          border: `1px solid ${isAdmin ? "#ffffff" : "rgba(96, 165, 250, 0.28)"}`,
                         }}
                       >
                         {u.role}
@@ -435,9 +435,9 @@ export default function AdminUsersModule({ currentUser }) {
                           borderRadius: 20,
                           fontSize: 11,
                           fontWeight: 600,
-                          background: isSuspended ? "#18181b" : isPending ? "#18181b" : "#18181b",
-                          color: isSuspended ? "#71717a" : isPending ? "#e4e4e7" : "#ffffff",
-                          border: `1px solid ${isSuspended ? "#3f3f46" : isPending ? "#52525b" : "#ffffff"}`,
+                          background: isSuspended ? "#0f2752" : isPending ? "#0f2752" : "#0f2752",
+                          color: isSuspended ? "#7dd3fc" : isPending ? "#e4e4e7" : "#ffffff",
+                          border: `1px solid ${isSuspended ? "rgba(96, 165, 250, 0.35)" : isPending ? "#52525b" : "#ffffff"}`,
                         }}
                       >
                         {isSuspended ? "SUSPENDED" : isPending ? "PENDING APPROVAL" : "ACTIVE"}
@@ -452,9 +452,9 @@ export default function AdminUsersModule({ currentUser }) {
                           display: "inline-flex",
                           alignItems: "center",
                           gap: 6,
-                          background: isLoginEnabled ? "#18181b" : "#ffffff",
-                          color: isLoginEnabled ? "#ffffff" : "#000000",
-                          border: `1px solid ${isLoginEnabled ? "#ffffff" : "#000000"}`,
+                          background: isLoginEnabled ? "#0f2752" : "#ffffff",
+                          color: isLoginEnabled ? "#ffffff" : "#08162d",
+                          border: `1px solid ${isLoginEnabled ? "#ffffff" : "#08162d"}`,
                           borderRadius: 6,
                           padding: "5px 10px",
                           fontSize: 11,
@@ -467,7 +467,7 @@ export default function AdminUsersModule({ currentUser }) {
                       </button>
                     </td>
 
-                    <td style={{ padding: "12px", color: "#a1a1aa", fontSize: 11.5 }}>
+                    <td style={{ padding: "12px", color: "#bae6fd", fontSize: 11.5 }}>
                       {u.last_login_at ? new Date(u.last_login_at).toLocaleString() : "Never logged in"}
                     </td>
 
@@ -479,7 +479,7 @@ export default function AdminUsersModule({ currentUser }) {
                             title="Approve client"
                             style={{
                               background: "#ffffff",
-                              color: "#000000",
+                              color: "#08162d",
                               border: "none",
                               borderRadius: 4,
                               padding: "4px 8px",
@@ -499,8 +499,8 @@ export default function AdminUsersModule({ currentUser }) {
                           }}
                           title="Reset Password"
                           style={{
-                            background: "#18181b",
-                            border: "1px solid #27272a",
+                            background: "#0f2752",
+                            border: "1px solid rgba(96, 165, 250, 0.28)",
                             borderRadius: 4,
                             padding: "4px 8px",
                             color: "#ffffff",
@@ -518,11 +518,11 @@ export default function AdminUsersModule({ currentUser }) {
                           onClick={() => handleStatusChange(u, isSuspended ? "ACTIVE" : "SUSPENDED")}
                           title={isSuspended ? "Activate user" : "Suspend user"}
                           style={{
-                            background: "#18181b",
-                            border: "1px solid #27272a",
+                            background: "#0f2752",
+                            border: "1px solid rgba(96, 165, 250, 0.28)",
                             borderRadius: 4,
                             padding: "4px 8px",
-                            color: isSuspended ? "#ffffff" : "#a1a1aa",
+                            color: isSuspended ? "#ffffff" : "#bae6fd",
                             cursor: "pointer",
                             fontSize: 11,
                           }}
@@ -535,11 +535,11 @@ export default function AdminUsersModule({ currentUser }) {
                             onClick={() => handleDeleteUser(u)}
                             title="Delete user"
                             style={{
-                              background: "#18181b",
-                              border: "1px solid #27272a",
+                              background: "#0f2752",
+                              border: "1px solid rgba(96, 165, 250, 0.28)",
                               borderRadius: 4,
                               padding: "4px 6px",
-                              color: "#71717a",
+                              color: "#7dd3fc",
                               cursor: "pointer",
                             }}
                           >
@@ -558,15 +558,15 @@ export default function AdminUsersModule({ currentUser }) {
 
       {/* Admin Audit Logs Drawer/Table */}
       {auditLogs.length > 0 && (
-        <div style={{ background: "#09090b", border: "1px solid #27272a", borderRadius: 12, padding: 18 }}>
+        <div style={{ background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 12, padding: 18 }}>
           <div style={{ fontSize: 14, fontWeight: 600, fontFamily: "Space Grotesk", marginBottom: 10, display: "flex", alignItems: "center", gap: 6 }}>
             <Clock size={14} /> Admin Security Audit Trail
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
             {auditLogs.slice(0, 5).map((log, i) => (
-              <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "#121215", border: "1px solid #1c1c1f", borderRadius: 6, padding: "8px 12px", fontSize: 11.5 }}>
+              <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "#08162d", border: "1px solid #1c1c1f", borderRadius: 6, padding: "8px 12px", fontSize: 11.5 }}>
                 <span style={{ color: "#ffffff", fontFamily: "JetBrains Mono" }}>{log.action}</span>
-                <span style={{ color: "#71717a" }}>{new Date(log.created_at).toLocaleString()}</span>
+                <span style={{ color: "#7dd3fc" }}>{new Date(log.created_at).toLocaleString()}</span>
               </div>
             ))}
           </div>
@@ -575,48 +575,48 @@ export default function AdminUsersModule({ currentUser }) {
 
       {/* Create User Modal */}
       {showCreateModal && (
-        <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.8)", backdropFilter: "blur(4px)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000 }}>
-          <div style={{ width: 440, background: "#09090b", border: "1px solid #27272a", borderRadius: 12, padding: 24 }}>
+        <div style={{ position: "fixed", inset: 0, background: "rgba(4, 11, 24, 0.88)", backdropFilter: "blur(4px)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000 }}>
+          <div style={{ width: 440, background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 12, padding: 24 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
               <div style={{ fontSize: 16, fontWeight: 700, fontFamily: "Space Grotesk" }}>Add User Account</div>
-              <button onClick={() => setShowCreateModal(false)} style={{ background: "none", border: "none", color: "#71717a", cursor: "pointer" }}><X size={16} /></button>
+              <button onClick={() => setShowCreateModal(false)} style={{ background: "none", border: "none", color: "#7dd3fc", cursor: "pointer" }}><X size={16} /></button>
             </div>
             <form onSubmit={handleCreateUser} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               <div>
-                <label style={{ display: "block", fontSize: 11.5, color: "#a1a1aa", marginBottom: 4 }}>Full Name</label>
-                <input required value={newName} onChange={e => setNewName(e.target.value)} placeholder="Jane Doe" style={{ width: "100%", background: "#121215", border: "1px solid #27272a", borderRadius: 6, padding: "8px 10px", color: "#ffffff", fontSize: 12, boxSizing: "border-box" }} />
+                <label style={{ display: "block", fontSize: 11.5, color: "#bae6fd", marginBottom: 4 }}>Full Name</label>
+                <input required value={newName} onChange={e => setNewName(e.target.value)} placeholder="Jane Doe" style={{ width: "100%", background: "#08162d", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#ffffff", fontSize: 12, boxSizing: "border-box" }} />
               </div>
               <div>
-                <label style={{ display: "block", fontSize: 11.5, color: "#a1a1aa", marginBottom: 4 }}>Email</label>
-                <input type="email" required value={newEmail} onChange={e => setNewEmail(e.target.value)} placeholder="user@company.com" style={{ width: "100%", background: "#121215", border: "1px solid #27272a", borderRadius: 6, padding: "8px 10px", color: "#ffffff", fontSize: 12, boxSizing: "border-box" }} />
+                <label style={{ display: "block", fontSize: 11.5, color: "#bae6fd", marginBottom: 4 }}>Email</label>
+                <input type="email" required value={newEmail} onChange={e => setNewEmail(e.target.value)} placeholder="user@company.com" style={{ width: "100%", background: "#08162d", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#ffffff", fontSize: 12, boxSizing: "border-box" }} />
               </div>
               <div>
-                <label style={{ display: "block", fontSize: 11.5, color: "#a1a1aa", marginBottom: 4 }}>Initial Password</label>
-                <input type="password" required value={newPass} onChange={e => setNewPass(e.target.value)} placeholder="••••••••" style={{ width: "100%", background: "#121215", border: "1px solid #27272a", borderRadius: 6, padding: "8px 10px", color: "#ffffff", fontSize: 12, boxSizing: "border-box" }} />
+                <label style={{ display: "block", fontSize: 11.5, color: "#bae6fd", marginBottom: 4 }}>Initial Password</label>
+                <input type="password" required value={newPass} onChange={e => setNewPass(e.target.value)} placeholder="••••••••" style={{ width: "100%", background: "#08162d", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#ffffff", fontSize: 12, boxSizing: "border-box" }} />
               </div>
               <div>
-                <label style={{ display: "block", fontSize: 11.5, color: "#a1a1aa", marginBottom: 4 }}>Company</label>
-                <input value={newCompany} onChange={e => setNewCompany(e.target.value)} placeholder="Client Org" style={{ width: "100%", background: "#121215", border: "1px solid #27272a", borderRadius: 6, padding: "8px 10px", color: "#ffffff", fontSize: 12, boxSizing: "border-box" }} />
+                <label style={{ display: "block", fontSize: 11.5, color: "#bae6fd", marginBottom: 4 }}>Company</label>
+                <input value={newCompany} onChange={e => setNewCompany(e.target.value)} placeholder="Client Org" style={{ width: "100%", background: "#08162d", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#ffffff", fontSize: 12, boxSizing: "border-box" }} />
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
                 <div>
-                  <label style={{ display: "block", fontSize: 11.5, color: "#a1a1aa", marginBottom: 4 }}>Role</label>
-                  <select value={newRole} onChange={e => setNewRole(e.target.value)} style={{ width: "100%", background: "#121215", border: "1px solid #27272a", borderRadius: 6, padding: "8px 10px", color: "#ffffff", fontSize: 12 }}>
+                  <label style={{ display: "block", fontSize: 11.5, color: "#bae6fd", marginBottom: 4 }}>Role</label>
+                  <select value={newRole} onChange={e => setNewRole(e.target.value)} style={{ width: "100%", background: "#08162d", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#ffffff", fontSize: 12 }}>
                     <option value="client">Client User</option>
                     <option value="admin">Administrator</option>
                   </select>
                 </div>
                 <div>
-                  <label style={{ display: "block", fontSize: 11.5, color: "#a1a1aa", marginBottom: 4 }}>Login Control</label>
-                  <select value={newLoginEnabled ? "true" : "false"} onChange={e => setNewLoginEnabled(e.target.value === "true")} style={{ width: "100%", background: "#121215", border: "1px solid #27272a", borderRadius: 6, padding: "8px 10px", color: "#ffffff", fontSize: 12 }}>
+                  <label style={{ display: "block", fontSize: 11.5, color: "#bae6fd", marginBottom: 4 }}>Login Control</label>
+                  <select value={newLoginEnabled ? "true" : "false"} onChange={e => setNewLoginEnabled(e.target.value === "true")} style={{ width: "100%", background: "#08162d", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#ffffff", fontSize: 12 }}>
                     <option value="true">Permitted</option>
                     <option value="false">Revoked</option>
                   </select>
                 </div>
               </div>
               <div style={{ display: "flex", justifyContent: "flex-end", gap: 10, marginTop: 10 }}>
-                <button type="button" onClick={() => setShowCreateModal(false)} style={{ background: "#121215", border: "1px solid #27272a", color: "#ffffff", borderRadius: 6, padding: "8px 14px", fontSize: 12, cursor: "pointer" }}>Cancel</button>
-                <button type="submit" style={{ background: "#ffffff", border: "none", color: "#000000", borderRadius: 6, padding: "8px 16px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Create Account</button>
+                <button type="button" onClick={() => setShowCreateModal(false)} style={{ background: "#08162d", border: "1px solid rgba(96, 165, 250, 0.28)", color: "#ffffff", borderRadius: 6, padding: "8px 14px", fontSize: 12, cursor: "pointer" }}>Cancel</button>
+                <button type="submit" style={{ background: "#ffffff", border: "none", color: "#08162d", borderRadius: 6, padding: "8px 16px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Create Account</button>
               </div>
             </form>
           </div>
@@ -625,13 +625,13 @@ export default function AdminUsersModule({ currentUser }) {
 
       {/* Reset Password Modal */}
       {showResetModal && targetUser && (
-        <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.8)", backdropFilter: "blur(4px)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000 }}>
-          <div style={{ width: 400, background: "#09090b", border: "1px solid #27272a", borderRadius: 12, padding: 24 }}>
+        <div style={{ position: "fixed", inset: 0, background: "rgba(4, 11, 24, 0.88)", backdropFilter: "blur(4px)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000 }}>
+          <div style={{ width: 400, background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 12, padding: 24 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
               <div style={{ fontSize: 15, fontWeight: 700, fontFamily: "Space Grotesk" }}>Reset Password</div>
-              <button onClick={() => setShowResetModal(false)} style={{ background: "none", border: "none", color: "#71717a", cursor: "pointer" }}><X size={16} /></button>
+              <button onClick={() => setShowResetModal(false)} style={{ background: "none", border: "none", color: "#7dd3fc", cursor: "pointer" }}><X size={16} /></button>
             </div>
-            <div style={{ fontSize: 12, color: "#a1a1aa", marginBottom: 14 }}>
+            <div style={{ fontSize: 12, color: "#bae6fd", marginBottom: 14 }}>
               Set new administrative password for <strong style={{ color: "#ffffff" }}>{targetUser.email}</strong>.
             </div>
             <form onSubmit={handleResetPassword} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -642,11 +642,11 @@ export default function AdminUsersModule({ currentUser }) {
                 value={newPassword}
                 onChange={e => setNewPassword(e.target.value)}
                 placeholder="New Password (min 6 chars)"
-                style={{ width: "100%", background: "#121215", border: "1px solid #27272a", borderRadius: 6, padding: "8px 10px", color: "#ffffff", fontSize: 12.5, boxSizing: "border-box" }}
+                style={{ width: "100%", background: "#08162d", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#ffffff", fontSize: 12.5, boxSizing: "border-box" }}
               />
               <div style={{ display: "flex", justifyContent: "flex-end", gap: 10, marginTop: 10 }}>
-                <button type="button" onClick={() => setShowResetModal(false)} style={{ background: "#121215", border: "1px solid #27272a", color: "#ffffff", borderRadius: 6, padding: "7px 14px", fontSize: 12, cursor: "pointer" }}>Cancel</button>
-                <button type="submit" style={{ background: "#ffffff", border: "none", color: "#000000", borderRadius: 6, padding: "7px 16px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Save New Password</button>
+                <button type="button" onClick={() => setShowResetModal(false)} style={{ background: "#08162d", border: "1px solid rgba(96, 165, 250, 0.28)", color: "#ffffff", borderRadius: 6, padding: "7px 14px", fontSize: 12, cursor: "pointer" }}>Cancel</button>
+                <button type="submit" style={{ background: "#ffffff", border: "none", color: "#08162d", borderRadius: 6, padding: "7px 16px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Save New Password</button>
               </div>
             </form>
           </div>

@@ -78,8 +78,9 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
         billingApi.getPublicPlans(),
       ]);
 
-      if (cmsRes.status === "fulfilled" && cmsRes.value?.data) {
-        setCms(cmsRes.value.data);
+      if (cmsRes.status === "fulfilled" && cmsRes.value) {
+        const cmsData = cmsRes.value.data || cmsRes.value;
+        if (cmsData && cmsData.hero) setCms(cmsData);
       }
       if (teamRes.status === "fulfilled" && teamRes.value) {
         const teamData = teamRes.value.data || teamRes.value;
