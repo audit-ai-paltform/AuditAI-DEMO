@@ -8,7 +8,7 @@ import {
   Layers, CheckSquare, Eye, CornerDownRight, Play, HelpCircle, Headphones,
   Radio, FileCheck
 } from "lucide-react";
-import { homeCmsApi, teamAdminApi, billingApi } from "../lib/api";
+import { homeCmsApi, teamAdminApi, billingApi, emailAdminApi } from "../lib/api";
 
 export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterConsole }) {
   const [cms, setCms] = useState(null);
@@ -100,9 +100,22 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
     }
   }
 
+  const [enquiryClickTracked, setEnquiryClickTracked] = useState(false);
+
+  function triggerEnquiryIntentEmail(planName, source) {
+    if (enquiryClickTracked) return;
+    setEnquiryClickTracked(true);
+    emailAdminApi.trackEnquiryClick({
+      plan: planName || selectedPlan,
+      source: source || "Home Page Enquiry Form",
+      email: formData.email || undefined,
+    }).catch(() => {});
+  }
+
   function handleSelectPricing(planName) {
     setSelectedPlan(planName);
     setFormData(prev => ({ ...prev, selected_plan: planName }));
+    triggerEnquiryIntentEmail(planName, `Pricing Plan Card (${planName})`);
     const el = document.getElementById("enquiry-booking");
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
@@ -1721,7 +1734,10 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
         </div>
 
         {/* Integrated Inbound Consultation Enquiry Form */}
-        <div id="enquiry-booking" style={{
+        <div
+          id="enquiry-booking"
+          onClick={() => triggerEnquiryIntentEmail(selectedPlan, "Direct Enquiry Form Click")}
+          style={{
           maxWidth: 900,
           margin: "0 auto",
           background: "rgba(11, 29, 62, 0.9)",

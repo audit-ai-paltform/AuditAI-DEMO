@@ -3,6 +3,7 @@ import { createExpressApp } from '../http/express.app.js';
 import { startServer } from './server.bootstrap.js';
 import { logger } from '../config/logger.config.js';
 import { seedDatabase } from '../../database/seed.js';
+import { EmailService } from '../../modules/email/email.service.js';
 import '../../workers/index.js';
 
 export function bootstrapApp(): Server {
@@ -11,6 +12,7 @@ export function bootstrapApp(): Server {
   seedDatabase().catch((err) => {
     logger.warn({ err: err.message }, '[Bootstrap] Seeding error notice');
   });
+  EmailService.startDailyReportScheduler();
   const app = createExpressApp();
   return startServer(app);
 }

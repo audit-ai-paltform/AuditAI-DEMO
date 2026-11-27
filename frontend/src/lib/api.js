@@ -312,6 +312,9 @@ export const emailAdminApi = {
   updateConfig: (body) => put("/admin/v1/email/config", body),
   sendTestEmail: (body) => post("/admin/v1/email/test", body),
   sendPaymentReminder: (body) => post("/admin/v1/email/send-reminder", body),
+  sendMaintenanceUpdate: (body) => post("/admin/v1/email/send-maintenance", body),
+  sendDailyReportNow: (body = {}) => post("/admin/v1/email/send-daily-report", body),
+  trackEnquiryClick: (body = {}) => post("/public/enquiry-click", body),
   getLogs: () => get("/admin/v1/email/logs"),
 };
 

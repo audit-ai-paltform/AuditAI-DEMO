@@ -12,6 +12,7 @@ import {
 } from './flags.types.js';
 import { runStageOneDetection, TranscriptSegment, SopKnowledge } from './stage-one.detectors.js';
 import { notificationService } from '../notifications/notifications.service.js';
+import { EmailService } from '../email/email.service.js';
 
 export const FLAG_ENGINE_VERSION = '1.0.0';
 
@@ -246,6 +247,17 @@ export class FlagEngineService {
         if (flag.requires_manager_attention) {
           try {
             await notificationService.notifyFlagCreated(flag);
+            await EmailService.sendCriticalAlertEmail({
+              callId: flag.call_id,
+              agentId: flag.agent_id,
+              severity: flag.severity,
+              flagType: flag.flag_type,
+              title: flag.title,
+              description: flag.description,
+              evidence: flag.evidence,
+              recommendedAction: flag.recommended_action,
+              confidence: flag.confidence,
+            });
           } catch (err: any) {
             logger.warn({ err: err.message }, '[FlagEngine] Notification dispatch notice');
           }

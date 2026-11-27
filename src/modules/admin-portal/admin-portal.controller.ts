@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { AdminPortalService } from './admin-portal.service.js';
+import { EmailService } from '../email/email.service.js';
 
 export class AdminPortalController {
   /**
@@ -35,6 +36,17 @@ export class AdminPortalController {
         message,
         preferred_schedule,
       });
+
+      // Automatically dispatch enquiry confirmation & admin lead alert
+      EmailService.sendEnquirySubmittedEmails({
+        name,
+        email,
+        company: company_name || 'Individual / Startup',
+        plan: service_interest || 'Growth Professional',
+        team_size,
+        schedule: preferred_schedule,
+        message,
+      }).catch(() => {});
 
       res.status(201).json({
         success: true,
@@ -106,6 +118,18 @@ export class AdminPortalController {
         res.status(404).json({ success: false, message: 'Enquiry not found.' });
         return;
       }
+
+      // Send client approval / confirmation email when enquired customer is approved or scheduled
+      if (req.body.status === 'RESOLVED' || req.body.status === 'SCHEDULED' || req.body.approved === true) {
+        EmailService.sendClientApprovedEmail({
+          to: updated.email,
+          name: updated.name,
+          company: updated.company_name,
+          role: 'Approved Enterprise Lead / Client',
+          plan: updated.service_interest || 'Growth Professional',
+        }).catch(() => {});
+      }
+
       res.status(200).json({
         success: true,
         message: `Enquiry ${id} updated successfully.`,
@@ -154,6 +178,17 @@ export class AdminPortalController {
         subscription_tier,
       });
 
+      // Automatically send approval & access credentials email to newly provisioned client
+      if (user_type === 'client' && newUser.status === 'ACTIVE') {
+        EmailService.sendClientApprovedEmail({
+          to: newUser.email,
+          name: newUser.name,
+          company: newUser.company_name,
+          role: newUser.role,
+          plan: newUser.subscription_tier || 'Growth Professional',
+        }).catch(() => {});
+      }
+
       res.status(201).json({
         success: true,
         message: `${user_type === 'client' ? 'Client' : 'Employee'} user created successfully.`,
@@ -179,6 +214,17 @@ export class AdminPortalController {
         res.status(404).json({ success: false, message: 'User record not found.' });
         return;
       }
+
+      if (updated.status === 'ACTIVE') {
+        EmailService.sendClientApprovedEmail({
+          to: updated.email,
+          name: updated.name,
+          company: updated.company_name,
+          role: updated.role,
+          plan: updated.subscription_tier || 'Growth Professional',
+        }).catch(() => {});
+      }
+
       res.status(200).json({
         success: true,
         message: `User access status updated to ${updated.status}.`,
@@ -219,6 +265,21 @@ export class AdminPortalController {
       }
 
       const result = AdminPortalService.sendPaymentReminder(userId);
+      if (result.success) {
+        const users = AdminPortalService.listUsers();
+        const user = users.find((u) => u.id === userId);
+        if (user) {
+          EmailService.sendPaymentReminderEmail({
+            to: user.email,
+            userName: user.name,
+            planName: user.subscription_tier || 'Growth Professional',
+            amountINR: user.subscription_tier?.includes('Enterprise') ? 24999 : user.subscription_tier?.includes('Starter') ? 4999 : 9999,
+            daysRemaining: 3,
+            expiryDate: new Date(Date.now() + 86400000 * 3).toLocaleDateString(),
+            paymentLink: `http://localhost:3001/?checkout=${encodeURIComponent(user.subscription_tier || 'Growth Professional')}`,
+          }).catch(() => {});
+        }
+      }
       res.status(result.success ? 200 : 400).json(result);
     } catch (err: any) {
       res.status(500).json({ success: false, message: err.message });
