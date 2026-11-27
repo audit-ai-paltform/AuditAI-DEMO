@@ -1,0 +1,29 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "auditai-edge-service",
+  "main": "src/index.ts",
+  "compatibility_date": "2024-09-23",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "auditai-d1-prod",
+      "database_id": "your-d1-database-uuid-here"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "RECORDINGS_BUCKET",
+      "bucket_name": "auditai-recordings-storage",
+      "preview_bucket_name": "auditai-recordings-dev"
+    }
+  ],
+  "vars": {
+    "ENVIRONMENT": "production",
+    "ENABLE_CORS": "true",
+    "ALLOWED_ORIGIN": "*",
+    "R2_PUBLIC_DOMAIN": "https://storage.auditai.io"
+  }
+}

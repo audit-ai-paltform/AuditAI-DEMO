@@ -1,0 +1,2927 @@
+{
+  "timestamp": "2026-11-02T13:33:08.981Z",
+  "counts": {
+    "calls": 3,
+    "call_processing_events": 27,
+    "webhook_events": 3
+  },
+  "calls": [
+    {
+      "id": "6e9f6604-2531-414f-a2f6-a5199a6a94af",
+      "client_id": "00000000-0000-0000-0000-000000000001",
+      "agent_id": "EMP003",
+      "transcript": [
+        {
+          "end": 27369,
+          "text": "Welcome to Platinum Rx, your trusted pharmacy for affordable medicine. Press 1 to choose English. Hindi me sunne ke liye 2 tabai. Press 1 to place a new order and press 2 to inquire about the existing order. Please wait while we are connecting your call. All",
+          "start": 149,
+          "speaker": "Agent",
+          "timestamp": "149-27369"
+        },
+        {
+          "end": 36406,
+          "text": "our team members are busy right now. Please stay on the line. We will connect you shortly. Please wait while we are connecting your call.",
+          "start": 27369,
+          "speaker": "Customer",
+          "timestamp": "27369-36406"
+        },
+        {
+          "end": 41566,
+          "text": "Hello, welcome to Platinum Oryx Online Pharmacy.",
+          "start": 37686,
+          "speaker": "Customer",
+          "timestamp": "37686-41566"
+        },
+        {
+          "end": 52806,
+          "text": "Yes, we are calling from Hyderabad. Please note down the name of the medicines that I require. Okay, please note down.",
+          "start": 42566,
+          "speaker": "Customer",
+          "timestamp": "42566-52806"
+        },
+        {
+          "end": 54426,
+          "text": "Okay, tell me the medicine name.",
+          "start": 53266,
+          "speaker": "Customer",
+          "timestamp": "53266-54426"
+        },
+        {
+          "end": 58426,
+          "text": "Lipwax, L-I-P-V-A-X Lipwax for DMG.",
+          "start": 55486,
+          "speaker": "Customer",
+          "timestamp": "55486-58426"
+        },
+        {
+          "end": 60938,
+          "text": "Lip was 40 mg",
+          "start": 59718,
+          "speaker": "Customer",
+          "timestamp": "59718-60938"
+        },
+        {
+          "end": 63858,
+          "text": "Lip L I P Lip was",
+          "start": 60938,
+          "speaker": "Customer",
+          "timestamp": "60938-63858"
+        },
+        {
+          "end": 65918,
+          "text": "How many good strip once?",
+          "start": 63858,
+          "speaker": "Customer",
+          "timestamp": "63858-65918"
+        },
+        {
+          "end": 70558,
+          "text": "One strip Sorry? One strip, one strip",
+          "start": 66178,
+          "speaker": "Customer",
+          "timestamp": "66178-70558"
+        },
+        {
+          "end": 72598,
+          "text": "Lip was one strip, ek pattha?",
+          "start": 70558,
+          "speaker": "Customer",
+          "timestamp": "70558-72598"
+        },
+        {
+          "end": 74938,
+          "text": "Haa, ek pattha Mithki",
+          "start": 73378,
+          "speaker": "Customer",
+          "timestamp": "73378-74938"
+        },
+        {
+          "end": 75158,
+          "text": "baaz?",
+          "start": 74938,
+          "speaker": "Customer",
+          "timestamp": "74938-75158"
+        },
+        {
+          "end": 87898,
+          "text": "Mithki baaaz... Gopi tab Gopi gold Gopi gold, A75 Gopi gold A75, two strips One",
+          "start": 75918,
+          "speaker": "Customer",
+          "timestamp": "75918-87898"
+        },
+        {
+          "end": 89198,
+          "text": "minute sir, Gopi gold",
+          "start": 87898,
+          "speaker": "Customer",
+          "timestamp": "87898-89198"
+        },
+        {
+          "end": 91009,
+          "text": "A75",
+          "start": 90329,
+          "speaker": "Customer",
+          "timestamp": "90329-91009"
+        },
+        {
+          "end": 94089,
+          "text": "k्loophee gool es् 75 2",
+          "start": 91009,
+          "speaker": "Customer",
+          "timestamp": "91009-94089"
+        },
+        {
+          "end": 96529,
+          "text": "s्tip 2 pt्ty 2",
+          "start": 94089,
+          "speaker": "Customer",
+          "timestamp": "94089-96529"
+        },
+        {
+          "end": 97829,
+          "text": "chrk्। 2 shr्ch ng्ga",
+          "start": 96529,
+          "speaker": "Customer",
+          "timestamp": "96529-97829"
+        },
+        {
+          "end": 104409,
+          "text": "p्roto mt् ऎksl",
+          "start": 97829,
+          "speaker": "Customer",
+          "timestamp": "97829-104409"
+        },
+        {
+          "end": 105889,
+          "text": "poore sం",
+          "start": 104409,
+          "speaker": "Customer",
+          "timestamp": "104409-105889"
+        },
+        {
+          "end": 122140,
+          "text": "p்roto મt् ऎksl રo।metr રotમ� P-R-O-T-O-M-E-T-P-R-O M-E-T",
+          "start": 105889,
+          "speaker": "Customer",
+          "timestamp": "105889-122140"
+        },
+        {
+          "end": 124340,
+          "text": "P-R-T-O M-A-T",
+          "start": 122140,
+          "speaker": "Customer",
+          "timestamp": "122140-124340"
+        },
+        {
+          "end": 126420,
+          "text": "P-O-T M-A-A-T-X-L",
+          "start": 124340,
+          "speaker": "Customer",
+          "timestamp": "124340-126420"
+        },
+        {
+          "end": 131140,
+          "text": "P-R-L-O M-O-T",
+          "start": 126420,
+          "speaker": "Customer",
+          "timestamp": "126420-131140"
+        },
+        {
+          "end": 139400,
+          "text": "P-A-R-O P-O-L-O-M P-R-R-O",
+          "start": 132960,
+          "speaker": "Customer",
+          "timestamp": "132960-139400"
+        },
+        {
+          "end": 142400,
+          "text": "T-O",
+          "start": 139400,
+          "speaker": "Customer",
+          "timestamp": "139400-142400"
+        },
+        {
+          "end": 150558,
+          "text": "P-R-A-T p्rolo",
+          "start": 143920,
+          "speaker": "Customer",
+          "timestamp": "143920-150558"
+        },
+        {
+          "end": 153018,
+          "text": "met Sir्ph dooma Sir्ph, sem b्rend aur al्t्rent b्rend Sir्ph?",
+          "start": 150558,
+          "speaker": "Customer",
+          "timestamp": "150558-153018"
+        },
+        {
+          "end": 159218,
+          "text": "b्rend b्rend men met ek्shl 50. p्rolo met, nak p्roto p्rolo.",
+          "start": 153798,
+          "speaker": "Customer",
+          "timestamp": "153798-159218"
+        },
+        {
+          "end": 181191,
+          "text": "ya, jrva sar, is p्rolo mait, yh p्rolo mait hai?",
+          "start": 159878,
+          "speaker": "Customer",
+          "timestamp": "159878-181191"
+        },
+        {
+          "end": 185791,
+          "text": "prsl? tat्se v्yoo, ten imjee",
+          "start": 181591,
+          "speaker": "Customer",
+          "timestamp": "181591-185791"
+        },
+        {
+          "end": 187971,
+          "text": "tat्se v्yu, ten emjee",
+          "start": 185791,
+          "speaker": "Customer",
+          "timestamp": "185791-187971"
+        },
+        {
+          "end": 212263,
+          "text": "। tain em्ड़ee ટat्se v्yoo, ।tেn im्jee । poo r, s ach्chha, yh",
+          "start": 187971,
+          "speaker": "Customer",
+          "timestamp": "187971-212263"
+        },
+        {
+          "end": 218923,
+          "text": "aach्chha. aa ch्cha, ach्cha.",
+          "start": 212263,
+          "speaker": "Customer",
+          "timestamp": "212263-218923"
+        },
+        {
+          "end": 220953,
+          "text": "ya, । aa, aa",
+          "start": 219563,
+          "speaker": "Customer",
+          "timestamp": "219563-220953"
+        },
+        {
+          "end": 222363,
+          "text": "ch्cha, అch्ಚa.",
+          "start": 220953,
+          "speaker": "Customer",
+          "timestamp": "220953-222363"
+        },
+        {
+          "end": 225543,
+          "text": "ya, aa, ॆ, ఆ, జ््্yా, జ््যా.",
+          "start": 222603,
+          "speaker": "Customer",
+          "timestamp": "222603-225543"
+        },
+        {
+          "end": 228543,
+          "text": "ఆch্্cha",
+          "start": 225543,
+          "speaker": "Customer",
+          "timestamp": "225543-228543"
+        },
+        {
+          "end": 235363,
+          "text": "ఆ చ्chా, yh,",
+          "start": 234443,
+          "speaker": "Customer",
+          "timestamp": "234443-235363"
+        },
+        {
+          "end": 238363,
+          "text": "జ్chా.",
+          "start": 235363,
+          "speaker": "Customer",
+          "timestamp": "235363-238363"
+        },
+        {
+          "end": 239512,
+          "text": "Cash and delivery only.",
+          "start": 238492,
+          "speaker": "Customer",
+          "timestamp": "238492-239512"
+        },
+        {
+          "end": 244752,
+          "text": "ya, বo, Online � payment is cash and delivery. Your name is Mohammed Habibullah.",
+          "start": 239883,
+          "speaker": "Customer",
+          "timestamp": "239883-244752"
+        },
+        {
+          "end": 246212,
+          "text": "Yes, Habibullah.",
+          "start": 245112,
+          "speaker": "Customer",
+          "timestamp": "245112-246212"
+        },
+        {
+          "end": 261272,
+          "text": "Address is 6-7 by 15, Sun City Gates, Bandalora, Fatima Mosque Lane, beside AM Pharmacy, Hyderabad. Pin code 586. Phone number is 9703023055.",
+          "start": 246392,
+          "speaker": "Customer",
+          "timestamp": "246392-261272"
+        },
+        {
+          "end": 263792,
+          "text": "What is your good name?",
+          "start": 262892,
+          "speaker": "Customer",
+          "timestamp": "262892-263792"
+        },
+        {
+          "end": 266032,
+          "text": "Mohammed Saddam, sir.",
+          "start": 264472,
+          "speaker": "Customer",
+          "timestamp": "264472-266032"
+        },
+        {
+          "end": 271141,
+          "text": "Mohammed Saddam, okay. sd्dhamushen",
+          "start": 266732,
+          "speaker": "Customer",
+          "timestamp": "266732-271141"
+        },
+        {
+          "end": 275101,
+          "text": "sd्dhamushen sd्dhamushen",
+          "start": 273021,
+          "speaker": "Customer",
+          "timestamp": "273021-275101"
+        },
+        {
+          "end": 282061,
+          "text": "sd्dhamushen irak men jekhte",
+          "start": 275101,
+          "speaker": "Customer",
+          "timestamp": "275101-282061"
+        },
+        {
+          "end": 284161,
+          "text": "hain",
+          "start": 282061,
+          "speaker": "Customer",
+          "timestamp": "282061-284161"
+        },
+        {
+          "end": 290121,
+          "text": "sd्hamushen kl",
+          "start": 284161,
+          "speaker": "Customer",
+          "timestamp": "284161-290121"
+        },
+        {
+          "end": 302943,
+          "text": "shmtak aajaege aaj hiveening ho gya na kl to nahi hoga 30 ko ho jayega Sir्v",
+          "start": 291101,
+          "speaker": "Customer",
+          "timestamp": "291101-302943"
+        }
+      ],
+      "score": 80,
+      "status": "COMPLETED",
+      "duration": "5:11",
+      "caller_number": "9876543212",
+      "flags": {
+        "summary": "The call was handled politely with accurate capture of medicine names, quantities, address, and cash on delivery details. However, adherence lost marks due to missing self-introduction in opening, delayed verification, and incomplete call closing procedures.",
+        "language": "te",
+        "strengths": [
+          "Patiently cross-verified medicine spellings and strip quantities.",
+          "Proactively checked brand preference (same brand vs alternate brand).",
+          "Maintained a respectful and cooperative tone throughout the transcript."
+        ],
+        "confidence": 0.61250246,
+        "evaluation": {
+          "Closing": {
+            "score": 40,
+            "status": "APPLICABLE",
+            "remarks": "The agent mentioned the estimated delivery date but did not provide a full order summary, ask if the customer had additional questions, or thank the customer."
+          },
+          "Greeting": {
+            "score": 50,
+            "status": "APPLICABLE",
+            "remarks": "The agent greeted the customer and stated the company name, but failed to introduce himself by name during the opening greeting."
+          },
+          "Compliance": {
+            "score": 100,
+            "status": "APPLICABLE",
+            "remarks": "The agent adhered to standard guidelines, did not make false promises, and re-confirmed delivery and contact details."
+          },
+          "Verification": {
+            "score": 70,
+            "status": "APPLICABLE",
+            "remarks": "The agent confirmed the customer's full name, address, and mobile number, but conducted verification towards the end of the call rather than before taking order details."
+          },
+          "Communication": {
+            "score": 90,
+            "status": "APPLICABLE",
+            "remarks": "The agent maintained a polite, patient, and professional tone throughout, carefully verifying character-by-character medicine spellings."
+          },
+          "Need Analysis": {
+            "score": 100,
+            "status": "APPLICABLE",
+            "remarks": "The agent actively understood customer requirements by clarifying medicine strip quantities, dosage strengths, and brand preferences (same vs alternate brand)."
+          },
+          "Product Knowledge": {
+            "score": 85,
+            "status": "APPLICABLE",
+            "remarks": "The agent accurately noted medicine names, clarified payment mode (Cash on Delivery), and provided expected delivery date details."
+          }
+        },
+        "utterances": [
+          {
+            "end": 27369,
+            "text": "Welcome to Platinum Rx, your trusted pharmacy for affordable medicine. Press 1 to choose English. Hindi me sunne ke liye 2 tabai. Press 1 to place a new order and press 2 to inquire about the existing order. Please wait while we are connecting your call. All",
+            "start": 149,
+            "speaker": "A",
+            "confidence": 0.71130496
+          },
+          {
+            "end": 36406,
+            "text": "our team members are busy right now. Please stay on the line. We will connect you shortly. Please wait while we are connecting your call.",
+            "start": 27369,
+            "speaker": "B",
+            "confidence": 0.7825116
+          },
+          {
+            "end": 41566,
+            "text": "Hello, welcome to Platinum Oryx Online Pharmacy.",
+            "start": 37686,
+            "speaker": "C",
+            "confidence": 0.6239173
+          },
+          {
+            "end": 52806,
+            "text": "Yes, we are calling from Hyderabad. Please note down the name of the medicines that I require. Okay, please note down.",
+            "start": 42566,
+            "speaker": "D",
+            "confidence": 0.65348756
+          },
+          {
+            "end": 54426,
+            "text": "Okay, tell me the medicine name.",
+            "start": 53266,
+            "speaker": "C",
+            "confidence": 0.6836202
+          },
+          {
+            "end": 58426,
+            "text": "Lipwax, L-I-P-V-A-X Lipwax for DMG.",
+            "start": 55486,
+            "speaker": "D",
+            "confidence": 0.6853809
+          },
+          {
+            "end": 60938,
+            "text": "Lip was 40 mg",
+            "start": 59718,
+            "speaker": "C",
+            "confidence": 0.41609192
+          },
+          {
+            "end": 63858,
+            "text": "Lip L I P Lip was",
+            "start": 60938,
+            "speaker": "D",
+            "confidence": 0.62905884
+          },
+          {
+            "end": 65918,
+            "text": "How many good strip once?",
+            "start": 63858,
+            "speaker": "C",
+            "confidence": 0.4660457
+          },
+          {
+            "end": 70558,
+            "text": "One strip Sorry? One strip, one strip",
+            "start": 66178,
+            "speaker": "D",
+            "confidence": 0.5939213
+          },
+          {
+            "end": 72598,
+            "text": "Lip was one strip, ek pattha?",
+            "start": 70558,
+            "speaker": "C",
+            "confidence": 0.6747917
+          },
+          {
+            "end": 74938,
+            "text": "Haa, ek pattha Mithki",
+            "start": 73378,
+            "speaker": "D",
+            "confidence": 0.65359056
+          },
+          {
+            "end": 75158,
+            "text": "baaz?",
+            "start": 74938,
+            "speaker": "C",
+            "confidence": 0.521
+          },
+          {
+            "end": 87898,
+            "text": "Mithki baaaz... Gopi tab Gopi gold Gopi gold, A75 Gopi gold A75, two strips One",
+            "start": 75918,
+            "speaker": "D",
+            "confidence": 0.6137059
+          },
+          {
+            "end": 89198,
+            "text": "minute sir, Gopi gold",
+            "start": 87898,
+            "speaker": "C",
+            "confidence": 0.7625013
+          },
+          {
+            "end": 91009,
+            "text": "A75",
+            "start": 90329,
+            "speaker": "D",
+            "confidence": 0.5028076
+          },
+          {
+            "end": 94089,
+            "text": "क्लूफी गूल एस् 75 2",
+            "start": 91009,
+            "speaker": "C",
+            "confidence": 0.48348945
+          },
+          {
+            "end": 96529,
+            "text": "स्टिप 2 पत्तय 2",
+            "start": 94089,
+            "speaker": "D",
+            "confidence": 0.47838715
+          },
+          {
+            "end": 97829,
+            "text": "चरक्। 2 शर्च नग्गा",
+            "start": 96529,
+            "speaker": "C",
+            "confidence": 0.15966275
+          },
+          {
+            "end": 104409,
+            "text": "प्रोटो मट् ऎकसल",
+            "start": 97829,
+            "speaker": "D",
+            "confidence": 0.37365583
+          },
+          {
+            "end": 105889,
+            "text": "पूरे सం",
+            "start": 104409,
+            "speaker": "C",
+            "confidence": 0.3349817
+          },
+          {
+            "end": 122140,
+            "text": "प்रोटो મट् ऎकसल રो।मेटर રोतમ� P-R-O-T-O-M-E-T-P-R-O M-E-T",
+            "start": 105889,
+            "speaker": "D",
+            "confidence": 0.5494383
+          },
+          {
+            "end": 124340,
+            "text": "P-R-T-O M-A-T",
+            "start": 122140,
+            "speaker": "C",
+            "confidence": 0.519
+          },
+          {
+            "end": 126420,
+            "text": "P-O-T M-A-A-T-X-L",
+            "start": 124340,
+            "speaker": "D",
+            "confidence": 0.561
+          },
+          {
+            "end": 131140,
+            "text": "P-R-L-O M-O-T",
+            "start": 126420,
+            "speaker": "C",
+            "confidence": 0.639
+          },
+          {
+            "end": 139400,
+            "text": "P-A-R-O P-O-L-O-M P-R-R-O",
+            "start": 132960,
+            "speaker": "D",
+            "confidence": 0.56233335
+          },
+          {
+            "end": 142400,
+            "text": "T-O",
+            "start": 139400,
+            "speaker": "C",
+            "confidence": 0.53
+          },
+          {
+            "end": 150558,
+            "text": "P-R-A-T प्रोलो",
+            "start": 143920,
+            "speaker": "D",
+            "confidence": 0.62247324
+          },
+          {
+            "end": 153018,
+            "text": "मेट सर्फ दूमा सर्फ, सेम ब्रेंड और अल्ट्रेंट ब्रेंड सर्फ?",
+            "start": 150558,
+            "speaker": "C",
+            "confidence": 0.5883275
+          },
+          {
+            "end": 159218,
+            "text": "ब्रेंड ब्रेंड में मेट एक्षल 50. प्रोलो मेट, नाक प्रोटो प्रोलो.",
+            "start": 153798,
+            "speaker": "D",
+            "confidence": 0.65053946
+          },
+          {
+            "end": 181191,
+            "text": "या, जरवा सार, इस प्रोलो मैट, यह प्रोलो मैट है?",
+            "start": 159878,
+            "speaker": "C",
+            "confidence": 0.48568258
+          },
+          {
+            "end": 185791,
+            "text": "परसल? टाट्से व्यू, टेन इमजी",
+            "start": 181591,
+            "speaker": "D",
+            "confidence": 0.48044884
+          },
+          {
+            "end": 187971,
+            "text": "टाट्से व्यु, तेन ेमजी",
+            "start": 185791,
+            "speaker": "C",
+            "confidence": 0.7449695
+          },
+          {
+            "end": 212263,
+            "text": "। टैन एम्ड़ी ટाट्से व्यू, ।टেन इम्जी । पू र, स अच्छा, यह",
+            "start": 187971,
+            "speaker": "D",
+            "confidence": 0.4515917
+          },
+          {
+            "end": 218923,
+            "text": "आच्छा. आ च्चा, अच्चा.",
+            "start": 212263,
+            "speaker": "C",
+            "confidence": 0.4353092
+          },
+          {
+            "end": 220953,
+            "text": "या, । आ, आ",
+            "start": 219563,
+            "speaker": "D",
+            "confidence": 0.27245373
+          },
+          {
+            "end": 222363,
+            "text": "च्चा, అच्ಚा.",
+            "start": 220953,
+            "speaker": "C",
+            "confidence": 0.5675
+          },
+          {
+            "end": 225543,
+            "text": "या, आ, ॆ, ఆ, జ््্यా, జ््যా.",
+            "start": 222603,
+            "speaker": "D",
+            "confidence": 0.41583332
+          },
+          {
+            "end": 228543,
+            "text": "ఆच্্चा",
+            "start": 225543,
+            "speaker": "C",
+            "confidence": 0.44516835
+          },
+          {
+            "end": 235363,
+            "text": "ఆ చ्चా, यह,",
+            "start": 234443,
+            "speaker": "D",
+            "confidence": 0.30535963
+          },
+          {
+            "end": 238363,
+            "text": "జ్चా.",
+            "start": 235363,
+            "speaker": "C",
+            "confidence": 0.466
+          },
+          {
+            "end": 239512,
+            "text": "Cash and delivery only.",
+            "start": 238492,
+            "speaker": "D",
+            "confidence": 0.40431988
+          },
+          {
+            "end": 244752,
+            "text": "या, বो, Online � payment is cash and delivery. Your name is Mohammed Habibullah.",
+            "start": 239883,
+            "speaker": "C",
+            "confidence": 0.5951038
+          },
+          {
+            "end": 246212,
+            "text": "Yes, Habibullah.",
+            "start": 245112,
+            "speaker": "D",
+            "confidence": 0.7155
+          },
+          {
+            "end": 261272,
+            "text": "Address is 6-7 by 15, Sun City Gates, Bandalora, Fatima Mosque Lane, beside AM Pharmacy, Hyderabad. Pin code 586. Phone number is 9703023055.",
+            "start": 246392,
+            "speaker": "C",
+            "confidence": 0.65374166
+          },
+          {
+            "end": 263792,
+            "text": "What is your good name?",
+            "start": 262892,
+            "speaker": "D",
+            "confidence": 0.8003078
+          },
+          {
+            "end": 266032,
+            "text": "Mohammed Saddam, sir.",
+            "start": 264472,
+            "speaker": "C",
+            "confidence": 0.71499217
+          },
+          {
+            "end": 271141,
+            "text": "Mohammed Saddam, okay. सद्धामुशेण",
+            "start": 266732,
+            "speaker": "D",
+            "confidence": 0.68757915
+          },
+          {
+            "end": 275101,
+            "text": "सद्धामुशेण सद्धामुशेण",
+            "start": 273021,
+            "speaker": "C",
+            "confidence": 0.8804362
+          },
+          {
+            "end": 282061,
+            "text": "सद्धामुषेण इराक में जेखते",
+            "start": 275101,
+            "speaker": "D",
+            "confidence": 0.60702276
+          },
+          {
+            "end": 284161,
+            "text": "हैं",
+            "start": 282061,
+            "speaker": "C",
+            "confidence": 0.8219401
+          },
+          {
+            "end": 290121,
+            "text": "सद्हामुशेण कल",
+            "start": 284161,
+            "speaker": "D",
+            "confidence": 0.57260156
+          },
+          {
+            "end": 302943,
+            "text": "शमतक आजाएगे आज हिवीनिंग हो गया ना कल तो नहीं होगा 30 को हो जायेगा सर्व",
+            "start": 291101,
+            "speaker": "C",
+            "confidence": 0.6589733
+          }
+        ],
+        "violations": [
+          "Failed to introduce self by name during initial greeting.",
+          "Verification of customer details was conducted near the end of the call instead of prior to discussing order details.",
+          "Failed to ask if the customer had further questions and omitted a professional thank-you closing."
+        ],
+        "suggestions": [
+          "Ensure immediate self-introduction following company name greeting.",
+          "Complete identity verification (customer name and contact details) before accepting order information.",
+          "Follow structured closing steps: summarize the order, check for additional queries, and thank the customer."
+        ],
+        "recording_url": "https://res.cloudinary.com/doenc9fyc/video/upload/v1785327507/3_gbnhtt.mp3",
+        "transcript_id": "81c2d195-398f-4507-bb00-9d126b907c0d",
+        "raw_transcript": [
+          {
+            "text": "Welcome to Platinum Rx, your trusted pharmacy for affordable medicine. Press 1 to choose English. Hindi me sunne ke liye 2 tabai. Press 1 to place a new order and press 2 to inquire about the existing order. Please wait while we are connecting your call. All",
+            "speaker": "Agent",
+            "timestamp": "149-27369"
+          },
+          {
+            "text": "our team members are busy right now. Please stay on the line. We will connect you shortly. Please wait while we are connecting your call.",
+            "speaker": "Customer",
+            "timestamp": "27369-36406"
+          },
+          {
+            "text": "Hello, welcome to Platinum Oryx Online Pharmacy.",
+            "speaker": "Customer",
+            "timestamp": "37686-41566"
+          },
+          {
+            "text": "Yes, we are calling from Hyderabad. Please note down the name of the medicines that I require. Okay, please note down.",
+            "speaker": "Customer",
+            "timestamp": "42566-52806"
+          },
+          {
+            "text": "Okay, tell me the medicine name.",
+            "speaker": "Customer",
+            "timestamp": "53266-54426"
+          },
+          {
+            "text": "Lipwax, L-I-P-V-A-X Lipwax for DMG.",
+            "speaker": "Customer",
+            "timestamp": "55486-58426"
+          },
+          {
+            "text": "Lip was 40 mg",
+            "speaker": "Customer",
+            "timestamp": "59718-60938"
+          },
+          {
+            "text": "Lip L I P Lip was",
+            "speaker": "Customer",
+            "timestamp": "60938-63858"
+          },
+          {
+            "text": "How many good strip once?",
+            "speaker": "Customer",
+            "timestamp": "63858-65918"
+          },
+          {
+            "text": "One strip Sorry? One strip, one strip",
+            "speaker": "Customer",
+            "timestamp": "66178-70558"
+          },
+          {
+            "text": "Lip was one strip, ek pattha?",
+            "speaker": "Customer",
+            "timestamp": "70558-72598"
+          },
+          {
+            "text": "Haa, ek pattha Mithki",
+            "speaker": "Customer",
+            "timestamp": "73378-74938"
+          },
+          {
+            "text": "baaz?",
+            "speaker": "Customer",
+            "timestamp": "74938-75158"
+          },
+          {
+            "text": "Mithki baaaz... Gopi tab Gopi gold Gopi gold, A75 Gopi gold A75, two strips One",
+            "speaker": "Customer",
+            "timestamp": "75918-87898"
+          },
+          {
+            "text": "minute sir, Gopi gold",
+            "speaker": "Customer",
+            "timestamp": "87898-89198"
+          },
+          {
+            "text": "A75",
+            "speaker": "Customer",
+            "timestamp": "90329-91009"
+          },
+          {
+            "text": "क्लूफी गूल एस् 75 2",
+            "speaker": "Customer",
+            "timestamp": "91009-94089"
+          },
+          {
+            "text": "स्टिप 2 पत्तय 2",
+            "speaker": "Customer",
+            "timestamp": "94089-96529"
+          },
+          {
+            "text": "चरक्। 2 शर्च नग्गा",
+            "speaker": "Customer",
+            "timestamp": "96529-97829"
+          },
+          {
+            "text": "प्रोटो मट् ऎकसल",
+            "speaker": "Customer",
+            "timestamp": "97829-104409"
+          },
+          {
+            "text": "पूरे सం",
+            "speaker": "Customer",
+            "timestamp": "104409-105889"
+          },
+          {
+            "text": "प்रोटो મट् ऎकसल રो।मेटर રोतમ� P-R-O-T-O-M-E-T-P-R-O M-E-T",
+            "speaker": "Customer",
+            "timestamp": "105889-122140"
+          },
+          {
+            "text": "P-R-T-O M-A-T",
+            "speaker": "Customer",
+            "timestamp": "122140-124340"
+          },
+          {
+            "text": "P-O-T M-A-A-T-X-L",
+            "speaker": "Customer",
+            "timestamp": "124340-126420"
+          },
+          {
+            "text": "P-R-L-O M-O-T",
+            "speaker": "Customer",
+            "timestamp": "126420-131140"
+          },
+          {
+            "text": "P-A-R-O P-O-L-O-M P-R-R-O",
+            "speaker": "Customer",
+            "timestamp": "132960-139400"
+          },
+          {
+            "text": "T-O",
+            "speaker": "Customer",
+            "timestamp": "139400-142400"
+          },
+          {
+            "text": "P-R-A-T प्रोलो",
+            "speaker": "Customer",
+            "timestamp": "143920-150558"
+          },
+          {
+            "text": "मेट सर्फ दूमा सर्फ, सेम ब्रेंड और अल्ट्रेंट ब्रेंड सर्फ?",
+            "speaker": "Customer",
+            "timestamp": "150558-153018"
+          },
+          {
+            "text": "ब्रेंड ब्रेंड में मेट एक्षल 50. प्रोलो मेट, नाक प्रोटो प्रोलो.",
+            "speaker": "Customer",
+            "timestamp": "153798-159218"
+          },
+          {
+            "text": "या, जरवा सार, इस प्रोलो मैट, यह प्रोलो मैट है?",
+            "speaker": "Customer",
+            "timestamp": "159878-181191"
+          },
+          {
+            "text": "परसल? टाट्से व्यू, टेन इमजी",
+            "speaker": "Customer",
+            "timestamp": "181591-185791"
+          },
+          {
+            "text": "टाट्से व्यु, तेन ेमजी",
+            "speaker": "Customer",
+            "timestamp": "185791-187971"
+          },
+          {
+            "text": "। टैन एम्ड़ी ટाट्से व्यू, ।टেन इम्जी । पू र, स अच्छा, यह",
+            "speaker": "Customer",
+            "timestamp": "187971-212263"
+          },
+          {
+            "text": "आच्छा. आ च्चा, अच्चा.",
+            "speaker": "Customer",
+            "timestamp": "212263-218923"
+          },
+          {
+            "text": "या, । आ, आ",
+            "speaker": "Customer",
+            "timestamp": "219563-220953"
+          },
+          {
+            "text": "च्चा, అच्ಚा.",
+            "speaker": "Customer",
+            "timestamp": "220953-222363"
+          },
+          {
+            "text": "या, आ, ॆ, ఆ, జ््্यా, జ््যా.",
+            "speaker": "Customer",
+            "timestamp": "222603-225543"
+          },
+          {
+            "text": "ఆच্্चा",
+            "speaker": "Customer",
+            "timestamp": "225543-228543"
+          },
+          {
+            "text": "ఆ చ्चా, यह,",
+            "speaker": "Customer",
+            "timestamp": "234443-235363"
+          },
+          {
+            "text": "జ్चా.",
+            "speaker": "Customer",
+            "timestamp": "235363-238363"
+          },
+          {
+            "text": "Cash and delivery only.",
+            "speaker": "Customer",
+            "timestamp": "238492-239512"
+          },
+          {
+            "text": "या, বो, Online � payment is cash and delivery. Your name is Mohammed Habibullah.",
+            "speaker": "Customer",
+            "timestamp": "239883-244752"
+          },
+          {
+            "text": "Yes, Habibullah.",
+            "speaker": "Customer",
+            "timestamp": "245112-246212"
+          },
+          {
+            "text": "Address is 6-7 by 15, Sun City Gates, Bandalora, Fatima Mosque Lane, beside AM Pharmacy, Hyderabad. Pin code 586. Phone number is 9703023055.",
+            "speaker": "Customer",
+            "timestamp": "246392-261272"
+          },
+          {
+            "text": "What is your good name?",
+            "speaker": "Customer",
+            "timestamp": "262892-263792"
+          },
+          {
+            "text": "Mohammed Saddam, sir.",
+            "speaker": "Customer",
+            "timestamp": "264472-266032"
+          },
+          {
+            "text": "Mohammed Saddam, okay. सद्धामुशेण",
+            "speaker": "Customer",
+            "timestamp": "266732-271141"
+          },
+          {
+            "text": "सद्धामुशेण सद्धामुशेण",
+            "speaker": "Customer",
+            "timestamp": "273021-275101"
+          },
+          {
+            "text": "सद्धामुषेण इराक में जेखते",
+            "speaker": "Customer",
+            "timestamp": "275101-282061"
+          },
+          {
+            "text": "हैं",
+            "speaker": "Customer",
+            "timestamp": "282061-284161"
+          },
+          {
+            "text": "सद्हामुशेण कल",
+            "speaker": "Customer",
+            "timestamp": "284161-290121"
+          },
+          {
+            "text": "शमतक आजाएगे आज हिवीनिंग हो गया ना कल तो नहीं होगा 30 को हो जायेगा सर्व",
+            "speaker": "Customer",
+            "timestamp": "291101-302943"
+          }
+        ]
+      },
+      "parameter_scores": [
+        {
+          "name": "Greeting",
+          "score": 50,
+          "status": "APPLICABLE",
+          "remarks": "The agent greeted the customer and stated the company name, but failed to introduce himself by name during the opening greeting.",
+          "parameter_id": "Greeting",
+          "justification": "The agent greeted the customer and stated the company name, but failed to introduce himself by name during the opening greeting."
+        },
+        {
+          "name": "Verification",
+          "score": 70,
+          "status": "APPLICABLE",
+          "remarks": "The agent confirmed the customer's full name, address, and mobile number, but conducted verification towards the end of the call rather than before taking order details.",
+          "parameter_id": "Verification",
+          "justification": "The agent confirmed the customer's full name, address, and mobile number, but conducted verification towards the end of the call rather than before taking order details."
+        },
+        {
+          "name": "Need Analysis",
+          "score": 100,
+          "status": "APPLICABLE",
+          "remarks": "The agent actively understood customer requirements by clarifying medicine strip quantities, dosage strengths, and brand preferences (same vs alternate brand).",
+          "parameter_id": "Need Analysis",
+          "justification": "The agent actively understood customer requirements by clarifying medicine strip quantities, dosage strengths, and brand preferences (same vs alternate brand)."
+        },
+        {
+          "name": "Communication",
+          "score": 90,
+          "status": "APPLICABLE",
+          "remarks": "The agent maintained a polite, patient, and professional tone throughout, carefully verifying character-by-character medicine spellings.",
+          "parameter_id": "Communication",
+          "justification": "The agent maintained a polite, patient, and professional tone throughout, carefully verifying character-by-character medicine spellings."
+        },
+        {
+          "name": "Product Knowledge",
+          "score": 85,
+          "status": "APPLICABLE",
+          "remarks": "The agent accurately noted medicine names, clarified payment mode (Cash on Delivery), and provided expected delivery date details.",
+          "parameter_id": "Product Knowledge",
+          "justification": "The agent accurately noted medicine names, clarified payment mode (Cash on Delivery), and provided expected delivery date details."
+        },
+        {
+          "name": "Compliance",
+          "score": 100,
+          "status": "APPLICABLE",
+          "remarks": "The agent adhered to standard guidelines, did not make false promises, and re-confirmed delivery and contact details.",
+          "parameter_id": "Compliance",
+          "justification": "The agent adhered to standard guidelines, did not make false promises, and re-confirmed delivery and contact details."
+        },
+        {
+          "name": "Closing",
+          "score": 40,
+          "status": "APPLICABLE",
+          "remarks": "The agent mentioned the estimated delivery date but did not provide a full order summary, ask if the customer had additional questions, or thank the customer.",
+          "parameter_id": "Closing",
+          "justification": "The agent mentioned the estimated delivery date but did not provide a full order summary, ask if the customer had additional questions, or thank the customer."
+        }
+      ],
+      "recording_path": "https://ixuutllrfapiawzumvvl.supabase.co/storage/v1/object/sign/recordings/00000000-0000-0000-0000-000000000001/6e9f6604-2531-414f-a2f6-a5199a6a94af.mp3?token=eyJraWQiOiI2YWZiMjI3OC05MDdlLTQ0MzgtOTkxNi05YjZmNjlmNzIwMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzLzAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMS82ZTlmNjYwNC0yNTMxLTQxNGYtYTJmNi1hNTE5OWE2YTk0YWYubXAzIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc5MzYxMTIzNCwiZXhwIjoxNzk0MjE2MDM0fQ.LvJYs2N_XyLvuLpcYF-XA0j9C5uZU2Pw2QWO04kTOu8",
+      "created_at": "2026-11-02T09:20:28.460Z",
+      "updated_at": "2026-11-02T09:21:32.015Z",
+      "sop_version_id": null,
+      "config_version": 0,
+      "processing_metadata": {
+        "ai_model": "gemini-3.6-flash",
+        "ai_provider": "gemini",
+        "flags_created": 0,
+        "flag_candidates": 0,
+        "flag_engine_version": "1.0.0",
+        "scoring_duration_ms": 34876,
+        "transcript_language": "te",
+        "transcription_model": "universal",
+        "transcription_provider": "assemblyai",
+        "latest_evaluation_run_id": null,
+        "transcription_confidence": 0.61250246,
+        "flag_analysis_duration_ms": 171,
+        "transcription_duration_ms": 18568
+      },
+      "failure_reason": null,
+      "correlation_id": null,
+      "utterances": [],
+      "confidence": null,
+      "language": null,
+      "transcript_id": null,
+      "raw_evaluation": {},
+      "temporary_data_delete_at": "2026-11-03T09:20:19.971Z",
+      "evidence_delete_at": null,
+      "deleted_at": null,
+      "retention_state": "ACTIVE",
+      "latest_evaluation_run_id": null
+    },
+    {
+      "id": "52234500-fefe-4487-a34b-334ac8f680a1",
+      "client_id": "00000000-0000-0000-0000-000000000001",
+      "agent_id": "EMP002",
+      "transcript": [
+        {
+          "end": 36406,
+          "text": "Welcome to Platinum Rx, your trusted pharmacy for affordable medicine. Press 1 to choose English. Hindi me sunne ke liye 2 tabai. Press 1 to place a new order and press 2 to inquire about the existing order. Please wait while we are connecting your call. All our team members are busy right now. Please stay on the line. We will connect you shortly. Please wait while we are connecting your call.",
+          "start": 149,
+          "speaker": "Agent",
+          "timestamp": "149-36406"
+        },
+        {
+          "end": 41566,
+          "text": "Hello, welcome to Platinum Oryx Online Pharmacy.",
+          "start": 37686,
+          "speaker": "Customer",
+          "timestamp": "37686-41566"
+        },
+        {
+          "end": 52806,
+          "text": "Yes, we are calling from Hyderabad. Please note down the name of the medicines that I require. Okay, please note down.",
+          "start": 42566,
+          "speaker": "Customer",
+          "timestamp": "42566-52806"
+        },
+        {
+          "end": 54426,
+          "text": "Okay, tell me the medicine name.",
+          "start": 53266,
+          "speaker": "Customer",
+          "timestamp": "53266-54426"
+        },
+        {
+          "end": 58426,
+          "text": "Lipwax, L-I-P-V-A-X Lipwax for DMG.",
+          "start": 55486,
+          "speaker": "Customer",
+          "timestamp": "55486-58426"
+        },
+        {
+          "end": 62758,
+          "text": "Lip was 40 mg Lip L I",
+          "start": 59718,
+          "speaker": "Customer",
+          "timestamp": "59718-62758"
+        },
+        {
+          "end": 68438,
+          "text": "P Lip was How many good strip once? One strip Sorry?",
+          "start": 62758,
+          "speaker": "Customer",
+          "timestamp": "62758-68438"
+        },
+        {
+          "end": 72598,
+          "text": "One strip, one strip Lip was one strip, ek pattha?",
+          "start": 69538,
+          "speaker": "Customer",
+          "timestamp": "69538-72598"
+        },
+        {
+          "end": 88118,
+          "text": "Haa, ek pattha Mithki baaz? Mithki baaaz... Gopi tab Gopi gold Gopi gold, A75 Gopi gold A75, two strips One minute",
+          "start": 73378,
+          "speaker": "Customer",
+          "timestamp": "73378-88118"
+        },
+        {
+          "end": 93029,
+          "text": "sir, Gopi gold A75 kloofi gool es",
+          "start": 88118,
+          "speaker": "Customer",
+          "timestamp": "88118-93029"
+        },
+        {
+          "end": 96649,
+          "text": "75 2 stip 2 pattay 2 charak.",
+          "start": 93029,
+          "speaker": "Customer",
+          "timestamp": "93029-96649"
+        },
+        {
+          "end": 105669,
+          "text": "2 sharch nagga proto mat eksal poore",
+          "start": 96649,
+          "speaker": "Customer",
+          "timestamp": "96649-105669"
+        },
+        {
+          "end": 126420,
+          "text": "Sam proto mat eksal ro.meter rotam P-R-O-T-O-M-E-T-P-R-O M-E-T P-R-T-O M-A-T P-O-T M-A-A-T-X-L",
+          "start": 105669,
+          "speaker": "Customer",
+          "timestamp": "105669-126420"
+        },
+        {
+          "end": 131140,
+          "text": "P-R-L-O M-O-T",
+          "start": 126420,
+          "speaker": "Customer",
+          "timestamp": "126420-131140"
+        },
+        {
+          "end": 146920,
+          "text": "P-A-R-O P-O-L-O-M P-R-R-O T-O P-R-A-T",
+          "start": 132960,
+          "speaker": "Customer",
+          "timestamp": "132960-146920"
+        },
+        {
+          "end": 153018,
+          "text": "Prolo mat surf duma surf, same brand aur alternate brand surf?",
+          "start": 149678,
+          "speaker": "Customer",
+          "timestamp": "149678-153018"
+        },
+        {
+          "end": 159218,
+          "text": "Brand brand mein mat excel 50. Prolo mat, naak proto prolo.",
+          "start": 153798,
+          "speaker": "Customer",
+          "timestamp": "153798-159218"
+        },
+        {
+          "end": 182051,
+          "text": "Ya, jarwa sar, is prolo mat, yeh prolo mat hai? Parsal?",
+          "start": 159878,
+          "speaker": "Customer",
+          "timestamp": "159878-182051"
+        },
+        {
+          "end": 203031,
+          "text": "Tatse view, ten mg tatse view, ten mg . Ten mg tatse view, . Ten mg . Poo ra, sa",
+          "start": 182551,
+          "speaker": "Customer",
+          "timestamp": "182551-203031"
+        },
+        {
+          "end": 218923,
+          "text": "Achha, yeh aachha. Aa chha, achha.",
+          "start": 210023,
+          "speaker": "Customer",
+          "timestamp": "210023-218923"
+        },
+        {
+          "end": 220173,
+          "text": "Ya, .",
+          "start": 219563,
+          "speaker": "Customer",
+          "timestamp": "219563-220173"
+        },
+        {
+          "end": 222363,
+          "text": "Aa, aa chha, achha.",
+          "start": 220173,
+          "speaker": "Customer",
+          "timestamp": "220173-222363"
+        },
+        {
+          "end": 225543,
+          "text": "Ya, aa, e, aa, jya, jya.",
+          "start": 222603,
+          "speaker": "Customer",
+          "timestamp": "222603-225543"
+        },
+        {
+          "end": 228543,
+          "text": "Aachha",
+          "start": 225543,
+          "speaker": "Customer",
+          "timestamp": "225543-228543"
+        },
+        {
+          "end": 239512,
+          "text": "Aa chha, yeh, jcha. Cash and delivery only.",
+          "start": 234443,
+          "speaker": "Customer",
+          "timestamp": "234443-239512"
+        },
+        {
+          "end": 244752,
+          "text": "Ya, bo, Online payment is cash and delivery. Your name is Mohammed Habibullah.",
+          "start": 239883,
+          "speaker": "Customer",
+          "timestamp": "239883-244752"
+        },
+        {
+          "end": 246212,
+          "text": "Yes, Habibullah.",
+          "start": 245112,
+          "speaker": "Customer",
+          "timestamp": "245112-246212"
+        },
+        {
+          "end": 261272,
+          "text": "Address is 6-7 by 15, Sun City Gates, Bandalora, Fatima Mosque Lane, beside AM Pharmacy, Hyderabad. Pin code 586. Phone number is 9703023055.",
+          "start": 246392,
+          "speaker": "Customer",
+          "timestamp": "246392-261272"
+        },
+        {
+          "end": 263792,
+          "text": "What is your good name?",
+          "start": 262892,
+          "speaker": "Customer",
+          "timestamp": "262892-263792"
+        },
+        {
+          "end": 266032,
+          "text": "Mohammed Saddam, sir.",
+          "start": 264472,
+          "speaker": "Customer",
+          "timestamp": "264472-266032"
+        },
+        {
+          "end": 298063,
+          "text": "Mohammed Saddam, okay. Saddamhusein Saddamhusein Saddamhusein Saddamhusein Iraq mein jekhte hain Saddamhusein kal shaamtak aajaenge aaj hivining",
+          "start": 266732,
+          "speaker": "Customer",
+          "timestamp": "266732-298063"
+        },
+        {
+          "end": 302943,
+          "text": "Ho gaya na kal to nahi hoga 30 ko ho jayega sarv",
+          "start": 298063,
+          "speaker": "Customer",
+          "timestamp": "298063-302943"
+        }
+      ],
+      "score": 85,
+      "status": "COMPLETED",
+      "duration": "5:11",
+      "caller_number": "9876543211",
+      "flags": {
+        "summary": "The agent handled an inbound pharmacy order call professionally, demonstrating good communication skills and patience while noting down medicine names, brand preferences, address, and payment method. However, the agent missed self-introduction in the initial greeting, performed customer verification late in the call, and omitted a complete order recap at closing.",
+        "language": "te",
+        "strengths": [
+          "Maintained a professional, patient, and courteous tone throughout the interaction.",
+          "Clarified brand preferences (same brand vs. alternate brand) effectively.",
+          "Accurately confirmed customer address, phone number, payment mode, and delivery timeline."
+        ],
+        "confidence": 0.61250246,
+        "evaluation": {
+          "Closing": {
+            "score": 70,
+            "status": "APPLICABLE",
+            "remarks": "The agent confirmed delivery expectations but did not perform a final summary of the complete medicine list or ask if the customer had any additional questions before concluding."
+          },
+          "Greeting": {
+            "score": 60,
+            "status": "APPLICABLE",
+            "remarks": "The agent greeted the customer and stated the company name ('Platinum Oryx Online Pharmacy'), but failed to introduce himself by name at the beginning of the call."
+          },
+          "Compliance": {
+            "score": 100,
+            "status": "APPLICABLE",
+            "remarks": "The agent followed proper procedure, provided realistic delivery timelines, and did not make false promises."
+          },
+          "Verification": {
+            "score": 80,
+            "status": "APPLICABLE",
+            "remarks": "The agent confirmed the customer's full name and registered phone number, but this verification occurred towards the end of the call rather than before taking order details."
+          },
+          "Communication": {
+            "score": 95,
+            "status": "APPLICABLE",
+            "remarks": "The agent maintained a polite and professional tone, patiently listened while the customer spelled out medicine names, and avoided interrupting."
+          },
+          "Need Analysis": {
+            "score": 90,
+            "status": "APPLICABLE",
+            "remarks": "The agent identified the customer's requirement for specific medicines and proactively asked whether the customer preferred the same brand or an alternate brand."
+          },
+          "Product Knowledge": {
+            "score": 85,
+            "status": "APPLICABLE",
+            "remarks": "The agent correctly captured medicine names, dosages, strip quantities, delivery timeline, and cash-on-delivery payment terms."
+          }
+        },
+        "utterances": [
+          {
+            "end": 36406,
+            "text": "Welcome to Platinum Rx, your trusted pharmacy for affordable medicine. Press 1 to choose English. Hindi me sunne ke liye 2 tabai. Press 1 to place a new order and press 2 to inquire about the existing order. Please wait while we are connecting your call. All our team members are busy right now. Please stay on the line. We will connect you shortly. Please wait while we are connecting your call.",
+            "start": 149,
+            "speaker": "A",
+            "confidence": 0.7360295
+          },
+          {
+            "end": 41566,
+            "text": "Hello, welcome to Platinum Oryx Online Pharmacy.",
+            "start": 37686,
+            "speaker": "B",
+            "confidence": 0.6239173
+          },
+          {
+            "end": 52806,
+            "text": "Yes, we are calling from Hyderabad. Please note down the name of the medicines that I require. Okay, please note down.",
+            "start": 42566,
+            "speaker": "C",
+            "confidence": 0.65348756
+          },
+          {
+            "end": 54426,
+            "text": "Okay, tell me the medicine name.",
+            "start": 53266,
+            "speaker": "B",
+            "confidence": 0.6836202
+          },
+          {
+            "end": 58426,
+            "text": "Lipwax, L-I-P-V-A-X Lipwax for DMG.",
+            "start": 55486,
+            "speaker": "C",
+            "confidence": 0.6853809
+          },
+          {
+            "end": 62758,
+            "text": "Lip was 40 mg Lip L I",
+            "start": 59718,
+            "speaker": "B",
+            "confidence": 0.4215611
+          },
+          {
+            "end": 68438,
+            "text": "P Lip was How many good strip once? One strip Sorry?",
+            "start": 62758,
+            "speaker": "C",
+            "confidence": 0.5891337
+          },
+          {
+            "end": 72598,
+            "text": "One strip, one strip Lip was one strip, ek pattha?",
+            "start": 69538,
+            "speaker": "B",
+            "confidence": 0.654375
+          },
+          {
+            "end": 88118,
+            "text": "Haa, ek pattha Mithki baaz? Mithki baaaz... Gopi tab Gopi gold Gopi gold, A75 Gopi gold A75, two strips One minute",
+            "start": 73378,
+            "speaker": "C",
+            "confidence": 0.62791264
+          },
+          {
+            "end": 93029,
+            "text": "sir, Gopi gold A75 क्लूफी गूल एस्",
+            "start": 88118,
+            "speaker": "B",
+            "confidence": 0.63693446
+          },
+          {
+            "end": 96649,
+            "text": "75 2 स्टिप 2 पत्तय 2 चरक्।",
+            "start": 93029,
+            "speaker": "C",
+            "confidence": 0.38451302
+          },
+          {
+            "end": 105669,
+            "text": "2 शर्च नग्गा प्रोटो मट् ऎकसल पूरे",
+            "start": 96649,
+            "speaker": "B",
+            "confidence": 0.2974317
+          },
+          {
+            "end": 126420,
+            "text": "सం प்रोटो મट् ऎकसल રो।मेटर રोतમ� P-R-O-T-O-M-E-T-P-R-O M-E-T P-R-T-O M-A-T P-O-T M-A-A-T-X-L",
+            "start": 105669,
+            "speaker": "C",
+            "confidence": 0.52017415
+          },
+          {
+            "end": 131140,
+            "text": "P-R-L-O M-O-T",
+            "start": 126420,
+            "speaker": "B",
+            "confidence": 0.639
+          },
+          {
+            "end": 146920,
+            "text": "P-A-R-O P-O-L-O-M P-R-R-O T-O P-R-A-T",
+            "start": 132960,
+            "speaker": "C",
+            "confidence": 0.5598
+          },
+          {
+            "end": 153018,
+            "text": "प्रोलो मेट सर्फ दूमा सर्फ, सेम ब्रेंड और अल्ट्रेंट ब्रेंड सर्फ?",
+            "start": 149678,
+            "speaker": "B",
+            "confidence": 0.5951111
+          },
+          {
+            "end": 159218,
+            "text": "ब्रेंड ब्रेंड में मेट एक्षल 50. प्रोलो मेट, नाक प्रोटो प्रोलो.",
+            "start": 153798,
+            "speaker": "C",
+            "confidence": 0.65053946
+          },
+          {
+            "end": 182051,
+            "text": "या, जरवा सार, इस प्रोलो मैट, यह प्रोलो मैट है? परसल?",
+            "start": 159878,
+            "speaker": "B",
+            "confidence": 0.45816597
+          },
+          {
+            "end": 203031,
+            "text": "टाट्से व्यू, टेन इमजी टाट्से व्यु, तेन ेमजी । टैन एम्ड़ी ટाट्से व्यू, ।टেन इम्जी । पू र, स",
+            "start": 182551,
+            "speaker": "C",
+            "confidence": 0.5408041
+          },
+          {
+            "end": 218923,
+            "text": "अच्छा, यह आच्छा. आ च्चा, अच्चा.",
+            "start": 210023,
+            "speaker": "B",
+            "confidence": 0.42262894
+          },
+          {
+            "end": 220173,
+            "text": "या, ।",
+            "start": 219563,
+            "speaker": "C",
+            "confidence": 0.3376406
+          },
+          {
+            "end": 222363,
+            "text": "आ, आ च्चा, అच्ಚा.",
+            "start": 220173,
+            "speaker": "B",
+            "confidence": 0.38738343
+          },
+          {
+            "end": 225543,
+            "text": "या, आ, ॆ, ఆ, జ््্यా, జ््যా.",
+            "start": 222603,
+            "speaker": "C",
+            "confidence": 0.41583332
+          },
+          {
+            "end": 228543,
+            "text": "ఆच্্चा",
+            "start": 225543,
+            "speaker": "B",
+            "confidence": 0.44516835
+          },
+          {
+            "end": 239512,
+            "text": "ఆ చ्चా, यह, జ్चా. Cash and delivery only.",
+            "start": 234443,
+            "speaker": "C",
+            "confidence": 0.3749198
+          },
+          {
+            "end": 244752,
+            "text": "या, বो, Online � payment is cash and delivery. Your name is Mohammed Habibullah.",
+            "start": 239883,
+            "speaker": "B",
+            "confidence": 0.5951038
+          },
+          {
+            "end": 246212,
+            "text": "Yes, Habibullah.",
+            "start": 245112,
+            "speaker": "C",
+            "confidence": 0.7155
+          },
+          {
+            "end": 261272,
+            "text": "Address is 6-7 by 15, Sun City Gates, Bandalora, Fatima Mosque Lane, beside AM Pharmacy, Hyderabad. Pin code 586. Phone number is 9703023055.",
+            "start": 246392,
+            "speaker": "B",
+            "confidence": 0.65374166
+          },
+          {
+            "end": 263792,
+            "text": "What is your good name?",
+            "start": 262892,
+            "speaker": "C",
+            "confidence": 0.8003078
+          },
+          {
+            "end": 266032,
+            "text": "Mohammed Saddam, sir.",
+            "start": 264472,
+            "speaker": "B",
+            "confidence": 0.71499217
+          },
+          {
+            "end": 298063,
+            "text": "Mohammed Saddam, okay. सद्धामुशेण सद्धामुशेण सद्धामुशेण सद्धामुषेण इराक में जेखते हैं सद्हामुशेण कल शमतक आजाएगे आज हिवीनिंग",
+            "start": 266732,
+            "speaker": "C",
+            "confidence": 0.6639483
+          },
+          {
+            "end": 302943,
+            "text": "हो गया ना कल तो नहीं होगा 30 को हो जायेगा सर्व",
+            "start": 298063,
+            "speaker": "B",
+            "confidence": 0.68023956
+          }
+        ],
+        "violations": [
+          "Did not introduce self by name in the initial greeting as per SOP guidelines.",
+          "Did not verify customer identity prior to taking medicine order details.",
+          "Failed to summarize the full order list and ask if the customer had further questions during call closing."
+        ],
+        "suggestions": [
+          "Ensure name introduction is included in the opening greeting.",
+          "Perform customer identity verification at the start of the interaction.",
+          "Summarize the complete order details and ask if the customer needs further assistance before concluding the call."
+        ],
+        "recording_url": "https://res.cloudinary.com/doenc9fyc/video/upload/v1785327501/2_cathxr.mp3",
+        "transcript_id": "dbdc8f98-6432-4051-91eb-202a7e4bc4b4",
+        "raw_transcript": [
+          {
+            "text": "Welcome to Platinum Rx, your trusted pharmacy for affordable medicine. Press 1 to choose English. Hindi me sunne ke liye 2 tabai. Press 1 to place a new order and press 2 to inquire about the existing order. Please wait while we are connecting your call. All our team members are busy right now. Please stay on the line. We will connect you shortly. Please wait while we are connecting your call.",
+            "speaker": "Agent",
+            "timestamp": "149-36406"
+          },
+          {
+            "text": "Hello, welcome to Platinum Oryx Online Pharmacy.",
+            "speaker": "Customer",
+            "timestamp": "37686-41566"
+          },
+          {
+            "text": "Yes, we are calling from Hyderabad. Please note down the name of the medicines that I require. Okay, please note down.",
+            "speaker": "Customer",
+            "timestamp": "42566-52806"
+          },
+          {
+            "text": "Okay, tell me the medicine name.",
+            "speaker": "Customer",
+            "timestamp": "53266-54426"
+          },
+          {
+            "text": "Lipwax, L-I-P-V-A-X Lipwax for DMG.",
+            "speaker": "Customer",
+            "timestamp": "55486-58426"
+          },
+          {
+            "text": "Lip was 40 mg Lip L I",
+            "speaker": "Customer",
+            "timestamp": "59718-62758"
+          },
+          {
+            "text": "P Lip was How many good strip once? One strip Sorry?",
+            "speaker": "Customer",
+            "timestamp": "62758-68438"
+          },
+          {
+            "text": "One strip, one strip Lip was one strip, ek pattha?",
+            "speaker": "Customer",
+            "timestamp": "69538-72598"
+          },
+          {
+            "text": "Haa, ek pattha Mithki baaz? Mithki baaaz... Gopi tab Gopi gold Gopi gold, A75 Gopi gold A75, two strips One minute",
+            "speaker": "Customer",
+            "timestamp": "73378-88118"
+          },
+          {
+            "text": "sir, Gopi gold A75 क्लूफी गूल एस्",
+            "speaker": "Customer",
+            "timestamp": "88118-93029"
+          },
+          {
+            "text": "75 2 स्टिप 2 पत्तय 2 चरक्।",
+            "speaker": "Customer",
+            "timestamp": "93029-96649"
+          },
+          {
+            "text": "2 शर्च नग्गा प्रोटो मट् ऎकसल पूरे",
+            "speaker": "Customer",
+            "timestamp": "96649-105669"
+          },
+          {
+            "text": "सం प்रोटो મट् ऎकसल રो।मेटर રोतમ� P-R-O-T-O-M-E-T-P-R-O M-E-T P-R-T-O M-A-T P-O-T M-A-A-T-X-L",
+            "speaker": "Customer",
+            "timestamp": "105669-126420"
+          },
+          {
+            "text": "P-R-L-O M-O-T",
+            "speaker": "Customer",
+            "timestamp": "126420-131140"
+          },
+          {
+            "text": "P-A-R-O P-O-L-O-M P-R-R-O T-O P-R-A-T",
+            "speaker": "Customer",
+            "timestamp": "132960-146920"
+          },
+          {
+            "text": "प्रोलो मेट सर्फ दूमा सर्फ, सेम ब्रेंड और अल्ट्रेंट ब्रेंड सर्फ?",
+            "speaker": "Customer",
+            "timestamp": "149678-153018"
+          },
+          {
+            "text": "ब्रेंड ब्रेंड में मेट एक्षल 50. प्रोलो मेट, नाक प्रोटो प्रोलो.",
+            "speaker": "Customer",
+            "timestamp": "153798-159218"
+          },
+          {
+            "text": "या, जरवा सार, इस प्रोलो मैट, यह प्रोलो मैट है? परसल?",
+            "speaker": "Customer",
+            "timestamp": "159878-182051"
+          },
+          {
+            "text": "टाट्से व्यू, टेन इमजी टाट्से व्यु, तेन ेमजी । टैन एम्ड़ी ટाट्से व्यू, ।टেन इम्जी । पू र, स",
+            "speaker": "Customer",
+            "timestamp": "182551-203031"
+          },
+          {
+            "text": "अच्छा, यह आच्छा. आ च्चा, अच्चा.",
+            "speaker": "Customer",
+            "timestamp": "210023-218923"
+          },
+          {
+            "text": "या, ।",
+            "speaker": "Customer",
+            "timestamp": "219563-220173"
+          },
+          {
+            "text": "आ, आ च्चा, అच्ಚा.",
+            "speaker": "Customer",
+            "timestamp": "220173-222363"
+          },
+          {
+            "text": "या, आ, ॆ, ఆ, జ््্यా, జ््যా.",
+            "speaker": "Customer",
+            "timestamp": "222603-225543"
+          },
+          {
+            "text": "ఆच্্चा",
+            "speaker": "Customer",
+            "timestamp": "225543-228543"
+          },
+          {
+            "text": "ఆ చ्चా, यह, జ్चా. Cash and delivery only.",
+            "speaker": "Customer",
+            "timestamp": "234443-239512"
+          },
+          {
+            "text": "या, বो, Online � payment is cash and delivery. Your name is Mohammed Habibullah.",
+            "speaker": "Customer",
+            "timestamp": "239883-244752"
+          },
+          {
+            "text": "Yes, Habibullah.",
+            "speaker": "Customer",
+            "timestamp": "245112-246212"
+          },
+          {
+            "text": "Address is 6-7 by 15, Sun City Gates, Bandalora, Fatima Mosque Lane, beside AM Pharmacy, Hyderabad. Pin code 586. Phone number is 9703023055.",
+            "speaker": "Customer",
+            "timestamp": "246392-261272"
+          },
+          {
+            "text": "What is your good name?",
+            "speaker": "Customer",
+            "timestamp": "262892-263792"
+          },
+          {
+            "text": "Mohammed Saddam, sir.",
+            "speaker": "Customer",
+            "timestamp": "264472-266032"
+          },
+          {
+            "text": "Mohammed Saddam, okay. सद्धामुशेण सद्धामुशेण सद्धामुशेण सद्धामुषेण इराक में जेखते हैं सद्हामुशेण कल शमतक आजाएगे आज हिवीनिंग",
+            "speaker": "Customer",
+            "timestamp": "266732-298063"
+          },
+          {
+            "text": "हो गया ना कल तो नहीं होगा 30 को हो जायेगा सर्व",
+            "speaker": "Customer",
+            "timestamp": "298063-302943"
+          }
+        ]
+      },
+      "parameter_scores": [
+        {
+          "name": "Greeting",
+          "score": 60,
+          "status": "APPLICABLE",
+          "remarks": "The agent greeted the customer and stated the company name ('Platinum Oryx Online Pharmacy'), but failed to introduce himself by name at the beginning of the call.",
+          "parameter_id": "Greeting",
+          "justification": "The agent greeted the customer and stated the company name ('Platinum Oryx Online Pharmacy'), but failed to introduce himself by name at the beginning of the call."
+        },
+        {
+          "name": "Verification",
+          "score": 80,
+          "status": "APPLICABLE",
+          "remarks": "The agent confirmed the customer's full name and registered phone number, but this verification occurred towards the end of the call rather than before taking order details.",
+          "parameter_id": "Verification",
+          "justification": "The agent confirmed the customer's full name and registered phone number, but this verification occurred towards the end of the call rather than before taking order details."
+        },
+        {
+          "name": "Need Analysis",
+          "score": 90,
+          "status": "APPLICABLE",
+          "remarks": "The agent identified the customer's requirement for specific medicines and proactively asked whether the customer preferred the same brand or an alternate brand.",
+          "parameter_id": "Need Analysis",
+          "justification": "The agent identified the customer's requirement for specific medicines and proactively asked whether the customer preferred the same brand or an alternate brand."
+        },
+        {
+          "name": "Communication",
+          "score": 95,
+          "status": "APPLICABLE",
+          "remarks": "The agent maintained a polite and professional tone, patiently listened while the customer spelled out medicine names, and avoided interrupting.",
+          "parameter_id": "Communication",
+          "justification": "The agent maintained a polite and professional tone, patiently listened while the customer spelled out medicine names, and avoided interrupting."
+        },
+        {
+          "name": "Product Knowledge",
+          "score": 85,
+          "status": "APPLICABLE",
+          "remarks": "The agent correctly captured medicine names, dosages, strip quantities, delivery timeline, and cash-on-delivery payment terms.",
+          "parameter_id": "Product Knowledge",
+          "justification": "The agent correctly captured medicine names, dosages, strip quantities, delivery timeline, and cash-on-delivery payment terms."
+        },
+        {
+          "name": "Compliance",
+          "score": 100,
+          "status": "APPLICABLE",
+          "remarks": "The agent followed proper procedure, provided realistic delivery timelines, and did not make false promises.",
+          "parameter_id": "Compliance",
+          "justification": "The agent followed proper procedure, provided realistic delivery timelines, and did not make false promises."
+        },
+        {
+          "name": "Closing",
+          "score": 70,
+          "status": "APPLICABLE",
+          "remarks": "The agent confirmed delivery expectations but did not perform a final summary of the complete medicine list or ask if the customer had any additional questions before concluding.",
+          "parameter_id": "Closing",
+          "justification": "The agent confirmed delivery expectations but did not perform a final summary of the complete medicine list or ask if the customer had any additional questions before concluding."
+        }
+      ],
+      "recording_path": "https://ixuutllrfapiawzumvvl.supabase.co/storage/v1/object/sign/recordings/00000000-0000-0000-0000-000000000001/52234500-fefe-4487-a34b-334ac8f680a1.mp3?token=eyJraWQiOiI2YWZiMjI3OC05MDdlLTQ0MzgtOTkxNi05YjZmNjlmNzIwMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzLzAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMS81MjIzNDUwMC1mZWZlLTQ0ODctYTM0Yi0zMzRhYzhmNjgwYTEubXAzIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc5MzYwNDg2MSwiZXhwIjoxNzk0MjA5NjYxfQ.nV46vFcxMskGka0Ks8UNL_jy9hPZxxxpuZ3SRJzw8BI",
+      "created_at": "2026-11-02T07:34:12.741Z",
+      "updated_at": "2026-11-02T07:35:19.354Z",
+      "sop_version_id": null,
+      "config_version": 0,
+      "processing_metadata": {
+        "ai_model": "gemini-3.6-flash",
+        "ai_provider": "gemini",
+        "flags_created": 0,
+        "flag_candidates": 0,
+        "flag_engine_version": "1.0.0",
+        "scoring_duration_ms": 20439,
+        "transcript_language": "te",
+        "transcription_model": "universal",
+        "transcription_provider": "assemblyai",
+        "latest_evaluation_run_id": null,
+        "transcription_confidence": 0.61250246,
+        "flag_analysis_duration_ms": 163,
+        "transcription_duration_ms": 33931
+      },
+      "failure_reason": null,
+      "correlation_id": null,
+      "utterances": [],
+      "confidence": null,
+      "language": null,
+      "transcript_id": null,
+      "raw_evaluation": {},
+      "temporary_data_delete_at": "2026-11-03T07:34:04.688Z",
+      "evidence_delete_at": null,
+      "deleted_at": null,
+      "retention_state": "ACTIVE",
+      "latest_evaluation_run_id": null
+    },
+    {
+      "id": "3eda742f-cb0e-40bc-b079-65f848efc10d",
+      "client_id": "00000000-0000-0000-0000-000000000001",
+      "agent_id": "EMP001",
+      "transcript": [
+        {
+          "end": 36890,
+          "text": "Welcome to Platinum Rx, your trusted pharmacy for affordable medicine. Press one to choose English, Hindi mein sunne ke liye do dabayein. Naya order dene ke liye ek dabayein aur maujuda order ke bare mein puchhtach karne ke liye do dabayein. Kripya prateeksha karein. Hum aapki call apne pratinidhi ko bhej rahe hain kripya prateeksha karein hum aapki call apne pratinidhi patna mar sahayata kar",
+          "start": 210,
+          "speaker": "Agent",
+          "timestamp": "210-36890"
+        },
+        {
+          "end": 59940,
+          "text": "sakta hoon aapki are goda tha hamara ye kya dikkat aa rahi hai matlab deliver nahi hua 25 tareekh mein hona tha aaj 28 ho gayi ji sir wo dekhega baar-baar yehi bata rahe hain ki hum bedwe gol abhi call aai thi rider ki ji unhone bataya ki ye raipur mein aap cancel kar dijiye",
+          "start": 36890,
+          "speaker": "Customer",
+          "timestamp": "36890-59940"
+        },
+        {
+          "end": 69220,
+          "text": "sir sir ye cancel ho gaya hai sir hmm ab ye order aapko nahi mil payega aapka refund aapko do din mein mil jayega do din ka kya",
+          "start": 59940,
+          "speaker": "Customer",
+          "timestamp": "59940-69220"
+        },
+        {
+          "end": 73440,
+          "text": "matlab hai pagal hoon kya mein itne din tak wait kar raha hoon kisi",
+          "start": 69220,
+          "speaker": "Customer",
+          "timestamp": "69220-73440"
+        },
+        {
+          "end": 85270,
+          "text": "ki cheez ka sir ek deliv customer not contactable customer not contactable delivery agent",
+          "start": 73440,
+          "speaker": "Customer",
+          "timestamp": "73440-85270"
+        },
+        {
+          "end": 89790,
+          "text": "ki hai bhai mujhe call karenge tabhi to nahi to mein striket dunga call",
+          "start": 85270,
+          "speaker": "Customer",
+          "timestamp": "85270-89790"
+        },
+        {
+          "end": 100710,
+          "text": "aapka spam ya phir thrash activated hai true caller se nahi hai kuchh bhi ya phir aapki sim airtel ki hai",
+          "start": 89790,
+          "speaker": "Customer",
+          "timestamp": "89790-100710"
+        },
+        {
+          "end": 102670,
+          "text": "ki jio ki hai airtel ki hai",
+          "start": 100710,
+          "speaker": "Customer",
+          "timestamp": "100710-102670"
+        },
+        {
+          "end": 106350,
+          "text": "sir usmein spam aur auto active, auto",
+          "start": 102670,
+          "speaker": "Customer",
+          "timestamp": "102670-106350"
+        },
+        {
+          "end": 108790,
+          "text": "active kar hi nahi rakha maine.",
+          "start": 106350,
+          "speaker": "Customer",
+          "timestamp": "106350-108790"
+        },
+        {
+          "end": 111190,
+          "text": "wo auto active hi aata hai.",
+          "start": 108790,
+          "speaker": "Customer",
+          "timestamp": "108790-111190"
+        },
+        {
+          "end": 119010,
+          "text": "nahi aisa, wo to order bhi aati hai, deliver to order bhi hota hai. Baki agar app mein to aisi koi dikkat nahi aai.",
+          "start": 111190,
+          "speaker": "Customer",
+          "timestamp": "111190-119010"
+        },
+        {
+          "end": 125310,
+          "text": "aur apps aapko delivery agent ke number se call karte hain, hamari app aapko ekart ke number matlab jo bhi",
+          "start": 119010,
+          "speaker": "Customer",
+          "timestamp": "119010-125310"
+        },
+        {
+          "end": 139490,
+          "text": "call aai aaj ki aap order cancel kar dijiye majboori mein cancel hi karna padega wo kya hoga teen din se mujhe pagal bana rakha hai is cheez ke liye",
+          "start": 130950,
+          "speaker": "Customer",
+          "timestamp": "130950-139490"
+        },
+        {
+          "end": 141190,
+          "text": "sir theek hai ye kaam thodi reh",
+          "start": 139490,
+          "speaker": "Customer",
+          "timestamp": "139490-141190"
+        },
+        {
+          "end": 144590,
+          "text": "gaya ki mein baar-baar call karke poochhta rahoon ki order aayega bhi ya nahi",
+          "start": 141190,
+          "speaker": "Customer",
+          "timestamp": "141190-144590"
+        },
+        {
+          "end": 158000,
+          "text": "aayega ji sir ji sir samajh paa raha hoon aapki concern but to RTO ho gaya ab yahan se bhi mein",
+          "start": 144590,
+          "speaker": "Customer",
+          "timestamp": "144590-158000"
+        },
+        {
+          "end": 166680,
+          "text": "kuchh nahi kar sakta hoon.",
+          "start": 158000,
+          "speaker": "Customer",
+          "timestamp": "158000-166680"
+        },
+        {
+          "end": 171060,
+          "text": "hello.",
+          "start": 166680,
+          "speaker": "Customer",
+          "timestamp": "166680-171060"
+        },
+        {
+          "end": 171510,
+          "text": "ye.",
+          "start": 171060,
+          "speaker": "Customer",
+          "timestamp": "171060-171510"
+        },
+        {
+          "end": 176740,
+          "text": "ab yahan se to sir mein kuchh bhi nahi kar sakta hoon.",
+          "start": 172280,
+          "speaker": "Customer",
+          "timestamp": "172280-176740"
+        },
+        {
+          "end": 178200,
+          "text": "theek hai.",
+          "start": 176740,
+          "speaker": "Customer",
+          "timestamp": "176740-178200"
+        },
+        {
+          "end": 181500,
+          "text": "theek hai sir practice marks mein samay dene ke liye dhanyawad aapka din shubh jay.",
+          "start": 178200,
+          "speaker": "Customer",
+          "timestamp": "178200-181500"
+        }
+      ],
+      "score": 37,
+      "status": "COMPLETED",
+      "duration": "3:10",
+      "caller_number": "9876543210",
+      "flags": {
+        "summary": "The customer called to inquire about an undelivered medicine order that was marked RTO. The agent failed basic greeting and customer verification SOPs. While the agent explained the refund timeline and RTO cause, the call lacked empathy, call ownership, and proper closing procedures.",
+        "language": "hi",
+        "strengths": [
+          "Clearly explained the refund processing SLA (2 business days).",
+          "Identified technical reason behind delivery failure (auto-spam block on courier calls)."
+        ],
+        "confidence": 0.96055543,
+        "evaluation": {
+          "Closing": {
+            "score": 30,
+            "status": "APPLICABLE",
+            "remarks": "The agent did not summarize the call or ask if the customer had further queries before closing."
+          },
+          "Greeting": {
+            "score": 0,
+            "status": "APPLICABLE",
+            "remarks": "The agent did not greet the customer, state their name, or mention the company name at the beginning of the call."
+          },
+          "Compliance": {
+            "score": 50,
+            "status": "APPLICABLE",
+            "remarks": "Failed data security compliance by revealing order details without customer authentication, though no false promises were made."
+          },
+          "Verification": {
+            "score": 0,
+            "status": "APPLICABLE",
+            "remarks": "The agent discussed order cancellation and account details without verifying the customer's identity, full name, or registered mobile number."
+          },
+          "Communication": {
+            "score": 50,
+            "status": "APPLICABLE",
+            "remarks": "The agent remained soft-spoken but showed poor empathy regarding the delayed medicine and repeatedly expressed helplessness ('Main kuch nahi kar sakta')."
+          },
+          "Need Analysis": {
+            "score": 40,
+            "status": "APPLICABLE",
+            "remarks": "The agent asked about the customer's telecom operator to diagnose call delivery issues, but failed to explore re-ordering options or address the urgent need for medicine."
+          },
+          "Product Knowledge": {
+            "score": 70,
+            "status": "APPLICABLE",
+            "remarks": "The agent correctly informed the customer about the 2-day refund SLA and explained RTO mechanics, but lacked knowledge on how to escalate or re-pitch the order."
+          }
+        },
+        "utterances": [
+          {
+            "end": 36890,
+            "text": "Welcome to Platinum Rx, your trusted pharmacy for affordable medicine. Press one to choose English, Hindi में सुनने के लिए दो दबाएं। नया ऑर्डर देने के लिए एक दबाएं और मौजूदा ऑर्डर के बारे में पूछताछ करने के लिए दो दबाएं। कृपया प्रतीक्षा करें। हम आपकी कॉल अपने प्रतिनिधि को भेज रहे हैं कृपया प्रतीक्षा करें हम आपकी कॉल अपने प्रतिनिधि पटना मार सहायता कर",
+            "start": 210,
+            "speaker": "A",
+            "confidence": 0.9689971
+          },
+          {
+            "end": 59940,
+            "text": "सकता हूँ आपकी अरे गोड़ा था हमारा ये क्या दिक्कत आ रही है मतलब डिलीवर नहीं हुआ 25 तारीख में होना था आज 28 हो गई जी सर वो देखिएगा बार-बार यही बता रहे हैं कि हम बेडवे गोल अभी कॉल आई थी राइडर की जी उन्होंने बताया कि ये रायपुर में आप कैंसल कर दीजिए",
+            "start": 36890,
+            "speaker": "B",
+            "confidence": 0.95975006
+          },
+          {
+            "end": 69220,
+            "text": "सर सर ये कैंसल हो गया है सर हम्म अब ये ऑर्डर आपको नहीं मिल पाएगा आपका रिफंड आपको दो दिन में मिल जाएगा दो दिन का क्या",
+            "start": 59940,
+            "speaker": "C",
+            "confidence": 0.99361265
+          },
+          {
+            "end": 73440,
+            "text": "मतलब है पागल हूँ क्या मैं इतने दिन तक वेट कर रहा हूँ किसी",
+            "start": 69220,
+            "speaker": "B",
+            "confidence": 0.95063275
+          },
+          {
+            "end": 85270,
+            "text": "की चीज़ का सर एक डिलीव कस्टमर नॉट कांटेक्टेबल कस्टमर नॉट कांटेक्टेबल डिलीवरी एजेंट",
+            "start": 73440,
+            "speaker": "C",
+            "confidence": 0.9416064
+          },
+          {
+            "end": 89790,
+            "text": "की है भाई मुझे कॉल करेंगे तभी तो नहीं तो मैं स्ट्रिकेट दूँगा कॉल",
+            "start": 85270,
+            "speaker": "B",
+            "confidence": 0.89355445
+          },
+          {
+            "end": 100710,
+            "text": "आपका स्पैम या फिर थ्रैश एक्टिवेटेड है टू कॉलर से नहीं है कुछ भी या फिर आपकी सिम एटल की है",
+            "start": 89790,
+            "speaker": "C",
+            "confidence": 0.9870037
+          },
+          {
+            "end": 102670,
+            "text": "कि जिओ की है एटल की है",
+            "start": 100710,
+            "speaker": "B",
+            "confidence": 0.98738605
+          },
+          {
+            "end": 106350,
+            "text": "सर उसमें स्पैम और ऑटो एक्टिव, ऑटो",
+            "start": 102670,
+            "speaker": "C",
+            "confidence": 0.93870455
+          },
+          {
+            "end": 108790,
+            "text": "एक्टिव कर ही नहीं रखा मैंने।",
+            "start": 106350,
+            "speaker": "B",
+            "confidence": 0.94537985
+          },
+          {
+            "end": 111190,
+            "text": "वो ऑटो एक्टिव ही आता है।",
+            "start": 108790,
+            "speaker": "C",
+            "confidence": 0.981795
+          },
+          {
+            "end": 119010,
+            "text": "नहीं ऐसा, वो तो ओर्डर भी आती है, डेलीवर तो ओर्डर भी होता है। बाकि अगर ऐप में तो ऐसी कोई दिक्कत नहीं आई।",
+            "start": 111190,
+            "speaker": "B",
+            "confidence": 0.9103519
+          },
+          {
+            "end": 125310,
+            "text": "और ऐप्स आपको डिलीवरी एजेंट के नंबर से कॉल करते हैं, हमारी ऐप आपको ई-कार्ड के नंबर मतलब जो भी",
+            "start": 119010,
+            "speaker": "C",
+            "confidence": 0.9837873
+          },
+          {
+            "end": 139490,
+            "text": "कोलाइए आज कि आप ऑर्डर कैंसल कर दीजिए मजबूरी में कैंसल ही करना पड़ेगा वो क्या होगा तीन दिन से मुझे पागल बना रखा है इस चीज के लिए",
+            "start": 130950,
+            "speaker": "B",
+            "confidence": 0.9611904
+          },
+          {
+            "end": 141190,
+            "text": "सर ठीक है ये काम थोड़ी रह",
+            "start": 139490,
+            "speaker": "C",
+            "confidence": 0.9741279
+          },
+          {
+            "end": 144590,
+            "text": "गया कि मैं बार-बार कोल करके पूछता रहूँ कि ऑर्डर आएगा भी या नहीं",
+            "start": 141190,
+            "speaker": "B",
+            "confidence": 0.94173235
+          },
+          {
+            "end": 158000,
+            "text": "आएगा जी सर जी सर समझ पा रहा हूँ आपकी कंसन बट तो आरटीओ हो गया अब यहाँ से भी मैं",
+            "start": 144590,
+            "speaker": "C",
+            "confidence": 0.9608642
+          },
+          {
+            "end": 166680,
+            "text": "कुछ नहीं कर सकता हूँ।",
+            "start": 158000,
+            "speaker": "B",
+            "confidence": 0.9776329
+          },
+          {
+            "end": 171060,
+            "text": "हेलो।",
+            "start": 166680,
+            "speaker": "C",
+            "confidence": 0.8727306
+          },
+          {
+            "end": 171510,
+            "text": "ये।",
+            "start": 171060,
+            "speaker": "B",
+            "confidence": 0.7606428
+          },
+          {
+            "end": 176740,
+            "text": "अब यहाँ से तो सर मैं कुछ भी नहीं कर सकता हूँ।",
+            "start": 172280,
+            "speaker": "C",
+            "confidence": 0.9998838
+          },
+          {
+            "end": 178200,
+            "text": "ठीक है।",
+            "start": 176740,
+            "speaker": "B",
+            "confidence": 0.99669665
+          },
+          {
+            "end": 181500,
+            "text": "ठीक है सर प्रैक्टिस मार्क्स में समय देने के लिए धन्यवाद आपका दिन शुभ जय।",
+            "start": 178200,
+            "speaker": "C",
+            "confidence": 0.94911134
+          }
+        ],
+        "violations": [
+          "Failed to greet the customer with name and company branding.",
+          "Did not perform mandatory customer verification before disclosing order details.",
+          "Exhibited clear lack of ownership by stating 'yahan se main kuch nahi kar sakta'.",
+          "Did not summarize call or offer further assistance during closing."
+        ],
+        "suggestions": [
+          "Mandate strict adherence to identity verification protocols prior to sharing order details.",
+          "Train agent on empathy and handling frustrated customers whose essential items (medicines) are delayed.",
+          "Provide coaching on call ownership and offering alternative solutions (e.g., placing a fresh order or raising an escalation ticket) instead of expressing helplessness."
+        ],
+        "recording_url": "https://res.cloudinary.com/doenc9fyc/video/upload/v1785327383/1_ck6wdb.mp3",
+        "transcript_id": "ff439a32-c1ad-44d4-bb42-ed94a40684e4",
+        "raw_transcript": [
+          {
+            "text": "Welcome to Platinum Rx, your trusted pharmacy for affordable medicine. Press one to choose English, Hindi में सुनने के लिए दो दबाएं। नया ऑर्डर देने के लिए एक दबाएं और मौजूदा ऑर्डर के बारे में पूछताछ करने के लिए दो दबाएं। कृपया प्रतीक्षा करें। हम आपकी कॉल अपने प्रतिनिधि को भेज रहे हैं कृपया प्रतीक्षा करें हम आपकी कॉल अपने प्रतिनिधि पटना मार सहायता कर",
+            "speaker": "Agent",
+            "timestamp": "210-36890"
+          },
+          {
+            "text": "सकता हूँ आपकी अरे गोड़ा था हमारा ये क्या दिक्कत आ रही है मतलब डिलीवर नहीं हुआ 25 तारीख में होना था आज 28 हो गई जी सर वो देखिएगा बार-बार यही बता रहे हैं कि हम बेडवे गोल अभी कॉल आई थी राइडर की जी उन्होंने बताया कि ये रायपुर में आप कैंसल कर दीजिए",
+            "speaker": "Customer",
+            "timestamp": "36890-59940"
+          },
+          {
+            "text": "सर सर ये कैंसल हो गया है सर हम्म अब ये ऑर्डर आपको नहीं मिल पाएगा आपका रिफंड आपको दो दिन में मिल जाएगा दो दिन का क्या",
+            "speaker": "Customer",
+            "timestamp": "59940-69220"
+          },
+          {
+            "text": "मतलब है पागल हूँ क्या मैं इतने दिन तक वेट कर रहा हूँ किसी",
+            "speaker": "Customer",
+            "timestamp": "69220-73440"
+          },
+          {
+            "text": "की चीज़ का सर एक डिलीव कस्टमर नॉट कांटेक्टेबल कस्टमर नॉट कांटेक्टेबल डिलीवरी एजेंट",
+            "speaker": "Customer",
+            "timestamp": "73440-85270"
+          },
+          {
+            "text": "की है भाई मुझे कॉल करेंगे तभी तो नहीं तो मैं स्ट्रिकेट दूँगा कॉल",
+            "speaker": "Customer",
+            "timestamp": "85270-89790"
+          },
+          {
+            "text": "आपका स्पैम या फिर थ्रैश एक्टिवेटेड है टू कॉलर से नहीं है कुछ भी या फिर आपकी सिम एटल की है",
+            "speaker": "Customer",
+            "timestamp": "89790-100710"
+          },
+          {
+            "text": "कि जिओ की है एटल की है",
+            "speaker": "Customer",
+            "timestamp": "100710-102670"
+          },
+          {
+            "text": "सर उसमें स्पैम और ऑटो एक्टिव, ऑटो",
+            "speaker": "Customer",
+            "timestamp": "102670-106350"
+          },
+          {
+            "text": "एक्टिव कर ही नहीं रखा मैंने।",
+            "speaker": "Customer",
+            "timestamp": "106350-108790"
+          },
+          {
+            "text": "वो ऑटो एक्टिव ही आता है।",
+            "speaker": "Customer",
+            "timestamp": "108790-111190"
+          },
+          {
+            "text": "नहीं ऐसा, वो तो ओर्डर भी आती है, डेलीवर तो ओर्डर भी होता है। बाकि अगर ऐप में तो ऐसी कोई दिक्कत नहीं आई।",
+            "speaker": "Customer",
+            "timestamp": "111190-119010"
+          },
+          {
+            "text": "और ऐप्स आपको डिलीवरी एजेंट के नंबर से कॉल करते हैं, हमारी ऐप आपको ई-कार्ड के नंबर मतलब जो भी",
+            "speaker": "Customer",
+            "timestamp": "119010-125310"
+          },
+          {
+            "text": "कोलाइए आज कि आप ऑर्डर कैंसल कर दीजिए मजबूरी में कैंसल ही करना पड़ेगा वो क्या होगा तीन दिन से मुझे पागल बना रखा है इस चीज के लिए",
+            "speaker": "Customer",
+            "timestamp": "130950-139490"
+          },
+          {
+            "text": "सर ठीक है ये काम थोड़ी रह",
+            "speaker": "Customer",
+            "timestamp": "139490-141190"
+          },
+          {
+            "text": "गया कि मैं बार-बार कोल करके पूछता रहूँ कि ऑर्डर आएगा भी या नहीं",
+            "speaker": "Customer",
+            "timestamp": "141190-144590"
+          },
+          {
+            "text": "आएगा जी सर जी सर समझ पा रहा हूँ आपकी कंसन बट तो आरटीओ हो गया अब यहाँ से भी मैं",
+            "speaker": "Customer",
+            "timestamp": "144590-158000"
+          },
+          {
+            "text": "कुछ नहीं कर सकता हूँ।",
+            "speaker": "Customer",
+            "timestamp": "158000-166680"
+          },
+          {
+            "text": "हेलो।",
+            "speaker": "Customer",
+            "timestamp": "166680-171060"
+          },
+          {
+            "text": "ये।",
+            "speaker": "Customer",
+            "timestamp": "171060-171510"
+          },
+          {
+            "text": "अब यहाँ से तो सर मैं कुछ भी नहीं कर सकता हूँ।",
+            "speaker": "Customer",
+            "timestamp": "172280-176740"
+          },
+          {
+            "text": "ठीक है।",
+            "speaker": "Customer",
+            "timestamp": "176740-178200"
+          },
+          {
+            "text": "ठीक है सर प्रैक्टिस मार्क्स में समय देने के लिए धन्यवाद आपका दिन शुभ जय।",
+            "speaker": "Customer",
+            "timestamp": "178200-181500"
+          }
+        ]
+      },
+      "parameter_scores": [
+        {
+          "name": "Greeting",
+          "score": 0,
+          "status": "APPLICABLE",
+          "remarks": "The agent did not greet the customer, state their name, or mention the company name at the beginning of the call.",
+          "parameter_id": "Greeting",
+          "justification": "The agent did not greet the customer, state their name, or mention the company name at the beginning of the call."
+        },
+        {
+          "name": "Verification",
+          "score": 0,
+          "status": "APPLICABLE",
+          "remarks": "The agent discussed order cancellation and account details without verifying the customer's identity, full name, or registered mobile number.",
+          "parameter_id": "Verification",
+          "justification": "The agent discussed order cancellation and account details without verifying the customer's identity, full name, or registered mobile number."
+        },
+        {
+          "name": "Need Analysis",
+          "score": 40,
+          "status": "APPLICABLE",
+          "remarks": "The agent asked about the customer's telecom operator to diagnose call delivery issues, but failed to explore re-ordering options or address the urgent need for medicine.",
+          "parameter_id": "Need Analysis",
+          "justification": "The agent asked about the customer's telecom operator to diagnose call delivery issues, but failed to explore re-ordering options or address the urgent need for medicine."
+        },
+        {
+          "name": "Communication",
+          "score": 50,
+          "status": "APPLICABLE",
+          "remarks": "The agent remained soft-spoken but showed poor empathy regarding the delayed medicine and repeatedly expressed helplessness ('Main kuch nahi kar sakta').",
+          "parameter_id": "Communication",
+          "justification": "The agent remained soft-spoken but showed poor empathy regarding the delayed medicine and repeatedly expressed helplessness ('Main kuch nahi kar sakta')."
+        },
+        {
+          "name": "Product Knowledge",
+          "score": 70,
+          "status": "APPLICABLE",
+          "remarks": "The agent correctly informed the customer about the 2-day refund SLA and explained RTO mechanics, but lacked knowledge on how to escalate or re-pitch the order.",
+          "parameter_id": "Product Knowledge",
+          "justification": "The agent correctly informed the customer about the 2-day refund SLA and explained RTO mechanics, but lacked knowledge on how to escalate or re-pitch the order."
+        },
+        {
+          "name": "Compliance",
+          "score": 50,
+          "status": "APPLICABLE",
+          "remarks": "Failed data security compliance by revealing order details without customer authentication, though no false promises were made.",
+          "parameter_id": "Compliance",
+          "justification": "Failed data security compliance by revealing order details without customer authentication, though no false promises were made."
+        },
+        {
+          "name": "Closing",
+          "score": 30,
+          "status": "APPLICABLE",
+          "remarks": "The agent did not summarize the call or ask if the customer had further queries before closing.",
+          "parameter_id": "Closing",
+          "justification": "The agent did not summarize the call or ask if the customer had further queries before closing."
+        }
+      ],
+      "recording_path": "https://ixuutllrfapiawzumvvl.supabase.co/storage/v1/object/sign/recordings/00000000-0000-0000-0000-000000000001/3eda742f-cb0e-40bc-b079-65f848efc10d.mp3?token=eyJraWQiOiI2YWZiMjI3OC05MDdlLTQ0MzgtOTkxNi05YjZmNjlmNzIwMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzLzAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMS8zZWRhNzQyZi1jYjBlLTQwYmMtYjA3OS02NWY4NDhlZmMxMGQubXAzIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc5MzYwNDUyMCwiZXhwIjoxNzk0MjA5MzIwfQ.r24k_VUTSW0PhNi39fmfZyZqxpBoqjpeMG4x-L-aczI",
+      "created_at": "2026-11-02T07:28:36.855Z",
+      "updated_at": "2026-11-02T07:29:42.699Z",
+      "sop_version_id": null,
+      "config_version": 0,
+      "processing_metadata": {
+        "ai_model": "gemini-3.6-flash",
+        "ai_provider": "gemini",
+        "flags_created": 0,
+        "flag_candidates": 0,
+        "flag_engine_version": "1.0.0",
+        "scoring_duration_ms": 19991,
+        "transcript_language": "hi",
+        "transcription_model": "universal",
+        "transcription_provider": "assemblyai",
+        "latest_evaluation_run_id": null,
+        "transcription_confidence": 0.96055543,
+        "flag_analysis_duration_ms": 134,
+        "transcription_duration_ms": 36725
+      },
+      "failure_reason": null,
+      "correlation_id": null,
+      "utterances": [],
+      "confidence": null,
+      "language": null,
+      "transcript_id": null,
+      "raw_evaluation": {},
+      "temporary_data_delete_at": "2026-11-03T07:28:28.256Z",
+      "evidence_delete_at": null,
+      "deleted_at": null,
+      "retention_state": "ACTIVE",
+      "latest_evaluation_run_id": null
+    }
+  ],
+  "call_processing_events": [
+    {
+      "id": "f3de8708-5fd3-4d8a-963a-f78b76e288c8",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "6e9f6604-2531-414f-a2f6-a5199a6a94af",
+      "event_type": "FLAG_ANALYSIS_COMPLETED",
+      "status": "COMPLETED",
+      "detail": {
+        "flags": 0,
+        "candidates": 0,
+        "durationMs": 171
+      },
+      "correlation_id": "0e98ed54-d012-4d4d-96e6-6589f4fcc490",
+      "created_at": "2026-11-02T09:21:32.242Z"
+    },
+    {
+      "id": "3ba75656-bd88-4c2b-9e99-ad1050b2cbf5",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "6e9f6604-2531-414f-a2f6-a5199a6a94af",
+      "event_type": "FLAG_ANALYSIS_STARTED",
+      "status": "STARTED",
+      "detail": {},
+      "correlation_id": "0e98ed54-d012-4d4d-96e6-6589f4fcc490",
+      "created_at": "2026-11-02T09:21:31.498Z"
+    },
+    {
+      "id": "cf65e7c1-568e-4f08-96f7-3068a2a6bfd8",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "6e9f6604-2531-414f-a2f6-a5199a6a94af",
+      "event_type": "SCORING_COMPLETED",
+      "status": "COMPLETED",
+      "detail": {
+        "score": 80,
+        "duration_ms": 34876,
+        "sop_version_id": null,
+        "evaluation_run_id": null
+      },
+      "correlation_id": "0e98ed54-d012-4d4d-96e6-6589f4fcc490",
+      "created_at": "2026-11-02T09:21:31.332Z"
+    },
+    {
+      "id": "8f7dce31-2e11-4c08-80ad-51fde51f0a28",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "6e9f6604-2531-414f-a2f6-a5199a6a94af",
+      "event_type": "SCORING_STARTED",
+      "status": "STARTED",
+      "detail": {},
+      "correlation_id": "0e98ed54-d012-4d4d-96e6-6589f4fcc490",
+      "created_at": "2026-11-02T09:20:54.837Z"
+    },
+    {
+      "id": "19c58ae7-c942-4e81-bc2a-0e7050c0a8e4",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "6e9f6604-2531-414f-a2f6-a5199a6a94af",
+      "event_type": "TRANSCRIPTION_COMPLETED",
+      "status": "COMPLETED",
+      "detail": {
+        "confidence": 0.61250246,
+        "transcript_id": "81c2d195-398f-4507-bb00-9d126b907c0d"
+      },
+      "correlation_id": "0e98ed54-d012-4d4d-96e6-6589f4fcc490",
+      "created_at": "2026-11-02T09:20:54.322Z"
+    },
+    {
+      "id": "bca15f25-f9d3-4ce9-b9d5-d08ffa12ef33",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "6e9f6604-2531-414f-a2f6-a5199a6a94af",
+      "event_type": "TRANSCRIPTION_STARTED",
+      "status": "STARTED",
+      "detail": {},
+      "correlation_id": "0e98ed54-d012-4d4d-96e6-6589f4fcc490",
+      "created_at": "2026-11-02T09:20:34.890Z"
+    },
+    {
+      "id": "86bacc04-319e-45bc-bf77-c86170906b15",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "6e9f6604-2531-414f-a2f6-a5199a6a94af",
+      "event_type": "RECORDING_STORED",
+      "status": "COMPLETED",
+      "detail": {
+        "storagePath": "00000000-0000-0000-0000-000000000001/6e9f6604-2531-414f-a2f6-a5199a6a94af.mp3"
+      },
+      "correlation_id": "0e98ed54-d012-4d4d-96e6-6589f4fcc490",
+      "created_at": "2026-11-02T09:20:34.450Z"
+    },
+    {
+      "id": "cac3684f-9896-433d-af6e-fcee98b29eec",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "6e9f6604-2531-414f-a2f6-a5199a6a94af",
+      "event_type": "CALL_RECEIVED",
+      "status": "COMPLETED",
+      "detail": {
+        "agent_id": "EMP003",
+        "event_key": "DEMO-CALL-003"
+      },
+      "correlation_id": "0e98ed54-d012-4d4d-96e6-6589f4fcc490",
+      "created_at": "2026-11-02T09:20:29.669Z"
+    },
+    {
+      "id": "efd1c3a2-26b4-42a5-bd28-509f8ae77ea1",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "6e9f6604-2531-414f-a2f6-a5199a6a94af",
+      "event_type": "RECORDING_DOWNLOAD_STARTED",
+      "status": "STARTED",
+      "detail": {},
+      "correlation_id": "0e98ed54-d012-4d4d-96e6-6589f4fcc490",
+      "created_at": "2026-11-02T09:20:29.257Z"
+    },
+    {
+      "id": "21c42420-523a-4062-9a38-343b0c38284b",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "52234500-fefe-4487-a34b-334ac8f680a1",
+      "event_type": "FLAG_ANALYSIS_COMPLETED",
+      "status": "COMPLETED",
+      "detail": {
+        "flags": 0,
+        "candidates": 0,
+        "durationMs": 163
+      },
+      "correlation_id": "e3732d68-2083-4686-8677-48010d90d7af",
+      "created_at": "2026-11-02T07:35:19.490Z"
+    },
+    {
+      "id": "0b62b244-5a0e-4029-9779-fd679737186b",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "52234500-fefe-4487-a34b-334ac8f680a1",
+      "event_type": "FLAG_ANALYSIS_STARTED",
+      "status": "STARTED",
+      "detail": {},
+      "correlation_id": "e3732d68-2083-4686-8677-48010d90d7af",
+      "created_at": "2026-11-02T07:35:18.836Z"
+    },
+    {
+      "id": "d306ff9e-0ccf-419f-a0d1-d39473bc6a2c",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "52234500-fefe-4487-a34b-334ac8f680a1",
+      "event_type": "SCORING_COMPLETED",
+      "status": "COMPLETED",
+      "detail": {
+        "score": 85,
+        "duration_ms": 20439,
+        "sop_version_id": null,
+        "evaluation_run_id": null
+      },
+      "correlation_id": "e3732d68-2083-4686-8677-48010d90d7af",
+      "created_at": "2026-11-02T07:35:18.654Z"
+    },
+    {
+      "id": "900b05c4-7f24-427b-bb2a-b41ae60836fc",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "52234500-fefe-4487-a34b-334ac8f680a1",
+      "event_type": "SCORING_STARTED",
+      "status": "STARTED",
+      "detail": {},
+      "correlation_id": "e3732d68-2083-4686-8677-48010d90d7af",
+      "created_at": "2026-11-02T07:34:56.944Z"
+    },
+    {
+      "id": "fc6af9f1-b99f-4eac-b9f0-fe1f7cbefc1d",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "52234500-fefe-4487-a34b-334ac8f680a1",
+      "event_type": "TRANSCRIPTION_COMPLETED",
+      "status": "COMPLETED",
+      "detail": {
+        "confidence": 0.61250246,
+        "transcript_id": "dbdc8f98-6432-4051-91eb-202a7e4bc4b4"
+      },
+      "correlation_id": "e3732d68-2083-4686-8677-48010d90d7af",
+      "created_at": "2026-11-02T07:34:56.646Z"
+    },
+    {
+      "id": "c041216b-329a-4a12-993c-4f589e309276",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "52234500-fefe-4487-a34b-334ac8f680a1",
+      "event_type": "TRANSCRIPTION_STARTED",
+      "status": "STARTED",
+      "detail": {},
+      "correlation_id": "e3732d68-2083-4686-8677-48010d90d7af",
+      "created_at": "2026-11-02T07:34:22.030Z"
+    },
+    {
+      "id": "e03e3c22-e2e8-43d0-ba94-d33ab31840c0",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "52234500-fefe-4487-a34b-334ac8f680a1",
+      "event_type": "RECORDING_STORED",
+      "status": "COMPLETED",
+      "detail": {
+        "storagePath": "00000000-0000-0000-0000-000000000001/52234500-fefe-4487-a34b-334ac8f680a1.mp3"
+      },
+      "correlation_id": "e3732d68-2083-4686-8677-48010d90d7af",
+      "created_at": "2026-11-02T07:34:21.626Z"
+    },
+    {
+      "id": "b07a441c-f7ac-431a-bdfe-725f576a9865",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "52234500-fefe-4487-a34b-334ac8f680a1",
+      "event_type": "RECORDING_DOWNLOAD_STARTED",
+      "status": "STARTED",
+      "detail": {},
+      "correlation_id": "e3732d68-2083-4686-8677-48010d90d7af",
+      "created_at": "2026-11-02T07:34:14.690Z"
+    },
+    {
+      "id": "28476851-c0cd-4ea8-81d9-f7f238aac436",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "52234500-fefe-4487-a34b-334ac8f680a1",
+      "event_type": "CALL_RECEIVED",
+      "status": "COMPLETED",
+      "detail": {
+        "agent_id": "EMP002",
+        "event_key": "DEMO-CALL-002"
+      },
+      "correlation_id": "e3732d68-2083-4686-8677-48010d90d7af",
+      "created_at": "2026-11-02T07:34:14.257Z"
+    },
+    {
+      "id": "5f5b5fad-90e3-463b-934e-b45c89ac0dbf",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "3eda742f-cb0e-40bc-b079-65f848efc10d",
+      "event_type": "FLAG_ANALYSIS_COMPLETED",
+      "status": "COMPLETED",
+      "detail": {
+        "flags": 0,
+        "candidates": 0,
+        "durationMs": 134
+      },
+      "correlation_id": "76ca2dce-4210-4dfe-a967-4279b3ae169a",
+      "created_at": "2026-11-02T07:29:42.865Z"
+    },
+    {
+      "id": "86e6ec87-7c6b-45c0-b733-2f16d23d2840",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "3eda742f-cb0e-40bc-b079-65f848efc10d",
+      "event_type": "FLAG_ANALYSIS_STARTED",
+      "status": "STARTED",
+      "detail": {},
+      "correlation_id": "76ca2dce-4210-4dfe-a967-4279b3ae169a",
+      "created_at": "2026-11-02T07:29:42.263Z"
+    },
+    {
+      "id": "0153c8ea-44aa-40b1-bc49-a6e0b48dd553",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "3eda742f-cb0e-40bc-b079-65f848efc10d",
+      "event_type": "SCORING_COMPLETED",
+      "status": "COMPLETED",
+      "detail": {
+        "score": 37,
+        "duration_ms": 19991,
+        "sop_version_id": null,
+        "evaluation_run_id": null
+      },
+      "correlation_id": "76ca2dce-4210-4dfe-a967-4279b3ae169a",
+      "created_at": "2026-11-02T07:29:41.884Z"
+    },
+    {
+      "id": "ed797385-46d2-4531-b485-250688e65631",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "3eda742f-cb0e-40bc-b079-65f848efc10d",
+      "event_type": "SCORING_STARTED",
+      "status": "STARTED",
+      "detail": {},
+      "correlation_id": "76ca2dce-4210-4dfe-a967-4279b3ae169a",
+      "created_at": "2026-11-02T07:29:19.433Z"
+    },
+    {
+      "id": "8c5899f9-d15b-4522-a899-c1f040d013a3",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "3eda742f-cb0e-40bc-b079-65f848efc10d",
+      "event_type": "TRANSCRIPTION_COMPLETED",
+      "status": "COMPLETED",
+      "detail": {
+        "confidence": 0.96055543,
+        "transcript_id": "ff439a32-c1ad-44d4-bb42-ed94a40684e4"
+      },
+      "correlation_id": "76ca2dce-4210-4dfe-a967-4279b3ae169a",
+      "created_at": "2026-11-02T07:29:18.936Z"
+    },
+    {
+      "id": "cacd897d-22af-416c-b0c0-bf4e0718e19e",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "3eda742f-cb0e-40bc-b079-65f848efc10d",
+      "event_type": "TRANSCRIPTION_STARTED",
+      "status": "STARTED",
+      "detail": {},
+      "correlation_id": "76ca2dce-4210-4dfe-a967-4279b3ae169a",
+      "created_at": "2026-11-02T07:28:40.890Z"
+    },
+    {
+      "id": "bd2c2007-bf01-433d-bd62-f884ada401f9",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "3eda742f-cb0e-40bc-b079-65f848efc10d",
+      "event_type": "RECORDING_STORED",
+      "status": "COMPLETED",
+      "detail": {
+        "storagePath": "00000000-0000-0000-0000-000000000001/3eda742f-cb0e-40bc-b079-65f848efc10d.mp3"
+      },
+      "correlation_id": "76ca2dce-4210-4dfe-a967-4279b3ae169a",
+      "created_at": "2026-11-02T07:28:40.495Z"
+    },
+    {
+      "id": "cae8d2b1-ce93-4935-8de7-4e67c82558dc",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "3eda742f-cb0e-40bc-b079-65f848efc10d",
+      "event_type": "RECORDING_DOWNLOAD_STARTED",
+      "status": "STARTED",
+      "detail": {},
+      "correlation_id": "76ca2dce-4210-4dfe-a967-4279b3ae169a",
+      "created_at": "2026-11-02T07:28:38.283Z"
+    },
+    {
+      "id": "26a5ce30-f88b-49e9-88b6-c99659a16a44",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "call_id": "3eda742f-cb0e-40bc-b079-65f848efc10d",
+      "event_type": "CALL_RECEIVED",
+      "status": "COMPLETED",
+      "detail": {
+        "agent_id": "EMP001",
+        "event_key": "DEMO-CALL-001"
+      },
+      "correlation_id": "76ca2dce-4210-4dfe-a967-4279b3ae169a",
+      "created_at": "2026-11-02T07:28:38.255Z"
+    }
+  ],
+  "webhook_events": [
+    {
+      "id": "f461153f-951a-4b38-bf5d-d6fbca32ab91",
+      "provider": "knowlarity",
+      "event_key": "DEMO-CALL-003",
+      "call_id": "6e9f6604-2531-414f-a2f6-a5199a6a94af",
+      "client_id": "00000000-0000-0000-0000-000000000001",
+      "payload": {
+        "agent_id": "EMP003",
+        "duration": "04:15",
+        "event_id": "DEMO-CALL-003",
+        "timestamp": "2026-11-02T10:40:00Z",
+        "caller_number": "9876543212",
+        "recording_url": "https://res.cloudinary.com/doenc9fyc/video/upload/v1785327507/3_gbnhtt.mp3"
+      },
+      "received_at": "2026-11-02T09:20:28.937Z"
+    },
+    {
+      "id": "424f88cd-4d77-49d2-9e62-a20ea22efa9e",
+      "provider": "knowlarity",
+      "event_key": "DEMO-CALL-002",
+      "call_id": "52234500-fefe-4487-a34b-334ac8f680a1",
+      "client_id": "00000000-0000-0000-0000-000000000001",
+      "payload": {
+        "agent_id": "EMP002",
+        "duration": "03:30",
+        "event_id": "DEMO-CALL-002",
+        "timestamp": "2026-11-02T10:35:00Z",
+        "caller_number": "9876543211",
+        "recording_url": "https://res.cloudinary.com/doenc9fyc/video/upload/v1785327501/2_cathxr.mp3"
+      },
+      "received_at": "2026-11-02T07:34:13.900Z"
+    },
+    {
+      "id": "46fe946f-baa5-479d-864d-402a5868d305",
+      "provider": "knowlarity",
+      "event_key": "DEMO-CALL-001",
+      "call_id": "3eda742f-cb0e-40bc-b079-65f848efc10d",
+      "client_id": "00000000-0000-0000-0000-000000000001",
+      "payload": {
+        "agent_id": "EMP001",
+        "duration": "03:09",
+        "event_id": "DEMO-CALL-001",
+        "timestamp": "2026-11-02T10:30:00Z",
+        "caller_number": "9876543210",
+        "recording_url": "https://res.cloudinary.com/doenc9fyc/video/upload/v1785327383/1_ck6wdb.mp3"
+      },
+      "received_at": "2026-11-02T07:28:37.397Z"
+    }
+  ]
+}

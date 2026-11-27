@@ -1,0 +1,34 @@
+# ====================================================================
+# Cloudflare Worker Configuration: AuditAI Edge Service
+# Deployment target: Cloudflare Workers + D1 Database + R2 Object Storage
+# ====================================================================
+
+name = "auditai-edge-service"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# Cloudflare D1 SQL Relational Database Binding
+# Create via: npx wrangler d1 create auditai-d1-prod
+[[d1_databases]]
+binding = "DB"
+database_name = "auditai-d1-prod"
+database_id = "your-d1-database-uuid-here"
+
+# Cloudflare R2 Object Storage Bucket Binding (Zero-Egress Audio & File Vault)
+# Create via: npx wrangler r2 bucket create auditai-recordings-storage
+[[r2_buckets]]
+binding = "RECORDINGS_BUCKET"
+bucket_name = "auditai-recordings-storage"
+preview_bucket_name = "auditai-recordings-dev"
+
+# Edge Environment Variables
+[vars]
+ENVIRONMENT = "production"
+ENABLE_CORS = "true"
+ALLOWED_ORIGIN = "*"
+R2_PUBLIC_DOMAIN = "https://storage.auditai.io"
+
+# Smart Edge Placement (executes closest to the database or caller)
+[placement]
+mode = "smart"
