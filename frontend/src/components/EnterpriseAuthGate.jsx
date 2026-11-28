@@ -100,7 +100,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
           boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.75), 0 0 35px rgba(56, 189, 248, 0.15)",
           position: "relative",
           fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
-          color: "#0f172a",
+          color: "#000000",
         }}
       >
         {onClose && (
@@ -144,7 +144,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
               height: 38,
               borderRadius: 10,
               background: "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)",
-              color: "#0f172a",
+              color: "#000000",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -226,7 +226,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
 
         {/* Mode Switcher */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-          <div style={{ fontSize: 13.5, fontWeight: 700, color: "#0f172a" }}>
+          <div style={{ fontSize: 13.5, fontWeight: 700, color: "#000000" }}>
             {mode === "login" ? `${role === "admin" ? "Super Administrator" : "Partner / Client"} Portal` : "Register Partner Account"}
           </div>
           <button
@@ -311,7 +311,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
                       border: "1px solid rgba(96, 165, 250, 0.3)",
                       borderRadius: 8,
                       padding: "10px 14px 10px 36px",
-                      color: "#0f172a",
+                      color: "#000000",
                       fontSize: 13,
                       boxSizing: "border-box",
                       outline: "none",
@@ -335,7 +335,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
                       border: "1px solid rgba(96, 165, 250, 0.3)",
                       borderRadius: 8,
                       padding: "10px 14px 10px 36px",
-                      color: "#0f172a",
+                      color: "#000000",
                       fontSize: 13,
                       boxSizing: "border-box",
                       outline: "none",
@@ -359,7 +359,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
                       border: "1px solid rgba(96, 165, 250, 0.3)",
                       borderRadius: 8,
                       padding: "10px 14px 10px 36px",
-                      color: "#0f172a",
+                      color: "#000000",
                       fontSize: 13,
                       boxSizing: "border-box",
                       outline: "none",
@@ -386,7 +386,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
                   border: "1px solid rgba(96, 165, 250, 0.3)",
                   borderRadius: 8,
                   padding: "10px 14px 10px 36px",
-                  color: "#0f172a",
+                  color: "#000000",
                   fontSize: 13,
                   boxSizing: "border-box",
                   outline: "none",
@@ -411,7 +411,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
                   border: "1px solid rgba(96, 165, 250, 0.3)",
                   borderRadius: 8,
                   padding: "10px 40px 10px 36px",
-                  color: "#0f172a",
+                  color: "#000000",
                   fontSize: 13,
                   boxSizing: "border-box",
                   outline: "none",
@@ -441,7 +441,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
             style={{
               marginTop: 8,
               background: "linear-gradient(135deg, #0284c7 0%, #2563eb 100%)",
-              color: "#0f172a",
+              color: "#000000",
               border: "none",
               borderRadius: 8,
               padding: "12px 18px",
@@ -497,7 +497,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
                 style={{
                   display: "inline-flex", alignItems: "center", gap: 6,
                   background: "#f5faff", border: "1px solid #cfe4ff",
-                  borderRadius: 8, padding: "7px 10px", color: "#0f172a", fontSize: 11.5, fontWeight: 600, cursor: "pointer",
+                  borderRadius: 8, padding: "7px 10px", color: "#000000", fontSize: 11.5, fontWeight: 600, cursor: "pointer",
                 }}
               >
                 <ShieldCheck size={13} color="#0284c7" /> {p.label}
@@ -538,7 +538,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
                 style={{
                   display: "inline-flex", alignItems: "center", gap: 6,
                   background: "#f5faff", border: "1px solid #cfe4ff",
-                  borderRadius: 8, padding: "7px 10px", color: "#0f172a", fontSize: 11.5, fontWeight: 600, cursor: "pointer",
+                  borderRadius: 8, padding: "7px 10px", color: "#000000", fontSize: 11.5, fontWeight: 600, cursor: "pointer",
                 }}
               >
                 <UserCheck size={13} color="#0284c7" /> {p.label}

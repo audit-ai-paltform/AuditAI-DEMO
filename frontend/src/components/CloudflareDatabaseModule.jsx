@@ -24,12 +24,12 @@ export default function CloudflareDatabaseModule() {
   }
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 20, fontFamily: "Inter, sans-serif", color: "#0f172a" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 20, fontFamily: "Inter, sans-serif", color: "#000000" }}>
       {/* Header */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 12 }}>
         <div>
           <div style={{ fontSize: 22, fontWeight: 700, fontFamily: "Space Grotesk", display: "flex", alignItems: "center", gap: 10 }}>
-            <Database size={22} style={{ color: "#0f172a" }} />
+            <Database size={22} style={{ color: "#000000" }} />
             Cloudflare D1 Relational DB & R2 Object Storage
           </div>
           <div style={{ fontSize: 13, color: "#334155", marginTop: 4 }}>
@@ -66,7 +66,7 @@ export default function CloudflareDatabaseModule() {
             <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 15, fontWeight: 700, fontFamily: "Space Grotesk" }}>
               <Shield size={18} /> Authentication & User Database
             </div>
-            <span style={{ fontSize: 10.5, background: "#e0f2fe", color: "#0f172a", border: "1px solid #ffffff", padding: "2px 8px", borderRadius: 10, fontWeight: 700 }}>
+            <span style={{ fontSize: 10.5, background: "#e0f2fe", color: "#000000", border: "1px solid #ffffff", padding: "2px 8px", borderRadius: 10, fontWeight: 700 }}>
               POSTGRESQL / SUPABASE
             </span>
           </div>
@@ -122,7 +122,7 @@ export default function CloudflareDatabaseModule() {
             <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 15, fontWeight: 700, fontFamily: "Space Grotesk" }}>
               <HardDrive size={18} /> Cloudflare R2 Object Storage
             </div>
-            <span style={{ fontSize: 10.5, background: "#e0f2fe", color: "#0f172a", border: "1px solid rgba(96, 165, 250, 0.28)", padding: "2px 8px", borderRadius: 10, fontWeight: 700 }}>
+            <span style={{ fontSize: 10.5, background: "#e0f2fe", color: "#000000", border: "1px solid rgba(96, 165, 250, 0.28)", padding: "2px 8px", borderRadius: 10, fontWeight: 700 }}>
               S3-COMPATIBLE
             </span>
           </div>
@@ -177,7 +177,7 @@ export default function CloudflareDatabaseModule() {
             <div key={idx} style={{ background: "#f0f9ff", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
               <div style={{ fontSize: 11.5, color: "#334155", marginBottom: 6 }}>{step.label}</div>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 12px" }}>
-                <code style={{ fontSize: 12, fontFamily: "JetBrains Mono", color: "#0f172a" }}>{step.cmd}</code>
+                <code style={{ fontSize: 12, fontFamily: "JetBrains Mono", color: "#000000" }}>{step.cmd}</code>
                 <button
                   onClick={() => copyText(`step-${idx}`, step.cmd)}
                   style={{ background: "transparent", border: "none", color: "#334155", cursor: "pointer", display: "flex", alignItems: "center", gap: 4, fontSize: 11 }}

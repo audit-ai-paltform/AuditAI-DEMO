@@ -116,7 +116,7 @@ export default function AdminUserActivityModule() {
             <div style={{ width: 36, height: 36, borderRadius: 8, background: "rgba(56,189,248,0.15)", border: "1px solid #38bdf8", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <Activity size={20} color="#38bdf8" />
             </div>
-            <h1 style={{ margin: 0, fontSize: 22, fontWeight: 700, color: "#0f172a" }}>
+            <h1 style={{ margin: 0, fontSize: 22, fontWeight: 700, color: "#000000" }}>
               User Authentication & Active Session Analytics
             </h1>
           </div>
@@ -191,7 +191,7 @@ export default function AdminUserActivityModule() {
               border: "1px solid #1e3a66",
               borderRadius: 8,
               padding: "10px 14px 10px 38px",
-              color: "#0f172a",
+              color: "#000000",
               fontSize: 14,
               outline: "none",
             }}
@@ -206,7 +206,7 @@ export default function AdminUserActivityModule() {
             border: "1px solid #1e3a66",
             borderRadius: 8,
             padding: "10px 14px",
-            color: "#0f172a",
+            color: "#000000",
             fontSize: 14,
             outline: "none",
           }}
@@ -261,7 +261,7 @@ export default function AdminUserActivityModule() {
                             title={online ? "Active Session Right Now" : "Offline"}
                           />
                           <div>
-                            <div style={{ color: "#0f172a", fontWeight: 600 }}>{act.user_name || "Enterprise User"}</div>
+                            <div style={{ color: "#000000", fontWeight: 600 }}>{act.user_name || "Enterprise User"}</div>
                             <div style={{ fontSize: 12, color: "#334155" }}>{act.email}</div>
                           </div>
                         </div>

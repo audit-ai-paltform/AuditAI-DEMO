@@ -60,13 +60,13 @@ export default function UniversalSearchModule() {
   }
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 20, color: "#ffffff", fontFamily: "Inter, sans-serif" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 20, color: "#000000", fontFamily: "Inter, sans-serif" }}>
       {/* Header */}
       <div>
         <h2 style={{ fontSize: 22, fontWeight: 800, fontFamily: "Space Grotesk", display: "flex", alignItems: "center", gap: 10 }}>
           <Search size={22} /> Universal Audit & Telemetry Search
         </h2>
-        <div style={{ fontSize: 13, color: "#bae6fd", marginTop: 2 }}>
+        <div style={{ fontSize: 13, color: "#000000", marginTop: 2 }}>
           Deep-search the entire platform across <strong>Name, Email, Company Name, and Phone Number</strong> to inspect login/logout audits, subscriptions, team seats, and access credentials.
         </div>
       </div>
@@ -85,7 +85,7 @@ export default function UniversalSearchModule() {
 
       {/* Search Input Bar */}
       <form onSubmit={handleSearchSubmit} style={{ display: "flex", gap: 10 }}>
-        <div style={{ flex: 1, display: "flex", alignItems: "center", gap: 10, background: "rgba(11, 29, 62, 0.85)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 10, padding: "10px 16px" }}>
+        <div style={{ flex: 1, display: "flex", alignItems: "center", gap: 10, background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 10, padding: "10px 16px" }}>
           <Search size={18} color="#bae6fd" />
           <input
             type="text"
@@ -95,10 +95,10 @@ export default function UniversalSearchModule() {
               setQuery(e.target.value);
               executeSearch(e.target.value);
             }}
-            style={{ width: "100%", background: "transparent", border: "none", color: "#ffffff", fontSize: 14, outline: "none" }}
+            style={{ width: "100%", background: "transparent", border: "none", color: "#000000", fontSize: 14, outline: "none" }}
           />
           {query && (
-            <button type="button" onClick={() => { setQuery(""); executeSearch(""); }} style={{ background: "none", border: "none", color: "#bae6fd", cursor: "pointer", fontSize: 13 }}>
+            <button type="button" onClick={() => { setQuery(""); executeSearch(""); }} style={{ background: "none", border: "none", color: "#000000", cursor: "pointer", fontSize: 13 }}>
               Clear
             </button>
           )}
@@ -108,7 +108,7 @@ export default function UniversalSearchModule() {
           type="submit"
           style={{
             background: "#ffffff",
-            color: "#38bdf8",
+            color: "#0369a1",
             border: "none",
             borderRadius: 10,
             padding: "0 24px",
@@ -128,12 +128,12 @@ export default function UniversalSearchModule() {
       <div style={{ display: "grid", gridTemplateColumns: "360px 1fr", gap: 20 }}>
         {/* Left Column: Matched Entities */}
         <div style={{ background: "rgba(13, 36, 78, 0.7)", border: "1px solid rgba(96, 165, 250, 0.22)", borderRadius: 12, padding: 16, height: "calc(100vh - 270px)", overflowY: "auto" }}>
-          <div style={{ fontSize: 12, color: "#bae6fd", fontWeight: 700, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 12 }}>
+          <div style={{ fontSize: 12, color: "#000000", fontWeight: 700, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 12 }}>
             Search Results ({results.length})
           </div>
 
           {results.length === 0 ? (
-            <div style={{ textAlign: "center", padding: "40px 10px", color: "#e0f2fe", fontSize: 13 }}>
+            <div style={{ textAlign: "center", padding: "40px 10px", color: "#000000", fontSize: 13 }}>
               No accounts found matching "{query}". Try a different name, company, email, or phone.
             </div>
           ) : (
@@ -145,8 +145,8 @@ export default function UniversalSearchModule() {
                     key={user.id}
                     onClick={() => setSelectedUser(user)}
                     style={{
-                      background: isSelected ? "rgba(255, 255, 255, 0.22)" : "rgba(0, 0, 0, 0.15)",
-                      border: isSelected ? "2px solid #ffffff" : "1px solid rgba(255, 255, 255, 0.15)",
+                      background: isSelected ? "#bae6fd" : "rgba(0, 0, 0, 0.15)",
+                      border: isSelected ? "2px solid #ffffff" : "1px solid #bae6fd",
                       borderRadius: 8,
                       padding: 12,
                       cursor: "pointer",
@@ -155,19 +155,19 @@ export default function UniversalSearchModule() {
                   >
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                       <span style={{ fontWeight: 700, fontSize: 13.5 }}>{user.name}</span>
-                      <span style={{ fontSize: 10, fontWeight: 700, background: "rgba(255, 255, 255, 0.18)", padding: "1px 6px", borderRadius: 4, textTransform: "uppercase" }}>
+                      <span style={{ fontSize: 10, fontWeight: 700, background: "#bae6fd", padding: "1px 6px", borderRadius: 4, textTransform: "uppercase" }}>
                         {user.user_type}
                       </span>
                     </div>
 
-                    <div style={{ fontSize: 11.5, color: "#bae6fd", marginTop: 3 }}>{user.company_name}</div>
-                    <div style={{ fontSize: 11, color: "#e0f2fe", marginTop: 2 }}>{user.email} • {user.phone}</div>
+                    <div style={{ fontSize: 11.5, color: "#000000", marginTop: 3 }}>{user.company_name}</div>
+                    <div style={{ fontSize: 11, color: "#000000", marginTop: 2 }}>{user.email} • {user.phone}</div>
 
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 8, fontSize: 11 }}>
                       <span style={{ color: user.status === "ACTIVE" ? "#86efac" : "#fda4af", fontWeight: 600 }}>
                         ● {user.status}
                       </span>
-                      <span style={{ color: "#ffffff", fontWeight: 600 }}>{user.subscription_tier}</span>
+                      <span style={{ color: "#000000", fontWeight: 600 }}>{user.subscription_tier}</span>
                     </div>
                   </div>
                 );
@@ -177,14 +177,14 @@ export default function UniversalSearchModule() {
         </div>
 
         {/* Right Column: Detailed Telemetry Dossier */}
-        <div style={{ background: "rgba(11, 29, 62, 0.85)", border: "1px solid rgba(96, 165, 250, 0.22)", borderRadius: 12, padding: 24, height: "calc(100vh - 270px)", overflowY: "auto" }}>
+        <div style={{ background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.22)", borderRadius: 12, padding: 24, height: "calc(100vh - 270px)", overflowY: "auto" }}>
           {selectedUser ? (
             <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               {/* Header Info Banner */}
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 14, borderBottom: "1px solid rgba(255, 255, 255, 0.2)", paddingBottom: 16 }}>
                 <div>
                   <div style={{ fontSize: 22, fontWeight: 800, fontFamily: "Space Grotesk" }}>{selectedUser.name}</div>
-                  <div style={{ fontSize: 13, color: "#bae6fd", marginTop: 2, display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+                  <div style={{ fontSize: 13, color: "#000000", marginTop: 2, display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
                     <span><Building2 size={13} style={{ display: "inline", verticalAlign: "middle" }} /> {selectedUser.company_name}</span>
                     <span>•</span>
                     <span><Mail size={13} style={{ display: "inline", verticalAlign: "middle" }} /> {selectedUser.email}</span>
@@ -199,7 +199,7 @@ export default function UniversalSearchModule() {
                     disabled={sendingReminder}
                     style={{
                       background: "#ffffff",
-                      color: "#38bdf8",
+                      color: "#0369a1",
                       border: "none",
                       borderRadius: 8,
                       padding: "8px 16px",
@@ -219,18 +219,18 @@ export default function UniversalSearchModule() {
               {/* 4 Telemetry Grid Cards */}
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 14 }}>
                 {/* 1. Access Credentials */}
-                <div style={{ background: "rgba(8, 22, 45, 0.88)", border: "1px solid rgba(96, 165, 250, 0.18)", borderRadius: 10, padding: 14 }}>
-                  <div style={{ fontSize: 11, color: "#bae6fd", textTransform: "uppercase", fontWeight: 700 }}>Access Credentials</div>
+                <div style={{ background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.18)", borderRadius: 10, padding: 14 }}>
+                  <div style={{ fontSize: 11, color: "#000000", textTransform: "uppercase", fontWeight: 700 }}>Access Credentials</div>
                   <div style={{ fontSize: 15, fontWeight: 700, marginTop: 4 }}>{selectedUser.role}</div>
                   <div style={{ fontSize: 12, color: selectedUser.status === "ACTIVE" ? "#86efac" : "#fda4af", fontWeight: 700, marginTop: 4 }}>
                     STATUS: {selectedUser.status}
                   </div>
-                  <div style={{ fontSize: 11, color: "#e0f2fe", marginTop: 4 }}>Total Sessions: {selectedUser.login_count}</div>
+                  <div style={{ fontSize: 11, color: "#000000", marginTop: 4 }}>Total Sessions: {selectedUser.login_count}</div>
                 </div>
 
                 {/* 2. Subscription Data */}
-                <div style={{ background: "rgba(8, 22, 45, 0.88)", border: "1px solid rgba(96, 165, 250, 0.18)", borderRadius: 10, padding: 14 }}>
-                  <div style={{ fontSize: 11, color: "#bae6fd", textTransform: "uppercase", fontWeight: 700 }}>Subscription Telemetry</div>
+                <div style={{ background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.18)", borderRadius: 10, padding: 14 }}>
+                  <div style={{ fontSize: 11, color: "#000000", textTransform: "uppercase", fontWeight: 700 }}>Subscription Telemetry</div>
                   <div style={{ fontSize: 15, fontWeight: 700, marginTop: 4 }}>{selectedUser.subscription_tier}</div>
                   <div style={{ fontSize: 12, marginTop: 4 }}>
                     {selectedUser.amount_due > 0 ? (
@@ -239,29 +239,29 @@ export default function UniversalSearchModule() {
                       <span style={{ color: "#86efac", fontWeight: 600 }}>Account Paid & Current</span>
                     )}
                   </div>
-                  <div style={{ fontSize: 11, color: "#e0f2fe", marginTop: 4 }}>Due Date: {selectedUser.due_date}</div>
+                  <div style={{ fontSize: 11, color: "#000000", marginTop: 4 }}>Due Date: {selectedUser.due_date}</div>
                 </div>
 
                 {/* 3. Login Timestamps */}
-                <div style={{ background: "rgba(8, 22, 45, 0.88)", border: "1px solid rgba(96, 165, 250, 0.18)", borderRadius: 10, padding: 14 }}>
-                  <div style={{ fontSize: 11, color: "#bae6fd", textTransform: "uppercase", fontWeight: 700 }}>Recent Auth Session</div>
+                <div style={{ background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.18)", borderRadius: 10, padding: 14 }}>
+                  <div style={{ fontSize: 11, color: "#000000", textTransform: "uppercase", fontWeight: 700 }}>Recent Auth Session</div>
                   <div style={{ fontSize: 12, marginTop: 6 }}>
-                    <span style={{ color: "#bae6fd" }}>Last Login: </span>
+                    <span style={{ color: "#000000" }}>Last Login: </span>
                     <span style={{ fontWeight: 600 }}>{selectedUser.last_login_at === "Never" ? "Never" : new Date(selectedUser.last_login_at).toLocaleString()}</span>
                   </div>
                   <div style={{ fontSize: 12, marginTop: 4 }}>
-                    <span style={{ color: "#bae6fd" }}>Last Logout: </span>
+                    <span style={{ color: "#000000" }}>Last Logout: </span>
                     <span style={{ fontWeight: 600 }}>{selectedUser.last_logout_at === "Never" ? "Never" : new Date(selectedUser.last_logout_at).toLocaleString()}</span>
                   </div>
                 </div>
 
                 {/* 4. Team Allocation */}
-                <div style={{ background: "rgba(8, 22, 45, 0.88)", border: "1px solid rgba(96, 165, 250, 0.18)", borderRadius: 10, padding: 14 }}>
-                  <div style={{ fontSize: 11, color: "#bae6fd", textTransform: "uppercase", fontWeight: 700 }}>Organization Team</div>
+                <div style={{ background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.18)", borderRadius: 10, padding: 14 }}>
+                  <div style={{ fontSize: 11, color: "#000000", textTransform: "uppercase", fontWeight: 700 }}>Organization Team</div>
                   <div style={{ fontSize: 20, fontWeight: 800, fontFamily: "Space Grotesk", marginTop: 4 }}>
                     {selectedUser.organization_team?.length || 0} Seats Active
                   </div>
-                  <div style={{ fontSize: 11, color: "#e0f2fe", marginTop: 4 }}>Assigned to {selectedUser.company_name}</div>
+                  <div style={{ fontSize: 11, color: "#000000", marginTop: 4 }}>Assigned to {selectedUser.company_name}</div>
                 </div>
               </div>
 
@@ -272,14 +272,14 @@ export default function UniversalSearchModule() {
                 </div>
 
                 {selectedUser.login_history?.length === 0 ? (
-                  <div style={{ padding: 16, background: "rgba(0,0,0,0.2)", borderRadius: 8, fontSize: 12, color: "#bae6fd" }}>
+                  <div style={{ padding: 16, background: "#f0f9ff", borderRadius: 8, fontSize: 12, color: "#000000" }}>
                     No recorded sessions yet for this user.
                   </div>
                 ) : (
-                  <div style={{ background: "rgba(0, 0, 0, 0.25)", borderRadius: 8, overflow: "hidden", border: "1px solid rgba(255, 255, 255, 0.15)" }}>
+                  <div style={{ background: "rgba(0, 0, 0, 0.25)", borderRadius: 8, overflow: "hidden", border: "1px solid #bae6fd" }}>
                     <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12, textAlign: "left" }}>
                       <thead>
-                        <tr style={{ background: "rgba(3, 105, 161, 0.6)", color: "#bae6fd", fontSize: 11 }}>
+                        <tr style={{ background: "#e0f2fe", color: "#000000", fontSize: 11 }}>
                           <th style={{ padding: "8px 12px" }}>Timestamp</th>
                           <th style={{ padding: "8px 12px" }}>Event Type</th>
                           <th style={{ padding: "8px 12px" }}>IP Address</th>
@@ -289,7 +289,7 @@ export default function UniversalSearchModule() {
                       </thead>
                       <tbody>
                         {selectedUser.login_history?.map((sess, sIdx) => (
-                          <tr key={sIdx} style={{ borderBottom: "1px solid rgba(255, 255, 255, 0.08)" }}>
+                          <tr key={sIdx} style={{ borderBottom: "1px solid #bae6fd" }}>
                             <td style={{ padding: "8px 12px" }}>{new Date(sess.timestamp).toLocaleString()}</td>
                             <td style={{ padding: "8px 12px", fontWeight: 700, color: sess.type === "LOGIN" ? "#86efac" : "#bae6fd" }}>{sess.type}</td>
                             <td style={{ padding: "8px 12px", fontFamily: "monospace" }}>{sess.ip}</td>
@@ -315,10 +315,10 @@ export default function UniversalSearchModule() {
 
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 10 }}>
                   {selectedUser.organization_team?.map((member) => (
-                    <div key={member.id} style={{ background: "rgba(0, 0, 0, 0.25)", border: "1px solid rgba(255, 255, 255, 0.15)", borderRadius: 8, padding: 12 }}>
+                    <div key={member.id} style={{ background: "rgba(0, 0, 0, 0.25)", border: "1px solid #bae6fd", borderRadius: 8, padding: 12 }}>
                       <div style={{ fontWeight: 700, fontSize: 13 }}>{member.name}</div>
-                      <div style={{ fontSize: 11.5, color: "#bae6fd" }}>{member.email}</div>
-                      <div style={{ fontSize: 11, color: "#e0f2fe", marginTop: 4, display: "flex", justifyContent: "space-between" }}>
+                      <div style={{ fontSize: 11.5, color: "#000000" }}>{member.email}</div>
+                      <div style={{ fontSize: 11, color: "#000000", marginTop: 4, display: "flex", justifyContent: "space-between" }}>
                         <span>Role: {member.role}</span>
                         <span style={{ color: "#86efac" }}>{member.lastActive}</span>
                       </div>
@@ -328,7 +328,7 @@ export default function UniversalSearchModule() {
               </div>
             </div>
           ) : (
-            <div style={{ textAlign: "center", padding: "80px 20px", color: "#e0f2fe" }}>
+            <div style={{ textAlign: "center", padding: "80px 20px", color: "#000000" }}>
               Select a user or company from the left column to view the full audit and access dossier.
             </div>
           )}

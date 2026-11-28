@@ -48,25 +48,25 @@ import AskAuditAIChatbot from "./components/AskAuditAIChatbot";
 /*  Status Colour Standard: Red = Risk, Grey = Neutral, Green = Good*/
 /* ---------------------------------------------------------------- */
 const C = {
-  bg: "#f0f7ff",          // Light sky-blue canvas
+  bg: "#e0f2fe",          // Clean light sky-blue canvas
   panel: "#ffffff",       // Crisp white cards, sidebar & tables
-  panel2: "#e0f2fe",      // Soft sky-blue elevated surface / table header
-  panelHover: "#bae6fd",  // Sky-blue hover highlight
-  border: "#bae6fd",      // Clean sky-blue border
-  borderSoft: "#e2e8f0",  // Soft slate divider
-  text: "#0f172a",        // Deep slate text
-  muted: "#334155",       // Secondary slate text
-  faint: "#64748b",       // Muted slate / grey
+  panel2: "#f0f9ff",      // Soft light-blue elevated surface / table header
+  panelHover: "#bae6fd",  // Light sky-blue hover highlight
+  border: "#93c5fd",      // Clean sky-blue border
+  borderSoft: "#cbd5e1",  // Crisp divider
+  text: "#000000",        // Pure black text for maximum clarity
+  muted: "#111827",       // Near-black secondary text
+  faint: "#374151",       // Dark slate-grey labels (clearly visible)
   white: "#ffffff",       // Pure white
-  black: "#0f172a",       // Deep slate ink
+  black: "#000000",       // Pure black
   teal: "#0284c7",        // Sky-blue accent
   tealSoft: "rgba(2, 132, 199, 0.12)",
   red: "#dc2626",         // Red = Risk
   redSoft: "rgba(220, 38, 38, 0.12)",
-  amber: "#64748b",       // Grey = Neutral
-  amberSoft: "rgba(100, 116, 139, 0.14)",
-  grey: "#64748b",        // Grey = Neutral
-  greySoft: "rgba(100, 116, 139, 0.14)",
+  amber: "#4b5563",       // Grey = Neutral
+  amberSoft: "rgba(75, 85, 99, 0.12)",
+  grey: "#4b5563",        // Grey = Neutral
+  greySoft: "rgba(75, 85, 99, 0.12)",
   green: "#16a34a",       // Green = Good
   greenSoft: "rgba(22, 163, 74, 0.12)",
 };
@@ -80,8 +80,8 @@ const FONT_STYLE = `
 html, body, #root {
   margin: 0;
   padding: 0;
-  background-color: #f0f7ff;
-  color: #0f172a;
+  background-color: #e0f2fe;
+  color: #000000;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -90,10 +90,10 @@ html, body, #root {
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #f0f7ff;
+  background: #e0f2fe;
 }
 ::-webkit-scrollbar-thumb {
-  background: #bae6fd;
+  background: #7dd3fc;
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -108,30 +108,30 @@ html, body, #root {
   animation: spin 1s linear infinite;
 }
 
-/* Lighter enterprise sky-blue canvas */
+/* Light sky-blue canvas */
 .auditai-grid-bg {
-  background-color: #f0f7ff;
+  background-color: #e0f2fe;
 }
 
 /* Unified Enterprise Table Styling */
 table {
   width: 100%;
   border-collapse: collapse;
-  color: #0f172a;
+  color: #000000;
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 thead th {
-  background: #f0f7ff;
-  color: #0f172a;
-  border-bottom: 1.5px solid #bae6fd;
+  background: #e0f2fe;
+  color: #000000;
+  border-bottom: 1.5px solid #93c5fd;
   font-weight: 700;
 }
 tbody td {
-  color: #0f172a;
-  border-bottom: 1px solid #e2e8f0;
+  color: #000000;
+  border-bottom: 1px solid #cbd5e1;
 }
 tbody tr:hover {
-  background: #f0f7ff;
+  background: #f0f9ff;
 }
 
 /* Modern Stylish Buttons */
@@ -2011,39 +2011,39 @@ function CallScores({ calls, loading, onOpenCoaching }) {
                           <div style={{ background: "#09090b", border: `1px solid ${C.border}`, borderRadius: 8, padding: 14, marginBottom: 14 }}>
                             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10, flexWrap: "wrap", gap: 8 }}>
                               <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                                <span style={{ background: "#ffffff", color: "#000000", borderRadius: 4, fontSize: 10, fontWeight: 700, padding: "2px 6px", fontFamily: "JetBrains Mono" }}>
+                                <span style={{ background: "#0284c7", color: "#ffffff", borderRadius: 4, fontSize: 10, fontWeight: 700, padding: "2px 6px", fontFamily: "JetBrains Mono" }}>
                                   PREDICTIVE CSAT
                                 </span>
-                                <span style={{ fontSize: 14, fontWeight: 700, color: "#ffffff", fontFamily: "Space Grotesk" }}>
+                                <span style={{ fontSize: 14, fontWeight: 700, color: "#000000", fontFamily: "Plus Jakarta Sans" }}>
                                   {c.flags?.predictive_csat?.predicted_csat_score ? `${c.flags.predictive_csat.predicted_csat_score} / 5.0` : "4.2 / 5.0"}
                                 </span>
-                                <span style={{ fontSize: 12, color: "#a1a1aa" }}>
+                                <span style={{ fontSize: 12, color: "#374151" }}>
                                   ({typeof c.score === "number" ? c.score : 85}% satisfaction probability)
                                 </span>
                               </div>
 
                               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                                <span style={{ fontSize: 11, color: "#a1a1aa" }}>
-                                  Silence / Dead Air: <strong>{c.flags?.predictive_csat?.silence_analysis?.silence_duration_seconds ? `${c.flags.predictive_csat.silence_analysis.silence_duration_seconds}s (${c.flags.predictive_csat.silence_analysis.silence_percentage}%)` : "6.4s (4.2%)"}</strong>
+                                <span style={{ fontSize: 11, color: "#374151" }}>
+                                  Silence / Dead Air: <strong style={{ color: "#000000" }}>{c.flags?.predictive_csat?.silence_analysis?.silence_duration_seconds ? `${c.flags.predictive_csat.silence_analysis.silence_duration_seconds}s (${c.flags.predictive_csat.silence_analysis.silence_percentage}%)` : "6.4s (4.2%)"}</strong>
                                 </span>
-                                <span style={{ background: "#18181b", border: "1px solid #27272a", borderRadius: 4, padding: "2px 6px", fontSize: 10.5, color: "#ffffff" }}>
+                                <span style={{ background: "#f0f9ff", border: "1px solid #93c5fd", borderRadius: 4, padding: "2px 6px", fontSize: 10.5, color: "#000000" }}>
                                   Escalation Risk: <strong>{c.flags?.predictive_csat?.escalation_risk?.risk_level || (c.score < 60 ? "HIGH" : "LOW")}</strong>
                                 </span>
                               </div>
                             </div>
 
                             {/* Sentiment Progression Trajectory */}
-                            <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 11.5, color: "#a1a1aa" }}>
-                              <span style={{ fontWeight: 600, color: "#ffffff" }}>Sentiment Progression:</span>
-                              <span style={{ padding: "2px 8px", background: "#121215", border: "1px solid #27272a", borderRadius: 4, color: "#ffffff" }}>
+                            <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 11.5, color: "#374151", flexWrap: "wrap" }}>
+                              <span style={{ fontWeight: 600, color: "#000000" }}>Sentiment Progression:</span>
+                              <span style={{ padding: "2px 8px", background: "#f0f9ff", border: "1px solid #93c5fd", borderRadius: 4, color: "#000000" }}>
                                 Opening: {c.flags?.predictive_csat?.sentiment_progression?.opening || "Positive"}
                               </span>
                               <span>→</span>
-                              <span style={{ padding: "2px 8px", background: "#121215", border: "1px solid #27272a", borderRadius: 4, color: "#ffffff" }}>
+                              <span style={{ padding: "2px 8px", background: "#f0f9ff", border: "1px solid #93c5fd", borderRadius: 4, color: "#000000" }}>
                                 Handling: {c.flags?.predictive_csat?.sentiment_progression?.middle || (c.score >= 60 ? "Neutral" : "Negative")}
                               </span>
                               <span>→</span>
-                              <span style={{ padding: "2px 8px", background: "#121215", border: "1px solid #27272a", borderRadius: 4, color: "#ffffff" }}>
+                              <span style={{ padding: "2px 8px", background: "#f0f9ff", border: "1px solid #93c5fd", borderRadius: 4, color: "#000000" }}>
                                 Closing: {c.flags?.predictive_csat?.sentiment_progression?.closing || "Positive"}
                               </span>
                             </div>
@@ -3686,19 +3686,19 @@ function PricingModal({ onClose }) {
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14 }}>
           {plans.map((p) => (
-            <div key={p.name} style={{ background: C.panel2, border: `1px solid ${p.popular ? "#ffffff" : C.border}`, borderRadius: 10, padding: 16, position: "relative" }}>
-              {p.popular && <span style={{ position: "absolute", top: -10, right: 10, background: "#ffffff", color: "#000000", fontSize: 10, fontWeight: 700, padding: "2px 8px", borderRadius: 10 }}>POPULAR</span>}
-              <div style={{ color: C.text, fontFamily: "Space Grotesk", fontSize: 15, fontWeight: 600 }}>{p.name}</div>
-              <div style={{ color: "#ffffff", fontFamily: "JetBrains Mono", fontSize: 18, fontWeight: 700, margin: "6px 0" }}>{p.price}</div>
+            <div key={p.name} style={{ background: C.panel2, border: `1.5px solid ${p.popular ? "#0284c7" : C.border}`, borderRadius: 10, padding: 16, position: "relative" }}>
+              {p.popular && <span style={{ position: "absolute", top: -10, right: 10, background: "#0284c7", color: "#ffffff", fontSize: 10, fontWeight: 700, padding: "2px 8px", borderRadius: 10 }}>POPULAR</span>}
+              <div style={{ color: C.text, fontFamily: "Plus Jakarta Sans", fontSize: 15, fontWeight: 700 }}>{p.name}</div>
+              <div style={{ color: "#000000", fontFamily: "JetBrains Mono", fontSize: 18, fontWeight: 700, margin: "6px 0" }}>{p.price}</div>
               <div style={{ color: C.faint, fontSize: 11, marginBottom: 12 }}>{p.limit}</div>
               <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 16 }}>
                 {p.feat.map((f, i) => (
                   <div key={i} style={{ display: "flex", alignItems: "center", gap: 6, color: C.muted, fontSize: 11 }}>
-                    <Check size={11} color="#ffffff" /> {f}
+                    <Check size={11} color="#0284c7" /> {f}
                   </div>
                 ))}
               </div>
-              <button onClick={() => handleCheckout(p)} style={{ width: "100%", background: p.popular ? "#ffffff" : C.panel, color: p.popular ? "#000000" : C.text, border: `1px solid ${C.border}`, borderRadius: 6, padding: "7px 0", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Subscribe with PayU</button>
+              <button onClick={() => handleCheckout(p)} style={{ width: "100%", background: p.popular ? "#0284c7" : C.panel, color: p.popular ? "#ffffff" : "#000000", border: `1px solid ${p.popular ? "#0284c7" : C.border}`, borderRadius: 6, padding: "7px 0", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Subscribe with PayU</button>
             </div>
           ))}
         </div>
@@ -4260,9 +4260,9 @@ function BillingManagementPage({ onOpenPricingModal }) {
           <div>
             <div style={{ color: C.text, fontFamily: "Space Grotesk", fontSize: 16, fontWeight: 700 }}>Enterprise Workspace Plan</div>
             <div style={{ color: C.muted, fontSize: 12, marginTop: 4 }}>High-scale concurrent QA evaluation with automated AssemblyAI & Gemini scoring.</div>
-            <div style={{ color: "#ffffff", fontSize: 12.5, fontFamily: "JetBrains Mono", marginTop: 6, fontWeight: 600 }}>Active · 50,000 Monthly Audit Capacity · PayU Gateway</div>
+            <div style={{ color: "#000000", fontSize: 12.5, fontFamily: "JetBrains Mono", marginTop: 6, fontWeight: 600 }}>Active · 50,000 Monthly Audit Capacity · PayU Gateway</div>
           </div>
-          <button onClick={onOpenPricingModal} style={{ background: "#ffffff", color: "#000000", border: "none", borderRadius: 7, padding: "8px 16px", fontFamily: "Inter", fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>
+          <button onClick={onOpenPricingModal} style={{ background: "#0284c7", color: "#ffffff", border: "none", borderRadius: 7, padding: "8px 16px", fontFamily: "Plus Jakarta Sans", fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>
             View All Plans & PayU Checkout
           </button>
         </div>
@@ -4270,7 +4270,7 @@ function BillingManagementPage({ onOpenPricingModal }) {
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 14 }}>
         <Card>
-          <div style={{ color: C.text, fontFamily: "Space Grotesk", fontSize: 15, fontWeight: 600 }}>Usage & Limits</div>
+          <div style={{ color: C.text, fontFamily: "Plus Jakarta Sans", fontSize: 15, fontWeight: 700 }}>Usage & Limits</div>
           <div style={{ marginTop: 12, display: "flex", flexDirection: "column", gap: 8, fontSize: 12.5, color: C.muted }}>
             <div style={{ display: "flex", justifyContent: "space-between" }}><span>Audits Completed</span><span style={{ color: C.text, fontWeight: 600 }}>3 calls</span></div>
             <div style={{ display: "flex", justifyContent: "space-between" }}><span>Monthly Quota</span><span style={{ color: C.text }}>50,000 calls</span></div>
@@ -4279,11 +4279,11 @@ function BillingManagementPage({ onOpenPricingModal }) {
         </Card>
 
         <Card>
-          <div style={{ color: C.text, fontFamily: "Space Grotesk", fontSize: 15, fontWeight: 600 }}>Security & Invoicing</div>
+          <div style={{ color: C.text, fontFamily: "Plus Jakarta Sans", fontSize: 15, fontWeight: 700 }}>Security & Invoicing</div>
           <div style={{ marginTop: 12, display: "flex", flexDirection: "column", gap: 8, fontSize: 12.5, color: C.muted }}>
-            <div style={{ display: "flex", justifyContent: "space-between" }}><span>Payment Gateway</span><span style={{ color: "#ffffff", fontWeight: 600 }}>PayU Enterprise Verified</span></div>
-            <div style={{ display: "flex", justifyContent: "space-between" }}><span>Data Encryption</span><span style={{ color: "#ffffff" }}>AES-256 Enabled</span></div>
-            <div style={{ display: "flex", justifyContent: "space-between" }}><span>Database Segregation</span><span style={{ color: "#ffffff" }}>Cloudflare D1 & R2 Active</span></div>
+            <div style={{ display: "flex", justifyContent: "space-between" }}><span>Payment Gateway</span><span style={{ color: "#000000", fontWeight: 600 }}>PayU Enterprise Verified</span></div>
+            <div style={{ display: "flex", justifyContent: "space-between" }}><span>Data Encryption</span><span style={{ color: "#000000" }}>AES-256 Enabled</span></div>
+            <div style={{ display: "flex", justifyContent: "space-between" }}><span>Database Segregation</span><span style={{ color: "#000000" }}>Cloudflare D1 & R2 Active</span></div>
           </div>
         </Card>
       </div>

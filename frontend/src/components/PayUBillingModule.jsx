@@ -161,12 +161,12 @@ export default function PayUBillingModule({ currentUser, isAdmin }) {
   const displayPlans = plans.length > 0 ? plans : defaultPlans;
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 20, fontFamily: "Inter, sans-serif", color: "#0f172a" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 20, fontFamily: "Inter, sans-serif", color: "#000000" }}>
       {/* Top Banner */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 12 }}>
         <div>
           <div style={{ fontSize: 22, fontWeight: 700, fontFamily: "Space Grotesk", display: "flex", alignItems: "center", gap: 10 }}>
-            <CreditCard size={22} style={{ color: "#0f172a" }} />
+            <CreditCard size={22} style={{ color: "#000000" }} />
             Subscription & PayU Payment Gateway
           </div>
           <div style={{ fontSize: 13, color: "#334155", marginTop: 4 }}>
@@ -185,7 +185,7 @@ export default function PayUBillingModule({ currentUser, isAdmin }) {
               border: "1px solid rgba(96, 165, 250, 0.28)",
               borderRadius: 7,
               padding: "8px 14px",
-              color: "#0f172a",
+              color: "#000000",
               fontSize: 12.5,
               fontWeight: 500,
               cursor: "pointer",
@@ -218,12 +218,12 @@ export default function PayUBillingModule({ currentUser, isAdmin }) {
       {/* Messages */}
       {successMsg && (
         <div style={{ background: "#e0f2fe", border: "1px solid #ffffff", borderRadius: 8, padding: "10px 14px", fontSize: 12.5, display: "flex", alignItems: "center", gap: 8 }}>
-          <CheckCircle2 size={15} style={{ color: "#0f172a" }} /> {successMsg}
+          <CheckCircle2 size={15} style={{ color: "#000000" }} /> {successMsg}
         </div>
       )}
       {error && (
         <div style={{ background: "#e0f2fe", border: "1px solid #52525b", borderRadius: 8, padding: "10px 14px", fontSize: 12.5, display: "flex", alignItems: "center", gap: 8 }}>
-          <AlertCircle size={15} style={{ color: "#0f172a" }} /> {error}
+          <AlertCircle size={15} style={{ color: "#000000" }} /> {error}
         </div>
       )}
 
@@ -239,26 +239,26 @@ export default function PayUBillingModule({ currentUser, isAdmin }) {
               </span>
             </div>
             <div style={{ fontSize: 12.5, color: "#334155", marginTop: 4 }}>
-              Payment Provider: <strong style={{ color: "#0f172a" }}>PayU Enterprise Gateway ({isTestMode ? "Sandbox" : "Production"})</strong>
+              Payment Provider: <strong style={{ color: "#000000" }}>PayU Enterprise Gateway ({isTestMode ? "Sandbox" : "Production"})</strong>
             </div>
           </div>
 
           <div style={{ display: "flex", gap: 24 }}>
             <div>
               <div style={{ fontSize: 11, color: "#0369a1" }}>Monthly Allocation</div>
-              <div style={{ fontSize: 16, fontWeight: 600, color: "#0f172a", fontFamily: "JetBrains Mono" }}>
+              <div style={{ fontSize: 16, fontWeight: 600, color: "#000000", fontFamily: "JetBrains Mono" }}>
                 {subscription?.max_call_minutes?.toLocaleString() || "50,000"} Minutes
               </div>
             </div>
             <div>
               <div style={{ fontSize: 11, color: "#0369a1" }}>Agent Seats</div>
-              <div style={{ fontSize: 16, fontWeight: 600, color: "#0f172a", fontFamily: "JetBrains Mono" }}>
+              <div style={{ fontSize: 16, fontWeight: 600, color: "#000000", fontFamily: "JetBrains Mono" }}>
                 {subscription?.max_agent_seats || "50"} Active
               </div>
             </div>
             <div>
               <div style={{ fontSize: 11, color: "#0369a1" }}>Next Billing</div>
-              <div style={{ fontSize: 16, fontWeight: 600, color: "#0f172a", fontFamily: "JetBrains Mono" }}>
+              <div style={{ fontSize: 16, fontWeight: 600, color: "#000000", fontFamily: "JetBrains Mono" }}>
                 30 Days
               </div>
             </div>
@@ -305,7 +305,7 @@ export default function PayUBillingModule({ currentUser, isAdmin }) {
 
               <div style={{ fontSize: 16, fontWeight: 700, fontFamily: "Space Grotesk" }}>{plan.name}</div>
               <div style={{ display: "flex", alignItems: "baseline", gap: 4, marginTop: 10, marginBottom: 4 }}>
-                <span style={{ fontSize: 28, fontWeight: 800, fontFamily: "JetBrains Mono", color: "#0f172a" }}>
+                <span style={{ fontSize: 28, fontWeight: 800, fontFamily: "JetBrains Mono", color: "#000000" }}>
                   ₹{plan.price.toLocaleString()}
                 </span>
                 <span style={{ fontSize: 12, color: "#0369a1" }}>/ month</span>
@@ -319,7 +319,7 @@ export default function PayUBillingModule({ currentUser, isAdmin }) {
               <div style={{ display: "flex", flexDirection: "column", gap: 10, flex: 1, marginBottom: 22 }}>
                 {plan.features?.map((feat, fIdx) => (
                   <div key={fIdx} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12, color: "#e4e4e7" }}>
-                    <Check size={14} style={{ color: "#0f172a", flexShrink: 0 }} />
+                    <Check size={14} style={{ color: "#000000", flexShrink: 0 }} />
                     <span>{feat}</span>
                   </div>
                 ))}
@@ -378,7 +378,7 @@ export default function PayUBillingModule({ currentUser, isAdmin }) {
               <tbody>
                 {transactions.map((tx, idx) => (
                   <tr key={idx} style={{ borderBottom: "1px solid #e0f2fe" }}>
-                    <td style={{ padding: "10px 12px", fontFamily: "JetBrains Mono", color: "#0f172a" }}>{tx.txnid}</td>
+                    <td style={{ padding: "10px 12px", fontFamily: "JetBrains Mono", color: "#000000" }}>{tx.txnid}</td>
                     <td style={{ padding: "10px 12px", textTransform: "capitalize" }}>{tx.plan_id || "Enterprise"}</td>
                     <td style={{ padding: "10px 12px", fontWeight: 600, fontFamily: "JetBrains Mono" }}>₹{Number(tx.amount || 0).toLocaleString()}</td>
                     <td style={{ padding: "10px 12px", color: "#334155" }}>{tx.mode || "PayU Gateway"}</td>
@@ -410,24 +410,24 @@ export default function PayUBillingModule({ currentUser, isAdmin }) {
             <div style={{ background: "#f0f9ff", border: "1px solid #1f1f23", borderRadius: 8, padding: 14, marginBottom: 16 }}>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
                 <span style={{ color: "#334155", fontSize: 12 }}>Product Description:</span>
-                <span style={{ color: "#0f172a", fontSize: 12, fontWeight: 600 }}>{checkoutData.productinfo}</span>
+                <span style={{ color: "#000000", fontSize: 12, fontWeight: 600 }}>{checkoutData.productinfo}</span>
               </div>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
                 <span style={{ color: "#334155", fontSize: 12 }}>Transaction Reference:</span>
-                <span style={{ color: "#0f172a", fontSize: 11.5, fontFamily: "JetBrains Mono" }}>{checkoutData.txnid}</span>
+                <span style={{ color: "#000000", fontSize: 11.5, fontFamily: "JetBrains Mono" }}>{checkoutData.txnid}</span>
               </div>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
                 <span style={{ color: "#334155", fontSize: 12 }}>Billed Customer:</span>
-                <span style={{ color: "#0f172a", fontSize: 12 }}>{checkoutData.firstname} ({checkoutData.email})</span>
+                <span style={{ color: "#000000", fontSize: 12 }}>{checkoutData.firstname} ({checkoutData.email})</span>
               </div>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
                 <span style={{ color: "#334155", fontSize: 12 }}>Gateway Mode:</span>
-                <span style={{ color: "#0f172a", fontSize: 12, fontWeight: 600 }}>PayU India ({isTestMode ? "Sandbox Simulator" : "Production Live"})</span>
+                <span style={{ color: "#000000", fontSize: 12, fontWeight: 600 }}>PayU India ({isTestMode ? "Sandbox Simulator" : "Production Live"})</span>
               </div>
               <div style={{ height: 1, background: "rgba(96, 165, 250, 0.28)", margin: "10px 0" }} />
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span style={{ color: "#0f172a", fontSize: 14, fontWeight: 600 }}>Total Payable:</span>
-                <span style={{ color: "#0f172a", fontSize: 20, fontWeight: 800, fontFamily: "JetBrains Mono" }}>₹{checkoutData.amount}</span>
+                <span style={{ color: "#000000", fontSize: 14, fontWeight: 600 }}>Total Payable:</span>
+                <span style={{ color: "#000000", fontSize: 20, fontWeight: 800, fontFamily: "JetBrains Mono" }}>₹{checkoutData.amount}</span>
               </div>
             </div>
 
@@ -482,7 +482,7 @@ export default function PayUBillingModule({ currentUser, isAdmin }) {
                 style={{
                   background: "#e0f2fe",
                   border: "1px solid rgba(96, 165, 250, 0.28)",
-                  color: "#0f172a",
+                  color: "#000000",
                   borderRadius: 7,
                   padding: "9px 16px",
                   fontSize: 12,
@@ -513,7 +513,7 @@ export default function PayUBillingModule({ currentUser, isAdmin }) {
             <form onSubmit={handleSavePayUConfig} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               <div>
                 <label style={{ display: "block", fontSize: 11.5, color: "#334155", marginBottom: 4 }}>PayU Merchant Key</label>
-                <input required value={payuKey} onChange={e => setPayuKey(e.target.value)} style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#0f172a", fontSize: 12, boxSizing: "border-box" }} />
+                <input required value={payuKey} onChange={e => setPayuKey(e.target.value)} style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#000000", fontSize: 12, boxSizing: "border-box" }} />
               </div>
 
               <div>
@@ -527,20 +527,20 @@ export default function PayUBillingModule({ currentUser, isAdmin }) {
                   value={payuSalt}
                   onChange={e => setPayuSalt(e.target.value.trim())}
                   placeholder="Paste 32-character Salt from PayU"
-                  style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#0f172a", fontSize: 12, fontFamily: "JetBrains Mono, monospace", boxSizing: "border-box" }}
+                  style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#000000", fontSize: 12, fontFamily: "JetBrains Mono, monospace", boxSizing: "border-box" }}
                 />
               </div>
 
               <div>
                 <label style={{ display: "block", fontSize: 11.5, color: "#334155", marginBottom: 4 }}>Environment Mode</label>
-                <select value={isTestMode ? "test" : "production"} onChange={e => setIsTestMode(e.target.value === "test")} style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#0f172a", fontSize: 12 }}>
+                <select value={isTestMode ? "test" : "production"} onChange={e => setIsTestMode(e.target.value === "test")} style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#000000", fontSize: 12 }}>
                   <option value="test">Sandbox / Test Mode (https://test.payu.in)</option>
                   <option value="production">Live Production (https://secure.payu.in)</option>
                 </select>
               </div>
 
               <div style={{ display: "flex", justifyContent: "flex-end", gap: 10, marginTop: 10 }}>
-                <button type="button" onClick={() => setShowConfigDrawer(false)} style={{ background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", color: "#0f172a", borderRadius: 6, padding: "8px 14px", fontSize: 12, cursor: "pointer" }}>Cancel</button>
+                <button type="button" onClick={() => setShowConfigDrawer(false)} style={{ background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", color: "#000000", borderRadius: 6, padding: "8px 14px", fontSize: 12, cursor: "pointer" }}>Cancel</button>
                 <button type="submit" disabled={savingConfig} style={{ background: "#ffffff", border: "none", color: "#f0f9ff", borderRadius: 6, padding: "8px 16px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>
                   {savingConfig ? "Saving..." : "Save Credentials"}
                 </button>

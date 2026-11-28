@@ -54,7 +54,7 @@ export default function HomePageCMSModule() {
 
   if (loading) {
     return (
-      <div style={{ padding: 40, textAlign: "center", color: "#0f172a" }}>
+      <div style={{ padding: 40, textAlign: "center", color: "#000000" }}>
         <RefreshCw size={24} className="spin" style={{ marginBottom: 12, color: "#0369a1" }} />
         <div>Loading Home Page CMS Editor...</div>
       </div>
@@ -63,7 +63,7 @@ export default function HomePageCMSModule() {
 
   if (!cms) {
     return (
-      <div style={{ padding: 40, textAlign: "center", color: "#0f172a", background: "#ffffff", borderRadius: 12, border: "1px solid rgba(239, 68, 68, 0.35)" }}>
+      <div style={{ padding: 40, textAlign: "center", color: "#000000", background: "#ffffff", borderRadius: 12, border: "1px solid rgba(239, 68, 68, 0.35)" }}>
         <AlertCircle size={28} color="#dc2626" style={{ marginBottom: 12 }} />
         <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 8 }}>{errorMsg || "Could not load Home Page CMS Editor"}</div>
         <button
@@ -91,7 +91,7 @@ export default function HomePageCMSModule() {
   ];
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 20, color: "#0f172a", fontFamily: "Inter, sans-serif" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 20, color: "#000000", fontFamily: "Inter, sans-serif" }}>
       {/* Header */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 14 }}>
         <div>
@@ -108,7 +108,7 @@ export default function HomePageCMSModule() {
           disabled={saving}
           style={{
             background: "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)",
-            color: "#0f172a",
+            color: "#000000",
             border: "none",
             borderRadius: 8,
             padding: "10px 24px",
@@ -182,7 +182,7 @@ export default function HomePageCMSModule() {
                 type="text"
                 value={cms.hero.badge}
                 onChange={e => setCms({ ...cms, hero: { ...cms.hero, badge: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13 }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13 }}
               />
             </div>
 
@@ -192,7 +192,7 @@ export default function HomePageCMSModule() {
                 type="text"
                 value={cms.hero.headline}
                 onChange={e => setCms({ ...cms, hero: { ...cms.hero, headline: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 14, fontWeight: 600 }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 14, fontWeight: 600 }}
               />
             </div>
 
@@ -202,7 +202,7 @@ export default function HomePageCMSModule() {
                 rows={3}
                 value={cms.hero.subheadline}
                 onChange={e => setCms({ ...cms, hero: { ...cms.hero, subheadline: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13, fontFamily: "inherit" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13, fontFamily: "inherit" }}
               />
             </div>
 
@@ -212,7 +212,7 @@ export default function HomePageCMSModule() {
                 type="text"
                 value={cms.hero.ctaPrimaryText}
                 onChange={e => setCms({ ...cms, hero: { ...cms.hero, ctaPrimaryText: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13 }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13 }}
               />
             </div>
 
@@ -222,7 +222,7 @@ export default function HomePageCMSModule() {
                 type="text"
                 value={cms.hero.ctaSecondaryText}
                 onChange={e => setCms({ ...cms, hero: { ...cms.hero, ctaSecondaryText: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13 }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13 }}
               />
             </div>
           </div>
@@ -241,7 +241,7 @@ export default function HomePageCMSModule() {
                       newStats[sIdx].value = e.target.value;
                       setCms({ ...cms, hero: { ...cms.hero, stats: newStats } });
                     }}
-                    style={{ width: "100%", background: "rgba(0,0,0,0.3)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 4, padding: "6px 8px", color: "#0f172a", fontSize: 13, fontWeight: 700, marginBottom: 6 }}
+                    style={{ width: "100%", background: "rgba(0,0,0,0.3)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 4, padding: "6px 8px", color: "#000000", fontSize: 13, fontWeight: 700, marginBottom: 6 }}
                   />
                   <label style={{ fontSize: 11, color: "#334155" }}>Label</label>
                   <input
@@ -252,7 +252,7 @@ export default function HomePageCMSModule() {
                       newStats[sIdx].label = e.target.value;
                       setCms({ ...cms, hero: { ...cms.hero, stats: newStats } });
                     }}
-                    style={{ width: "100%", background: "rgba(0,0,0,0.3)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 4, padding: "6px 8px", color: "#0f172a", fontSize: 12 }}
+                    style={{ width: "100%", background: "rgba(0,0,0,0.3)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 4, padding: "6px 8px", color: "#000000", fontSize: 12 }}
                   />
                 </div>
               ))}
@@ -273,7 +273,7 @@ export default function HomePageCMSModule() {
                 type="text"
                 value={cms.about.title}
                 onChange={e => setCms({ ...cms, about: { ...cms.about, title: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13.5, fontWeight: 600 }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13.5, fontWeight: 600 }}
               />
             </div>
 
@@ -283,7 +283,7 @@ export default function HomePageCMSModule() {
                 rows={3}
                 value={cms.about.description}
                 onChange={e => setCms({ ...cms, about: { ...cms.about, description: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13, fontFamily: "inherit" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13, fontFamily: "inherit" }}
               />
             </div>
 
@@ -293,7 +293,7 @@ export default function HomePageCMSModule() {
                 type="text"
                 value={cms.about.mission}
                 onChange={e => setCms({ ...cms, about: { ...cms.about, mission: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13 }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13 }}
               />
             </div>
 
@@ -303,7 +303,7 @@ export default function HomePageCMSModule() {
                 type="text"
                 value={cms.about.yearsInBusiness}
                 onChange={e => setCms({ ...cms, about: { ...cms.about, yearsInBusiness: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13 }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13 }}
               />
             </div>
 
@@ -313,7 +313,7 @@ export default function HomePageCMSModule() {
                 type="text"
                 value={cms.about.complianceStandard}
                 onChange={e => setCms({ ...cms, about: { ...cms.about, complianceStandard: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13 }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13 }}
               />
             </div>
           </div>
@@ -369,7 +369,7 @@ export default function HomePageCMSModule() {
                         newFeats[fIdx].category = e.target.value;
                         setCms({ ...cms, features: newFeats });
                       }}
-                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 10px", color: "#0f172a", fontSize: 12 }}
+                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 10px", color: "#000000", fontSize: 12 }}
                     />
                   </div>
 
@@ -383,7 +383,7 @@ export default function HomePageCMSModule() {
                         newFeats[fIdx].title = e.target.value;
                         setCms({ ...cms, features: newFeats });
                       }}
-                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 10px", color: "#0f172a", fontSize: 13, fontWeight: 700 }}
+                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 10px", color: "#000000", fontSize: 13, fontWeight: 700 }}
                     />
                   </div>
 
@@ -397,7 +397,7 @@ export default function HomePageCMSModule() {
                         newFeats[fIdx].badge = e.target.value;
                         setCms({ ...cms, features: newFeats });
                       }}
-                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 10px", color: "#0f172a", fontSize: 12 }}
+                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 10px", color: "#000000", fontSize: 12 }}
                     />
                   </div>
 
@@ -411,7 +411,7 @@ export default function HomePageCMSModule() {
                         newFeats[fIdx].description = e.target.value;
                         setCms({ ...cms, features: newFeats });
                       }}
-                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 10px", color: "#0f172a", fontSize: 12, fontFamily: "inherit" }}
+                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 10px", color: "#000000", fontSize: 12, fontFamily: "inherit" }}
                     />
                   </div>
                 </div>
@@ -429,7 +429,7 @@ export default function HomePageCMSModule() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 18 }}>
             {cms.pricing?.map((plan, pIdx) => (
               <div key={plan.id || pIdx} style={{ background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.22)", borderRadius: 10, padding: 18 }}>
-                <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 12, color: "#0f172a", display: "flex", justifyContent: "space-between" }}>
+                <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 12, color: "#000000", display: "flex", justifyContent: "space-between" }}>
                   <span>Plan {pIdx + 1}: {plan.name}</span>
                   {plan.popular && <span style={{ fontSize: 10, background: "#38bdf8", color: "#f0f9ff", padding: "1px 6px", borderRadius: 4, fontWeight: 800 }}>POPULAR</span>}
                 </div>
@@ -445,7 +445,7 @@ export default function HomePageCMSModule() {
                         newPricing[pIdx].name = e.target.value;
                         setCms({ ...cms, pricing: newPricing });
                       }}
-                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 10px", color: "#0f172a", fontSize: 12.5 }}
+                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 10px", color: "#000000", fontSize: 12.5 }}
                     />
                   </div>
 
@@ -459,7 +459,7 @@ export default function HomePageCMSModule() {
                         newPricing[pIdx].price = Number(e.target.value);
                         setCms({ ...cms, pricing: newPricing });
                       }}
-                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 10px", color: "#0f172a", fontSize: 12.5 }}
+                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 10px", color: "#000000", fontSize: 12.5 }}
                     />
                   </div>
 
@@ -473,7 +473,7 @@ export default function HomePageCMSModule() {
                         newPricing[pIdx].callMinutes = Number(e.target.value);
                         setCms({ ...cms, pricing: newPricing });
                       }}
-                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 10px", color: "#0f172a", fontSize: 12.5 }}
+                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 10px", color: "#000000", fontSize: 12.5 }}
                     />
                   </div>
 
@@ -487,7 +487,7 @@ export default function HomePageCMSModule() {
                         newPricing[pIdx].agentSeats = e.target.value;
                         setCms({ ...cms, pricing: newPricing });
                       }}
-                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 10px", color: "#0f172a", fontSize: 12.5 }}
+                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 10px", color: "#000000", fontSize: 12.5 }}
                     />
                   </div>
                 </div>
@@ -509,7 +509,7 @@ export default function HomePageCMSModule() {
                 type="email"
                 value={cms.enquirySettings?.notifyEmail || ""}
                 onChange={e => setCms({ ...cms, enquirySettings: { ...cms.enquirySettings, notifyEmail: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13 }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13 }}
               />
             </div>
 
@@ -519,7 +519,7 @@ export default function HomePageCMSModule() {
                 type="text"
                 value={cms.enquirySettings?.autoReplySubject || ""}
                 onChange={e => setCms({ ...cms, enquirySettings: { ...cms.enquirySettings, autoReplySubject: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13 }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13 }}
               />
             </div>
 
@@ -529,7 +529,7 @@ export default function HomePageCMSModule() {
                 rows={4}
                 value={cms.enquirySettings?.autoReplyMessage || ""}
                 onChange={e => setCms({ ...cms, enquirySettings: { ...cms.enquirySettings, autoReplyMessage: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13, fontFamily: "inherit" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13, fontFamily: "inherit" }}
               />
             </div>
           </div>
@@ -586,7 +586,7 @@ export default function HomePageCMSModule() {
                         newTeam[mIdx].name = e.target.value;
                         setCms({ ...cms, team: newTeam });
                       }}
-                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 8px", color: "#0f172a", fontSize: 12.5, fontWeight: 700 }}
+                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 8px", color: "#000000", fontSize: 12.5, fontWeight: 700 }}
                     />
                   </div>
 
@@ -600,7 +600,7 @@ export default function HomePageCMSModule() {
                         newTeam[mIdx].role = e.target.value;
                         setCms({ ...cms, team: newTeam });
                       }}
-                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 8px", color: "#0f172a", fontSize: 12 }}
+                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 8px", color: "#000000", fontSize: 12 }}
                     />
                   </div>
 
@@ -614,7 +614,7 @@ export default function HomePageCMSModule() {
                         newTeam[mIdx].avatar = e.target.value;
                         setCms({ ...cms, team: newTeam });
                       }}
-                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 8px", color: "#0f172a", fontSize: 11.5 }}
+                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 8px", color: "#000000", fontSize: 11.5 }}
                     />
                   </div>
 
@@ -628,7 +628,7 @@ export default function HomePageCMSModule() {
                         newTeam[mIdx].bio = e.target.value;
                         setCms({ ...cms, team: newTeam });
                       }}
-                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 8px", color: "#0f172a", fontSize: 12, fontFamily: "inherit" }}
+                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 8px", color: "#000000", fontSize: 12, fontFamily: "inherit" }}
                     />
                   </div>
                 </div>
@@ -685,7 +685,7 @@ export default function HomePageCMSModule() {
                         newFaqs[fIdx].question = e.target.value;
                         setCms({ ...cms, faqs: newFaqs });
                       }}
-                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 10px", color: "#0f172a", fontSize: 13, fontWeight: 600 }}
+                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 10px", color: "#000000", fontSize: 13, fontWeight: 600 }}
                     />
                   </div>
 
@@ -699,7 +699,7 @@ export default function HomePageCMSModule() {
                         newFaqs[fIdx].answer = e.target.value;
                         setCms({ ...cms, faqs: newFaqs });
                       }}
-                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 10px", color: "#0f172a", fontSize: 12, fontFamily: "inherit" }}
+                      style={{ width: "100%", background: "rgba(0,0,0,0.25)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "6px 10px", color: "#000000", fontSize: 12, fontFamily: "inherit" }}
                     />
                   </div>
                 </div>
@@ -721,7 +721,7 @@ export default function HomePageCMSModule() {
                 type="text"
                 value={cms.contactInfo.companyName}
                 onChange={e => setCms({ ...cms, contactInfo: { ...cms.contactInfo, companyName: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13 }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13 }}
               />
             </div>
 
@@ -731,7 +731,7 @@ export default function HomePageCMSModule() {
                 type="email"
                 value={cms.contactInfo.email}
                 onChange={e => setCms({ ...cms, contactInfo: { ...cms.contactInfo, email: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13 }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13 }}
               />
             </div>
 
@@ -741,7 +741,7 @@ export default function HomePageCMSModule() {
                 type="email"
                 value={cms.contactInfo.salesEmail}
                 onChange={e => setCms({ ...cms, contactInfo: { ...cms.contactInfo, salesEmail: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13 }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13 }}
               />
             </div>
 
@@ -751,7 +751,7 @@ export default function HomePageCMSModule() {
                 type="text"
                 value={cms.contactInfo.phone}
                 onChange={e => setCms({ ...cms, contactInfo: { ...cms.contactInfo, phone: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13 }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13 }}
               />
             </div>
 
@@ -761,7 +761,7 @@ export default function HomePageCMSModule() {
                 type="text"
                 value={cms.contactInfo.emergencyHotline}
                 onChange={e => setCms({ ...cms, contactInfo: { ...cms.contactInfo, emergencyHotline: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13 }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13 }}
               />
             </div>
 
@@ -771,7 +771,7 @@ export default function HomePageCMSModule() {
                 type="text"
                 value={cms.contactInfo.supportHours}
                 onChange={e => setCms({ ...cms, contactInfo: { ...cms.contactInfo, supportHours: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13 }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13 }}
               />
             </div>
 
@@ -781,7 +781,7 @@ export default function HomePageCMSModule() {
                 type="text"
                 value={cms.contactInfo.address}
                 onChange={e => setCms({ ...cms, contactInfo: { ...cms.contactInfo, address: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13 }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13 }}
               />
             </div>
           </div>
@@ -795,42 +795,42 @@ export default function HomePageCMSModule() {
 
           <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
             <div>
-              <label style={{ display: "block", fontSize: 13, fontWeight: 700, color: "#0f172a", marginBottom: 6 }}>1. Privacy Policy Document (ISO 27001 ISMS)</label>
+              <label style={{ display: "block", fontSize: 13, fontWeight: 700, color: "#000000", marginBottom: 6 }}>1. Privacy Policy Document (ISO 27001 ISMS)</label>
               <textarea
                 rows={5}
                 value={cms.legal.privacyPolicy}
                 onChange={e => setCms({ ...cms, legal: { ...cms.legal, privacyPolicy: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "10px", color: "#0f172a", fontSize: 12, fontFamily: "monospace" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "10px", color: "#000000", fontSize: 12, fontFamily: "monospace" }}
               />
             </div>
 
             <div>
-              <label style={{ display: "block", fontSize: 13, fontWeight: 700, color: "#0f172a", marginBottom: 6 }}>2. Terms and Conditions of Service</label>
+              <label style={{ display: "block", fontSize: 13, fontWeight: 700, color: "#000000", marginBottom: 6 }}>2. Terms and Conditions of Service</label>
               <textarea
                 rows={5}
                 value={cms.legal.termsConditions}
                 onChange={e => setCms({ ...cms, legal: { ...cms.legal, termsConditions: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "10px", color: "#0f172a", fontSize: 12, fontFamily: "monospace" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "10px", color: "#000000", fontSize: 12, fontFamily: "monospace" }}
               />
             </div>
 
             <div>
-              <label style={{ display: "block", fontSize: 13, fontWeight: 700, color: "#0f172a", marginBottom: 6 }}>3. Platform Usage Rights & Enterprise SLA</label>
+              <label style={{ display: "block", fontSize: 13, fontWeight: 700, color: "#000000", marginBottom: 6 }}>3. Platform Usage Rights & Enterprise SLA</label>
               <textarea
                 rows={5}
                 value={cms.legal.platformUsageRights}
                 onChange={e => setCms({ ...cms, legal: { ...cms.legal, platformUsageRights: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "10px", color: "#0f172a", fontSize: 12, fontFamily: "monospace" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "10px", color: "#000000", fontSize: 12, fontFamily: "monospace" }}
               />
             </div>
 
             <div>
-              <label style={{ display: "block", fontSize: 13, fontWeight: 700, color: "#0f172a", marginBottom: 6 }}>4. Subscription Cancellation & Refund Policy</label>
+              <label style={{ display: "block", fontSize: 13, fontWeight: 700, color: "#000000", marginBottom: 6 }}>4. Subscription Cancellation & Refund Policy</label>
               <textarea
                 rows={5}
                 value={cms.legal.refundPolicy}
                 onChange={e => setCms({ ...cms, legal: { ...cms.legal, refundPolicy: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "10px", color: "#0f172a", fontSize: 12, fontFamily: "monospace" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "10px", color: "#000000", fontSize: 12, fontFamily: "monospace" }}
               />
             </div>
           </div>
@@ -849,7 +849,7 @@ export default function HomePageCMSModule() {
                 type="text"
                 value={cms.footer.tagline}
                 onChange={e => setCms({ ...cms, footer: { ...cms.footer, tagline: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13 }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13 }}
               />
             </div>
 
@@ -859,7 +859,7 @@ export default function HomePageCMSModule() {
                 type="text"
                 value={cms.footer.copyright}
                 onChange={e => setCms({ ...cms, footer: { ...cms.footer, copyright: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13 }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13 }}
               />
             </div>
 
@@ -869,7 +869,7 @@ export default function HomePageCMSModule() {
                 type="text"
                 value={cms.footer.disclaimer}
                 onChange={e => setCms({ ...cms, footer: { ...cms.footer, disclaimer: e.target.value } })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#0f172a", fontSize: 13 }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#000000", fontSize: 13 }}
               />
             </div>
           </div>
@@ -920,7 +920,7 @@ export default function HomePageCMSModule() {
                     next[idx] = { ...next[idx], name: e.target.value };
                     setCms({ ...cms, clientsWithUs: next });
                   }}
-                  style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "7px 10px", color: "#0f172a", fontSize: 12.5, boxSizing: "border-box" }}
+                  style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "7px 10px", color: "#000000", fontSize: 12.5, boxSizing: "border-box" }}
                 />
                 <input
                   type="text"
@@ -931,7 +931,7 @@ export default function HomePageCMSModule() {
                     next[idx] = { ...next[idx], industry: e.target.value };
                     setCms({ ...cms, clientsWithUs: next });
                   }}
-                  style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "7px 10px", color: "#0f172a", fontSize: 12.5, boxSizing: "border-box" }}
+                  style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "7px 10px", color: "#000000", fontSize: 12.5, boxSizing: "border-box" }}
                 />
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
                   <input
@@ -943,7 +943,7 @@ export default function HomePageCMSModule() {
                       next[idx] = { ...next[idx], seats: e.target.value };
                       setCms({ ...cms, clientsWithUs: next });
                     }}
-                    style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "7px 10px", color: "#0f172a", fontSize: 12, boxSizing: "border-box" }}
+                    style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "7px 10px", color: "#000000", fontSize: 12, boxSizing: "border-box" }}
                   />
                   <input
                     type="text"
@@ -954,7 +954,7 @@ export default function HomePageCMSModule() {
                       next[idx] = { ...next[idx], badge: e.target.value };
                       setCms({ ...cms, clientsWithUs: next });
                     }}
-                    style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "7px 10px", color: "#0f172a", fontSize: 12, boxSizing: "border-box" }}
+                    style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "7px 10px", color: "#000000", fontSize: 12, boxSizing: "border-box" }}
                   />
                 </div>
               </div>

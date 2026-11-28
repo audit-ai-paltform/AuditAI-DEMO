@@ -109,7 +109,7 @@ export default function AgentCoachingModal({ call, onClose }) {
           padding: 24,
           display: "flex",
           flexDirection: "column",
-          color: "#0f172a",
+          color: "#000000",
           overflow: "hidden",
         }}
       >
@@ -120,7 +120,7 @@ export default function AgentCoachingModal({ call, onClose }) {
               <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", color: "#334155", textTransform: "uppercase" }}>
                 Qalyzer v2.0 Coaching Engine
               </span>
-              <span style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 4, fontSize: 10, padding: "2px 6px", color: "#0f172a", fontFamily: "JetBrains Mono" }}>
+              <span style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 4, fontSize: 10, padding: "2px 6px", color: "#000000", fontFamily: "JetBrains Mono" }}>
                 Side-by-Side Review
               </span>
             </div>
@@ -166,7 +166,7 @@ export default function AgentCoachingModal({ call, onClose }) {
                     style={{
                       background: "#e0f2fe",
                       border: "1px solid rgba(96, 165, 250, 0.28)",
-                      color: "#0f172a",
+                      color: "#000000",
                       fontSize: 10.5,
                       fontWeight: 700,
                       textTransform: "uppercase",
@@ -209,17 +209,17 @@ export default function AgentCoachingModal({ call, onClose }) {
                   <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", color: "#334155", marginBottom: 6 }}>
                     What The Agent Said:
                   </div>
-                  <div style={{ fontSize: 12.5, color: "#0f172a", lineHeight: 1.5, fontStyle: "italic" }}>
+                  <div style={{ fontSize: 12.5, color: "#000000", lineHeight: 1.5, fontStyle: "italic" }}>
                     "{m.what_agent_said}"
                   </div>
                 </div>
 
                 {/* Right: Ideal Script Rewrite */}
                 <div style={{ background: "#e0f2fe", border: "1px solid #ffffff", borderRadius: 6, padding: 12 }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", color: "#0f172a", marginBottom: 6, display: "flex", alignItems: "center", gap: 6 }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", color: "#000000", marginBottom: 6, display: "flex", alignItems: "center", gap: 6 }}>
                     <Sparkles size={13} /> Ideal SOP Script Rewrite:
                   </div>
-                  <div style={{ fontSize: 12.5, color: "#0f172a", lineHeight: 1.5, fontWeight: 500 }}>
+                  <div style={{ fontSize: 12.5, color: "#000000", lineHeight: 1.5, fontWeight: 500 }}>
                     "{m.ideal_rewrite}"
                   </div>
                 </div>
@@ -244,7 +244,7 @@ export default function AgentCoachingModal({ call, onClose }) {
                 background: "#f0f9ff",
                 border: "1px solid rgba(96, 165, 250, 0.28)",
                 borderRadius: 6,
-                color: "#0f172a",
+                color: "#000000",
                 fontSize: 12,
                 padding: "6px 10px",
                 cursor: "pointer",
@@ -262,7 +262,7 @@ export default function AgentCoachingModal({ call, onClose }) {
               style={{
                 background: "#f0f9ff",
                 border: "1px solid rgba(96, 165, 250, 0.28)",
-                color: "#0f172a",
+                color: "#000000",
                 borderRadius: 6,
                 padding: "8px 14px",
                 fontSize: 12,

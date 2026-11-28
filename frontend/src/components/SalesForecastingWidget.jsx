@@ -44,7 +44,7 @@ export default function SalesForecastingWidget() {
         border: "1px solid rgba(96, 165, 250, 0.28)",
         borderRadius: 10,
         padding: 20,
-        color: "#0f172a",
+        color: "#000000",
         fontFamily: "Inter, sans-serif",
       }}
     >
@@ -55,7 +55,7 @@ export default function SalesForecastingWidget() {
             <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", color: "#334155", textTransform: "uppercase" }}>
               Stage 2 Intelligence
             </span>
-            <span style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 4, fontSize: 10, padding: "2px 6px", color: "#0f172a", fontFamily: "JetBrains Mono" }}>
+            <span style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 4, fontSize: 10, padding: "2px 6px", color: "#000000", fontFamily: "JetBrains Mono" }}>
               Qalyzer v2.0
             </span>
           </div>
@@ -74,7 +74,7 @@ export default function SalesForecastingWidget() {
             background: "#f0f9ff",
             border: "1px solid rgba(96, 165, 250, 0.28)",
             borderRadius: 6,
-            color: "#0f172a",
+            color: "#000000",
             padding: "6px 12px",
             fontSize: 12,
             cursor: "pointer",
@@ -93,7 +93,7 @@ export default function SalesForecastingWidget() {
           <div style={{ fontSize: 11, color: "#334155", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 4 }}>
             Projected Pipeline Value
           </div>
-          <div style={{ fontSize: 24, fontWeight: 800, fontFamily: "JetBrains Mono", color: "#0f172a" }}>
+          <div style={{ fontSize: 24, fontWeight: 800, fontFamily: "JetBrains Mono", color: "#000000" }}>
             ₹{totalRevenue.toLocaleString()}
           </div>
           <div style={{ fontSize: 11, color: "#0369a1", marginTop: 4 }}>
@@ -105,7 +105,7 @@ export default function SalesForecastingWidget() {
           <div style={{ fontSize: 11, color: "#334155", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 4 }}>
             Average Win Probability
           </div>
-          <div style={{ fontSize: 24, fontWeight: 800, fontFamily: "JetBrains Mono", color: "#0f172a", display: "flex", alignItems: "center", gap: 8 }}>
+          <div style={{ fontSize: 24, fontWeight: 800, fontFamily: "JetBrains Mono", color: "#000000", display: "flex", alignItems: "center", gap: 8 }}>
             {avgWinProb}%
             <span style={{ fontSize: 12, fontWeight: 500, color: avgWinProb >= 65 ? "#ffffff" : "#bae6fd" }}>
               ({avgWinProb >= 70 ? "Strong Momentum" : "Stable"})
@@ -129,7 +129,7 @@ export default function SalesForecastingWidget() {
             padding: "12px 14px",
             textAlign: "left",
             cursor: "pointer",
-            color: "#0f172a",
+            color: "#000000",
           }}
         >
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
@@ -156,7 +156,7 @@ export default function SalesForecastingWidget() {
             padding: "12px 14px",
             textAlign: "left",
             cursor: "pointer",
-            color: "#0f172a",
+            color: "#000000",
           }}
         >
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
@@ -183,7 +183,7 @@ export default function SalesForecastingWidget() {
             padding: "12px 14px",
             textAlign: "left",
             cursor: "pointer",
-            color: "#0f172a",
+            color: "#000000",
           }}
         >
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
@@ -204,7 +204,7 @@ export default function SalesForecastingWidget() {
       {/* Deal Pipeline Inspection */}
       <div style={{ background: "#f0f9ff", border: "1px solid #1f1f23", borderRadius: 8, padding: 14 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
-          <div style={{ fontSize: 13, fontWeight: 600, color: "#0f172a", display: "flex", alignItems: "center", gap: 6 }}>
+          <div style={{ fontSize: 13, fontWeight: 600, color: "#000000", display: "flex", alignItems: "center", gap: 6 }}>
             <BarChart3 size={15} /> Active Leads in {currentBucketData.label} Bucket
           </div>
           <span style={{ fontSize: 11, color: "#334155", fontFamily: "JetBrains Mono" }}>
@@ -256,7 +256,7 @@ export default function SalesForecastingWidget() {
                         {deal.win_probability}% WIN
                       </span>
                       <div>
-                        <div style={{ fontSize: 13, fontWeight: 600, color: "#0f172a" }}>
+                        <div style={{ fontSize: 13, fontWeight: 600, color: "#000000" }}>
                           {deal.lead_identifier || `Lead #${deal.id.slice(0, 8)}`}
                         </div>
                         <div style={{ fontSize: 11, color: "#0369a1" }}>
@@ -266,7 +266,7 @@ export default function SalesForecastingWidget() {
                     </div>
 
                     <div style={{ textAlign: "right" }}>
-                      <div style={{ fontSize: 14, fontWeight: 700, fontFamily: "JetBrains Mono", color: "#0f172a" }}>
+                      <div style={{ fontSize: 14, fontWeight: 700, fontFamily: "JetBrains Mono", color: "#000000" }}>
                         ₹{Number(deal.projected_revenue || 0).toLocaleString()}
                       </div>
                       <div style={{ fontSize: 10, color: deal.budget_confirmed ? "#ffffff" : "#7dd3fc" }}>
@@ -280,11 +280,11 @@ export default function SalesForecastingWidget() {
                     <div style={{ marginTop: 12, paddingTop: 10, borderTop: "1px solid rgba(96, 165, 250, 0.28)", fontSize: 11.5, color: "#334155" }}>
                       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
                         <div>
-                          <span style={{ color: "#0f172a", fontWeight: 600 }}>Competitors Mentioned:</span>
+                          <span style={{ color: "#000000", fontWeight: 600 }}>Competitors Mentioned:</span>
                           <div style={{ marginTop: 4, display: "flex", flexWrap: "wrap", gap: 4 }}>
                             {competitorList.length > 0 ? (
                               competitorList.map((comp, cIdx) => (
-                                <span key={cIdx} style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.28)", padding: "2px 6px", borderRadius: 4, color: "#0f172a", fontSize: 10.5 }}>
+                                <span key={cIdx} style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.28)", padding: "2px 6px", borderRadius: 4, color: "#000000", fontSize: 10.5 }}>
                                   {comp}
                                 </span>
                               ))
@@ -295,11 +295,11 @@ export default function SalesForecastingWidget() {
                         </div>
 
                         <div>
-                          <span style={{ color: "#0f172a", fontWeight: 600 }}>Pricing Objections / Hesitations:</span>
+                          <span style={{ color: "#000000", fontWeight: 600 }}>Pricing Objections / Hesitations:</span>
                           <div style={{ marginTop: 4, display: "flex", flexWrap: "wrap", gap: 4 }}>
                             {objectionList.length > 0 ? (
                               objectionList.map((obj, oIdx) => (
-                                <span key={oIdx} style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.28)", padding: "2px 6px", borderRadius: 4, color: "#0f172a", fontSize: 10.5 }}>
+                                <span key={oIdx} style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.28)", padding: "2px 6px", borderRadius: 4, color: "#000000", fontSize: 10.5 }}>
                                   {obj}
                                 </span>
                               ))

@@ -627,7 +627,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
     <div style={{
       minHeight: "100vh",
       backgroundColor: "#f0f7ff",
-      color: "#0f172a",
+      color: "#000000",
       fontFamily: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif",
       position: "relative",
       overflowX: "hidden",
@@ -763,7 +763,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
               alignItems: "center",
               gap: 6,
               background: "#0284c7",
-              color: "#ffffff",
+              color: "#000000",
               padding: "4px 11px",
               borderRadius: 9999,
               fontSize: 10.5,
@@ -798,7 +798,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             maxWidth: 1040,
             margin: "0 auto 20px",
             letterSpacing: "-0.03em",
-            color: "#0f172a",
+            color: "#000000",
           }}>
             Autonomous Call Quality Governance & <span style={{ color: "#0284c7" }}>Predictive Sales Intelligence</span>
           </h1>
@@ -833,7 +833,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 alignItems: "center",
                 gap: 10,
                 background: "linear-gradient(135deg, #0284c7 0%, #2563eb 55%, #4f46e5 100%)",
-                color: "#0f172a",
+                color: "#000000",
                 textDecoration: "none",
                 borderRadius: 10,
                 padding: "14px 30px",
@@ -855,7 +855,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 gap: 8,
                 background: "#ffffff",
                 border: "1px solid #cfe4ff",
-                color: "#0f172a",
+                color: "#000000",
                 textDecoration: "none",
                 borderRadius: 10,
                 padding: "14px 26px",
@@ -877,7 +877,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 gap: 8,
                 background: "#ffffff",
                 border: "1px solid #cfe4ff",
-                color: "#0f172a",
+                color: "#000000",
                 borderRadius: 10,
                 padding: "14px 24px",
                 fontSize: 14.5,
@@ -914,7 +914,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 gap: 6,
                 background: "transparent",
                 border: "none",
-                color: "#0f172a",
+                color: "#000000",
                 fontSize: 12,
                 fontWeight: 600,
                 cursor: "pointer",
@@ -935,7 +935,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 gap: 6,
                 background: "transparent",
                 border: "none",
-                color: "#0f172a",
+                color: "#000000",
                 fontSize: 12,
                 fontWeight: 600,
                 cursor: "pointer",
@@ -1087,7 +1087,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                       fontWeight: 850,
                       fontFamily: "'Space Grotesk', -apple-system, sans-serif",
                       letterSpacing: "-0.03em",
-                      color: "#0f172a",
+                      color: "#000000",
                       lineHeight: 1,
                       marginBottom: 8,
                     }}>
@@ -1167,7 +1167,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   </span>
                   {active && <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#38bdf8", boxShadow: "0 0 8px #38bdf8" }} />}
                 </div>
-                <div style={{ fontSize: 15, fontWeight: 700, color: "#0f172a", fontFamily: "Space Grotesk", marginBottom: 4 }}>
+                <div style={{ fontSize: 15, fontWeight: 700, color: "#000000", fontFamily: "Space Grotesk", marginBottom: 4 }}>
                   {stage.title}
                 </div>
                 <div style={{ fontSize: 12, color: "#334155", lineHeight: 1.4 }}>
@@ -1210,7 +1210,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
 
                 <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                   {current.bullets.map((b, bIdx) => (
-                    <div key={bIdx} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 13.5, color: "#0f172a" }}>
+                    <div key={bIdx} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 13.5, color: "#000000" }}>
                       <CheckCircle2 size={16} color="#38bdf8" style={{ flexShrink: 0 }} />
                       <span>{b}</span>
                     </div>
@@ -1230,7 +1230,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 overflowX: "auto"
               }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid rgba(96, 165, 250, 0.2)", paddingBottom: 8, marginBottom: 12 }}>
-                  <span style={{ color: "#0f172a", fontWeight: 700 }}>Telemetry Event Payload</span>
+                  <span style={{ color: "#000000", fontWeight: 700 }}>Telemetry Event Payload</span>
                   <span style={{ fontSize: 11, color: "#16a34a", display: "flex", alignItems: "center", gap: 5 }}>
                     <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#16a34a" }} /> LIVE 200 OK
                   </span>
@@ -1385,7 +1385,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
 
               <div style={{ background: "#ffffff", padding: 14, borderRadius: 10, border: "1px solid rgba(96, 165, 250, 0.2)" }}>
                 <div style={{ fontSize: 11.5, color: "#334155" }}>Projected Annual Cost Reduction</div>
-                <div style={{ fontSize: 22, fontWeight: 800, fontFamily: "Space Grotesk", color: "#0f172a", marginTop: 4 }}>
+                <div style={{ fontSize: 22, fontWeight: 800, fontFamily: "Space Grotesk", color: "#000000", marginTop: 4 }}>
                   ₹{estimatedAnnualSavingsINR.toLocaleString()}
                 </div>
               </div>
@@ -1404,7 +1404,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 width: "100%",
                 background: "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)",
                 border: "none",
-                color: "#0f172a",
+                color: "#000000",
                 borderRadius: 8,
                 padding: "12px",
                 fontSize: 13.5,
@@ -1540,7 +1540,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   height: 40,
                   borderRadius: 10,
                   background: "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)",
-                  color: "#0f172a",
+                  color: "#000000",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -1663,7 +1663,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     style={{
                       width: "100%",
                       background: "linear-gradient(135deg, #0284c7 0%, #2563eb 100%)",
-                      color: "#0f172a",
+                      color: "#000000",
                       border: "1px solid rgba(56, 189, 248, 0.4)",
                       borderRadius: 8,
                       padding: "12px 18px",
@@ -1779,7 +1779,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 placeholder="e.g. Vikram Singhania"
                 value={formData.name}
                 onChange={e => setFormData({ ...formData, name: e.target.value })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#0f172a", fontSize: 13.5, boxSizing: "border-box" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#000000", fontSize: 13.5, boxSizing: "border-box" }}
               />
             </div>
 
@@ -1791,7 +1791,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 placeholder="e.g. vikram@enterprise.com"
                 value={formData.email}
                 onChange={e => setFormData({ ...formData, email: e.target.value })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#0f172a", fontSize: 13.5, boxSizing: "border-box" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#000000", fontSize: 13.5, boxSizing: "border-box" }}
               />
             </div>
 
@@ -1803,7 +1803,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 placeholder="e.g. +91 98200 12345"
                 value={formData.phone}
                 onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#0f172a", fontSize: 13.5, boxSizing: "border-box" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#000000", fontSize: 13.5, boxSizing: "border-box" }}
               />
             </div>
 
@@ -1814,7 +1814,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 placeholder="e.g. Acme Financial / Global BPO"
                 value={formData.company_name}
                 onChange={e => setFormData({ ...formData, company_name: e.target.value })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#0f172a", fontSize: 13.5, boxSizing: "border-box" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#000000", fontSize: 13.5, boxSizing: "border-box" }}
               />
             </div>
 
@@ -1823,7 +1823,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
               <select
                 value={formData.team_size}
                 onChange={e => setFormData({ ...formData, team_size: e.target.value })}
-                style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#0f172a", fontSize: 13.5 }}
+                style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#000000", fontSize: 13.5 }}
               >
                 <option value="1-5 Agents">1 - 5 Agents (Starter)</option>
                 <option value="5-20 Agents">5 - 20 Agents (Growth)</option>
@@ -1840,7 +1840,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 placeholder="e.g. Tomorrow 3:00 PM IST"
                 value={formData.preferred_schedule}
                 onChange={e => setFormData({ ...formData, preferred_schedule: e.target.value })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#0f172a", fontSize: 13.5, boxSizing: "border-box" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#000000", fontSize: 13.5, boxSizing: "border-box" }}
               />
             </div>
 
@@ -1852,7 +1852,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 placeholder="Describe your current QA challenges (e.g. Hindi/English speech accuracy, Knowlarity integration, missed upsells detection, ISO 9001 governance)..."
                 value={formData.message}
                 onChange={e => setFormData({ ...formData, message: e.target.value })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#0f172a", fontSize: 13.5, boxSizing: "border-box", fontFamily: "inherit" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#000000", fontSize: 13.5, boxSizing: "border-box", fontFamily: "inherit" }}
               />
             </div>
 
@@ -1862,7 +1862,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 disabled={submittingEnquiry}
                 style={{
                   background: "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)",
-                  color: "#0f172a",
+                  color: "#000000",
                   border: "none",
                   borderRadius: 8,
                   padding: "13px 36px",
@@ -1908,7 +1908,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   <span style={{ fontSize: 10.5, fontWeight: 700, background: "rgba(56, 189, 248, 0.15)", color: "#0369a1", padding: "3px 9px", borderRadius: 10 }}>{cl.badge}</span>
                   <span style={{ fontSize: 11.5, color: "#0369a1", fontWeight: 600 }}>{cl.seats}</span>
                 </div>
-                <div style={{ fontSize: 17, fontWeight: 800, fontFamily: "Space Grotesk", color: "#0f172a" }}>{cl.name}</div>
+                <div style={{ fontSize: 17, fontWeight: 800, fontFamily: "Space Grotesk", color: "#000000" }}>{cl.name}</div>
                 <div style={{ fontSize: 12.5, color: "#334155", marginTop: 4 }}>{cl.industry}</div>
               </div>
             </div>
@@ -1972,7 +1972,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   href={m.linkedin || m.linkedin_url}
                   target="_blank"
                   rel="noreferrer"
-                  style={{ display: "inline-flex", alignItems: "center", gap: 4, color: "#0f172a", fontSize: 11.5, fontWeight: 600, textDecoration: "none", background: "rgba(96, 165, 250, 0.18)", border: "1px solid rgba(96, 165, 250, 0.35)", padding: "4px 10px", borderRadius: 6 }}
+                  style={{ display: "inline-flex", alignItems: "center", gap: 4, color: "#000000", fontSize: 11.5, fontWeight: 600, textDecoration: "none", background: "rgba(96, 165, 250, 0.18)", border: "1px solid rgba(96, 165, 250, 0.35)", padding: "4px 10px", borderRadius: 6 }}
                 >
                   Connect on LinkedIn <ArrowUpRight size={12} color="#38bdf8" />
                 </a>
@@ -2031,7 +2031,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
-                    color: "#0f172a",
+                    color: "#000000",
                     fontSize: 15,
                     fontWeight: 600,
                     cursor: "pointer",
@@ -2106,7 +2106,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   gap: 6,
                   background: "#bae6fd",
                   border: "1px solid rgba(96, 165, 250, 0.35)",
-                  color: "#0f172a",
+                  color: "#000000",
                   borderRadius: 6,
                   padding: "8px 14px",
                   fontSize: 12,
@@ -2125,7 +2125,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   gap: 6,
                   background: "rgba(96, 165, 250, 0.18)",
                   border: "1px solid #38bdf8",
-                  color: "#0f172a",
+                  color: "#000000",
                   borderRadius: 6,
                   padding: "8px 14px",
                   fontSize: 12,
@@ -2143,7 +2143,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   alignItems: "center",
                   gap: 6,
                   background: "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)",
-                  color: "#0f172a",
+                  color: "#000000",
                   border: "none",
                   borderRadius: 6,
                   padding: "8px 16px",
@@ -2181,14 +2181,14 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       {/* -------------------- Interactive Dual-Gateway Direct Checkout Modal -------------------- */}
       {showCheckoutModal && checkoutPlan && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(4, 12, 25, 0.88)", backdropFilter: "blur(10px)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1100, padding: 16 }}>
-          <div style={{ width: 560, maxWidth: "100%", maxHeight: "90vh", background: "#0b1f3d", border: "2px solid #38bdf8", borderRadius: 16, padding: 28, display: "flex", flexDirection: "column", color: "#0f172a", boxShadow: "0 20px 50px rgba(0,0,0,0.7)", overflowY: "auto" }}>
+          <div style={{ width: 560, maxWidth: "100%", maxHeight: "90vh", background: "#0b1f3d", border: "2px solid #38bdf8", borderRadius: 16, padding: 28, display: "flex", flexDirection: "column", color: "#000000", boxShadow: "0 20px 50px rgba(0,0,0,0.7)", overflowY: "auto" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20, borderBottom: "1px solid #1e3a66", paddingBottom: 14 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <div style={{ width: 34, height: 34, borderRadius: 8, background: "rgba(56,189,248,0.15)", border: "1px solid #38bdf8", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <CreditCard size={18} color="#38bdf8" />
                 </div>
                 <div>
-                  <h3 style={{ margin: 0, fontSize: 18, color: "#0f172a", fontWeight: 700 }}>
+                  <h3 style={{ margin: 0, fontSize: 18, color: "#000000", fontWeight: 700 }}>
                     Instant Checkout & Activation
                   </h3>
                   <div style={{ fontSize: 12, color: "#334155" }}>Dual Gateway: PayU & Razorpay Supported</div>
@@ -2202,7 +2202,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             {/* Plan Summary Badge */}
             <div style={{ background: "#f0f9ff", border: "1px solid #1e3a66", borderRadius: 12, padding: 16, marginBottom: 20, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div>
-                <div style={{ fontSize: 16, fontWeight: 700, color: "#0f172a" }}>{checkoutPlan.name}</div>
+                <div style={{ fontSize: 16, fontWeight: 700, color: "#000000" }}>{checkoutPlan.name}</div>
                 <div style={{ fontSize: 12, color: "#0369a1", marginTop: 2 }}>
                   {typeof checkoutPlan.callMinutes === "number" ? checkoutPlan.callMinutes.toLocaleString() : checkoutPlan.callMinutes} Call Audits / Month • 30-Day Period
                 </div>
@@ -2267,7 +2267,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     border: "1px solid #1e3a66",
                     borderRadius: 8,
                     padding: "9px 12px",
-                    color: "#0f172a",
+                    color: "#000000",
                     fontSize: 13.5,
                     outline: "none",
                   }}
@@ -2290,7 +2290,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                       border: "1px solid #1e3a66",
                       borderRadius: 8,
                       padding: "9px 12px",
-                      color: "#0f172a",
+                      color: "#000000",
                       fontSize: 13.5,
                       outline: "none",
                     }}
@@ -2312,7 +2312,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                       border: "1px solid #1e3a66",
                       borderRadius: 8,
                       padding: "9px 12px",
-                      color: "#0f172a",
+                      color: "#000000",
                       fontSize: 13.5,
                       outline: "none",
                     }}
@@ -2334,7 +2334,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 disabled={checkoutLoading}
                 style={{
                   background: "linear-gradient(135deg, #0284c7 0%, #2563eb 100%)",
-                  color: "#0f172a",
+                  color: "#000000",
                   border: "none",
                   borderRadius: 8,
                   padding: "13px",
@@ -2376,12 +2376,12 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       {/* -------------------- Payment Success Modal -------------------- */}
       {paymentSuccessData && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(4, 12, 25, 0.92)", backdropFilter: "blur(12px)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1200, padding: 16 }}>
-          <div style={{ width: 500, maxWidth: "100%", background: "#0b1f3d", border: "2px solid #10b981", borderRadius: 16, padding: 32, textAlign: "center", color: "#0f172a", boxShadow: "0 25px 60px rgba(16, 185, 129, 0.25)" }}>
+          <div style={{ width: 500, maxWidth: "100%", background: "#0b1f3d", border: "2px solid #10b981", borderRadius: 16, padding: 32, textAlign: "center", color: "#000000", boxShadow: "0 25px 60px rgba(16, 185, 129, 0.25)" }}>
             <div style={{ width: 64, height: 64, borderRadius: "50%", background: "rgba(16, 185, 129, 0.15)", border: "2px solid #10b981", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
               <CheckCircle2 size={36} color="#16a34a" />
             </div>
 
-            <h2 style={{ margin: "0 0 10px 0", fontSize: 24, fontWeight: 800, color: "#0f172a" }}>
+            <h2 style={{ margin: "0 0 10px 0", fontSize: 24, fontWeight: 800, color: "#000000" }}>
               Subscription Successfully Activated!
             </h2>
 
@@ -2397,7 +2397,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 }}
                 style={{
                   background: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
-                  color: "#0f172a",
+                  color: "#000000",
                   border: "none",
                   borderRadius: 8,
                   padding: "12px 26px",
@@ -2435,7 +2435,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       {/* -------------------- Legal Policy Dialog Modal -------------------- */}
       {activeLegalModal && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(4, 12, 25, 0.85)", backdropFilter: "blur(8px)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000, padding: 16 }}>
-          <div style={{ width: 680, maxWidth: "100%", maxHeight: "85vh", background: "#ffffff", border: "2px solid #38bdf8", borderRadius: 14, padding: 26, display: "flex", flexDirection: "column", color: "#0f172a", boxShadow: "0 16px 40px rgba(0,0,0,0.6)" }}>
+          <div style={{ width: 680, maxWidth: "100%", maxHeight: "85vh", background: "#ffffff", border: "2px solid #38bdf8", borderRadius: 14, padding: 26, display: "flex", flexDirection: "column", color: "#000000", boxShadow: "0 16px 40px rgba(0,0,0,0.6)" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16, borderBottom: "1px solid rgba(96, 165, 250, 0.25)", paddingBottom: 10 }}>
               <div style={{ fontSize: 19, fontWeight: 700, fontFamily: "Space Grotesk", color: "#0369a1" }}>
                 {activeLegalModal === "privacy" && "Privacy Policy (ISO 27001)"}
@@ -2443,7 +2443,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 {activeLegalModal === "usage" && "Platform Usage Rights & SLA"}
                 {activeLegalModal === "refund" && "Subscription & Refund Policy"}
               </div>
-              <button onClick={() => setActiveLegalModal(null)} style={{ background: "none", border: "none", color: "#0f172a", cursor: "pointer" }}><X size={20} /></button>
+              <button onClick={() => setActiveLegalModal(null)} style={{ background: "none", border: "none", color: "#000000", cursor: "pointer" }}><X size={20} /></button>
             </div>
 
             <div style={{ flex: 1, overflowY: "auto", fontSize: 13, lineHeight: 1.65, whiteSpace: "pre-line", color: "#334155", paddingRight: 6 }}>

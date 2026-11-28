@@ -154,7 +154,7 @@ export default function AdminSubscriptionsModule() {
             <div style={{ width: 36, height: 36, borderRadius: 8, background: "rgba(56,189,248,0.15)", border: "1px solid #38bdf8", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <CreditCard size={20} color="#38bdf8" />
             </div>
-            <h1 style={{ margin: 0, fontSize: 22, fontWeight: 700, color: "#0f172a" }}>
+            <h1 style={{ margin: 0, fontSize: 22, fontWeight: 700, color: "#000000" }}>
               Dual Payment Gateways & Subscription Engine
             </h1>
           </div>
@@ -251,7 +251,7 @@ export default function AdminSubscriptionsModule() {
                   <Shield size={18} color="#38bdf8" />
                 </div>
                 <div>
-                  <h3 style={{ margin: 0, fontSize: 17, color: "#0f172a", fontWeight: 700 }}>PayU Hosted Checkout</h3>
+                  <h3 style={{ margin: 0, fontSize: 17, color: "#000000", fontWeight: 700 }}>PayU Hosted Checkout</h3>
                   <span style={{ fontSize: 12, color: "#334155" }}>SHA-512 Reverse Hash Signature Verified</span>
                 </div>
               </div>
@@ -292,7 +292,7 @@ export default function AdminSubscriptionsModule() {
                       border: "1px solid #1e3a66",
                       borderRadius: 8,
                       padding: "10px 14px",
-                      color: "#0f172a",
+                      color: "#000000",
                       fontSize: 14,
                       outline: "none",
                     }}
@@ -321,7 +321,7 @@ export default function AdminSubscriptionsModule() {
                     border: "1px solid #1e3a66",
                     borderRadius: 8,
                     padding: "10px 14px",
-                    color: "#0f172a",
+                    color: "#000000",
                     fontSize: 14,
                     outline: "none",
                   }}
@@ -330,7 +330,7 @@ export default function AdminSubscriptionsModule() {
 
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "#f0f9ff", padding: "12px 16px", borderRadius: 8, border: "1px solid #1e3a66" }}>
                 <div>
-                  <div style={{ fontSize: 14, fontWeight: 600, color: "#0f172a" }}>Environment Mode</div>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: "#000000" }}>Environment Mode</div>
                   <div style={{ fontSize: 12, color: "#334155" }}>
                     {gatewayConfigs.payu?.is_test_mode ? "Test Sandbox (test.payu.in)" : "Production Live (secure.payu.in)"}
                   </div>
@@ -392,7 +392,7 @@ export default function AdminSubscriptionsModule() {
                   <Zap size={18} color="#38bdf8" />
                 </div>
                 <div>
-                  <h3 style={{ margin: 0, fontSize: 17, color: "#0f172a", fontWeight: 700 }}>Razorpay Native Modal</h3>
+                  <h3 style={{ margin: 0, fontSize: 17, color: "#000000", fontWeight: 700 }}>Razorpay Native Modal</h3>
                   <span style={{ fontSize: 12, color: "#334155" }}>HMAC SHA-256 Client & Server Verified</span>
                 </div>
               </div>
@@ -432,7 +432,7 @@ export default function AdminSubscriptionsModule() {
                     border: "1px solid #1e3a66",
                     borderRadius: 8,
                     padding: "10px 14px",
-                    color: "#0f172a",
+                    color: "#000000",
                     fontSize: 14,
                     outline: "none",
                   }}
@@ -460,7 +460,7 @@ export default function AdminSubscriptionsModule() {
                     border: "1px solid #1e3a66",
                     borderRadius: 8,
                     padding: "10px 14px",
-                    color: "#0f172a",
+                    color: "#000000",
                     fontSize: 14,
                     outline: "none",
                   }}
@@ -469,7 +469,7 @@ export default function AdminSubscriptionsModule() {
 
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "#f0f9ff", padding: "12px 16px", borderRadius: 8, border: "1px solid #1e3a66" }}>
                 <div>
-                  <div style={{ fontSize: 14, fontWeight: 600, color: "#0f172a" }}>Environment Mode</div>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: "#000000" }}>Environment Mode</div>
                   <div style={{ fontSize: 12, color: "#334155" }}>
                     {gatewayConfigs.razorpay?.is_test_mode ? "Test Sandbox (rzp_test_...)" : "Production Live (rzp_live_...)"}
                   </div>
@@ -530,7 +530,7 @@ export default function AdminSubscriptionsModule() {
         <div style={{ background: "#0b1f3d", border: "1px solid #1e3a66", borderRadius: 12, overflow: "hidden" }}>
           <div style={{ padding: "18px 24px", borderBottom: "1px solid #1e3a66", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div>
-              <h3 style={{ margin: 0, fontSize: 16, color: "#0f172a", fontWeight: 700 }}>Tenant Subscriptions</h3>
+              <h3 style={{ margin: 0, fontSize: 16, color: "#000000", fontWeight: 700 }}>Tenant Subscriptions</h3>
               <p style={{ margin: "4px 0 0", fontSize: 13, color: "#334155" }}>
                 Multi-tenant billing lifecycle management, automated grace periods, and renewal extensions.
               </p>
@@ -561,7 +561,7 @@ export default function AdminSubscriptionsModule() {
                     const isValid = new Date(sub.current_period_end).getTime() > Date.now();
                     return (
                       <tr key={sub.id} style={{ borderBottom: "1px solid #152b4d" }}>
-                        <td style={{ padding: "16px 20px", color: "#0f172a", fontFamily: "monospace" }}>
+                        <td style={{ padding: "16px 20px", color: "#000000", fontFamily: "monospace" }}>
                           {sub.tenant_id}
                         </td>
                         <td style={{ padding: "16px 20px", color: "#0369a1", fontWeight: 600 }}>
@@ -620,7 +620,7 @@ export default function AdminSubscriptionsModule() {
       {activeSection === "payments" && (
         <div style={{ background: "#0b1f3d", border: "1px solid #1e3a66", borderRadius: 12, overflow: "hidden" }}>
           <div style={{ padding: "18px 24px", borderBottom: "1px solid #1e3a66" }}>
-            <h3 style={{ margin: 0, fontSize: 16, color: "#0f172a", fontWeight: 700 }}>Payment Transactions Ledger</h3>
+            <h3 style={{ margin: 0, fontSize: 16, color: "#000000", fontWeight: 700 }}>Payment Transactions Ledger</h3>
             <p style={{ margin: "4px 0 0", fontSize: 13, color: "#334155" }}>
               Immutable audit ledger of verified payments across PayU and Razorpay with one-click administrative refund processing.
             </p>
@@ -648,7 +648,7 @@ export default function AdminSubscriptionsModule() {
                 ) : (
                   payments.map((p) => (
                     <tr key={p.id} style={{ borderBottom: "1px solid #152b4d" }}>
-                      <td style={{ padding: "16px 20px", color: "#0f172a", fontFamily: "monospace" }}>
+                      <td style={{ padding: "16px 20px", color: "#000000", fontFamily: "monospace" }}>
                         <div>{p.id}</div>
                         <div style={{ fontSize: 11, color: "#334155" }}>{p.gateway_payment_id || p.order_id}</div>
                       </td>
@@ -709,7 +709,7 @@ export default function AdminSubscriptionsModule() {
       {activeSection === "invoices" && (
         <div style={{ background: "#0b1f3d", border: "1px solid #1e3a66", borderRadius: 12, overflow: "hidden" }}>
           <div style={{ padding: "18px 24px", borderBottom: "1px solid #1e3a66" }}>
-            <h3 style={{ margin: 0, fontSize: 16, color: "#0f172a", fontWeight: 700 }}>GST Tax Invoices</h3>
+            <h3 style={{ margin: 0, fontSize: 16, color: "#000000", fontWeight: 700 }}>GST Tax Invoices</h3>
             <p style={{ margin: "4px 0 0", fontSize: 13, color: "#334155" }}>
               Gapless GST-compliant tax invoices (SAC code 998313) automatically generated upon successful payment.
             </p>
@@ -749,7 +749,7 @@ export default function AdminSubscriptionsModule() {
                       <td style={{ padding: "16px 20px", color: "#334155" }}>
                         ₹{(inv.gst_paise / 100).toLocaleString("en-IN", { minimumFractionDigits: 2 })}
                       </td>
-                      <td style={{ padding: "16px 20px", color: "#0f172a", fontWeight: 700 }}>
+                      <td style={{ padding: "16px 20px", color: "#000000", fontWeight: 700 }}>
                         ₹{(inv.total_paise / 100).toLocaleString("en-IN", { minimumFractionDigits: 2 })}
                       </td>
                       <td style={{ padding: "16px 20px" }}>

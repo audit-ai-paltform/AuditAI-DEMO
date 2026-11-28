@@ -123,7 +123,7 @@ export default function AdminTeamEditorModule() {
             <div style={{ width: 36, height: 36, borderRadius: 8, background: "rgba(56,189,248,0.15)", border: "1px solid #38bdf8", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <Users size={20} color="#38bdf8" />
             </div>
-            <h1 style={{ margin: 0, fontSize: 22, fontWeight: 700, color: "#0f172a" }}>
+            <h1 style={{ margin: 0, fontSize: 22, fontWeight: 700, color: "#000000" }}>
               "Team Behind" Leadership & Executive Directory
             </h1>
           </div>
@@ -207,7 +207,7 @@ export default function AdminTeamEditorModule() {
           }}
         >
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
-            <h3 style={{ margin: 0, fontSize: 18, color: "#0f172a", fontWeight: 700 }}>
+            <h3 style={{ margin: 0, fontSize: 18, color: "#000000", fontWeight: 700 }}>
               {isCreating ? "Add New Leadership Member" : `Edit Member: ${editingMember.name}`}
             </h3>
             <button
@@ -238,7 +238,7 @@ export default function AdminTeamEditorModule() {
                       border: "1px solid #1e3a66",
                       borderRadius: 8,
                       padding: "10px 14px",
-                      color: "#0f172a",
+                      color: "#000000",
                       fontSize: 14,
                       outline: "none",
                     }}
@@ -261,7 +261,7 @@ export default function AdminTeamEditorModule() {
                       border: "1px solid #1e3a66",
                       borderRadius: 8,
                       padding: "10px 14px",
-                      color: "#0f172a",
+                      color: "#000000",
                       fontSize: 14,
                       outline: "none",
                     }}
@@ -285,7 +285,7 @@ export default function AdminTeamEditorModule() {
                     border: "1px solid #1e3a66",
                     borderRadius: 8,
                     padding: "10px 14px",
-                    color: "#0f172a",
+                    color: "#000000",
                     fontSize: 14,
                     outline: "none",
                     resize: "vertical",
@@ -309,7 +309,7 @@ export default function AdminTeamEditorModule() {
                     border: "1px solid #1e3a66",
                     borderRadius: 8,
                     padding: "10px 14px",
-                    color: "#0f172a",
+                    color: "#000000",
                     fontSize: 14,
                     outline: "none",
                   }}
@@ -332,7 +332,7 @@ export default function AdminTeamEditorModule() {
                       border: "1px solid #1e3a66",
                       borderRadius: 8,
                       padding: "8px 12px",
-                      color: "#0f172a",
+                      color: "#000000",
                       fontSize: 13,
                       outline: "none",
                     }}
@@ -354,7 +354,7 @@ export default function AdminTeamEditorModule() {
                       border: "1px solid #1e3a66",
                       borderRadius: 8,
                       padding: "8px 12px",
-                      color: "#0f172a",
+                      color: "#000000",
                       fontSize: 13,
                       outline: "none",
                     }}
@@ -376,7 +376,7 @@ export default function AdminTeamEditorModule() {
                       border: "1px solid #1e3a66",
                       borderRadius: 8,
                       padding: "8px 12px",
-                      color: "#0f172a",
+                      color: "#000000",
                       fontSize: 13,
                       outline: "none",
                     }}
@@ -393,7 +393,7 @@ export default function AdminTeamEditorModule() {
                     onChange={(e) => setEditingMember({ ...editingMember, active: e.target.checked })}
                     style={{ width: 18, height: 18, cursor: "pointer" }}
                   />
-                  <label htmlFor="member_active" style={{ fontSize: 14, color: "#0f172a", fontWeight: 600, cursor: "pointer" }}>
+                  <label htmlFor="member_active" style={{ fontSize: 14, color: "#000000", fontWeight: 600, cursor: "pointer" }}>
                     Publish publicly on Homepage
                   </label>
                 </div>
@@ -455,7 +455,7 @@ export default function AdminTeamEditorModule() {
                   marginBottom: 14,
                 }}
               />
-              <h4 style={{ margin: "0 0 4px 0", fontSize: 17, color: "#0f172a", fontWeight: 700 }}>
+              <h4 style={{ margin: "0 0 4px 0", fontSize: 17, color: "#000000", fontWeight: 700 }}>
                 {editingMember.name || "Executive Name"}
               </h4>
               <div style={{ color: "#0369a1", fontSize: 13, fontWeight: 600, marginBottom: 10 }}>
@@ -498,7 +498,7 @@ export default function AdminTeamEditorModule() {
                   style={{ width: 56, height: 56, borderRadius: "50%", objectFit: "cover", border: "2px solid #38bdf8" }}
                 />
                 <div>
-                  <h4 style={{ margin: 0, fontSize: 16, color: "#0f172a", fontWeight: 700 }}>{m.name}</h4>
+                  <h4 style={{ margin: 0, fontSize: 16, color: "#000000", fontWeight: 700 }}>{m.name}</h4>
                   <div style={{ color: "#0369a1", fontSize: 13, fontWeight: 600 }}>{m.role}</div>
                   <span
                     style={{

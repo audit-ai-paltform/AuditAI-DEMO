@@ -71,7 +71,7 @@ export default function EnquiriesManagementModule() {
   ];
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 20, color: "#0f172a", fontFamily: "Inter, sans-serif" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 20, color: "#000000", fontFamily: "Inter, sans-serif" }}>
       {/* Header */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 14 }}>
         <div>
@@ -87,7 +87,7 @@ export default function EnquiriesManagementModule() {
           onClick={loadEnquiries}
           style={{
             background: "#bae6fd",
-            color: "#0f172a",
+            color: "#000000",
             border: "1px solid rgba(96, 165, 250, 0.25)",
             borderRadius: 8,
             padding: "8px 16px",
@@ -202,7 +202,7 @@ export default function EnquiriesManagementModule() {
                 </div>
 
                 {/* Contact details */}
-                <div style={{ background: "rgba(0, 0, 0, 0.2)", borderRadius: 8, padding: 10, fontSize: 12, display: "flex", flexDirection: "column", gap: 4 }}>
+                <div style={{ background: "#f0f9ff", borderRadius: 8, padding: 10, fontSize: 12, display: "flex", flexDirection: "column", gap: 4 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#334155" }}>
                     <Mail size={12} color="#bae6fd" /> {enq.email}
                   </div>
@@ -215,7 +215,7 @@ export default function EnquiriesManagementModule() {
                 </div>
 
                 {/* Requirements message */}
-                <div style={{ fontSize: 12.5, color: "#0f172a", lineHeight: 1.5, background: "#bae6fd", padding: 10, borderRadius: 6, borderLeft: "3px solid #ffffff" }}>
+                <div style={{ fontSize: 12.5, color: "#000000", lineHeight: 1.5, background: "#bae6fd", padding: 10, borderRadius: 6, borderLeft: "3px solid #ffffff" }}>
                   <div style={{ fontSize: 10.5, color: "#334155", fontWeight: 700, textTransform: "uppercase", marginBottom: 2 }}>Service Interest: {enq.service_interest}</div>
                   "{enq.message}"
                 </div>
@@ -229,10 +229,10 @@ export default function EnquiriesManagementModule() {
                         value={notesText}
                         onChange={e => setNotesText(e.target.value)}
                         placeholder="Add internal lead qualification notes..."
-                        style={{ width: "100%", background: "rgba(0,0,0,0.3)", border: "1px solid rgba(255,255,255,0.3)", borderRadius: 6, padding: "6px 8px", color: "#0f172a", fontSize: 12, fontFamily: "inherit" }}
+                        style={{ width: "100%", background: "rgba(0,0,0,0.3)", border: "1px solid rgba(255,255,255,0.3)", borderRadius: 6, padding: "6px 8px", color: "#000000", fontSize: 12, fontFamily: "inherit" }}
                       />
                       <div style={{ display: "flex", justifyContent: "flex-end", gap: 6 }}>
-                        <button onClick={() => setEditingNotesId(null)} style={{ background: "none", border: "1px solid rgba(255,255,255,0.3)", color: "#0f172a", borderRadius: 4, padding: "3px 8px", fontSize: 11, cursor: "pointer" }}>Cancel</button>
+                        <button onClick={() => setEditingNotesId(null)} style={{ background: "none", border: "1px solid rgba(255,255,255,0.3)", color: "#000000", borderRadius: 4, padding: "3px 8px", fontSize: 11, cursor: "pointer" }}>Cancel</button>
                         <button onClick={() => handleSaveNotes(enq.id)} style={{ background: "#ffffff", color: "#0369a1", border: "none", borderRadius: 4, padding: "3px 10px", fontSize: 11, fontWeight: 700, cursor: "pointer" }}>Save Note</button>
                       </div>
                     </div>
@@ -246,7 +246,7 @@ export default function EnquiriesManagementModule() {
                           setEditingNotesId(enq.id);
                           setNotesText(enq.notes || "");
                         }}
-                        style={{ background: "none", border: "none", color: "#0f172a", textDecoration: "underline", fontSize: 11, cursor: "pointer" }}
+                        style={{ background: "none", border: "none", color: "#000000", textDecoration: "underline", fontSize: 11, cursor: "pointer" }}
                       >
                         Edit Note
                       </button>
@@ -260,7 +260,7 @@ export default function EnquiriesManagementModule() {
                     <button
                       onClick={() => handleUpdateStatus(enq.id, "SCHEDULED")}
                       disabled={updatingId === enq.id}
-                      style={{ background: "#7dd3fc", border: "1px solid rgba(255,255,255,0.3)", color: "#0f172a", borderRadius: 6, padding: "5px 10px", fontSize: 11, fontWeight: 600, cursor: "pointer" }}
+                      style={{ background: "#7dd3fc", border: "1px solid rgba(255,255,255,0.3)", color: "#000000", borderRadius: 6, padding: "5px 10px", fontSize: 11, fontWeight: 600, cursor: "pointer" }}
                     >
                       Schedule Demo
                     </button>
@@ -269,7 +269,7 @@ export default function EnquiriesManagementModule() {
                     <button
                       onClick={() => handleUpdateStatus(enq.id, "IN_PROGRESS")}
                       disabled={updatingId === enq.id}
-                      style={{ background: "rgba(245, 158, 11, 0.25)", border: "1px solid rgba(255,255,255,0.3)", color: "#0f172a", borderRadius: 6, padding: "5px 10px", fontSize: 11, fontWeight: 600, cursor: "pointer" }}
+                      style={{ background: "rgba(245, 158, 11, 0.25)", border: "1px solid rgba(255,255,255,0.3)", color: "#000000", borderRadius: 6, padding: "5px 10px", fontSize: 11, fontWeight: 600, cursor: "pointer" }}
                     >
                       Mark In Progress
                     </button>
@@ -278,7 +278,7 @@ export default function EnquiriesManagementModule() {
                     <button
                       onClick={() => handleUpdateStatus(enq.id, "RESOLVED")}
                       disabled={updatingId === enq.id}
-                      style={{ background: "rgba(34, 197, 94, 0.25)", border: "1px solid #86efac", color: "#0f172a", borderRadius: 6, padding: "5px 10px", fontSize: 11, fontWeight: 700, cursor: "pointer" }}
+                      style={{ background: "rgba(34, 197, 94, 0.25)", border: "1px solid #86efac", color: "#000000", borderRadius: 6, padding: "5px 10px", fontSize: 11, fontWeight: 700, cursor: "pointer" }}
                     >
                       Resolve / Closed
                     </button>

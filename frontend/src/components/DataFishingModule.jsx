@@ -66,7 +66,7 @@ export default function DataFishingModule() {
     : clusters.filter((c) => c.cluster_type === selectedClusterType);
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 20, fontFamily: "Inter, sans-serif", color: "#0f172a" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 20, fontFamily: "Inter, sans-serif", color: "#000000" }}>
       {/* Header Banner */}
       <div style={{ background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 10, padding: 22 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
@@ -75,7 +75,7 @@ export default function DataFishingModule() {
               <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", color: "#334155", textTransform: "uppercase" }}>
                 Semantic Search & Trend Discovery
               </span>
-              <span style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 4, fontSize: 10, padding: "2px 6px", color: "#0f172a", fontFamily: "JetBrains Mono" }}>
+              <span style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 4, fontSize: 10, padding: "2px 6px", color: "#000000", fontFamily: "JetBrains Mono" }}>
                 Data Fishing
               </span>
             </div>
@@ -105,7 +105,7 @@ export default function DataFishingModule() {
                 background: "transparent",
                 border: "none",
                 outline: "none",
-                color: "#0f172a",
+                color: "#000000",
                 fontSize: 13.5,
                 padding: "8px 4px",
               }}
@@ -117,7 +117,7 @@ export default function DataFishingModule() {
                 background: "#e0f2fe",
                 border: "1px solid rgba(96, 165, 250, 0.28)",
                 borderRadius: 6,
-                color: "#0f172a",
+                color: "#000000",
                 fontSize: 12,
                 padding: "0 10px",
                 cursor: "pointer",
@@ -178,7 +178,7 @@ export default function DataFishingModule() {
 
       {/* Error Banner */}
       {error && (
-        <div style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 8, padding: 12, color: "#0f172a", fontSize: 13 }}>
+        <div style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 8, padding: 12, color: "#000000", fontSize: 13 }}>
           {error}
         </div>
       )}
@@ -196,7 +196,7 @@ export default function DataFishingModule() {
             </span>
           </div>
 
-          <div style={{ fontSize: 13.5, lineHeight: 1.6, color: "#0f172a", background: "#f0f9ff", border: "1px solid #1f1f23", borderRadius: 8, padding: 16, marginBottom: 16 }}>
+          <div style={{ fontSize: 13.5, lineHeight: 1.6, color: "#000000", background: "#f0f9ff", border: "1px solid #1f1f23", borderRadius: 8, padding: 16, marginBottom: 16 }}>
             {searchResult.answer}
           </div>
 
@@ -208,7 +208,7 @@ export default function DataFishingModule() {
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
                 {searchResult.key_findings.map((finding, idx) => (
-                  <div key={idx} style={{ display: "flex", alignItems: "flex-start", gap: 8, fontSize: 12.5, color: "#0f172a" }}>
+                  <div key={idx} style={{ display: "flex", alignItems: "flex-start", gap: 8, fontSize: 12.5, color: "#000000" }}>
                     <CheckCircle2 size={15} style={{ marginTop: 2, flexShrink: 0 }} />
                     <span>{finding}</span>
                   </div>
@@ -227,14 +227,14 @@ export default function DataFishingModule() {
                 {searchResult.citations.map((cite, idx) => (
                   <div key={idx} style={{ background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: 12 }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
-                      <span style={{ fontSize: 11, fontFamily: "JetBrains Mono", color: "#0f172a", fontWeight: 700 }}>
+                      <span style={{ fontSize: 11, fontFamily: "JetBrains Mono", color: "#000000", fontWeight: 700 }}>
                         {cite.speaker || "Customer"} ({cite.timestamp || "01:24"})
                       </span>
                       <span style={{ fontSize: 10.5, color: "#0369a1", fontFamily: "JetBrains Mono" }}>
                         Call #{cite.interaction_id || "c8f12a"}
                       </span>
                     </div>
-                    <div style={{ fontSize: 12, fontStyle: "italic", color: "#0f172a", borderLeft: "2px solid #ffffff", paddingLeft: 8, marginBottom: 6 }}>
+                    <div style={{ fontSize: 12, fontStyle: "italic", color: "#000000", borderLeft: "2px solid #ffffff", paddingLeft: 8, marginBottom: 6 }}>
                       "{cite.verbatim_quote}"
                     </div>
                     <div style={{ fontSize: 11, color: "#334155" }}>
@@ -313,7 +313,7 @@ export default function DataFishingModule() {
                       style={{
                         background: "#e0f2fe",
                         border: "1px solid rgba(96, 165, 250, 0.28)",
-                        color: "#0f172a",
+                        color: "#000000",
                         fontSize: 10,
                         fontWeight: 700,
                         textTransform: "uppercase",
@@ -323,7 +323,7 @@ export default function DataFishingModule() {
                     >
                       {cluster.cluster_type.replace(/_/g, " ")}
                     </span>
-                    <span style={{ fontSize: 14, fontWeight: 700, color: "#0f172a" }}>
+                    <span style={{ fontSize: 14, fontWeight: 700, color: "#000000" }}>
                       {cluster.topic_title}
                     </span>
                   </div>
@@ -359,7 +359,7 @@ export default function DataFishingModule() {
                       Sample Verbatim Customer Quotes:
                     </div>
                     {quotes.map((q, qIdx) => (
-                      <div key={qIdx} style={{ fontSize: 11.5, color: "#0f172a", fontStyle: "italic", marginBottom: 4 }}>
+                      <div key={qIdx} style={{ fontSize: 11.5, color: "#000000", fontStyle: "italic", marginBottom: 4 }}>
                         • "{q}"
                       </div>
                     ))}

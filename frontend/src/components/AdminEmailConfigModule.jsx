@@ -410,7 +410,7 @@ export default function AdminEmailConfigModule() {
     border: "1px solid rgba(96, 165, 250, 0.3)",
     borderRadius: 8,
     padding: "9px 12px",
-    color: "#0f172a",
+    color: "#000000",
     fontSize: 12.5,
     boxSizing: "border-box",
     outline: "none",
@@ -424,7 +424,7 @@ export default function AdminEmailConfigModule() {
           <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 11, color: "#0369a1", fontWeight: 700, textTransform: "uppercase", letterSpacing: 0.6 }}>
             <Mail size={13} /> Automated Email Studio, Live Preview & Yearly Audit
           </div>
-          <h1 style={{ fontSize: 23, fontWeight: 800, margin: "4px 0", fontFamily: "Space Grotesk", color: "#0f172a" }}>
+          <h1 style={{ fontSize: 23, fontWeight: 800, margin: "4px 0", fontFamily: "Space Grotesk", color: "#000000" }}>
             Email Automation, Branding & Delivery Audit
           </h1>
           <p style={{ fontSize: 13, color: "#334155", margin: 0 }}>
@@ -452,7 +452,7 @@ export default function AdminEmailConfigModule() {
               gap: 6,
               background: "#e0f2fe",
               border: "1px solid rgba(96, 165, 250, 0.3)",
-              color: "#0f172a",
+              color: "#000000",
               borderRadius: 8,
               padding: "8px 14px",
               fontSize: 12.5,
@@ -523,7 +523,7 @@ export default function AdminEmailConfigModule() {
                 gap: 7,
                 background: active ? "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)" : "#ffffff",
                 border: `1px solid ${active ? "#38bdf8" : "rgba(96, 165, 250, 0.25)"}`,
-                color: "#0f172a",
+                color: "#000000",
                 borderRadius: 8,
                 padding: "8px 13px",
                 fontSize: 12,
@@ -562,7 +562,7 @@ export default function AdminEmailConfigModule() {
                   }}
                 >
                   <div style={{ minWidth: 0 }}>
-                    <div style={{ fontSize: 12.5, fontWeight: 700, color: "#0f172a", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{tpl.label}</div>
+                    <div style={{ fontSize: 12.5, fontWeight: 700, color: "#000000", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{tpl.label}</div>
                     <div style={{ fontSize: 10.5, color: "#0369a1", marginTop: 2 }}>{tpl.recipientType}</div>
                   </div>
                   <button
@@ -584,7 +584,7 @@ export default function AdminEmailConfigModule() {
           {activeTemplate && (
             <div style={{ background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 12, padding: 20 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
-                <h3 style={{ fontSize: 15.5, fontWeight: 700, color: "#0f172a", margin: 0 }}>{activeTemplate.label}</h3>
+                <h3 style={{ fontSize: 15.5, fontWeight: 700, color: "#000000", margin: 0 }}>{activeTemplate.label}</h3>
                 <span style={{ fontSize: 10.5, fontWeight: 700, padding: "3px 8px", borderRadius: 10, background: activeTemplate.enabled ? "rgba(16, 185, 129, 0.15)" : "rgba(100, 116, 139, 0.2)", color: activeTemplate.enabled ? "#16a34a" : "#94a3b8" }}>
                   {activeTemplate.enabled ? "ACTIVE" : "PAUSED"}
                 </span>
@@ -780,7 +780,7 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
               <div><span style={{ color: "#0369a1" }}>From:</span> <span style={{ color: "#ffffff" }}>{config.from_name} &lt;{config.from_local}@{activeTemplate?.from_domain || config.selected_domain}&gt;</span></div>
               {activeTemplate?.cc && <div><span style={{ color: "#0369a1" }}>CC:</span> <span style={{ color: "#334155" }}>{activeTemplate.cc}</span></div>}
               {activeTemplate?.bcc && <div><span style={{ color: "#0369a1" }}>BCC:</span> <span style={{ color: "#334155" }}>{activeTemplate.bcc}</span></div>}
-              <div><span style={{ color: "#0369a1" }}>Subject:</span> <strong style={{ color: "#0f172a" }}>{previewData.subject || activeTemplate?.subject}</strong></div>
+              <div><span style={{ color: "#0369a1" }}>Subject:</span> <strong style={{ color: "#000000" }}>{previewData.subject || activeTemplate?.subject}</strong></div>
             </div>
 
             <div
@@ -823,7 +823,7 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
                           borderRadius: 7,
                           border: `1px solid ${config.logo_placement === pos.id ? "#38bdf8" : "rgba(96, 165, 250, 0.25)"}`,
                           background: config.logo_placement === pos.id ? "rgba(56, 189, 248, 0.2)" : "#f0f9ff",
-                          color: "#0f172a",
+                          color: "#000000",
                           fontSize: 11.5,
                           fontWeight: 600,
                           cursor: "pointer",
@@ -865,7 +865,7 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
                           borderRadius: 7,
                           border: `1px solid ${config.signature_placement === pos.id ? "#38bdf8" : "rgba(96, 165, 250, 0.25)"}`,
                           background: config.signature_placement === pos.id ? "rgba(56, 189, 248, 0.2)" : "#f0f9ff",
-                          color: "#0f172a",
+                          color: "#000000",
                           fontSize: 11.5,
                           fontWeight: 600,
                           cursor: "pointer",
@@ -939,7 +939,7 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
                         borderRadius: 10,
                         padding: 12,
                         textAlign: "left",
-                        color: "#0f172a",
+                        color: "#000000",
                         cursor: "pointer",
                       }}
                     >
@@ -1146,7 +1146,7 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
               <input type="email" value={config.admin_email} onChange={(e) => setConfig({ ...config, admin_email: e.target.value })} style={inputStyle} />
             </div>
             <div style={{ display: "flex", gap: 10 }}>
-              <button onClick={() => handleSaveGlobalConfig()} disabled={loading} style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.4)", color: "#0f172a", borderRadius: 8, padding: "9px 14px", fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>
+              <button onClick={() => handleSaveGlobalConfig()} disabled={loading} style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.4)", color: "#000000", borderRadius: 8, padding: "9px 14px", fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>
                 Save Admin Email
               </button>
               <button onClick={handleTriggerCriticalAlertTest} disabled={loading} style={{ background: "rgba(239, 68, 68, 0.2)", border: "1px solid rgba(239, 68, 68, 0.5)", color: "#fca5a5", borderRadius: 8, padding: "9px 14px", fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>
@@ -1164,14 +1164,14 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
             </p>
 
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "#f0f9ff", padding: "10px 14px", borderRadius: 8, border: "1px solid rgba(96, 165, 250, 0.2)", marginBottom: 14 }}>
-              <span style={{ fontSize: 13, fontWeight: 600, color: "#0f172a" }}>Auto-Send Daily Executive Digest</span>
+              <span style={{ fontSize: 13, fontWeight: 600, color: "#000000" }}>Auto-Send Daily Executive Digest</span>
               <button type="button" onClick={() => setConfig({ ...config, daily_report_enabled: !config.daily_report_enabled })} style={{ background: "transparent", border: "none", cursor: "pointer", color: config.daily_report_enabled ? "#16a34a" : "#64748b" }}>
                 {config.daily_report_enabled ? <ToggleRight size={24} /> : <ToggleLeft size={24} />}
               </button>
             </div>
 
             <div style={{ display: "flex", gap: 10 }}>
-              <button onClick={() => handleSaveGlobalConfig()} disabled={loading} style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.4)", color: "#0f172a", borderRadius: 8, padding: "9px 14px", fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>
+              <button onClick={() => handleSaveGlobalConfig()} disabled={loading} style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.4)", color: "#000000", borderRadius: 8, padding: "9px 14px", fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>
                 Save Schedule
               </button>
               <button onClick={handleTriggerDailyReport} disabled={loading} style={{ background: "linear-gradient(135deg, #0284c7 0%, #2563eb 100%)", border: "none", color: "#ffffff", borderRadius: 8, padding: "9px 16px", fontSize: 12.5, fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", gap: 6 }}>
@@ -1197,7 +1197,7 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
                   .map((job) => (
                     <div key={job.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "#f0f9ff", padding: "10px 14px", borderRadius: 8, fontSize: 12.5 }}>
                       <div>
-                        <strong style={{ color: "#0f172a" }}>{job.payload?.subject}</strong>
+                        <strong style={{ color: "#000000" }}>{job.payload?.subject}</strong>
                         <div style={{ color: "#0369a1", fontSize: 11.5 }}>
                           To: {Array.isArray(job.payload?.to) ? job.payload.to.join(", ") : job.payload?.to} · Scheduled: {new Date(job.scheduled_at).toLocaleString()}
                         </div>
@@ -1252,7 +1252,7 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
                 ) : (
                   filteredLogs.map((log, i) => (
                     <tr key={log.id || i} style={{ borderBottom: "1px solid rgba(96, 165, 250, 0.12)", fontSize: 12.5 }}>
-                      <td style={{ padding: "11px 14px", color: "#0f172a" }}>
+                      <td style={{ padding: "11px 14px", color: "#000000" }}>
                         <div style={{ fontWeight: 600 }}>{log.recipient}</div>
                         {log.cc && <div style={{ fontSize: 11, color: "#0369a1" }}>CC: {log.cc}</div>}
                         {log.bcc && <div style={{ fontSize: 11, color: "#0369a1" }}>BCC: {log.bcc}</div>}

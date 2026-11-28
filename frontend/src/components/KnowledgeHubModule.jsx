@@ -87,7 +87,7 @@ export default function KnowledgeHubModule() {
   }
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 20, fontFamily: "Inter, sans-serif", color: "#0f172a" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 20, fontFamily: "Inter, sans-serif", color: "#000000" }}>
       {/* Top Banner */}
       <div style={{ background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 10, padding: 22 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
@@ -96,7 +96,7 @@ export default function KnowledgeHubModule() {
               <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", color: "#334155", textTransform: "uppercase" }}>
                 Knowledge Hub & Rule Engine
               </span>
-              <span style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 4, fontSize: 10, padding: "2px 6px", color: "#0f172a", fontFamily: "JetBrains Mono" }}>
+              <span style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 4, fontSize: 10, padding: "2px 6px", color: "#000000", fontFamily: "JetBrains Mono" }}>
                 {"Settings > Products & Processes"}
               </span>
             </div>
@@ -115,7 +115,7 @@ export default function KnowledgeHubModule() {
                 background: "#f0f9ff",
                 border: "1px solid rgba(96, 165, 250, 0.28)",
                 borderRadius: 6,
-                color: "#0f172a",
+                color: "#000000",
                 padding: "8px 14px",
                 fontSize: 12.5,
                 fontWeight: 600,
@@ -202,7 +202,7 @@ export default function KnowledgeHubModule() {
                       >
                         v{doc.version}
                       </span>
-                      <span style={{ fontSize: 14, fontWeight: 700, color: "#0f172a" }}>
+                      <span style={{ fontSize: 14, fontWeight: 700, color: "#000000" }}>
                         {doc.title}
                       </span>
                       <span
@@ -231,7 +231,7 @@ export default function KnowledgeHubModule() {
                       background: "#e0f2fe",
                       border: "1px solid rgba(96, 165, 250, 0.28)",
                       borderRadius: 6,
-                      color: "#0f172a",
+                      color: "#000000",
                       fontSize: 11.5,
                       padding: "6px 10px",
                       cursor: "pointer",
@@ -264,7 +264,7 @@ export default function KnowledgeHubModule() {
                             borderRadius: 4,
                             padding: "3px 8px",
                             fontSize: 11,
-                            color: "#0f172a",
+                            color: "#000000",
                           }}
                         >
                           • {r.rule} <span style={{ color: "#0369a1" }}>({r.suggestedWeight}%)</span>
@@ -300,7 +300,7 @@ export default function KnowledgeHubModule() {
                   placeholder="e.g. Q3 Inbound Support & Objection Handling Playbook"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
-                  style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#0f172a", fontSize: 12, boxSizing: "border-box" }}
+                  style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#000000", fontSize: 12, boxSizing: "border-box" }}
                 />
               </div>
 
@@ -310,7 +310,7 @@ export default function KnowledgeHubModule() {
                   <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#0f172a", fontSize: 12 }}
+                    style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#000000", fontSize: 12 }}
                   >
                     <option value="product">Product Line Update</option>
                     <option value="process">Process & Workflow</option>
@@ -327,7 +327,7 @@ export default function KnowledgeHubModule() {
                     placeholder="2.5"
                     value={version}
                     onChange={(e) => setVersion(e.target.value)}
-                    style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#0f172a", fontSize: 12, boxSizing: "border-box" }}
+                    style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#000000", fontSize: 12, boxSizing: "border-box" }}
                   />
                 </div>
               </div>
@@ -340,7 +340,7 @@ export default function KnowledgeHubModule() {
                     required
                     value={effectiveFrom}
                     onChange={(e) => setEffectiveFrom(e.target.value)}
-                    style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#0f172a", fontSize: 12, boxSizing: "border-box" }}
+                    style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#000000", fontSize: 12, boxSizing: "border-box" }}
                   />
                 </div>
 
@@ -350,7 +350,7 @@ export default function KnowledgeHubModule() {
                     type="date"
                     value={effectiveTo}
                     onChange={(e) => setEffectiveTo(e.target.value)}
-                    style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#0f172a", fontSize: 12, boxSizing: "border-box" }}
+                    style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 10px", color: "#000000", fontSize: 12, boxSizing: "border-box" }}
                   />
                 </div>
               </div>
@@ -363,12 +363,12 @@ export default function KnowledgeHubModule() {
                   placeholder="Paste complete standard operating procedure or product details here. Qalyzer will automatically parse compliance rules and apply them to calls created within the effective date range."
                   value={content}
                   onChange={(e) => setContent(e.target.value)}
-                  style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "10px", color: "#0f172a", fontSize: 12, boxSizing: "border-box", fontFamily: "Inter, sans-serif" }}
+                  style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "10px", color: "#000000", fontSize: 12, boxSizing: "border-box", fontFamily: "Inter, sans-serif" }}
                 />
               </div>
 
               <div style={{ display: "flex", justifyContent: "flex-end", gap: 10, marginTop: 10 }}>
-                <button type="button" onClick={() => setShowUploadModal(false)} style={{ background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", color: "#0f172a", borderRadius: 6, padding: "8px 14px", fontSize: 12, cursor: "pointer" }}>Cancel</button>
+                <button type="button" onClick={() => setShowUploadModal(false)} style={{ background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", color: "#000000", borderRadius: 6, padding: "8px 14px", fontSize: 12, cursor: "pointer" }}>Cancel</button>
                 <button type="submit" disabled={saving} style={{ background: "#ffffff", border: "none", color: "#f0f9ff", borderRadius: 6, padding: "8px 16px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>
                   {saving ? "Extracting Rules..." : "Publish & Enforce Version"}
                 </button>
@@ -381,7 +381,7 @@ export default function KnowledgeHubModule() {
       {/* Executive Business Impact Report Modal */}
       {showImpactModal && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(4, 11, 24, 0.88)", backdropFilter: "blur(6px)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1100 }}>
-          <div style={{ width: 780, maxHeight: "90vh", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 12, padding: 24, overflowY: "auto", color: "#0f172a" }}>
+          <div style={{ width: 780, maxHeight: "90vh", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 12, padding: 24, overflowY: "auto", color: "#000000" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -441,8 +441,8 @@ export default function KnowledgeHubModule() {
                         </div>
                         <div style={{ fontSize: 18, color: "#0369a1" }}>→</div>
                         <div>
-                          <span style={{ fontSize: 13, color: "#0f172a" }}>After: </span>
-                          <span style={{ fontSize: 18, fontWeight: 800, fontFamily: "JetBrains Mono", color: "#0f172a" }}>{item.after}</span>
+                          <span style={{ fontSize: 13, color: "#000000" }}>After: </span>
+                          <span style={{ fontSize: 18, fontWeight: 800, fontFamily: "JetBrains Mono", color: "#000000" }}>{item.after}</span>
                         </div>
                         <span
                           style={{
@@ -453,7 +453,7 @@ export default function KnowledgeHubModule() {
                             fontSize: 11,
                             fontWeight: 700,
                             fontFamily: "JetBrains Mono",
-                            color: "#0f172a",
+                            color: "#000000",
                           }}
                         >
                           {item.delta}
@@ -465,7 +465,7 @@ export default function KnowledgeHubModule() {
 
                 {/* Executive Summary Takeaway */}
                 <div style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 8, padding: 14 }}>
-                  <div style={{ fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#0f172a", marginBottom: 4 }}>
+                  <div style={{ fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#000000", marginBottom: 4 }}>
                     Executive Takeaway & Operational Gains
                   </div>
                   <p style={{ fontSize: 12.5, color: "#334155", lineHeight: 1.6, margin: 0 }}>
