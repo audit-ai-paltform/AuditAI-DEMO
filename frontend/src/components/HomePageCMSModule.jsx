@@ -431,7 +431,7 @@ export default function HomePageCMSModule() {
               <div key={plan.id || pIdx} style={{ background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.22)", borderRadius: 10, padding: 18 }}>
                 <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 12, color: "#000000", display: "flex", justifyContent: "space-between" }}>
                   <span>Plan {pIdx + 1}: {plan.name}</span>
-                  {plan.popular && <span style={{ fontSize: 10, background: "#38bdf8", color: "#f0f9ff", padding: "1px 6px", borderRadius: 4, fontWeight: 800 }}>POPULAR</span>}
+                  {plan.popular && <span style={{ fontSize: 10, background: "#38bdf8", color: "#0F172A", padding: "1px 6px", borderRadius: 4, fontWeight: 800 }}>POPULAR</span>}
                 </div>
 
                 <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>

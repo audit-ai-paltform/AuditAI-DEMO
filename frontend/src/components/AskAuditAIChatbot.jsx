@@ -447,13 +447,13 @@ export default function AskAuditAIChatbot({ currentUser, allowedTabs = [], onNav
                 <span style={{ position: "absolute", bottom: 2, right: 2, width: 10, height: 10, borderRadius: "50%", background: "#34D399", border: "2px solid #0284C7" }} />
               </div>
               <div>
-                <div style={{ fontSize: 14.5, fontWeight: 800, display: "flex", alignItems: "center", gap: 6, color: "#FFFFFF" }}>
+                <div style={{ fontSize: 14.5, fontWeight: 800, display: "flex", alignItems: "center", gap: 6, color: "#0F172A" }}>
                   Ask AuditAI <Sparkles size={13} />
                   <span style={{ fontSize: 9.5, fontWeight: 800, background: "rgba(16, 185, 129, 0.25)", border: "1px solid rgba(110, 231, 183, 0.6)", color: "#ECFDF5", padding: "1px 7px", borderRadius: 999 }}>
                     ACTIVE
                   </span>
                 </div>
-                <div style={{ fontSize: 11, color: "#E0F2FE" }}>
+                <div style={{ fontSize: 11, color: "#0F172A" }}>
                   Role: {(currentUser?.role || "super_admin").replace(/_/g, " ").toUpperCase()}
                 </div>
               </div>
@@ -462,13 +462,13 @@ export default function AskAuditAIChatbot({ currentUser, allowedTabs = [], onNav
               <button
                 onClick={() => setShowAllScreens((v) => !v)}
                 title="Browse All Pages & Features"
-                style={{ background: "rgba(255,255,255,0.20)", border: "none", borderRadius: 8, padding: "5px 9px", color: "#FFFFFF", cursor: "pointer", display: "flex", alignItems: "center", gap: 4, fontSize: 11, fontWeight: 700 }}
+                style={{ background: "rgba(255,255,255,0.20)", border: "none", borderRadius: 8, padding: "5px 9px", color: "#0F172A", cursor: "pointer", display: "flex", alignItems: "center", gap: 4, fontSize: 11, fontWeight: 700 }}
               >
                 <LayoutGrid size={13} /> Screens
               </button>
               <button
                 onClick={() => setIsOpen(false)}
-                style={{ background: "rgba(255,255,255,0.20)", border: "none", borderRadius: 8, width: 28, height: 28, color: "#FFFFFF", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}
+                style={{ background: "rgba(255,255,255,0.20)", border: "none", borderRadius: 8, width: 28, height: 28, color: "#0F172A", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}
               >
                 <X size={16} />
               </button>

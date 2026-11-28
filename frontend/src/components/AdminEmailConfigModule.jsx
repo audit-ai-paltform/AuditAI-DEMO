@@ -664,14 +664,14 @@ export default function AdminEmailConfigModule() {
                       <button
                         type="button"
                         onClick={() => setEditorMode("simple")}
-                        style={{ fontSize: 10.5, padding: "2px 8px", borderRadius: 5, border: "1px solid #38bdf8", background: editorMode === "simple" ? "#38bdf8" : "transparent", color: editorMode === "simple" ? "#f0f9ff" : "#38bdf8", fontWeight: 700, cursor: "pointer" }}
+                        style={{ fontSize: 10.5, padding: "2px 8px", borderRadius: 5, border: "1px solid #0284C7", background: editorMode === "simple" ? "#0284C7" : "transparent", color: editorMode === "simple" ? "#FFFFFF" : "#0284C7", fontWeight: 700, cursor: "pointer" }}
                       >
                         Simple Editor
                       </button>
                       <button
                         type="button"
                         onClick={() => setEditorMode("html")}
-                        style={{ fontSize: 10.5, padding: "2px 8px", borderRadius: 5, border: "1px solid #38bdf8", background: editorMode === "html" ? "#38bdf8" : "transparent", color: editorMode === "html" ? "#f0f9ff" : "#38bdf8", fontWeight: 700, cursor: "pointer" }}
+                        style={{ fontSize: 10.5, padding: "2px 8px", borderRadius: 5, border: "1px solid #0284C7", background: editorMode === "html" ? "#0284C7" : "transparent", color: editorMode === "html" ? "#FFFFFF" : "#0284C7", fontWeight: 700, cursor: "pointer" }}
                       >
                         Advanced HTML
                       </button>
@@ -777,7 +777,7 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
             </div>
 
             <div style={{ padding: "12px 16px", borderBottom: "1px solid rgba(96, 165, 250, 0.15)", fontSize: 12, display: "flex", flexDirection: "column", gap: 4, background: "#f0f9ff" }}>
-              <div><span style={{ color: "#0369a1" }}>From:</span> <span style={{ color: "#ffffff" }}>{config.from_name} &lt;{config.from_local}@{activeTemplate?.from_domain || config.selected_domain}&gt;</span></div>
+              <div><span style={{ color: "#0284C7", fontWeight: 700 }}>From:</span> <span style={{ color: "#0F172A" }}>{config.from_name} &lt;{config.from_local}@{activeTemplate?.from_domain || config.selected_domain}&gt;</span></div>
               {activeTemplate?.cc && <div><span style={{ color: "#0369a1" }}>CC:</span> <span style={{ color: "#334155" }}>{activeTemplate.cc}</span></div>}
               {activeTemplate?.bcc && <div><span style={{ color: "#0369a1" }}>BCC:</span> <span style={{ color: "#334155" }}>{activeTemplate.bcc}</span></div>}
               <div><span style={{ color: "#0369a1" }}>Subject:</span> <strong style={{ color: "#000000" }}>{previewData.subject || activeTemplate?.subject}</strong></div>

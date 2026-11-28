@@ -132,8 +132,8 @@ export default function DataFishingModule() {
               type="submit"
               disabled={searching || !query.trim()}
               style={{
-                background: "#ffffff",
-                color: "#f0f9ff",
+                background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
+                color: "#FFFFFF",
                 border: "none",
                 borderRadius: 6,
                 padding: "8px 18px",
@@ -273,7 +273,7 @@ export default function DataFishingModule() {
                 onClick={() => setSelectedClusterType(tab.id)}
                 style={{
                   background: selectedClusterType === tab.id ? "#ffffff" : "#f0f9ff",
-                  color: selectedClusterType === tab.id ? "#f0f9ff" : "#ffffff",
+                  color: selectedClusterType === tab.id ? "#0F172A" : "#ffffff",
                   border: "1px solid rgba(96, 165, 250, 0.28)",
                   borderRadius: 6,
                   padding: "5px 10px",
@@ -335,7 +335,7 @@ export default function DataFishingModule() {
                     <span
                       style={{
                         background: "#ffffff",
-                        color: "#f0f9ff",
+                        color: "#0F172A",
                         fontSize: 11,
                         fontWeight: 700,
                         padding: "2px 8px",

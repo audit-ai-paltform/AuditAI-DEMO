@@ -159,7 +159,7 @@ export default function AdminTeamEditorModule() {
             style={{
               background: "#38bdf8",
               border: "none",
-              color: "#f0f9ff",
+              color: "#0F172A",
               borderRadius: 8,
               padding: "9px 18px",
               fontSize: 13,
@@ -419,7 +419,7 @@ export default function AdminTeamEditorModule() {
                     style={{
                       background: "#38bdf8",
                       border: "none",
-                      color: "#f0f9ff",
+                      color: "#0F172A",
                       borderRadius: 8,
                       padding: "9px 24px",
                       fontSize: 13,

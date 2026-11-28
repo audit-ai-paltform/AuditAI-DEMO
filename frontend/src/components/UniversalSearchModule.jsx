@@ -236,7 +236,7 @@ export default function UniversalSearchModule() {
                     {selectedUser.amount_due > 0 ? (
                       <span style={{ color: "#fda4af", fontWeight: 700 }}>Renewal Due: ₹{selectedUser.amount_due.toLocaleString()}</span>
                     ) : (
-                      <span style={{ color: "#86efac", fontWeight: 600 }}>Account Paid & Current</span>
+                      <span style={{ color: "#059669", fontWeight: 600 }}>Account Paid & Current</span>
                     )}
                   </div>
                   <div style={{ fontSize: 11, color: "#000000", marginTop: 4 }}>Due Date: {selectedUser.due_date}</div>
@@ -291,11 +291,11 @@ export default function UniversalSearchModule() {
                         {selectedUser.login_history?.map((sess, sIdx) => (
                           <tr key={sIdx} style={{ borderBottom: "1px solid #bae6fd" }}>
                             <td style={{ padding: "8px 12px" }}>{new Date(sess.timestamp).toLocaleString()}</td>
-                            <td style={{ padding: "8px 12px", fontWeight: 700, color: sess.type === "LOGIN" ? "#86efac" : "#bae6fd" }}>{sess.type}</td>
+                            <td style={{ padding: "8px 12px", fontWeight: 700, color: sess.type === "LOGIN" ? "#059669" : "#0284C7" }}>{sess.type}</td>
                             <td style={{ padding: "8px 12px", fontFamily: "monospace" }}>{sess.ip}</td>
                             <td style={{ padding: "8px 12px" }}>{sess.userAgent}</td>
                             <td style={{ padding: "8px 12px" }}>
-                              <span style={{ background: "rgba(34,197,94,0.2)", color: "#86efac", padding: "2px 6px", borderRadius: 4, fontSize: 10, fontWeight: 700 }}>
+                              <span style={{ background: "rgba(34,197,94,0.2)", color: "#059669", padding: "2px 6px", borderRadius: 4, fontSize: 10, fontWeight: 700 }}>
                                 {sess.status}
                               </span>
                             </td>
@@ -320,7 +320,7 @@ export default function UniversalSearchModule() {
                       <div style={{ fontSize: 11.5, color: "#000000" }}>{member.email}</div>
                       <div style={{ fontSize: 11, color: "#000000", marginTop: 4, display: "flex", justifyContent: "space-between" }}>
                         <span>Role: {member.role}</span>
-                        <span style={{ color: "#86efac" }}>{member.lastActive}</span>
+                        <span style={{ color: "#059669" }}>{member.lastActive}</span>
                       </div>
                     </div>
                   ))}

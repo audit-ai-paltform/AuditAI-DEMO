@@ -206,8 +206,8 @@ export default function AdminUsersModule({ currentUser }) {
               display: "flex",
               alignItems: "center",
               gap: 6,
-              background: "#ffffff",
-              color: "#f0f9ff",
+              background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
+              color: "#FFFFFF",
               border: "none",
               borderRadius: 7,
               padding: "8px 16px",
@@ -249,7 +249,7 @@ export default function AdminUsersModule({ currentUser }) {
 
         <div style={{ background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 10, padding: 16 }}>
           <div style={{ fontSize: 12, color: "#334155", textTransform: "uppercase", letterSpacing: 0.5 }}>Access Revoked</div>
-          <div style={{ fontSize: 26, fontWeight: 700, fontFamily: "Space Grotesk", marginTop: 4, color: "#d4d4d8" }}>{disabledCount}</div>
+          <div style={{ fontSize: 26, fontWeight: 700, fontFamily: "Space Grotesk", marginTop: 4, color: "#0F172A" }}>{disabledCount}</div>
           <div style={{ fontSize: 11, color: "#0369a1", marginTop: 4 }}>Disabled by Administrator</div>
         </div>
 
@@ -337,8 +337,8 @@ export default function AdminUsersModule({ currentUser }) {
             onClick={handleSaveControls}
             disabled={controlsSaving}
             style={{
-              background: "#ffffff",
-              color: "#f0f9ff",
+              background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
+              color: "#FFFFFF",
               border: "none",
               borderRadius: 6,
               padding: "7px 16px",
@@ -417,7 +417,7 @@ export default function AdminUsersModule({ currentUser }) {
                           textTransform: "uppercase",
                           letterSpacing: 0.5,
                           background: isAdmin ? "#ffffff" : "#e0f2fe",
-                          color: isAdmin ? "#f0f9ff" : "#bae6fd",
+                          color: isAdmin ? "#0F172A" : "#bae6fd",
                           border: `1px solid ${isAdmin ? "#ffffff" : "rgba(96, 165, 250, 0.28)"}`,
                         }}
                       >
@@ -436,7 +436,7 @@ export default function AdminUsersModule({ currentUser }) {
                           fontSize: 11,
                           fontWeight: 600,
                           background: isSuspended ? "#e0f2fe" : isPending ? "#e0f2fe" : "#e0f2fe",
-                          color: isSuspended ? "#7dd3fc" : isPending ? "#e4e4e7" : "#ffffff",
+                          color: isSuspended ? "#7dd3fc" : isPending ? "#e4e4e7" : "#0F172A",
                           border: `1px solid ${isSuspended ? "rgba(96, 165, 250, 0.35)" : isPending ? "#52525b" : "#ffffff"}`,
                         }}
                       >
@@ -453,7 +453,7 @@ export default function AdminUsersModule({ currentUser }) {
                           alignItems: "center",
                           gap: 6,
                           background: isLoginEnabled ? "#e0f2fe" : "#ffffff",
-                          color: isLoginEnabled ? "#ffffff" : "#f0f9ff",
+                          color: isLoginEnabled ? "#0F172A" : "#f0f9ff",
                           border: `1px solid ${isLoginEnabled ? "#ffffff" : "#f0f9ff"}`,
                           borderRadius: 6,
                           padding: "5px 10px",
@@ -478,8 +478,8 @@ export default function AdminUsersModule({ currentUser }) {
                             onClick={() => handleStatusChange(u, "ACTIVE")}
                             title="Approve client"
                             style={{
-                              background: "#ffffff",
-                              color: "#f0f9ff",
+                              background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
+                              color: "#FFFFFF",
                               border: "none",
                               borderRadius: 4,
                               padding: "4px 8px",
@@ -522,7 +522,7 @@ export default function AdminUsersModule({ currentUser }) {
                             border: "1px solid rgba(96, 165, 250, 0.28)",
                             borderRadius: 4,
                             padding: "4px 8px",
-                            color: isSuspended ? "#ffffff" : "#bae6fd",
+                            color: isSuspended ? "#059669" : "#0284C7",
                             cursor: "pointer",
                             fontSize: 11,
                           }}
@@ -616,7 +616,7 @@ export default function AdminUsersModule({ currentUser }) {
               </div>
               <div style={{ display: "flex", justifyContent: "flex-end", gap: 10, marginTop: 10 }}>
                 <button type="button" onClick={() => setShowCreateModal(false)} style={{ background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", color: "#000000", borderRadius: 6, padding: "8px 14px", fontSize: 12, cursor: "pointer" }}>Cancel</button>
-                <button type="submit" style={{ background: "#ffffff", border: "none", color: "#f0f9ff", borderRadius: 6, padding: "8px 16px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Create Account</button>
+                <button type="submit" style={{ background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)", border: "none", color: "#FFFFFF", borderRadius: 6, padding: "8px 16px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Create Account</button>
               </div>
             </form>
           </div>
@@ -646,7 +646,7 @@ export default function AdminUsersModule({ currentUser }) {
               />
               <div style={{ display: "flex", justifyContent: "flex-end", gap: 10, marginTop: 10 }}>
                 <button type="button" onClick={() => setShowResetModal(false)} style={{ background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", color: "#000000", borderRadius: 6, padding: "7px 14px", fontSize: 12, cursor: "pointer" }}>Cancel</button>
-                <button type="submit" style={{ background: "#ffffff", border: "none", color: "#f0f9ff", borderRadius: 6, padding: "7px 16px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Save New Password</button>
+                <button type="submit" style={{ background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)", border: "none", color: "#FFFFFF", borderRadius: 6, padding: "7px 16px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Save New Password</button>
               </div>
             </form>
           </div>

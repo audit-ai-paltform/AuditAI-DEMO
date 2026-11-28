@@ -344,7 +344,7 @@ export default function AdminSubscriptionsModule() {
                   }
                   style={{
                     background: gatewayConfigs.payu?.is_test_mode ? "#f59e0b" : "#10b981",
-                    color: "#f0f9ff",
+                    color: "#0F172A",
                     border: "none",
                     borderRadius: 6,
                     padding: "6px 14px",
@@ -364,7 +364,7 @@ export default function AdminSubscriptionsModule() {
                   style={{
                     flex: 1,
                     background: "#38bdf8",
-                    color: "#f0f9ff",
+                    color: "#0F172A",
                     border: "none",
                     borderRadius: 8,
                     padding: "11px",
@@ -483,7 +483,7 @@ export default function AdminSubscriptionsModule() {
                   }
                   style={{
                     background: gatewayConfigs.razorpay?.is_test_mode ? "#f59e0b" : "#10b981",
-                    color: "#f0f9ff",
+                    color: "#0F172A",
                     border: "none",
                     borderRadius: 6,
                     padding: "6px 14px",
@@ -503,7 +503,7 @@ export default function AdminSubscriptionsModule() {
                   style={{
                     flex: 1,
                     background: "#38bdf8",
-                    color: "#f0f9ff",
+                    color: "#0F172A",
                     border: "none",
                     borderRadius: 8,
                     padding: "11px",

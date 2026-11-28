@@ -180,7 +180,7 @@ export default function AgentCoachingModal({ call, onClose }) {
                   <span
                     style={{
                       background: "#ffffff",
-                      color: "#f0f9ff",
+                      color: "#0F172A",
                       fontSize: 10.5,
                       fontWeight: 700,
                       textTransform: "uppercase",
@@ -276,8 +276,8 @@ export default function AgentCoachingModal({ call, onClose }) {
               onClick={handleDispatchDigest}
               disabled={dispatching}
               style={{
-                background: "#ffffff",
-                color: "#f0f9ff",
+                background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
+                color: "#FFFFFF",
                 border: "none",
                 borderRadius: 6,
                 padding: "8px 16px",

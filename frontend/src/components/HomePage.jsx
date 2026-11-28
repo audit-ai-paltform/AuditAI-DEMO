@@ -793,7 +793,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
           <h1 style={{
             fontSize: "clamp(34px, 5.2vw, 56px)",
             fontWeight: 800,
-            fontFamily: "'Plus Jakarta Sans', -apple-system, sans-serif",
+            fontFamily: "'Outfit', 'Plus Jakarta Sans', -apple-system, sans-serif",
             lineHeight: 1.14,
             maxWidth: 1040,
             margin: "0 auto 20px",
@@ -1085,7 +1085,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     <div style={{
                       fontSize: 38,
                       fontWeight: 800,
-                      fontFamily: "'Plus Jakarta Sans', -apple-system, sans-serif",
+                      fontFamily: "'Outfit', 'Plus Jakarta Sans', -apple-system, sans-serif",
                       letterSpacing: "-0.03em",
                       color: "#0F172A",
                       lineHeight: 1,
@@ -1196,7 +1196,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             }}>
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-                  <span style={{ fontSize: 12, fontWeight: 800, background: "#38bdf8", color: "#f0f9ff", padding: "2px 8px", borderRadius: 6 }}>
+                  <span style={{ fontSize: 12, fontWeight: 800, background: "#38bdf8", color: "#0F172A", padding: "2px 8px", borderRadius: 6 }}>
                     ACTIVE PIPELINE STEP {current.step}
                   </span>
                   <span style={{ fontSize: 13, color: "#0369a1", fontWeight: 600 }}>Real-Time Automated Execution</span>
@@ -1625,7 +1625,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     top: -12,
                     right: 24,
                     background: "#38bdf8",
-                    color: "#f0f9ff",
+                    color: "#0F172A",
                     fontSize: 10.5,
                     fontWeight: 800,
                     padding: "3px 12px",

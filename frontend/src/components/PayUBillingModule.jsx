@@ -200,8 +200,8 @@ export default function PayUBillingModule({ currentUser, isAdmin }) {
               display: "flex",
               alignItems: "center",
               gap: 6,
-              background: "#ffffff",
-              color: "#f0f9ff",
+              background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
+              color: "#FFFFFF",
               border: "none",
               borderRadius: 7,
               padding: "8px 16px",
@@ -234,7 +234,7 @@ export default function PayUBillingModule({ currentUser, isAdmin }) {
             <div style={{ fontSize: 11, color: "#334155", textTransform: "uppercase", letterSpacing: 0.6 }}>Active Enterprise Plan</div>
             <div style={{ fontSize: 20, fontWeight: 700, fontFamily: "Space Grotesk", marginTop: 2, display: "flex", alignItems: "center", gap: 8 }}>
               {subscription?.plan_tier ? subscription.plan_tier.toUpperCase() : "ENTERPRISE"} TIER
-              <span style={{ fontSize: 11, background: "#ffffff", color: "#f0f9ff", fontWeight: 700, padding: "2px 8px", borderRadius: 12 }}>
+              <span style={{ fontSize: 11, background: "#ffffff", color: "#0F172A", fontWeight: 700, padding: "2px 8px", borderRadius: 12 }}>
                 {subscription?.status || "ACTIVE"}
               </span>
             </div>
@@ -290,7 +290,7 @@ export default function PayUBillingModule({ currentUser, isAdmin }) {
                     top: -11,
                     right: 18,
                     background: "#ffffff",
-                    color: "#f0f9ff",
+                    color: "#0F172A",
                     fontSize: 10,
                     fontWeight: 700,
                     padding: "2px 8px",
@@ -383,7 +383,7 @@ export default function PayUBillingModule({ currentUser, isAdmin }) {
                     <td style={{ padding: "10px 12px", fontWeight: 600, fontFamily: "JetBrains Mono" }}>₹{Number(tx.amount || 0).toLocaleString()}</td>
                     <td style={{ padding: "10px 12px", color: "#334155" }}>{tx.mode || "PayU Gateway"}</td>
                     <td style={{ padding: "10px 12px" }}>
-                      <span style={{ padding: "3px 8px", borderRadius: 12, fontSize: 10.5, fontWeight: 700, background: tx.status === "SUCCESS" ? "#ffffff" : "#e0f2fe", color: tx.status === "SUCCESS" ? "#f0f9ff" : "#bae6fd", border: "1px solid rgba(96, 165, 250, 0.28)" }}>
+                      <span style={{ padding: "3px 8px", borderRadius: 12, fontSize: 10.5, fontWeight: 700, background: tx.status === "SUCCESS" ? "#ffffff" : "#e0f2fe", color: tx.status === "SUCCESS" ? "#0F172A" : "#bae6fd", border: "1px solid rgba(96, 165, 250, 0.28)" }}>
                         {tx.status}
                       </span>
                     </td>
@@ -458,8 +458,8 @@ export default function PayUBillingModule({ currentUser, isAdmin }) {
                   type="submit"
                   style={{
                     width: "100%",
-                    background: "#ffffff",
-                    color: "#f0f9ff",
+                    background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
+                    color: "#FFFFFF",
                     border: "none",
                     borderRadius: 7,
                     padding: "10px 16px",
@@ -541,7 +541,7 @@ export default function PayUBillingModule({ currentUser, isAdmin }) {
 
               <div style={{ display: "flex", justifyContent: "flex-end", gap: 10, marginTop: 10 }}>
                 <button type="button" onClick={() => setShowConfigDrawer(false)} style={{ background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", color: "#000000", borderRadius: 6, padding: "8px 14px", fontSize: 12, cursor: "pointer" }}>Cancel</button>
-                <button type="submit" disabled={savingConfig} style={{ background: "#ffffff", border: "none", color: "#f0f9ff", borderRadius: 6, padding: "8px 16px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>
+                <button type="submit" disabled={savingConfig} style={{ background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)", border: "none", color: "#FFFFFF", borderRadius: 6, padding: "8px 16px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>
                   {savingConfig ? "Saving..." : "Save Credentials"}
                 </button>
               </div>

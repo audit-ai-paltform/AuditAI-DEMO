@@ -131,10 +131,10 @@ export default function KnowledgeHubModule() {
             <button
               onClick={() => setShowUploadModal(true)}
               style={{
-                background: "#ffffff",
+                background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
                 border: "none",
                 borderRadius: 6,
-                color: "#f0f9ff",
+                color: "#FFFFFF",
                 padding: "8px 16px",
                 fontSize: 12.5,
                 fontWeight: 600,
@@ -192,7 +192,7 @@ export default function KnowledgeHubModule() {
                       <span
                         style={{
                           background: "#ffffff",
-                          color: "#f0f9ff",
+                          color: "#0F172A",
                           borderRadius: 4,
                           fontSize: 10,
                           fontWeight: 700,
@@ -369,7 +369,7 @@ export default function KnowledgeHubModule() {
 
               <div style={{ display: "flex", justifyContent: "flex-end", gap: 10, marginTop: 10 }}>
                 <button type="button" onClick={() => setShowUploadModal(false)} style={{ background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", color: "#000000", borderRadius: 6, padding: "8px 14px", fontSize: 12, cursor: "pointer" }}>Cancel</button>
-                <button type="submit" disabled={saving} style={{ background: "#ffffff", border: "none", color: "#f0f9ff", borderRadius: 6, padding: "8px 16px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>
+                <button type="submit" disabled={saving} style={{ background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)", border: "none", color: "#FFFFFF", borderRadius: 6, padding: "8px 16px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>
                   {saving ? "Extracting Rules..." : "Publish & Enforce Version"}
                 </button>
               </div>
@@ -388,7 +388,7 @@ export default function KnowledgeHubModule() {
                   <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", color: "#334155", textTransform: "uppercase" }}>
                     Executive Audit Analytics
                   </span>
-                  <span style={{ background: "#ffffff", color: "#f0f9ff", borderRadius: 4, fontSize: 10, fontWeight: 700, padding: "2px 6px", fontFamily: "JetBrains Mono" }}>
+                  <span style={{ background: "#ffffff", color: "#0F172A", borderRadius: 4, fontSize: 10, fontWeight: 700, padding: "2px 6px", fontFamily: "JetBrains Mono" }}>
                     Before & After Report
                   </span>
                 </div>
@@ -404,8 +404,8 @@ export default function KnowledgeHubModule() {
                 <button
                   onClick={handlePrintExecutivePdf}
                   style={{
-                    background: "#ffffff",
-                    color: "#f0f9ff",
+                    background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
+                    color: "#FFFFFF",
                     border: "none",
                     borderRadius: 6,
                     padding: "6px 12px",

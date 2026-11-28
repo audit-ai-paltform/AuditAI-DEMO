@@ -107,7 +107,7 @@ export default function SalesForecastingWidget() {
           </div>
           <div style={{ fontSize: 24, fontWeight: 800, fontFamily: "JetBrains Mono", color: "#000000", display: "flex", alignItems: "center", gap: 8 }}>
             {avgWinProb}%
-            <span style={{ fontSize: 12, fontWeight: 500, color: avgWinProb >= 65 ? "#ffffff" : "#bae6fd" }}>
+            <span style={{ fontSize: 12, fontWeight: 500, color: avgWinProb >= 65 ? "#059669" : "#0284C7" }}>
               ({avgWinProb >= 70 ? "Strong Momentum" : "Stable"})
             </span>
           </div>
@@ -245,7 +245,7 @@ export default function SalesForecastingWidget() {
                       <span
                         style={{
                           background: "#ffffff",
-                          color: "#f0f9ff",
+                          color: "#0F172A",
                           borderRadius: 4,
                           fontSize: 10,
                           fontWeight: 700,
@@ -269,7 +269,7 @@ export default function SalesForecastingWidget() {
                       <div style={{ fontSize: 14, fontWeight: 700, fontFamily: "JetBrains Mono", color: "#000000" }}>
                         ₹{Number(deal.projected_revenue || 0).toLocaleString()}
                       </div>
-                      <div style={{ fontSize: 10, color: deal.budget_confirmed ? "#ffffff" : "#7dd3fc" }}>
+                      <div style={{ fontSize: 10, color: deal.budget_confirmed ? "#059669" : "#0284C7" }}>
                         {deal.budget_confirmed ? "✓ Budget Confirmed" : "○ Budget Unconfirmed"}
                       </div>
                     </div>

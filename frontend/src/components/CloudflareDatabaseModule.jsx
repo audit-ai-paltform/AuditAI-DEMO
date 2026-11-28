@@ -44,8 +44,8 @@ export default function CloudflareDatabaseModule() {
             display: "flex",
             alignItems: "center",
             gap: 6,
-            background: "#ffffff",
-            color: "#f0f9ff",
+            background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
+            color: "#FFFFFF",
             border: "none",
             borderRadius: 7,
             padding: "8px 16px",
@@ -94,7 +94,7 @@ export default function CloudflareDatabaseModule() {
             <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 15, fontWeight: 700, fontFamily: "Space Grotesk" }}>
               <Database size={18} /> Cloudflare D1 Operational DB
             </div>
-            <span style={{ fontSize: 10.5, background: "#ffffff", color: "#f0f9ff", padding: "2px 8px", borderRadius: 10, fontWeight: 700 }}>
+            <span style={{ fontSize: 10.5, background: "#ffffff", color: "#0F172A", padding: "2px 8px", borderRadius: 10, fontWeight: 700 }}>
               {d1Status}
             </span>
           </div>

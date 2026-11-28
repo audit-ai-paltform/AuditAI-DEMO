@@ -74,7 +74,7 @@ const C = {
 };
 
 const FONT_STYLE = `
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -86,6 +86,10 @@ html, body, #root {
   color: #0F172A;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, .font-display {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.02em;
 }
 ::-webkit-scrollbar {
   width: 7px;
