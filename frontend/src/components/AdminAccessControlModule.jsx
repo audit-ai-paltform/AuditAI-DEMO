@@ -325,7 +325,7 @@ export default function AdminAccessControlModule({ currentUser, onRoleFeaturesUp
           <div style={{ background: "#ffffff", border: "1px solid #bae6fd", borderRadius: 12, overflowX: "auto", boxShadow: "0 4px 16px rgba(2, 132, 199, 0.06)" }}>
             <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left" }}>
               <thead>
-                <tr style={{ background: "#e0f2fe", borderBottom: "1.5px solid #bae6fd", fontSize: 11, color: "#0c4a6e", textTransform: "uppercase" }}>
+                <tr style={{ background: "#0c2d48", borderBottom: "2.5px solid #0ea5e9", fontSize: 11, color: "#ffffff", textTransform: "uppercase" }}>
                   <th style={{ padding: "12px 14px" }}>User & Organization</th>
                   <th style={{ padding: "12px 14px" }}>Type & Dashboard Role</th>
                   <th style={{ padding: "12px 14px" }}>Status (Red/Grey/Green)</th>
