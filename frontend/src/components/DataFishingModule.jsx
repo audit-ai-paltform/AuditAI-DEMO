@@ -196,7 +196,7 @@ export default function DataFishingModule() {
             </span>
           </div>
 
-          <div style={{ fontSize: 13.5, lineHeight: 1.6, color: "#000000", background: "#f0f9ff", border: "1px solid #1f1f23", borderRadius: 8, padding: 16, marginBottom: 16 }}>
+          <div style={{ fontSize: 13.5, lineHeight: 1.6, color: "#000000", background: "#f0f9ff", border: "1px solid #FFFFFF", borderRadius: 8, padding: 16, marginBottom: 16 }}>
             {searchResult.answer}
           </div>
 
@@ -302,7 +302,7 @@ export default function DataFishingModule() {
                 key={cluster.id}
                 style={{
                   background: "#f0f9ff",
-                  border: "1px solid #1f1f23",
+                  border: "1px solid #FFFFFF",
                   borderRadius: 8,
                   padding: 16,
                 }}

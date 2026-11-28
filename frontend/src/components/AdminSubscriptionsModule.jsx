@@ -138,8 +138,8 @@ export default function AdminSubscriptionsModule() {
       {/* Header */}
       <div
         style={{
-          background: "linear-gradient(135deg, #0b1f3d 0%, #f0f9ff 100%)",
-          border: "1px solid #1e3a66",
+          background: "linear-gradient(135deg, #FFFFFF 0%, #f0f9ff 100%)",
+          border: "1px solid #FFFFFF",
           borderRadius: 14,
           padding: "24px 28px",
           display: "flex",
@@ -205,7 +205,7 @@ export default function AdminSubscriptionsModule() {
       )}
 
       {/* Navigation Sub-Tabs */}
-      <div style={{ display: "flex", gap: 10, borderBottom: "1px solid #1e3a66", paddingBottom: 12 }}>
+      <div style={{ display: "flex", gap: 10, borderBottom: "1px solid #FFFFFF", paddingBottom: 12 }}>
         {[
           { id: "gateways", label: "Dual Gateways Config", icon: Sliders },
           { id: "subscriptions", label: `Active Subscriptions (${subscriptions.length})`, icon: Calendar },
@@ -219,9 +219,9 @@ export default function AdminSubscriptionsModule() {
               key={t.id}
               onClick={() => setActiveSection(t.id)}
               style={{
-                background: isActive ? "#38bdf8" : "rgba(15,36,68,0.6)",
-                color: isActive ? "#f0f9ff" : "#cbd5e1",
-                border: `1px solid ${isActive ? "#38bdf8" : "#1e3a66"}`,
+                background: isActive ? "#0284C7" : "#FFFFFF",
+                color: isActive ? "#FFFFFF" : "#334155",
+                border: `1px solid ${isActive ? "#0284C7" : "#BAE6FD"}`,
                 borderRadius: 8,
                 padding: "8px 18px",
                 fontSize: 13,
@@ -244,7 +244,7 @@ export default function AdminSubscriptionsModule() {
       {activeSection === "gateways" && (
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(480px, 1fr))", gap: 24 }}>
           {/* PayU Panel */}
-          <div style={{ background: "#0b1f3d", border: "1px solid #1e3a66", borderRadius: 12, padding: 24 }}>
+          <div style={{ background: "#FFFFFF", border: "1px solid #FFFFFF", borderRadius: 12, padding: 24 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 18 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <div style={{ width: 34, height: 34, borderRadius: 8, background: "rgba(56,189,248,0.1)", border: "1px solid #38bdf8", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -289,7 +289,7 @@ export default function AdminSubscriptionsModule() {
                       width: "100%",
                       boxSizing: "border-box",
                       background: "#f0f9ff",
-                      border: "1px solid #1e3a66",
+                      border: "1px solid #FFFFFF",
                       borderRadius: 8,
                       padding: "10px 14px",
                       color: "#000000",
@@ -318,7 +318,7 @@ export default function AdminSubscriptionsModule() {
                     width: "100%",
                     boxSizing: "border-box",
                     background: "#f0f9ff",
-                    border: "1px solid #1e3a66",
+                    border: "1px solid #FFFFFF",
                     borderRadius: 8,
                     padding: "10px 14px",
                     color: "#000000",
@@ -328,7 +328,7 @@ export default function AdminSubscriptionsModule() {
                 />
               </div>
 
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "#f0f9ff", padding: "12px 16px", borderRadius: 8, border: "1px solid #1e3a66" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "#f0f9ff", padding: "12px 16px", borderRadius: 8, border: "1px solid #FFFFFF" }}>
                 <div>
                   <div style={{ fontSize: 14, fontWeight: 600, color: "#000000" }}>Environment Mode</div>
                   <div style={{ fontSize: 12, color: "#334155" }}>
@@ -385,7 +385,7 @@ export default function AdminSubscriptionsModule() {
           </div>
 
           {/* Razorpay Panel */}
-          <div style={{ background: "#0b1f3d", border: "1px solid #1e3a66", borderRadius: 12, padding: 24 }}>
+          <div style={{ background: "#FFFFFF", border: "1px solid #FFFFFF", borderRadius: 12, padding: 24 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 18 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <div style={{ width: 34, height: 34, borderRadius: 8, background: "rgba(56,189,248,0.1)", border: "1px solid #38bdf8", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -429,7 +429,7 @@ export default function AdminSubscriptionsModule() {
                     width: "100%",
                     boxSizing: "border-box",
                     background: "#f0f9ff",
-                    border: "1px solid #1e3a66",
+                    border: "1px solid #FFFFFF",
                     borderRadius: 8,
                     padding: "10px 14px",
                     color: "#000000",
@@ -457,7 +457,7 @@ export default function AdminSubscriptionsModule() {
                     width: "100%",
                     boxSizing: "border-box",
                     background: "#f0f9ff",
-                    border: "1px solid #1e3a66",
+                    border: "1px solid #FFFFFF",
                     borderRadius: 8,
                     padding: "10px 14px",
                     color: "#000000",
@@ -467,7 +467,7 @@ export default function AdminSubscriptionsModule() {
                 />
               </div>
 
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "#f0f9ff", padding: "12px 16px", borderRadius: 8, border: "1px solid #1e3a66" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "#f0f9ff", padding: "12px 16px", borderRadius: 8, border: "1px solid #FFFFFF" }}>
                 <div>
                   <div style={{ fontSize: 14, fontWeight: 600, color: "#000000" }}>Environment Mode</div>
                   <div style={{ fontSize: 12, color: "#334155" }}>
@@ -527,8 +527,8 @@ export default function AdminSubscriptionsModule() {
 
       {/* SECTION 2: Active Subscriptions */}
       {activeSection === "subscriptions" && (
-        <div style={{ background: "#0b1f3d", border: "1px solid #1e3a66", borderRadius: 12, overflow: "hidden" }}>
-          <div style={{ padding: "18px 24px", borderBottom: "1px solid #1e3a66", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <div style={{ background: "#FFFFFF", border: "1px solid #FFFFFF", borderRadius: 12, overflow: "hidden" }}>
+          <div style={{ padding: "18px 24px", borderBottom: "1px solid #FFFFFF", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div>
               <h3 style={{ margin: 0, fontSize: 16, color: "#000000", fontWeight: 700 }}>Tenant Subscriptions</h3>
               <p style={{ margin: "4px 0 0", fontSize: 13, color: "#334155" }}>
@@ -540,7 +540,7 @@ export default function AdminSubscriptionsModule() {
           <div style={{ overflowX: "auto" }}>
             <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left", fontSize: 13 }}>
               <thead>
-                <tr style={{ background: "#f0f9ff", color: "#334155", borderBottom: "1px solid #1e3a66" }}>
+                <tr style={{ background: "#f0f9ff", color: "#334155", borderBottom: "1px solid #FFFFFF" }}>
                   <th style={{ padding: "14px 20px", fontWeight: 600 }}>Tenant ID</th>
                   <th style={{ padding: "14px 20px", fontWeight: 600 }}>Plan</th>
                   <th style={{ padding: "14px 20px", fontWeight: 600 }}>Gateway</th>
@@ -560,7 +560,7 @@ export default function AdminSubscriptionsModule() {
                   subscriptions.map((sub) => {
                     const isValid = new Date(sub.current_period_end).getTime() > Date.now();
                     return (
-                      <tr key={sub.id} style={{ borderBottom: "1px solid #152b4d" }}>
+                      <tr key={sub.id} style={{ borderBottom: "1px solid #FFFFFF" }}>
                         <td style={{ padding: "16px 20px", color: "#000000", fontFamily: "monospace" }}>
                           {sub.tenant_id}
                         </td>
@@ -618,8 +618,8 @@ export default function AdminSubscriptionsModule() {
 
       {/* SECTION 3: Payment Ledger */}
       {activeSection === "payments" && (
-        <div style={{ background: "#0b1f3d", border: "1px solid #1e3a66", borderRadius: 12, overflow: "hidden" }}>
-          <div style={{ padding: "18px 24px", borderBottom: "1px solid #1e3a66" }}>
+        <div style={{ background: "#FFFFFF", border: "1px solid #FFFFFF", borderRadius: 12, overflow: "hidden" }}>
+          <div style={{ padding: "18px 24px", borderBottom: "1px solid #FFFFFF" }}>
             <h3 style={{ margin: 0, fontSize: 16, color: "#000000", fontWeight: 700 }}>Payment Transactions Ledger</h3>
             <p style={{ margin: "4px 0 0", fontSize: 13, color: "#334155" }}>
               Immutable audit ledger of verified payments across PayU and Razorpay with one-click administrative refund processing.
@@ -629,7 +629,7 @@ export default function AdminSubscriptionsModule() {
           <div style={{ overflowX: "auto" }}>
             <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left", fontSize: 13 }}>
               <thead>
-                <tr style={{ background: "#f0f9ff", color: "#334155", borderBottom: "1px solid #1e3a66" }}>
+                <tr style={{ background: "#f0f9ff", color: "#334155", borderBottom: "1px solid #FFFFFF" }}>
                   <th style={{ padding: "14px 20px", fontWeight: 600 }}>Payment ID / Ref</th>
                   <th style={{ padding: "14px 20px", fontWeight: 600 }}>Gateway</th>
                   <th style={{ padding: "14px 20px", fontWeight: 600 }}>Amount</th>
@@ -647,7 +647,7 @@ export default function AdminSubscriptionsModule() {
                   </tr>
                 ) : (
                   payments.map((p) => (
-                    <tr key={p.id} style={{ borderBottom: "1px solid #152b4d" }}>
+                    <tr key={p.id} style={{ borderBottom: "1px solid #FFFFFF" }}>
                       <td style={{ padding: "16px 20px", color: "#000000", fontFamily: "monospace" }}>
                         <div>{p.id}</div>
                         <div style={{ fontSize: 11, color: "#334155" }}>{p.gateway_payment_id || p.order_id}</div>
@@ -707,8 +707,8 @@ export default function AdminSubscriptionsModule() {
 
       {/* SECTION 4: Invoices */}
       {activeSection === "invoices" && (
-        <div style={{ background: "#0b1f3d", border: "1px solid #1e3a66", borderRadius: 12, overflow: "hidden" }}>
-          <div style={{ padding: "18px 24px", borderBottom: "1px solid #1e3a66" }}>
+        <div style={{ background: "#FFFFFF", border: "1px solid #FFFFFF", borderRadius: 12, overflow: "hidden" }}>
+          <div style={{ padding: "18px 24px", borderBottom: "1px solid #FFFFFF" }}>
             <h3 style={{ margin: 0, fontSize: 16, color: "#000000", fontWeight: 700 }}>GST Tax Invoices</h3>
             <p style={{ margin: "4px 0 0", fontSize: 13, color: "#334155" }}>
               Gapless GST-compliant tax invoices (SAC code 998313) automatically generated upon successful payment.
@@ -718,7 +718,7 @@ export default function AdminSubscriptionsModule() {
           <div style={{ overflowX: "auto" }}>
             <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left", fontSize: 13 }}>
               <thead>
-                <tr style={{ background: "#f0f9ff", color: "#334155", borderBottom: "1px solid #1e3a66" }}>
+                <tr style={{ background: "#f0f9ff", color: "#334155", borderBottom: "1px solid #FFFFFF" }}>
                   <th style={{ padding: "14px 20px", fontWeight: 600 }}>Invoice #</th>
                   <th style={{ padding: "14px 20px", fontWeight: 600 }}>Issued Date</th>
                   <th style={{ padding: "14px 20px", fontWeight: 600 }}>Subtotal (Excl. Tax)</th>
@@ -736,7 +736,7 @@ export default function AdminSubscriptionsModule() {
                   </tr>
                 ) : (
                   invoices.map((inv) => (
-                    <tr key={inv.id} style={{ borderBottom: "1px solid #152b4d" }}>
+                    <tr key={inv.id} style={{ borderBottom: "1px solid #FFFFFF" }}>
                       <td style={{ padding: "16px 20px", color: "#0369a1", fontWeight: 700, fontFamily: "monospace" }}>
                         {inv.number}
                       </td>

@@ -75,7 +75,7 @@ export default function CloudflareDatabaseModule() {
             Designated <strong>exclusively</strong> for user authentication, passwords, administrative controls, and session validation.
           </div>
 
-          <div style={{ background: "#f0f9ff", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
+          <div style={{ background: "#f0f9ff", border: "1px solid #FFFFFF", borderRadius: 8, padding: 12 }}>
             <div style={{ fontSize: 11, color: "#0369a1", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
               Restricted Tables:
             </div>
@@ -103,7 +103,7 @@ export default function CloudflareDatabaseModule() {
             Serverless SQLite-powered distributed relational database for all high-volume operational and analytics data.
           </div>
 
-          <div style={{ background: "#f0f9ff", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
+          <div style={{ background: "#f0f9ff", border: "1px solid #FFFFFF", borderRadius: 8, padding: 12 }}>
             <div style={{ fontSize: 11, color: "#0369a1", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
               Migrated Application Tables:
             </div>
@@ -131,7 +131,7 @@ export default function CloudflareDatabaseModule() {
             High-throughput, zero-egress fee binary asset storage for audio calls, transcripts, SOP PDFs, and reports.
           </div>
 
-          <div style={{ background: "#f0f9ff", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
+          <div style={{ background: "#f0f9ff", border: "1px solid #FFFFFF", borderRadius: 8, padding: 12 }}>
             <div style={{ fontSize: 11, color: "#0369a1", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
               Stored Object Buckets:
             </div>
@@ -174,7 +174,7 @@ export default function CloudflareDatabaseModule() {
               cmd: "npx wrangler r2 bucket create auditai-recordings-storage",
             },
           ].map((step, idx) => (
-            <div key={idx} style={{ background: "#f0f9ff", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
+            <div key={idx} style={{ background: "#f0f9ff", border: "1px solid #FFFFFF", borderRadius: 8, padding: 12 }}>
               <div style={{ fontSize: 11.5, color: "#334155", marginBottom: 6 }}>{step.label}</div>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 6, padding: "8px 12px" }}>
                 <code style={{ fontSize: 12, fontFamily: "JetBrains Mono", color: "#000000" }}>{step.cmd}</code>

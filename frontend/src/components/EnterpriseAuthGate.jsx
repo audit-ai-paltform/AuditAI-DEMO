@@ -93,14 +93,14 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
         style={{
           width: 480,
           maxWidth: "100%",
-          background: "linear-gradient(145deg, #f0f9ff 0%, #ffffff 50%, #0e244d 100%)",
+          background: "linear-gradient(145deg, #f0f9ff 0%, #ffffff 50%, #FFFFFF 100%)",
           border: "1px solid #7dd3fc",
           borderRadius: 16,
           padding: 32,
           boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.75), 0 0 35px rgba(56, 189, 248, 0.15)",
           position: "relative",
           fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
-          color: "#000000",
+          color: "#FFFFFF",
         }}
       >
         {onClose && (
@@ -144,7 +144,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
               height: 38,
               borderRadius: 10,
               background: "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)",
-              color: "#000000",
+              color: "#FFFFFF",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -441,7 +441,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
             style={{
               marginTop: 8,
               background: "linear-gradient(135deg, #0284c7 0%, #2563eb 100%)",
-              color: "#000000",
+              color: "#FFFFFF",
               border: "none",
               borderRadius: 8,
               padding: "12px 18px",

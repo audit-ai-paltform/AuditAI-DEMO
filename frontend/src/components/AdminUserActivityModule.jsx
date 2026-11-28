@@ -100,8 +100,8 @@ export default function AdminUserActivityModule() {
       {/* Header */}
       <div
         style={{
-          background: "linear-gradient(135deg, #0b1f3d 0%, #f0f9ff 100%)",
-          border: "1px solid #1e3a66",
+          background: "linear-gradient(135deg, #FFFFFF 0%, #f0f9ff 100%)",
+          border: "1px solid #FFFFFF",
           borderRadius: 14,
           padding: "24px 28px",
           display: "flex",
@@ -126,7 +126,7 @@ export default function AdminUserActivityModule() {
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, background: "#f0f9ff", padding: "8px 14px", borderRadius: 8, border: "1px solid #1e3a66" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8, background: "#f0f9ff", padding: "8px 14px", borderRadius: 8, border: "1px solid #FFFFFF" }}>
             <Radio size={15} color={onlineCount > 0 ? "#10b981" : "#94a3b8"} className={onlineCount > 0 ? "animate-pulse" : ""} />
             <span style={{ fontSize: 13, fontWeight: 700, color: onlineCount > 0 ? "#16a34a" : "#94a3b8" }}>
               {onlineCount} Online Now
@@ -187,8 +187,8 @@ export default function AdminUserActivityModule() {
             style={{
               width: "100%",
               boxSizing: "border-box",
-              background: "#0b1f3d",
-              border: "1px solid #1e3a66",
+              background: "#FFFFFF",
+              border: "1px solid #FFFFFF",
               borderRadius: 8,
               padding: "10px 14px 10px 38px",
               color: "#000000",
@@ -202,8 +202,8 @@ export default function AdminUserActivityModule() {
           value={roleFilter}
           onChange={(e) => setRoleFilter(e.target.value)}
           style={{
-            background: "#0b1f3d",
-            border: "1px solid #1e3a66",
+            background: "#FFFFFF",
+            border: "1px solid #FFFFFF",
             borderRadius: 8,
             padding: "10px 14px",
             color: "#000000",
@@ -221,11 +221,11 @@ export default function AdminUserActivityModule() {
       </div>
 
       {/* Sessions Table */}
-      <div style={{ background: "#0b1f3d", border: "1px solid #1e3a66", borderRadius: 12, overflow: "hidden" }}>
+      <div style={{ background: "#FFFFFF", border: "1px solid #FFFFFF", borderRadius: 12, overflow: "hidden" }}>
         <div style={{ overflowX: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left", fontSize: 13 }}>
             <thead>
-              <tr style={{ background: "#f0f9ff", color: "#334155", borderBottom: "1px solid #1e3a66" }}>
+              <tr style={{ background: "#f0f9ff", color: "#334155", borderBottom: "1px solid #FFFFFF" }}>
                 <th style={{ padding: "14px 20px", fontWeight: 600 }}>User / Identity</th>
                 <th style={{ padding: "14px 20px", fontWeight: 600 }}>Role</th>
                 <th style={{ padding: "14px 20px", fontWeight: 600 }}>Status</th>
@@ -247,7 +247,7 @@ export default function AdminUserActivityModule() {
                   const online = isSessionOnline(act.last_ping);
                   const isRevoked = act.status === "REVOKED";
                   return (
-                    <tr key={act.id || act.user_id} style={{ borderBottom: "1px solid #152b4d" }}>
+                    <tr key={act.id || act.user_id} style={{ borderBottom: "1px solid #FFFFFF" }}>
                       <td style={{ padding: "16px 20px" }}>
                         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                           <div

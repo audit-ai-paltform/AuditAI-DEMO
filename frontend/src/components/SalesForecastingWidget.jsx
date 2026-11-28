@@ -89,7 +89,7 @@ export default function SalesForecastingWidget() {
 
       {/* Top Aggregates Ribbon */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 12, marginBottom: 18 }}>
-        <div style={{ background: "#f0f9ff", border: "1px solid #1f1f23", borderRadius: 8, padding: 14 }}>
+        <div style={{ background: "#f0f9ff", border: "1px solid #FFFFFF", borderRadius: 8, padding: 14 }}>
           <div style={{ fontSize: 11, color: "#334155", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 4 }}>
             Projected Pipeline Value
           </div>
@@ -101,7 +101,7 @@ export default function SalesForecastingWidget() {
           </div>
         </div>
 
-        <div style={{ background: "#f0f9ff", border: "1px solid #1f1f23", borderRadius: 8, padding: 14 }}>
+        <div style={{ background: "#f0f9ff", border: "1px solid #FFFFFF", borderRadius: 8, padding: 14 }}>
           <div style={{ fontSize: 11, color: "#334155", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 4 }}>
             Average Win Probability
           </div>
@@ -202,7 +202,7 @@ export default function SalesForecastingWidget() {
       </div>
 
       {/* Deal Pipeline Inspection */}
-      <div style={{ background: "#f0f9ff", border: "1px solid #1f1f23", borderRadius: 8, padding: 14 }}>
+      <div style={{ background: "#f0f9ff", border: "1px solid #FFFFFF", borderRadius: 8, padding: 14 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
           <div style={{ fontSize: 13, fontWeight: 600, color: "#000000", display: "flex", alignItems: "center", gap: 6 }}>
             <BarChart3 size={15} /> Active Leads in {currentBucketData.label} Bucket

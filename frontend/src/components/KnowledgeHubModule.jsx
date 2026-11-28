@@ -181,7 +181,7 @@ export default function KnowledgeHubModule() {
                 key={doc.id}
                 style={{
                   background: "#f0f9ff",
-                  border: "1px solid #1f1f23",
+                  border: "1px solid #FFFFFF",
                   borderRadius: 8,
                   padding: 16,
                 }}
@@ -250,7 +250,7 @@ export default function KnowledgeHubModule() {
 
                 {/* Extracted Rules Badges */}
                 {rules.length > 0 && (
-                  <div style={{ marginTop: 10, paddingTop: 10, borderTop: "1px solid #1f1f23" }}>
+                  <div style={{ marginTop: 10, paddingTop: 10, borderTop: "1px solid #FFFFFF" }}>
                     <div style={{ fontSize: 10.5, color: "#0369a1", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 6 }}>
                       Active Audit Rules Enforced on Interactions in this Date Range:
                     </div>
@@ -430,7 +430,7 @@ export default function KnowledgeHubModule() {
                 {/* Comparative Metric Cards */}
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                   {Object.entries(impactData.comparison || {}).map(([key, item]) => (
-                    <div key={key} style={{ background: "#f0f9ff", border: "1px solid #1f1f23", borderRadius: 8, padding: 14 }}>
+                    <div key={key} style={{ background: "#f0f9ff", border: "1px solid #FFFFFF", borderRadius: 8, padding: 14 }}>
                       <div style={{ fontSize: 11, color: "#334155", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 6 }}>
                         {item.metric}
                       </div>

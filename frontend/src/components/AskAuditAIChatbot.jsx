@@ -140,7 +140,7 @@ export default function AskAuditAIChatbot({ currentUser, allowedTabs = [], onNav
           </div>
           <div style={{ textAlign: "left" }}>
             <div style={{ fontSize: 13, fontWeight: 800, fontFamily: "Space Grotesk", lineHeight: 1.1 }}>Ask AuditAI</div>
-            <div style={{ fontSize: 10, color: "#e0f2fe", fontWeight: 600 }}>AI Copilot & Navigator</div>
+            <div style={{ fontSize: 10, color: "#0F172A", fontWeight: 600 }}>AI Copilot & Navigator</div>
           </div>
         </button>
       )}
@@ -185,14 +185,14 @@ export default function AskAuditAIChatbot({ currentUser, allowedTabs = [], onNav
                 <div style={{ fontSize: 14.5, fontWeight: 800, fontFamily: "Space Grotesk", display: "flex", alignItems: "center", gap: 6 }}>
                   Ask AuditAI <Sparkles size={13} />
                 </div>
-                <div style={{ fontSize: 11, color: "#e0f2fe" }}>
+                <div style={{ fontSize: 11, color: "#0F172A" }}>
                   Role: {(currentUser?.role || "super_admin").replace(/_/g, " ").toUpperCase()}
                 </div>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              style={{ background: "rgba(255,255,255,0.22)", border: "none", borderRadius: 8, width: 28, height: 28, color: "#ffffff", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}
+              style={{ background: "rgba(255,255,255,0.22)", border: "none", borderRadius: 8, width: 28, height: 28, color: "#0F172A", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}
             >
               <X size={16} />
             </button>

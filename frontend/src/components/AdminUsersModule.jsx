@@ -267,7 +267,7 @@ export default function AdminUsersModule({ currentUser }) {
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 14 }}>
-          <div style={{ background: "#f0f9ff", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
+          <div style={{ background: "#f0f9ff", border: "1px solid #FFFFFF", borderRadius: 8, padding: 12 }}>
             <label style={{ display: "flex", alignItems: "center", justifyContent: "space-between", cursor: "pointer", fontSize: 12 }}>
               <span>Require Admin Approval for Signups</span>
               <input
@@ -282,7 +282,7 @@ export default function AdminUsersModule({ currentUser }) {
             </div>
           </div>
 
-          <div style={{ background: "#f0f9ff", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
+          <div style={{ background: "#f0f9ff", border: "1px solid #FFFFFF", borderRadius: 8, padding: 12 }}>
             <label style={{ display: "flex", alignItems: "center", justifyContent: "space-between", cursor: "pointer", fontSize: 12 }}>
               <span>Allow Client Self-Registration</span>
               <input
@@ -297,7 +297,7 @@ export default function AdminUsersModule({ currentUser }) {
             </div>
           </div>
 
-          <div style={{ background: "#f0f9ff", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
+          <div style={{ background: "#f0f9ff", border: "1px solid #FFFFFF", borderRadius: 8, padding: 12 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span style={{ fontSize: 12 }}>Max Failed Attempts</span>
               <input
@@ -314,7 +314,7 @@ export default function AdminUsersModule({ currentUser }) {
             </div>
           </div>
 
-          <div style={{ background: "#f0f9ff", border: "1px solid #1f1f23", borderRadius: 8, padding: 12 }}>
+          <div style={{ background: "#f0f9ff", border: "1px solid #FFFFFF", borderRadius: 8, padding: 12 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span style={{ fontSize: 12 }}>Lockout Duration (Mins)</span>
               <input
@@ -564,7 +564,7 @@ export default function AdminUsersModule({ currentUser }) {
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
             {auditLogs.slice(0, 5).map((log, i) => (
-              <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "#f0f9ff", border: "1px solid #1c1c1f", borderRadius: 6, padding: "8px 12px", fontSize: 11.5 }}>
+              <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "#f0f9ff", border: "1px solid #FFFFFF", borderRadius: 6, padding: "8px 12px", fontSize: 11.5 }}>
                 <span style={{ color: "#000000", fontFamily: "JetBrains Mono" }}>{log.action}</span>
                 <span style={{ color: "#0369a1" }}>{new Date(log.created_at).toLocaleString()}</span>
               </div>

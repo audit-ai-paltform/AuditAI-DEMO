@@ -107,8 +107,8 @@ export default function AdminTeamEditorModule() {
       {/* Header */}
       <div
         style={{
-          background: "linear-gradient(135deg, #0b1f3d 0%, #f0f9ff 100%)",
-          border: "1px solid #1e3a66",
+          background: "linear-gradient(135deg, #FFFFFF 0%, #f0f9ff 100%)",
+          border: "1px solid #FFFFFF",
           borderRadius: 14,
           padding: "24px 28px",
           display: "flex",
@@ -199,7 +199,7 @@ export default function AdminTeamEditorModule() {
       {editingMember && (
         <div
           style={{
-            background: "#0b1f3d",
+            background: "#FFFFFF",
             border: "1px solid #38bdf8",
             borderRadius: 14,
             padding: 24,
@@ -235,7 +235,7 @@ export default function AdminTeamEditorModule() {
                       width: "100%",
                       boxSizing: "border-box",
                       background: "#f0f9ff",
-                      border: "1px solid #1e3a66",
+                      border: "1px solid #FFFFFF",
                       borderRadius: 8,
                       padding: "10px 14px",
                       color: "#000000",
@@ -258,7 +258,7 @@ export default function AdminTeamEditorModule() {
                       width: "100%",
                       boxSizing: "border-box",
                       background: "#f0f9ff",
-                      border: "1px solid #1e3a66",
+                      border: "1px solid #FFFFFF",
                       borderRadius: 8,
                       padding: "10px 14px",
                       color: "#000000",
@@ -282,7 +282,7 @@ export default function AdminTeamEditorModule() {
                     width: "100%",
                     boxSizing: "border-box",
                     background: "#f0f9ff",
-                    border: "1px solid #1e3a66",
+                    border: "1px solid #FFFFFF",
                     borderRadius: 8,
                     padding: "10px 14px",
                     color: "#000000",
@@ -306,7 +306,7 @@ export default function AdminTeamEditorModule() {
                     width: "100%",
                     boxSizing: "border-box",
                     background: "#f0f9ff",
-                    border: "1px solid #1e3a66",
+                    border: "1px solid #FFFFFF",
                     borderRadius: 8,
                     padding: "10px 14px",
                     color: "#000000",
@@ -329,7 +329,7 @@ export default function AdminTeamEditorModule() {
                       width: "100%",
                       boxSizing: "border-box",
                       background: "#f0f9ff",
-                      border: "1px solid #1e3a66",
+                      border: "1px solid #FFFFFF",
                       borderRadius: 8,
                       padding: "8px 12px",
                       color: "#000000",
@@ -351,7 +351,7 @@ export default function AdminTeamEditorModule() {
                       width: "100%",
                       boxSizing: "border-box",
                       background: "#f0f9ff",
-                      border: "1px solid #1e3a66",
+                      border: "1px solid #FFFFFF",
                       borderRadius: 8,
                       padding: "8px 12px",
                       color: "#000000",
@@ -373,7 +373,7 @@ export default function AdminTeamEditorModule() {
                       width: "100%",
                       boxSizing: "border-box",
                       background: "#f0f9ff",
-                      border: "1px solid #1e3a66",
+                      border: "1px solid #FFFFFF",
                       borderRadius: 8,
                       padding: "8px 12px",
                       color: "#000000",
@@ -403,7 +403,7 @@ export default function AdminTeamEditorModule() {
                     onClick={() => setEditingMember(null)}
                     style={{
                       background: "transparent",
-                      border: "1px solid #1e3a66",
+                      border: "1px solid #FFFFFF",
                       color: "#334155",
                       borderRadius: 8,
                       padding: "9px 18px",
@@ -438,7 +438,7 @@ export default function AdminTeamEditorModule() {
             </div>
 
             {/* Live Preview Card */}
-            <div style={{ background: "#f0f9ff", border: "1px solid #1e3a66", borderRadius: 12, padding: 20, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+            <div style={{ background: "#f0f9ff", border: "1px solid #FFFFFF", borderRadius: 12, padding: 20, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
               <div style={{ fontSize: 12, color: "#0369a1", fontWeight: 700, marginBottom: 14, textTransform: "uppercase", letterSpacing: "0.08em" }}>
                 Homepage Card Live Preview
               </div>
@@ -480,8 +480,8 @@ export default function AdminTeamEditorModule() {
           <div
             key={m.id}
             style={{
-              background: "#0b1f3d",
-              border: "1px solid #1e3a66",
+              background: "#FFFFFF",
+              border: "1px solid #FFFFFF",
               borderRadius: 12,
               padding: 22,
               display: "flex",
@@ -522,7 +522,7 @@ export default function AdminTeamEditorModule() {
               </p>
             </div>
 
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid #152b4d", paddingTop: 14 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid #FFFFFF", paddingTop: 14 }}>
               <div style={{ display: "flex", gap: 10 }}>
                 {m.linkedin_url && (
                   <a href={m.linkedin_url} target="_blank" rel="noreferrer" style={{ color: "#0369a1" }}>

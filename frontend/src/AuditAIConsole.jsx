@@ -2015,7 +2015,7 @@ function CallScores({ calls, loading, onOpenCoaching }) {
                       <tr>
                         <td colSpan={7} style={{ padding: "16px", background: C.panel2 }}>
                           {/* Qalyzer v2.0 Predictive CSAT & Sentiment Progression Banner */}
-                          <div style={{ background: "#09090b", border: `1px solid ${C.border}`, borderRadius: 8, padding: 14, marginBottom: 14 }}>
+                          <div style={{ background: "#FFFFFF", border: `1px solid ${C.border}`, borderRadius: 8, padding: 14, marginBottom: 14 }}>
                             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10, flexWrap: "wrap", gap: 8 }}>
                               <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                                 <span style={{ background: "#0284c7", color: "#ffffff", borderRadius: 4, fontSize: 10, fontWeight: 700, padding: "2px 6px", fontFamily: "JetBrains Mono" }}>
@@ -2548,7 +2548,7 @@ function AgentMapping({ agents, setAgents, calls, loading }) {
             <button
               onClick={handleRunSweep}
               disabled={sweeping}
-              style={{ background: C.teal, color: "#ffffff", border: "none", borderRadius: 6, padding: "7px 14px", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
+              style={{ background: C.teal, color: "#0F172A", border: "none", borderRadius: 6, padding: "7px 14px", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
             >
               {sweeping ? "Scanning..." : "Run 24–48h Sweep Now"}
             </button>
@@ -2558,7 +2558,7 @@ function AgentMapping({ agents, setAgents, calls, loading }) {
 
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div style={{ color: C.text, fontFamily: "Space Grotesk", fontSize: 15, fontWeight: 600 }}>Active Roster ({agents.length})</div>
-        <button onClick={() => setShowAdd(true)} style={{ display: "flex", alignItems: "center", gap: 6, background: C.teal, color: "#ffffff", border: "none", borderRadius: 7, padding: "8px 14px", fontFamily: "Inter", fontWeight: 600, fontSize: 12.5, cursor: "pointer" }}>
+        <button onClick={() => setShowAdd(true)} style={{ display: "flex", alignItems: "center", gap: 6, background: C.teal, color: "#0F172A", border: "none", borderRadius: 7, padding: "8px 14px", fontFamily: "Inter", fontWeight: 600, fontSize: 12.5, cursor: "pointer" }}>
           <Plus size={14} /> Add Agent
         </button>
       </div>
@@ -2581,7 +2581,7 @@ function AgentMapping({ agents, setAgents, calls, loading }) {
               <option value="Sales & KYC">Sales & KYC</option>
             </select>
             <input type="number" value={form.tenure_minutes} onChange={(e) => setForm({ ...form, tenure_minutes: Number(e.target.value) })} placeholder="Tenure (Minutes)" style={{ background: C.panel2, border: `1px solid ${C.border}`, borderRadius: 6, padding: "7px 10px", color: C.text, fontSize: 12 }} />
-            <button onClick={addAgent} style={{ background: C.teal, color: "#ffffff", border: "none", borderRadius: 6, fontWeight: 600, fontSize: 12, cursor: "pointer" }}>Save Agent</button>
+            <button onClick={addAgent} style={{ background: C.teal, color: "#0F172A", border: "none", borderRadius: 6, fontWeight: 600, fontSize: 12, cursor: "pointer" }}>Save Agent</button>
           </div>
         </Card>
       )}
@@ -3684,7 +3684,7 @@ function PricingModal({ onClose }) {
 
   return (
     <div style={{ position: "fixed", inset: 0, background: "rgba(0, 0, 0, 0.88)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 100, backdropFilter: "blur(6px)" }}>
-      <Card style={{ width: 760, maxWidth: "90vw", border: `1px solid ${C.border}`, background: "#09090b" }}>
+      <Card style={{ width: 760, maxWidth: "90vw", border: `1px solid ${C.border}`, background: "#FFFFFF" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
           <div style={{ color: C.text, fontFamily: "Space Grotesk", fontSize: 18, fontWeight: 700, display: "flex", alignItems: "center", gap: 8 }}>
             <CreditCard size={18} /> AuditAI Enterprise Subscription Plans (PayU India Gateway)
@@ -3980,7 +3980,7 @@ function ReportsModule() {
       {periodTab === "daily" && (
         <>
           <Card>
-            <button onClick={generate} disabled={busy} style={{ background: C.teal, color: "#ffffff", border: "none", borderRadius: 6, padding: "8px 16px", fontWeight: 600, fontSize: 12.5, cursor: "pointer" }}>
+            <button onClick={generate} disabled={busy} style={{ background: C.teal, color: "#0F172A", border: "none", borderRadius: 6, padding: "8px 16px", fontWeight: 600, fontSize: 12.5, cursor: "pointer" }}>
               {busy ? "Queueing…" : `Generate ${date} Daily Report`}
             </button>
           </Card>
@@ -3989,7 +3989,7 @@ function ReportsModule() {
               <div key={report.id} style={{ display: "flex", justifyContent: "space-between", gap: 10, padding: "10px 0", borderBottom: `1px solid ${C.borderSoft}` }}>
                 <span style={{ fontWeight: 600, color: C.text }}>{report.business_date} · <span style={{ color: report.status === "READY" ? C.green : report.status === "FAILED" ? C.red : C.grey }}>{report.status}</span></span>
                 <div style={{ display: "flex", gap: 8 }}>
-                  {report.status === "READY" && <button onClick={() => download(report.id)} style={{ background: C.teal, color: "#ffffff", border: "none", borderRadius: 5, padding: "4px 10px", fontSize: 11.5, cursor: "pointer" }}>Download PDF</button>}
+                  {report.status === "READY" && <button onClick={() => download(report.id)} style={{ background: C.teal, color: "#0F172A", border: "none", borderRadius: 5, padding: "4px 10px", fontSize: 11.5, cursor: "pointer" }}>Download PDF</button>}
                   {report.status === "FAILED" && <button onClick={() => reportsApi.regenerate(report.id).then(load)} style={{ background: C.greySoft, color: C.text, border: `1px solid ${C.border}`, borderRadius: 5, padding: "4px 10px", fontSize: 11.5, cursor: "pointer" }}>Retry</button>}
                 </div>
               </div>
@@ -4846,7 +4846,7 @@ function UnifiedCallScoresModule({ calls, parameters, loading, selectedId, setSe
           <div style={{ display: "flex", justifyContent: "flex-end" }}>
             <button
               onClick={() => setSub("reaudit")}
-              style={{ display: "inline-flex", alignItems: "center", gap: 6, background: C.teal, color: "#ffffff", border: "none", borderRadius: 7, padding: "7px 14px", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
+              style={{ display: "inline-flex", alignItems: "center", gap: 6, background: C.teal, color: "#0F172A", border: "none", borderRadius: 7, padding: "7px 14px", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
             >
               <ClipboardCheck size={14} /> Open Re-audit (1-Click)
             </button>

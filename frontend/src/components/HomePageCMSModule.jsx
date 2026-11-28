@@ -108,7 +108,7 @@ export default function HomePageCMSModule() {
           disabled={saving}
           style={{
             background: "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)",
-            color: "#000000",
+            color: "#FFFFFF",
             border: "none",
             borderRadius: 8,
             padding: "10px 24px",

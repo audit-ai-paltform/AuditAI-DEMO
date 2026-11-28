@@ -314,12 +314,12 @@ export default function PayUBillingModule({ currentUser, isAdmin }) {
                 Includes {plan.callMinutes?.toLocaleString()} call minutes and {plan.agentSeats} seats.
               </div>
 
-              <div style={{ height: 1, background: "#1f1f23", marginBottom: 16 }} />
+              <div style={{ height: 1, background: "#BAE6FD", marginBottom: 16 }} />
 
               <div style={{ display: "flex", flexDirection: "column", gap: 10, flex: 1, marginBottom: 22 }}>
                 {plan.features?.map((feat, fIdx) => (
-                  <div key={fIdx} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12, color: "#e4e4e7" }}>
-                    <Check size={14} style={{ color: "#000000", flexShrink: 0 }} />
+                  <div key={fIdx} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12, color: "#334155" }}>
+                    <Check size={14} style={{ color: "#0284C7", flexShrink: 0 }} />
                     <span>{feat}</span>
                   </div>
                 ))}
@@ -330,9 +330,9 @@ export default function PayUBillingModule({ currentUser, isAdmin }) {
                 disabled={initiating}
                 style={{
                   width: "100%",
-                  background: isCurrent ? "#e0f2fe" : "#ffffff",
-                  color: isCurrent ? "#bae6fd" : "#f0f9ff",
-                  border: isCurrent ? "1px solid rgba(96, 165, 250, 0.28)" : "none",
+                  background: isCurrent ? "#E0F2FE" : "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
+                  color: isCurrent ? "#0284C7" : "#FFFFFF",
+                  border: isCurrent ? "1px solid #BAE6FD" : "none",
                   borderRadius: 7,
                   padding: "10px 16px",
                   fontSize: 13,
@@ -407,7 +407,7 @@ export default function PayUBillingModule({ currentUser, isAdmin }) {
               <button onClick={() => setShowCheckoutModal(false)} style={{ background: "none", border: "none", color: "#0369a1", cursor: "pointer" }}><X size={18} /></button>
             </div>
 
-            <div style={{ background: "#f0f9ff", border: "1px solid #1f1f23", borderRadius: 8, padding: 14, marginBottom: 16 }}>
+            <div style={{ background: "#f0f9ff", border: "1px solid #FFFFFF", borderRadius: 8, padding: 14, marginBottom: 16 }}>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
                 <span style={{ color: "#334155", fontSize: 12 }}>Product Description:</span>
                 <span style={{ color: "#000000", fontSize: 12, fontWeight: 600 }}>{checkoutData.productinfo}</span>

@@ -707,7 +707,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
           padding: 8px 10px;
           border-radius: 8px;
           border: 1px solid transparent;
-          color: #ffffff;
+          color: #0F172A;
           text-decoration: none;
           font-size: 11.5px;
           font-weight: 600;
@@ -716,8 +716,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
         }
         .hero-nav-pill:hover {
           background: #E0F2FE;
-          border-color: #7dd3fc;
-          color: #38bdf8;
+          border-color: #BAE6FD;
+          color: #0284C7;
           transform: translateY(-1px);
         }
       `}</style>
@@ -833,7 +833,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 alignItems: "center",
                 gap: 10,
                 background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
-                color: "#0F172A",
+                color: "#FFFFFF",
                 textDecoration: "none",
                 borderRadius: 10,
                 padding: "14px 30px",
@@ -1404,7 +1404,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 width: "100%",
                 background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
                 border: "none",
-                color: "#0F172A",
+                color: "#FFFFFF",
                 borderRadius: 8,
                 padding: "12px",
                 fontSize: 13.5,
@@ -1540,7 +1540,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   height: 40,
                   borderRadius: 10,
                   background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
-                  color: "#0F172A",
+                  color: "#FFFFFF",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -1650,8 +1650,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
 
                 <div style={{ display: "flex", flexDirection: "column", gap: 11, flex: 1, marginBottom: 26 }}>
                   {plan.features?.map((f, fIdx) => (
-                    <div key={fIdx} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 13, color: "#f0f9ff" }}>
-                      <Check size={14} style={{ flexShrink: 0, color: "#0369a1" }} />
+                    <div key={fIdx} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 13, color: "#334155" }}>
+                      <Check size={14} style={{ flexShrink: 0, color: "#0284C7" }} />
                       <span>{f}</span>
                     </div>
                   ))}
@@ -1663,7 +1663,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     style={{
                       width: "100%",
                       background: "linear-gradient(135deg, #0284c7 0%, #2563eb 100%)",
-                      color: "#0F172A",
+                      color: "#FFFFFF",
                       border: "1px solid #BAE6FD",
                       borderRadius: 8,
                       padding: "12px 18px",
@@ -1687,9 +1687,9 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     onClick={() => handleSelectPricing(plan.name)}
                     style={{
                       width: "100%",
-                      background: isSelected ? "#E0F2FE" : "#bae6fd",
-                      color: isSelected ? "#38bdf8" : "#cbd5e1",
-                      border: `1px solid ${isSelected ? "#38bdf8" : "#BAE6FD"}`,
+                      background: isSelected ? "#E0F2FE" : "#F0F9FF",
+                      color: isSelected ? "#0284C7" : "#0F172A",
+                      border: `1px solid ${isSelected ? "#0284C7" : "#BAE6FD"}`,
                       borderRadius: 8,
                       padding: "10px 18px",
                       fontSize: 12.5,
@@ -1862,7 +1862,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 disabled={submittingEnquiry}
                 style={{
                   background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
-                  color: "#0F172A",
+                  color: "#FFFFFF",
                   border: "none",
                   borderRadius: 8,
                   padding: "13px 36px",
@@ -2143,7 +2143,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   alignItems: "center",
                   gap: 6,
                   background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
-                  color: "#0F172A",
+                  color: "#FFFFFF",
                   border: "none",
                   borderRadius: 6,
                   padding: "8px 16px",
@@ -2181,8 +2181,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       {/* -------------------- Interactive Dual-Gateway Direct Checkout Modal -------------------- */}
       {showCheckoutModal && checkoutPlan && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(4, 12, 25, 0.88)", backdropFilter: "blur(10px)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1100, padding: 16 }}>
-          <div style={{ width: 560, maxWidth: "100%", maxHeight: "90vh", background: "#0b1f3d", border: "2px solid #0284C7", borderRadius: 16, padding: 28, display: "flex", flexDirection: "column", color: "#0F172A", boxShadow: "0 20px 50px rgba(0,0,0,0.7)", overflowY: "auto" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20, borderBottom: "1px solid #1e3a66", paddingBottom: 14 }}>
+          <div style={{ width: 560, maxWidth: "100%", maxHeight: "90vh", background: "#FFFFFF", border: "2px solid #0284C7", borderRadius: 16, padding: 28, display: "flex", flexDirection: "column", color: "#0F172A", boxShadow: "0 20px 50px rgba(0,0,0,0.7)", overflowY: "auto" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20, borderBottom: "1px solid #FFFFFF", paddingBottom: 14 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <div style={{ width: 34, height: 34, borderRadius: 8, background: "#E0F2FE", border: "1px solid #38bdf8", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <CreditCard size={18} color="#0284C7" />
@@ -2200,7 +2200,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             </div>
 
             {/* Plan Summary Badge */}
-            <div style={{ background: "#f0f9ff", border: "1px solid #1e3a66", borderRadius: 12, padding: 16, marginBottom: 20, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div style={{ background: "#f0f9ff", border: "1px solid #FFFFFF", borderRadius: 12, padding: 16, marginBottom: 20, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div>
                 <div style={{ fontSize: 16, fontWeight: 700, color: "#0F172A" }}>{checkoutPlan.name}</div>
                 <div style={{ fontSize: 12, color: "#0369a1", marginTop: 2 }}>
@@ -2230,7 +2230,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                       onClick={() => setSelectedGateway(gw.id)}
                       style={{
                         background: isSel ? "#E0F2FE" : "#f0f9ff",
-                        border: `2px solid ${isSel ? "#38bdf8" : "#1e3a66"}`,
+                        border: `2px solid ${isSel ? "#38bdf8" : "#FFFFFF"}`,
                         borderRadius: 10,
                         padding: "12px 14px",
                         textAlign: "left",
@@ -2264,7 +2264,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     width: "100%",
                     boxSizing: "border-box",
                     background: "#f0f9ff",
-                    border: "1px solid #1e3a66",
+                    border: "1px solid #FFFFFF",
                     borderRadius: 8,
                     padding: "9px 12px",
                     color: "#0F172A",
@@ -2287,7 +2287,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                       width: "100%",
                       boxSizing: "border-box",
                       background: "#f0f9ff",
-                      border: "1px solid #1e3a66",
+                      border: "1px solid #FFFFFF",
                       borderRadius: 8,
                       padding: "9px 12px",
                       color: "#0F172A",
@@ -2309,7 +2309,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                       width: "100%",
                       boxSizing: "border-box",
                       background: "#f0f9ff",
-                      border: "1px solid #1e3a66",
+                      border: "1px solid #FFFFFF",
                       borderRadius: 8,
                       padding: "9px 12px",
                       color: "#0F172A",
@@ -2334,7 +2334,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 disabled={checkoutLoading}
                 style={{
                   background: "linear-gradient(135deg, #0284c7 0%, #2563eb 100%)",
-                  color: "#0F172A",
+                  color: "#FFFFFF",
                   border: "none",
                   borderRadius: 8,
                   padding: "13px",
@@ -2376,7 +2376,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       {/* -------------------- Payment Success Modal -------------------- */}
       {paymentSuccessData && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(4, 12, 25, 0.92)", backdropFilter: "blur(12px)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1200, padding: 16 }}>
-          <div style={{ width: 500, maxWidth: "100%", background: "#0b1f3d", border: "2px solid #10b981", borderRadius: 16, padding: 32, textAlign: "center", color: "#0F172A", boxShadow: "0 25px 60px rgba(16, 185, 129, 0.25)" }}>
+          <div style={{ width: 500, maxWidth: "100%", background: "#FFFFFF", border: "2px solid #10b981", borderRadius: 16, padding: 32, textAlign: "center", color: "#0F172A", boxShadow: "0 25px 60px rgba(16, 185, 129, 0.25)" }}>
             <div style={{ width: 64, height: 64, borderRadius: "50%", background: "rgba(16, 185, 129, 0.15)", border: "2px solid #10b981", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
               <CheckCircle2 size={36} color="#16a34a" />
             </div>
@@ -2397,7 +2397,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 }}
                 style={{
                   background: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
-                  color: "#0F172A",
+                  color: "#FFFFFF",
                   border: "none",
                   borderRadius: 8,
                   padding: "12px 26px",
@@ -2417,7 +2417,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 onClick={() => setPaymentSuccessData(null)}
                 style={{
                   background: "#bae6fd",
-                  border: "1px solid #1e3a66",
+                  border: "1px solid #FFFFFF",
                   color: "#334155",
                   borderRadius: 8,
                   padding: "12px 20px",

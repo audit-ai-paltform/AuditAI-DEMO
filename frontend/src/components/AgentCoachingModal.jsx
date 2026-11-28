@@ -154,7 +154,7 @@ export default function AgentCoachingModal({ call, onClose }) {
               key={idx}
               style={{
                 background: "#f0f9ff",
-                border: "1px solid #1f1f23",
+                border: "1px solid #FFFFFF",
                 borderRadius: 8,
                 padding: 16,
               }}
