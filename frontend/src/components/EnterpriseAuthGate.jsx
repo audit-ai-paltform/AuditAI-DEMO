@@ -463,61 +463,87 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
         </form>
 
         {/* Demo Fast Login Pills */}
-        <div style={{ marginTop: 22, paddingTop: 16, borderTop: "1px solid rgba(96, 165, 250, 0.2)" }}>
-          <div style={{ fontSize: 11, color: "#7dd3fc", marginBottom: 10, textTransform: "uppercase", letterSpacing: 0.6, fontWeight: 700 }}>
-            Instant Access Credentials (Demo Presets):
+        <div style={{ marginTop: 20, paddingTop: 14, borderTop: "1px solid rgba(96, 165, 250, 0.2)" }}>
+          <div style={{ fontSize: 10.5, color: "#7dd3fc", marginBottom: 8, textTransform: "uppercase", letterSpacing: 0.6, fontWeight: 700 }}>
+            Platform Employee Panels (1-Click Demo):
           </div>
-          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-            <button
-              type="button"
-              onClick={() => {
-                applyPreset("admin");
-                setTimeout(() => handleSubmit(), 60);
-              }}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 6,
-                background: "rgba(14, 34, 72, 0.8)",
-                border: "1px solid rgba(56, 189, 248, 0.4)",
-                borderRadius: 8,
-                padding: "8px 14px",
-                color: "#ffffff",
-                fontSize: 12,
-                fontWeight: 600,
-                cursor: "pointer",
-                transition: "all 0.2s",
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.borderColor = "#38bdf8"}
-              onMouseLeave={(e) => e.currentTarget.style.borderColor = "rgba(56, 189, 248, 0.4)"}
-            >
-              <ShieldCheck size={14} color="#38bdf8" /> Admin: admin@auditai.io
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                applyPreset("client");
-                setTimeout(() => handleSubmit(), 60);
-              }}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 6,
-                background: "rgba(14, 34, 72, 0.8)",
-                border: "1px solid rgba(56, 189, 248, 0.4)",
-                borderRadius: 8,
-                padding: "8px 14px",
-                color: "#ffffff",
-                fontSize: 12,
-                fontWeight: 600,
-                cursor: "pointer",
-                transition: "all 0.2s",
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.borderColor = "#38bdf8"}
-              onMouseLeave={(e) => e.currentTarget.style.borderColor = "rgba(56, 189, 248, 0.4)"}
-            >
-              <UserCheck size={14} color="#38bdf8" /> Client: client@auditai.io
-            </button>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6, marginBottom: 12 }}>
+            {[
+              { label: "Main Super Admin", email: "admin@auditai.io", pass: "Admin@12345", roleKey: "super_admin" },
+              { label: "Administrator", email: "administrator@auditai.io", pass: "Admin@12345", roleKey: "admin" },
+              { label: "Manager Panel", email: "manager@auditai.io", pass: "Manager@12345", roleKey: "manager" },
+              { label: "Sales Team Panel", email: "sales@auditai.io", pass: "Sales@12345", roleKey: "sales" },
+            ].map((p) => (
+              <button
+                key={p.email}
+                type="button"
+                onClick={async () => {
+                  setEmail(p.email);
+                  setPassword(p.pass);
+                  setRole("admin");
+                  setLoading(true);
+                  setError("");
+                  try {
+                    const session = await authApi.login({ email: p.email, password: p.pass, role: p.roleKey });
+                    const user = session?.user || session || { email: p.email, role: p.roleKey, full_name: p.label };
+                    if (onLoginSuccess) onLoginSuccess(user);
+                    if (onClose) onClose();
+                  } catch (err) {
+                    setError(err.message || "Login failed");
+                  } finally {
+                    setLoading(false);
+                  }
+                }}
+                style={{
+                  display: "inline-flex", alignItems: "center", gap: 6,
+                  background: "rgba(14, 34, 72, 0.85)", border: "1px solid rgba(56, 189, 248, 0.38)",
+                  borderRadius: 8, padding: "7px 10px", color: "#ffffff", fontSize: 11.5, fontWeight: 600, cursor: "pointer",
+                }}
+              >
+                <ShieldCheck size={13} color="#38bdf8" /> {p.label}
+              </button>
+            ))}
+          </div>
+
+          <div style={{ fontSize: 10.5, color: "#7dd3fc", marginBottom: 8, textTransform: "uppercase", letterSpacing: 0.6, fontWeight: 700 }}>
+            Client Organization Panels (1-Click Demo):
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6 }}>
+            {[
+              { label: "Client Super Admin", email: "client.superadmin@auditai.io", pass: "Client@12345", roleKey: "client_super_admin" },
+              { label: "Client Admin", email: "client.admin@auditai.io", pass: "Client@12345", roleKey: "client_admin" },
+              { label: "Client Manager", email: "client.manager@auditai.io", pass: "Client@12345", roleKey: "client_manager" },
+              { label: "Client Viewer Panel", email: "client@auditai.io", pass: "Client@12345", roleKey: "client" },
+            ].map((p) => (
+              <button
+                key={p.email}
+                type="button"
+                onClick={async () => {
+                  setEmail(p.email);
+                  setPassword(p.pass);
+                  setRole("client");
+                  setLoading(true);
+                  setError("");
+                  try {
+                    const session = await authApi.login({ email: p.email, password: p.pass, role: p.roleKey });
+                    const user = session?.user || session || { email: p.email, role: p.roleKey, full_name: p.label };
+                    if (onLoginSuccess) onLoginSuccess(user);
+                    if (onClose) onClose();
+                  } catch (err) {
+                    setError(err.message || "Login failed");
+                  } finally {
+                    setLoading(false);
+                  }
+                }}
+                style={{
+                  display: "inline-flex", alignItems: "center", gap: 6,
+                  background: "rgba(14, 34, 72, 0.85)", border: "1px solid rgba(56, 189, 248, 0.38)",
+                  borderRadius: 8, padding: "7px 10px", color: "#ffffff", fontSize: 11.5, fontWeight: 600, cursor: "pointer",
+                }}
+              >
+                <UserCheck size={13} color="#38bdf8" /> {p.label}
+              </button>
+            ))}
           </div>
         </div>
       </div>

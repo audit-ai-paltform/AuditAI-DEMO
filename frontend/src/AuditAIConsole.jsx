@@ -5,7 +5,7 @@ import {
 } from "recharts";
 import {
   LayoutDashboard, UploadCloud, Mic, ListChecks, SlidersHorizontal, Grid3x3,
-  AlertTriangle, CheckCircle2, AlertCircle, Search, Plus, X, Loader2, Play, Pause,
+  AlertTriangle, CheckCircle2, AlertCircle, Search, Plus, Minus, Menu, X, Loader2, Play, Pause,
   ChevronDown, ChevronRight, ChevronLeft, Sparkles, Clock, ArrowRight, Heart, ShieldAlert,
   RefreshCcw, Users, FileText, Languages, CreditCard, Check, History, Filter, Calendar,
   Database, Download, TrendingUp, Smile, MessageSquare, Mail, FileSpreadsheet, Flag,
@@ -44,31 +44,31 @@ import AdminUserActivityModule from "./components/AdminUserActivityModule";
 import AskAuditAIChatbot from "./components/AskAuditAIChatbot";
 
 /* ---------------------------------------------------------------- */
-/*  Design tokens — Lighter Enterprise Sky Blue & Crisp Slate UI    */
+/*  Design tokens — Unified Enterprise Sky-Blue Grid & White UI     */
 /*  Status Colour Standard: Red = Risk, Grey = Neutral, Green = Good*/
 /* ---------------------------------------------------------------- */
 const C = {
-  bg: "#f0f7ff",          // Light sky-blue canvas
-  panel: "#ffffff",       // Crisp white panel & sidebar
-  panel2: "#e0f2fe",      // Soft ice-blue container
-  panelHover: "#bae6fd",  // Hover sky highlight
-  border: "#bae6fd",      // Clean sky border
-  borderSoft: "#e2e8f0",  // Soft slate divider
-  text: "#0f172a",        // Deep slate ink
-  muted: "#334155",       // Secondary slate text
-  faint: "#64748b",       // Neutral grey
+  bg: "#092147",          // Deep sky-blue canvas
+  panel: "#0c2856",       // Crisp sky-navy panel & sidebar
+  panel2: "#11356e",      // Elevated sky-blue card / table header
+  panelHover: "#174287",  // Hover sky highlight
+  border: "rgba(56, 189, 248, 0.30)",      // Clean sky border
+  borderSoft: "rgba(255, 255, 255, 0.14)", // Soft white divider
+  text: "#ffffff",        // Crisp white text
+  muted: "#e0f2fe",       // Soft sky-white secondary text
+  faint: "#7dd3fc",       // Light sky-blue labels
   white: "#ffffff",       // Pure white
-  black: "#0f172a",       // Deep slate
-  teal: "#0284c7",        // Sky blue primary accent
-  tealSoft: "rgba(2, 132, 199, 0.12)",
-  red: "#dc2626",         // Red = Risk (very high)
-  redSoft: "rgba(220, 38, 38, 0.12)",
-  amber: "#64748b",       // Grey = Neutral
-  amberSoft: "rgba(100, 116, 139, 0.14)",
-  grey: "#64748b",        // Grey = Neutral
-  greySoft: "rgba(100, 116, 139, 0.14)",
-  green: "#16a34a",       // Green = Good
-  greenSoft: "rgba(22, 163, 74, 0.12)",
+  black: "#08162d",       // Deep contrast ink (for bright sky-blue buttons)
+  teal: "#38bdf8",        // Sky-blue primary accent
+  tealSoft: "rgba(56, 189, 248, 0.16)",
+  red: "#f87171",         // Red = Risk
+  redSoft: "rgba(248, 113, 113, 0.16)",
+  amber: "#94a3b8",       // Grey = Neutral
+  amberSoft: "rgba(148, 163, 184, 0.18)",
+  grey: "#94a3b8",        // Grey = Neutral
+  greySoft: "rgba(148, 163, 184, 0.18)",
+  green: "#34d399",       // Green = Good
+  greenSoft: "rgba(52, 211, 153, 0.16)",
 };
 
 const FONT_STYLE = `
@@ -82,12 +82,12 @@ const FONT_STYLE = `
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #08162d;
+  background: #081e40;
 }
 ::-webkit-scrollbar-thumb {
-  background: #19263c;
-  border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #174287;
+  border-radius: 6px;
+  border: 1px solid rgba(56, 189, 248, 0.25);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #38bdf8;
@@ -101,9 +101,87 @@ const FONT_STYLE = `
   animation: spin 1s linear infinite;
 }
 
+/* Sky-blue small checkbox/grid pattern background */
+.auditai-grid-bg {
+  background-color: #092147;
+  background-image:
+    radial-gradient(rgba(125, 211, 252, 0.14) 1px, transparent 1px),
+    linear-gradient(to right, rgba(56, 189, 248, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px, 20px 20px, 20px 20px;
+  background-position: 10px 10px, 0 0, 0 0;
+}
+
+/* Unified Table Contrast for Sky-Blue + White Theme */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #ffffff;
+}
+thead th {
+  background: rgba(17, 53, 110, 0.92);
+  color: #e0f2fe;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.35);
+}
+tbody td {
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+tbody tr:hover {
+  background: rgba(56, 189, 248, 0.10);
+}
+
+/* Modern Stylish Buttons */
+button {
+  transition: transform 0.14s ease, box-shadow 0.16s ease, background-color 0.16s ease, border-color 0.16s ease;
+}
+button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
 input:focus, select:focus, textarea:focus {
-  outline: 1px solid #ffffff !important;
-  border-color: #ffffff !important;
+  outline: 1px solid #38bdf8 !important;
+  border-color: #38bdf8 !important;
+}
+
+/* Responsive Breakpoints: Smaller, Larger & Ultra-Wide Screens */
+.auditai-mobile-menu-btn {
+  display: none;
+}
+.auditai-main-pad {
+  padding: 24px;
+}
+.auditai-content-inner {
+  width: 100%;
+  max-width: 1840px;
+  margin: 0 auto;
+}
+@media (max-width: 960px) {
+  .auditai-sidebar {
+    position: fixed !important;
+    left: 0;
+    top: 0;
+    z-index: 60;
+    transform: translateX(-100%);
+    box-shadow: 8px 0 32px rgba(0, 0, 0, 0.45);
+  }
+  .auditai-sidebar.open {
+    transform: translateX(0);
+  }
+  .auditai-mobile-menu-btn {
+    display: inline-flex !important;
+  }
+  .auditai-badges-hide {
+    display: none !important;
+  }
+  .auditai-main-pad {
+    padding: 14px;
+  }
+}
+@media (min-width: 1600px) {
+  .auditai-main-pad {
+    padding: 28px 36px;
+  }
 }
 `;
 
@@ -4788,6 +4866,9 @@ export default function AuditAIConsole() {
   const [showAuthGate, setShowAuthGate] = useState(false);
   const [authGateRole, setAuthGateRole] = useState("admin");
   const [roleFeatures, setRoleFeatures] = useState(null);
+  const [collapsedGroups, setCollapsedGroups] = useState({});
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [fullscreenPane, setFullscreenPane] = useState(false);
 
   useEffect(() => {
     adminPortalApi.getRoleFeatures().then((res) => {
@@ -5113,21 +5194,28 @@ export default function AuditAIConsole() {
   return (
     <>
       <style>{FONT_STYLE}</style>
-      <div style={{ display: "flex", height: "100vh", overflow: "hidden", background: C.bg, color: C.text, fontFamily: "Inter, sans-serif" }}>
+      <div className="auditai-grid-bg" style={{ display: "flex", height: "100vh", overflow: "hidden", color: C.text, fontFamily: "Inter, sans-serif", position: "relative" }}>
+        {mobileNavOpen && (
+          <div
+            onClick={() => setMobileNavOpen(false)}
+            style={{ position: "fixed", inset: 0, background: "rgba(4, 14, 32, 0.65)", backdropFilter: "blur(2px)", zIndex: 55 }}
+          />
+        )}
         {/* Sidebar — fixed to the viewport; only the nav list scrolls internally */}
         <aside
+          className={`auditai-sidebar ${mobileNavOpen ? "open" : ""}`}
           style={{
-            width: sidebarCollapsed ? 72 : 240,
+            width: sidebarCollapsed ? 72 : 254,
             flexShrink: 0,
             height: "100vh",
-            background: C.panel,
+            background: "linear-gradient(180deg, #0c2856 0%, #092147 100%)",
             borderRight: `1px solid ${C.border}`,
-            padding: sidebarCollapsed ? "20px 10px" : "20px 14px",
-            display: "flex",
+            padding: sidebarCollapsed ? "18px 10px" : "18px 14px",
+            display: fullscreenPane ? "none" : "flex",
             flexDirection: "column",
-            gap: 18,
+            gap: 16,
             overflow: "hidden",
-            transition: "width 0.2s ease, padding 0.2s ease",
+            transition: "width 0.2s ease, padding 0.2s ease, transform 0.2s ease",
           }}
         >
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
@@ -5165,43 +5253,69 @@ export default function AuditAIConsole() {
             </button>
           )}
 
-          <nav style={{ display: "flex", flexDirection: "column", gap: 16, flex: 1, minHeight: 0, overflowY: "auto", overflowX: "hidden" }}>
-            {navGroupsFor(tenantConfig?.setup_state, currentUser?.role, roleFeatures).map((group, gIdx) => (
-              <div key={gIdx} style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-                {gIdx > 0 && <div style={{ height: 1, background: C.borderSoft, margin: sidebarCollapsed ? "6px 4px 10px" : "6px 0 10px" }} />}
+          <nav style={{ display: "flex", flexDirection: "column", gap: 12, flex: 1, minHeight: 0, overflowY: "auto", overflowX: "hidden" }}>
+            {navGroupsFor(tenantConfig?.setup_state, currentUser?.role, roleFeatures).map((group, gIdx) => {
+              const isGroupCollapsed = !!collapsedGroups[group.title];
+              return (
+              <div key={group.title || gIdx} style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                {gIdx > 0 && <div style={{ height: 1, background: C.borderSoft, margin: sidebarCollapsed ? "4px 4px 8px" : "4px 0 8px" }} />}
                 {!sidebarCollapsed && (
-                  <div style={{ color: C.faint, fontSize: 10, fontFamily: "Inter", fontWeight: 700, letterSpacing: 0.6, padding: "0 8px 4px" }}>
-                    {group.title}
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "2px 6px 4px 8px", gap: 6 }}>
+                    <span style={{ color: C.faint, fontSize: 10, fontFamily: "Inter", fontWeight: 700, letterSpacing: 0.7 }}>
+                      {group.title}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setCollapsedGroups((prev) => ({ ...prev, [group.title]: !prev[group.title] }))}
+                      title={isGroupCollapsed ? `Maximize ${group.title}` : `Minimize ${group.title}`}
+                      aria-label={isGroupCollapsed ? `Maximize ${group.title}` : `Minimize ${group.title}`}
+                      style={{
+                        width: 20,
+                        height: 20,
+                        borderRadius: 6,
+                        border: `1px solid ${C.border}`,
+                        background: isGroupCollapsed ? "rgba(56, 189, 248, 0.20)" : C.panel2,
+                        color: "#ffffff",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        cursor: "pointer",
+                        flexShrink: 0,
+                      }}
+                    >
+                      {isGroupCollapsed ? <Plus size={12} color="#38bdf8" /> : <Minus size={12} color="#e0f2fe" />}
+                    </button>
                   </div>
                 )}
-                {group.items.map((item) => {
+                {(!isGroupCollapsed || sidebarCollapsed) && group.items.map((item) => {
                   const Icon = item.Icon;
                   const active = tab === item.id;
                   return (
                     <button
                       key={item.id}
-                      onClick={() => setTab(item.id)}
+                      onClick={() => { setTab(item.id); setMobileNavOpen(false); }}
                       title={sidebarCollapsed ? item.label : undefined}
                       aria-label={item.label}
                       style={{
                         display: "flex", alignItems: "center", gap: 10, width: "100%", textAlign: "left",
                         justifyContent: sidebarCollapsed ? "center" : "flex-start",
-                        background: active ? C.teal : "transparent",
-                        color: active ? "#ffffff" : C.text,
-                        border: "none",
-                        borderRadius: 6, padding: sidebarCollapsed ? "9px 0" : "8px 10px",
+                        background: active ? "linear-gradient(135deg, #38bdf8 0%, #7dd3fc 100%)" : "transparent",
+                        color: active ? "#08162d" : "#ffffff",
+                        border: active ? "1px solid rgba(255, 255, 255, 0.45)" : "1px solid transparent",
+                        borderRadius: 10, padding: sidebarCollapsed ? "9px 0" : "8px 11px",
                         fontFamily: "Inter", fontSize: 12.5, fontWeight: active ? 700 : 500,
                         cursor: "pointer", transition: "all 0.15s ease",
-                        boxShadow: active ? "0 2px 8px rgba(2, 132, 199, 0.25)" : "none",
+                        boxShadow: active ? "0 4px 14px rgba(56, 189, 248, 0.35)" : "none",
                       }}
                     >
-                      <Icon size={15} style={{ flexShrink: 0, color: active ? "#ffffff" : C.teal }} />
+                      <Icon size={15} style={{ flexShrink: 0, color: active ? "#08162d" : C.teal }} />
                       {!sidebarCollapsed && <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{item.label}</span>}
                     </button>
                   );
                 })}
               </div>
-            ))}
+              );
+            })}
           </nav>
 
           <div style={{ borderTop: `1px solid ${C.borderSoft}`, paddingTop: 12, flexShrink: 0 }}>
@@ -5219,22 +5333,63 @@ export default function AuditAIConsole() {
         {/* Main Content Pane — scrolls independently of the sidebar */}
         <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", height: "100vh", overflow: "hidden" }}>
           {/* Top Bar Header — fixed within the content pane */}
-          <div style={{ height: 56, flexShrink: 0, borderBottom: `1px solid ${C.border}`, background: C.panel, padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+          <div style={{ height: 58, flexShrink: 0, borderBottom: `1px solid ${C.border}`, background: "rgba(12, 40, 86, 0.94)", backdropFilter: "blur(8px)", padding: "0 20px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, minWidth: 0 }}>
+              <button
+                type="button"
+                className="auditai-mobile-menu-btn"
+                onClick={() => setMobileNavOpen((v) => !v)}
+                aria-label="Toggle navigation menu"
+                style={{
+                  background: C.panel2,
+                  border: `1px solid ${C.border}`,
+                  color: "#ffffff",
+                  borderRadius: 10,
+                  padding: "6px 8px",
+                  cursor: "pointer",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Menu size={16} />
+              </button>
+              <button
+                type="button"
+                onClick={() => setFullscreenPane((v) => !v)}
+                title={fullscreenPane ? "Minimize workspace (show sidebar)" : "Maximize workspace (hide sidebar)"}
+                aria-label={fullscreenPane ? "Minimize workspace" : "Maximize workspace"}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 5,
+                  background: fullscreenPane ? "linear-gradient(135deg, #38bdf8 0%, #0284c7 100%)" : C.panel2,
+                  border: `1px solid ${C.border}`,
+                  color: "#ffffff",
+                  borderRadius: 999,
+                  padding: "5px 10px",
+                  fontSize: 11,
+                  fontWeight: 700,
+                  cursor: "pointer",
+                  flexShrink: 0,
+                }}
+              >
+                {fullscreenPane ? <Minus size={13} /> : <Plus size={13} />}
+                <span>{fullscreenPane ? "Minimize" : "Maximize"}</span>
+              </button>
+              <div style={{ display: "flex", alignItems: "center", gap: 6, minWidth: 0 }}>
                 <span style={{ color: C.faint, fontSize: 12, fontFamily: "Inter" }}>Workspace:</span>
-                <span style={{ color: C.text, fontSize: 13, fontFamily: "Inter", fontWeight: 600 }}>NA Enterprise</span>
+                <span style={{ color: C.text, fontSize: 13, fontFamily: "Inter", fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>NA Enterprise</span>
               </div>
 
-              {/* Architecture Badges in Lighter Sky Blue */}
-              <div style={{ alignItems: "center", gap: 6, display: sidebarCollapsed ? "none" : "flex" }}>
-                <span style={{ display: "inline-flex", alignItems: "center", gap: 4, background: C.panel2, border: `1px solid ${C.border}`, borderRadius: 4, padding: "2px 8px", fontSize: 10.5, color: C.teal, fontWeight: 600, fontFamily: "JetBrains Mono" }}>
+              {/* Architecture Badges */}
+              <div className="auditai-badges-hide" style={{ alignItems: "center", gap: 6, display: sidebarCollapsed ? "none" : "flex" }}>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 4, background: C.panel2, border: `1px solid ${C.border}`, borderRadius: 999, padding: "2px 9px", fontSize: 10.5, color: C.teal, fontWeight: 600, fontFamily: "JetBrains Mono" }}>
                   <Shield size={11} color={C.teal} /> Auth DB
                 </span>
-                <span style={{ display: "inline-flex", alignItems: "center", gap: 4, background: C.panel2, border: `1px solid ${C.border}`, borderRadius: 4, padding: "2px 8px", fontSize: 10.5, color: C.teal, fontWeight: 600, fontFamily: "JetBrains Mono" }}>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 4, background: C.panel2, border: `1px solid ${C.border}`, borderRadius: 999, padding: "2px 9px", fontSize: 10.5, color: C.teal, fontWeight: 600, fontFamily: "JetBrains Mono" }}>
                   <Database size={11} color={C.teal} /> Cloudflare D1
                 </span>
-                <span style={{ display: "inline-flex", alignItems: "center", gap: 4, background: C.panel2, border: `1px solid ${C.border}`, borderRadius: 4, padding: "2px 8px", fontSize: 10.5, color: C.teal, fontWeight: 600, fontFamily: "JetBrains Mono" }}>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 4, background: C.panel2, border: `1px solid ${C.border}`, borderRadius: 999, padding: "2px 9px", fontSize: 10.5, color: C.teal, fontWeight: 600, fontFamily: "JetBrains Mono" }}>
                   <HardDrive size={11} color={C.teal} /> Cloudflare R2
                 </span>
               </div>
@@ -5335,7 +5490,8 @@ export default function AuditAIConsole() {
           </div>
 
           {/* Dynamic Content View — the only scrolling region in the app */}
-          <div style={{ flex: 1, minHeight: 0, padding: 24, overflowY: "auto", overflowX: "hidden" }}>
+          <div className="auditai-main-pad" style={{ flex: 1, minHeight: 0, overflowY: "auto", overflowX: "hidden" }}>
+            <div className="auditai-content-inner">
             {(tab === "home_cms" || tab === "admin_home_cms") && <HomePageCMSModule />}
             {tab === "admin_team" && <AdminTeamEditorModule />}
             {tab === "admin_subscriptions" && <AdminSubscriptionsModule />}
@@ -5371,6 +5527,7 @@ export default function AuditAIConsole() {
             {tab === "settings" && <SettingsModule config={tenantConfig} sopVersions={sopVersions} configError={configError} onRefresh={() => { loadConfig(); }} goTo={goTo} />}
             {tab === "reports" && <ReportsModule />}
             {tab === "csvupload" && <CsvUploadModule onImportComplete={loadData} />}
+            </div>
           </div>
         </div>
 

@@ -1,4 +1,12 @@
-export type UserRole = 'admin' | 'client';
+export type UserRole =
+  | 'super_admin'
+  | 'admin'
+  | 'manager'
+  | 'sales'
+  | 'client_super_admin'
+  | 'client_admin'
+  | 'client_manager'
+  | 'client';
 export type UserStatus = 'ACTIVE' | 'SUSPENDED' | 'PENDING_APPROVAL';
 
 export interface AuthUser {

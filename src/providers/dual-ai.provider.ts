@@ -1,13 +1,11 @@
 /**
  * Dual AI / LLM Orchestration Provider
- * Primary: OpenAI API (gpt-4o-mini / gpt-4o)
+ * Primary: OpenRouter API (configured model e.g. inclusionai/ling-3.2-flash:free / claude-3.5-sonnet)
  * Safe Fallback: Google Gemini API (gemini-3.6-flash / gemini-2.5-flash)
- * Tertiary Fallback: OpenRouter API
  */
 
-import { openAIProvider, OpenAIProvider } from './openai.provider.js';
-import { geminiProvider, GeminiProvider } from './gemini.provider.js';
 import { openRouterFallback, OpenRouterProvider } from './openrouter.provider.js';
+import { geminiProvider, GeminiProvider } from './gemini.provider.js';
 import {
   IAIProvider,
   FlagVerificationInput,
@@ -27,57 +25,55 @@ export interface AIProviderStatus {
     model: string;
     configured: boolean;
   };
-  activeMode: 'openai-primary-gemini-fallback' | 'gemini-primary' | 'dual-fallback';
+  activeMode: 'openrouter-primary-gemini-fallback' | 'gemini-only';
 }
 
 export class DualAIProvider implements IAIProvider {
-  private openai: OpenAIProvider;
-  private gemini: GeminiProvider;
   private openrouter: OpenRouterProvider;
+  private gemini: GeminiProvider;
 
   constructor() {
-    this.openai = openAIProvider;
-    this.gemini = geminiProvider;
     this.openrouter = openRouterFallback;
+    this.gemini = geminiProvider;
+  }
+
+  private isOpenRouterConfigured(): boolean {
+    const k = process.env.OPENROUTER_API_KEY;
+    return Boolean(k && k.trim().length > 10);
   }
 
   public getStatus(): AIProviderStatus {
-    const hasOpenAI = this.openai.isConfigured();
+    const hasOpenRouter = this.isOpenRouterConfigured();
     const hasGemini = Boolean(process.env.GEMINI_API_KEY && process.env.GEMINI_API_KEY !== 'sample_gemini_api_key');
 
     return {
       primary: {
-        name: hasOpenAI ? 'OpenAI' : 'Google Gemini',
-        model: hasOpenAI ? this.openai.getModel() : 'gemini-3.6-flash / gemini-2.5-flash',
-        configured: hasOpenAI || hasGemini,
+        name: hasOpenRouter ? 'OpenRouter' : 'Google Gemini',
+        model: hasOpenRouter ? this.openrouter.getModel() : 'gemini-3.6-flash / gemini-2.5-flash',
+        configured: hasOpenRouter || hasGemini,
       },
       secondary: {
-        name: hasOpenAI ? 'Google Gemini (Safe Fallback)' : 'OpenRouter (Fallback)',
-        model: hasOpenAI ? 'gemini-3.6-flash / gemini-2.5-flash' : this.openrouter.getModel(),
-        configured: hasOpenAI ? hasGemini : Boolean(process.env.OPENROUTER_API_KEY),
+        name: hasOpenRouter ? 'Google Gemini (Safe Fallback)' : 'OpenRouter',
+        model: hasOpenRouter ? 'gemini-3.6-flash / gemini-2.5-flash' : this.openrouter.getModel(),
+        configured: hasOpenRouter ? hasGemini : hasOpenRouter,
       },
-      activeMode: hasOpenAI ? 'openai-primary-gemini-fallback' : 'gemini-primary',
+      activeMode: hasOpenRouter ? 'openrouter-primary-gemini-fallback' : 'gemini-only',
     };
   }
 
   public async generateStructuredJson(systemInstruction: string, prompt: string): Promise<Record<string, unknown>> {
-    if (this.openai.isConfigured()) {
+    if (this.isOpenRouterConfigured()) {
       try {
-        return await this.openai.generateStructuredJson(systemInstruction, prompt);
-      } catch (openAiErr: any) {
-        logger.warn({ err: openAiErr.message }, '[DualAIProvider] Primary OpenAI failed, failing over to Google Gemini...');
+        return await this.openrouter.generateStructuredJson(systemInstruction, prompt);
+      } catch (openRouterErr: any) {
+        logger.warn({ err: openRouterErr.message }, '[DualAIProvider] Primary OpenRouter failed, failing over to Google Gemini...');
       }
     }
 
     try {
       return await this.gemini.generateStructuredJson(systemInstruction, prompt);
     } catch (geminiErr: any) {
-      logger.warn({ err: geminiErr.message }, '[DualAIProvider] Google Gemini failed, failing over to OpenRouter...');
-      try {
-        return await this.openrouter.generateStructuredJson(systemInstruction, prompt);
-      } catch (openRouterErr: any) {
-        throw new Error(`AI generation failed across providers: Gemini (${geminiErr.message}), OpenRouter (${openRouterErr.message})`);
-      }
+      throw new Error(`AI generation failed across OpenRouter and Google Gemini: ${geminiErr.message}`);
     }
   }
 
@@ -88,87 +84,56 @@ export class DualAIProvider implements IAIProvider {
     parameters: Array<{ name: string; weight: number }>,
     tenantApiKey?: string,
   ): Promise<StructuredEvaluationResult> {
-    if (this.openai.isConfigured()) {
+    if (this.isOpenRouterConfigured()) {
       try {
-        return await this.openai.evaluateCall(transcriptText, utterances, sopContent, parameters, tenantApiKey);
-      } catch (openAiErr: any) {
-        logger.warn({ err: openAiErr.message }, '[DualAIProvider] OpenAI evaluateCall failed, failing over to Google Gemini...');
+        return await this.openrouter.evaluateCall(transcriptText, utterances, sopContent, parameters);
+      } catch (openRouterErr: any) {
+        logger.warn({ err: openRouterErr.message }, '[DualAIProvider] OpenRouter evaluateCall failed, failing over to Google Gemini...');
       }
     }
 
-    try {
-      return await this.gemini.evaluateCall(transcriptText, utterances, sopContent, parameters, tenantApiKey);
-    } catch (geminiErr: any) {
-      logger.warn({ err: geminiErr.message }, '[DualAIProvider] Gemini evaluateCall failed, failing over to OpenRouter...');
-      return await this.openrouter.evaluateCall(transcriptText, utterances, sopContent, parameters);
-    }
+    return await this.gemini.evaluateCall(transcriptText, utterances, sopContent, parameters, tenantApiKey);
   }
 
   public async verifyFlags(input: FlagVerificationInput): Promise<FlagVerificationOutput> {
-    if (this.openai.isConfigured()) {
+    if (this.isOpenRouterConfigured()) {
       try {
-        return await this.openai.verifyFlags(input);
+        return await this.openrouter.verifyFlags(input);
       } catch (err: any) {
-        logger.warn({ err: err.message }, '[DualAIProvider] OpenAI verifyFlags failed, failing over to Google Gemini...');
+        logger.warn({ err: err.message }, '[DualAIProvider] OpenRouter verifyFlags failed, failing over to Google Gemini...');
       }
     }
 
     try {
       return await this.gemini.verifyFlags(input);
     } catch {
-      try {
-        return await this.openrouter.verifyFlags(input);
-      } catch {
-        return { flags: [] };
-      }
+      return { flags: [] };
     }
   }
 
   public async extractAuditRules(sopText: string): Promise<Array<{ rule: string; suggestedWeight: number }>> {
     const sys = `Extract 5-8 concrete audit rules with suggested percentage weights (total ~100) from the provided call script. Return ONLY raw JSON: {"rules":[{"rule":"string","suggestedWeight":number}]}`;
-    if (this.openai.isConfigured()) {
+    if (this.isOpenRouterConfigured()) {
       try {
-        const res = await this.openai.generateStructuredJson(sys, sopText);
+        const res = await this.openrouter.generateStructuredJson(sys, sopText);
         return Array.isArray((res as any).rules) ? (res as any).rules : [];
       } catch {}
     }
-    try {
-      return await this.gemini.extractAuditRules(sopText);
-    } catch {
-      const res = await this.openrouter.generateStructuredJson(sys, sopText);
-      return Array.isArray((res as any).rules) ? (res as any).rules : [];
-    }
+    return await this.gemini.extractAuditRules(sopText);
   }
 
   public async suggestParameter(currentParameters: Array<{ name: string; weight: number }>): Promise<{ name: string; suggestedWeight: number; rationale: string }> {
     const sys = `Suggest exactly ONE new QA parameter not covered in the current list. Return ONLY raw JSON: {"name":"string","suggestedWeight":number,"rationale":"string"}`;
-    if (this.openai.isConfigured()) {
+    if (this.isOpenRouterConfigured()) {
       try {
-        return (await this.openai.generateStructuredJson(sys, JSON.stringify(currentParameters))) as any;
+        return (await this.openrouter.generateStructuredJson(sys, JSON.stringify(currentParameters))) as any;
       } catch {}
     }
-    try {
-      return await this.gemini.suggestParameter(currentParameters);
-    } catch {
-      return (await this.openrouter.generateStructuredJson(sys, JSON.stringify(currentParameters))) as any;
-    }
+    return await this.gemini.suggestParameter(currentParameters);
   }
 
   public async probeDualProviders() {
     const orResult = await this.openrouter.probe();
-    let openaiStatus: { status: 'healthy' | 'error' | 'unconfigured'; model: string; latencyMs?: number; error?: string } = {
-      status: this.openai.isConfigured() ? 'healthy' : 'unconfigured',
-      model: this.openai.getModel(),
-    };
-    if (this.openai.isConfigured()) {
-      const oStart = Date.now();
-      try {
-        await this.openai.generateStructuredJson('Ping test.', 'Return {"ping":"pong"}');
-        openaiStatus = { status: 'healthy', model: this.openai.getModel(), latencyMs: Date.now() - oStart };
-      } catch (err: any) {
-        openaiStatus = { status: 'error', model: this.openai.getModel(), latencyMs: Date.now() - oStart, error: err.message };
-      }
-    }
 
     let geminiStatus: { status: 'healthy' | 'error'; latencyMs?: number; error?: string } = { status: 'healthy', latencyMs: 0 };
     const gStart = Date.now();
@@ -180,14 +145,13 @@ export class DualAIProvider implements IAIProvider {
     }
 
     return {
-      openai: openaiStatus,
-      gemini: geminiStatus,
       openrouter: {
         status: orResult.ok ? 'healthy' : 'error',
         model: orResult.model,
         latencyMs: orResult.latencyMs,
         error: orResult.error,
       },
+      gemini: geminiStatus,
     };
   }
 }

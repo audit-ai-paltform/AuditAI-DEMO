@@ -23,8 +23,8 @@ memoryUsers.set('admin@auditai.io', {
   email: 'admin@auditai.io',
   password_hash: adminCreds.hash,
   salt: adminCreds.salt,
-  role: 'admin',
-  full_name: 'Master Administrator',
+  role: 'super_admin',
+  full_name: 'Main Super Admin',
   company: 'AuditAI Enterprise Governance',
   phone: '+1-800-AUDIT-AI',
   status: 'ACTIVE',
@@ -34,6 +34,35 @@ memoryUsers.set('admin@auditai.io', {
   created_at: new Date().toISOString(),
   updated_at: new Date().toISOString(),
 });
+
+const extraDemoAccounts: Array<{ id: string; email: string; pass: string; role: any; name: string; company: string }> = [
+  { id: '00000000-0000-0000-0000-000000000003', email: 'administrator@auditai.io', pass: 'Admin@12345', role: 'admin', name: 'Platform Administrator', company: 'AuditAI Enterprise Governance' },
+  { id: '00000000-0000-0000-0000-000000000004', email: 'manager@auditai.io', pass: 'Manager@12345', role: 'manager', name: 'QA Operations Manager', company: 'AuditAI Enterprise Governance' },
+  { id: '00000000-0000-0000-0000-000000000005', email: 'sales@auditai.io', pass: 'Sales@12345', role: 'sales', name: 'Enterprise Sales Lead', company: 'AuditAI Enterprise Governance' },
+  { id: '00000000-0000-0000-0000-000000000006', email: 'client.superadmin@auditai.io', pass: 'Client@12345', role: 'client_super_admin', name: 'Client Super Admin', company: 'Acme Telephony Solutions' },
+  { id: '00000000-0000-0000-0000-000000000007', email: 'client.admin@auditai.io', pass: 'Client@12345', role: 'client_admin', name: 'Client Administrator', company: 'Acme Telephony Solutions' },
+  { id: '00000000-0000-0000-0000-000000000008', email: 'client.manager@auditai.io', pass: 'Client@12345', role: 'client_manager', name: 'Client QA Manager', company: 'Acme Telephony Solutions' },
+];
+
+for (const acc of extraDemoAccounts) {
+  const c = AuthCrypto.hashPassword(acc.pass);
+  memoryUsers.set(acc.email, {
+    id: acc.id,
+    email: acc.email,
+    password_hash: c.hash,
+    salt: c.salt,
+    role: acc.role,
+    full_name: acc.name,
+    company: acc.company,
+    phone: '+91-9876543210',
+    status: 'ACTIVE',
+    login_enabled: true,
+    failed_login_attempts: 0,
+    tenant_id: '00000000-0000-0000-0000-000000000001',
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  });
+}
 
 const clientCreds = AuthCrypto.hashPassword('Client@12345');
 memoryUsers.set('client@auditai.io', {

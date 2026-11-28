@@ -157,19 +157,20 @@ export default function AskAuditAIChatbot({ currentUser, allowedTabs = [], onNav
             height: 540,
             maxHeight: "calc(100vh - 48px)",
             zIndex: 9995,
-            background: "#ffffff",
-            border: "1.5px solid #bae6fd",
+            background: "#0c2856",
+            border: "1.5px solid rgba(56, 189, 248, 0.45)",
             borderRadius: 16,
-            boxShadow: "0 20px 50px rgba(15, 23, 42, 0.22)",
+            boxShadow: "0 20px 50px rgba(4, 14, 32, 0.55)",
             display: "flex",
             flexDirection: "column",
             overflow: "hidden",
             fontFamily: "Inter, sans-serif",
+            color: "#ffffff",
           }}
         >
           {/* Header */}
           <div style={{
-            background: "linear-gradient(135deg, #0284c7 0%, #2563eb 100%)",
+            background: "linear-gradient(135deg, #0284c7 0%, #1d4ed8 100%)",
             padding: "14px 16px",
             color: "#ffffff",
             display: "flex",
@@ -198,7 +199,7 @@ export default function AskAuditAIChatbot({ currentUser, allowedTabs = [], onNav
           </div>
 
           {/* Messages */}
-          <div ref={scrollRef} style={{ flex: 1, overflowY: "auto", padding: 14, background: "#f0f7ff", display: "flex", flexDirection: "column", gap: 10 }}>
+          <div ref={scrollRef} className="auditai-grid-bg" style={{ flex: 1, overflowY: "auto", padding: 14, display: "flex", flexDirection: "column", gap: 10 }}>
             {messages.map((m) => (
               <div key={m.id} style={{ display: "flex", flexDirection: "column", alignItems: m.sender === "user" ? "flex-end" : "flex-start" }}>
                 <div
@@ -208,20 +209,20 @@ export default function AskAuditAIChatbot({ currentUser, allowedTabs = [], onNav
                     borderRadius: 12,
                     fontSize: 12.5,
                     lineHeight: 1.5,
-                    background: m.sender === "user" ? "#0284c7" : "#ffffff",
-                    color: m.sender === "user" ? "#ffffff" : "#0f172a",
-                    border: m.sender === "user" ? "none" : "1px solid #bae6fd",
-                    boxShadow: "0 2px 6px rgba(15, 23, 42, 0.05)",
+                    background: m.sender === "user" ? "linear-gradient(135deg, #38bdf8 0%, #0284c7 100%)" : "#11356e",
+                    color: "#ffffff",
+                    border: m.sender === "user" ? "none" : "1px solid rgba(56, 189, 248, 0.35)",
+                    boxShadow: "0 2px 8px rgba(4, 14, 32, 0.22)",
                   }}
                 >
                   {m.text}
                   {m.navigateTo && (
-                    <div style={{ marginTop: 8, display: "inline-flex", alignItems: "center", gap: 4, background: "#e0f2fe", color: "#0369a1", padding: "3px 8px", borderRadius: 6, fontSize: 11, fontWeight: 700 }}>
+                    <div style={{ marginTop: 8, display: "inline-flex", alignItems: "center", gap: 4, background: "rgba(56, 189, 248, 0.2)", color: "#7dd3fc", padding: "3px 8px", borderRadius: 6, fontSize: 11, fontWeight: 700 }}>
                       <Compass size={12} /> Redirected to: {m.navigateTo.replace(/_/g, " ")}
                     </div>
                   )}
                   {m.actionOutcome && (
-                    <div style={{ marginTop: 6, display: "flex", alignItems: "center", gap: 5, color: "#16a34a", fontSize: 11.5, fontWeight: 600 }}>
+                    <div style={{ marginTop: 6, display: "flex", alignItems: "center", gap: 5, color: "#34d399", fontSize: 11.5, fontWeight: 600 }}>
                       <CheckCircle2 size={13} /> {m.actionOutcome}
                     </div>
                   )}
@@ -234,9 +235,9 @@ export default function AskAuditAIChatbot({ currentUser, allowedTabs = [], onNav
                         key={idx}
                         onClick={() => handleSend(s)}
                         style={{
-                          background: "#ffffff",
-                          border: "1px solid #bae6fd",
-                          color: "#0284c7",
+                          background: "#11356e",
+                          border: "1px solid rgba(56, 189, 248, 0.45)",
+                          color: "#e0f2fe",
                           borderRadius: 14,
                           padding: "4px 10px",
                           fontSize: 11,
@@ -247,7 +248,7 @@ export default function AskAuditAIChatbot({ currentUser, allowedTabs = [], onNav
                           gap: 4,
                         }}
                       >
-                        <Zap size={10} /> {s}
+                        <Zap size={10} color="#38bdf8" /> {s}
                       </button>
                     ))}
                   </div>
@@ -255,7 +256,7 @@ export default function AskAuditAIChatbot({ currentUser, allowedTabs = [], onNav
               </div>
             ))}
             {loading && (
-              <div style={{ fontSize: 12, color: "#0284c7", fontWeight: 600, padding: "4px 8px" }}>
+              <div style={{ fontSize: 12, color: "#7dd3fc", fontWeight: 600, padding: "4px 8px" }}>
                 Ask AuditAI is thinking...
               </div>
             )}
@@ -267,7 +268,7 @@ export default function AskAuditAIChatbot({ currentUser, allowedTabs = [], onNav
               e.preventDefault();
               handleSend();
             }}
-            style={{ padding: 10, background: "#ffffff", borderTop: "1px solid #e2e8f0", display: "flex", gap: 8 }}
+            style={{ padding: 10, background: "#0c2856", borderTop: "1px solid rgba(56, 189, 248, 0.28)", display: "flex", gap: 8 }}
           >
             <input
               type="text"
@@ -276,12 +277,12 @@ export default function AskAuditAIChatbot({ currentUser, allowedTabs = [], onNav
               placeholder="Ask anything, navigate, or run an action..."
               style={{
                 flex: 1,
-                background: "#f8fafc",
-                border: "1px solid #cbd5e1",
-                borderRadius: 8,
+                background: "#11356e",
+                border: "1px solid rgba(56, 189, 248, 0.35)",
+                borderRadius: 10,
                 padding: "9px 12px",
                 fontSize: 12.5,
-                color: "#0f172a",
+                color: "#ffffff",
                 outline: "none",
               }}
             />
@@ -289,10 +290,10 @@ export default function AskAuditAIChatbot({ currentUser, allowedTabs = [], onNav
               type="submit"
               disabled={loading}
               style={{
-                background: "#0284c7",
+                background: "linear-gradient(135deg, #38bdf8 0%, #0284c7 100%)",
                 color: "#ffffff",
                 border: "none",
-                borderRadius: 8,
+                borderRadius: 10,
                 padding: "0 14px",
                 cursor: "pointer",
                 display: "flex",
