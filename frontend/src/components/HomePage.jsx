@@ -626,18 +626,9 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
   return (
     <div style={{
       minHeight: "100vh",
-      backgroundColor: "#061224",
+      backgroundColor: "#eef6ff",
       color: "#0f172a",
-      fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
-      backgroundImage: `
-        radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12) 0%, transparent 50%),
-        radial-gradient(circle at 85% 30%, rgba(37, 99, 235, 0.08) 0%, transparent 45%),
-        linear-gradient(to right, rgba(25, 38, 60, 0.4) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(25, 38, 60, 0.4) 1px, transparent 1px),
-        linear-gradient(145deg, #061224 0%, #f0f9ff 30%, #0a1a38 60%, #0c2146 100%)
-      `,
-      backgroundSize: "100% 100%, 100% 100%, 24px 24px, 24px 24px, 100% 100%",
-      backgroundAttachment: "fixed",
+      fontFamily: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif",
       position: "relative",
       overflowX: "hidden",
     }}>
@@ -661,30 +652,30 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
         }
         .hero-action-primary:hover {
           transform: translateY(-2px);
-          box-shadow: 0 10px 30px rgba(14, 165, 233, 0.55), 0 0 20px rgba(56, 189, 248, 0.4) !important;
+          box-shadow: 0 8px 24px rgba(2, 132, 199, 0.28) !important;
         }
         .hero-action-secondary:hover {
           transform: translateY(-2px);
-          border-color: #38bdf8 !important;
-          background: rgba(14, 34, 72, 0.95) !important;
-          box-shadow: 0 6px 20px #7dd3fc !important;
+          border-color: #0284c7 !important;
+          background: #f5faff !important;
+          box-shadow: 0 6px 18px rgba(2, 132, 199, 0.12) !important;
         }
         .hero-dock-pill {
           transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .hero-dock-pill:hover {
-          background: rgba(56, 189, 248, 0.18) !important;
-          border-color: #38bdf8 !important;
-          color: #ffffff !important;
+          background: #e0f0ff !important;
+          border-color: #0284c7 !important;
+          color: #0369a1 !important;
           transform: translateY(-2px);
         }
         .hero-kpi-card {
           transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .hero-kpi-card:hover {
-          transform: translateY(-5px);
-          border-color: rgba(56, 189, 248, 0.55) !important;
-          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 25px #7dd3fc !important;
+          transform: translateY(-4px);
+          border-color: #0284c7 !important;
+          box-shadow: 0 12px 28px rgba(2, 132, 199, 0.12) !important;
         }
         .hero-nav-grid {
           display: grid;
@@ -692,12 +683,11 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
           gap: 8px;
           max-width: 1140px;
           margin: 0 auto 36px;
-          padding: 6px;
-          background: rgba(10, 24, 52, 0.7);
-          border: 1px solid rgba(96, 165, 250, 0.25);
-          border-radius: 12px;
-          backdrop-filter: blur(14px);
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+          padding: 8px;
+          background: #ffffff;
+          border: 1px solid #cfe4ff;
+          border-radius: 14px;
+          box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
         }
         @media (max-width: 1080px) {
           .hero-nav-grid {
@@ -760,28 +750,26 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             display: "inline-flex",
             alignItems: "center",
             gap: 12,
-            background: "linear-gradient(135deg, rgba(14, 34, 72, 0.85) 0%, rgba(20, 50, 102, 0.6) 100%)",
-            border: "1px solid #7dd3fc",
+            background: "#ffffff",
+            border: "1px solid #cfe4ff",
             borderRadius: 9999,
             padding: "6px 18px 6px 8px",
             marginBottom: 28,
-            backdropFilter: "blur(16px)",
-            boxShadow: "0 8px 30px rgba(0, 0, 0, 0.35), inset 0 1px 0 #bae6fd",
+            boxShadow: "0 4px 16px rgba(2, 132, 199, 0.08)",
             animation: "floatSlow 6s ease-in-out infinite",
           }}>
             <div style={{
               display: "flex",
               alignItems: "center",
               gap: 6,
-              background: "linear-gradient(135deg, #0284c7 0%, #2563eb 100%)",
-              color: "#0f172a",
+              background: "#0284c7",
+              color: "#ffffff",
               padding: "4px 11px",
               borderRadius: 9999,
               fontSize: 10.5,
               fontWeight: 800,
               letterSpacing: "0.06em",
               textTransform: "uppercase",
-              boxShadow: "0 0 14px rgba(56, 189, 248, 0.6)",
             }}>
               <Sparkles size={12} /> AuditAI v2.0
             </div>
@@ -796,26 +784,23 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
               letterSpacing: "0.01em",
             }}>
               <span>ISO 9001:2015 & ISO/IEC 27001 Certified Quality Platform</span>
-              <span style={{ width: 4, height: 4, borderRadius: "50%", background: "#38bdf8", boxShadow: "0 0 6px #38bdf8" }} />
-              <span style={{ color: "#0369a1" }}>SOC-2 Type II Verified</span>
+              <span style={{ width: 4, height: 4, borderRadius: "50%", background: "#0284c7" }} />
+              <span style={{ color: "#0284c7", fontWeight: 700 }}>SOC-2 Type II Verified</span>
             </div>
           </div>
 
           {/* Majestic Hero Headline */}
           <h1 style={{
-            fontSize: "clamp(34px, 5.2vw, 58px)",
-            fontWeight: 850,
-            fontFamily: "'Space Grotesk', -apple-system, sans-serif",
+            fontSize: "clamp(34px, 5.2vw, 56px)",
+            fontWeight: 800,
+            fontFamily: "'Plus Jakarta Sans', -apple-system, sans-serif",
             lineHeight: 1.14,
-            maxWidth: 1060,
+            maxWidth: 1040,
             margin: "0 auto 20px",
             letterSpacing: "-0.03em",
-            background: "linear-gradient(180deg, #ffffff 40%, #bae6fd 85%, #38bdf8 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            filter: "drop-shadow(0 4px 20px rgba(56, 189, 248, 0.2))",
+            color: "#0f172a",
           }}>
-            Autonomous Call Quality Governance & Predictive Sales Intelligence
+            Autonomous Call Quality Governance & <span style={{ color: "#0284c7" }}>Predictive Sales Intelligence</span>
           </h1>
 
           {/* Refined High-Contrast Subtitle */}
@@ -868,20 +853,19 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 8,
-                background: "rgba(14, 34, 72, 0.8)",
-                border: "1px solid rgba(56, 189, 248, 0.4)",
+                background: "#ffffff",
+                border: "1px solid #cfe4ff",
                 color: "#0f172a",
                 textDecoration: "none",
                 borderRadius: 10,
                 padding: "14px 26px",
                 fontSize: 14.5,
                 fontWeight: 600,
-                backdropFilter: "blur(12px)",
-                boxShadow: "0 4px 15px rgba(0, 0, 0, 0.25)",
+                boxShadow: "0 2px 10px rgba(2, 132, 199, 0.08)",
                 transition: "all 0.25s ease",
               }}
             >
-              <Calculator size={16} color="#38bdf8" /> {hero.ctaSecondaryText}
+              <Calculator size={16} color="#0284c7" /> {hero.ctaSecondaryText}
             </a>
 
             <button
@@ -891,19 +875,19 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 8,
-                background: "#bae6fd",
-                border: "1px solid #bae6fd",
+                background: "#ffffff",
+                border: "1px solid #cfe4ff",
                 color: "#0f172a",
                 borderRadius: 10,
                 padding: "14px 24px",
                 fontSize: 14.5,
                 fontWeight: 600,
                 cursor: "pointer",
-                backdropFilter: "blur(12px)",
+                boxShadow: "0 2px 10px rgba(2, 132, 199, 0.08)",
                 transition: "all 0.25s ease",
               }}
             >
-              <ExternalLink size={16} color="#38bdf8" /> Launch Console
+              <ExternalLink size={16} color="#0284c7" /> Launch Console
             </button>
           </div>
 
@@ -912,11 +896,11 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             display: "inline-flex",
             alignItems: "center",
             gap: 12,
-            background: "rgba(10, 24, 52, 0.65)",
-            border: "1px solid rgba(96, 165, 250, 0.2)",
+            background: "#ffffff",
+            border: "1px solid #cfe4ff",
             borderRadius: 30,
             padding: "6px 18px",
-            backdropFilter: "blur(12px)",
+            boxShadow: "0 2px 12px rgba(2, 132, 199, 0.06)",
             marginBottom: 44,
           }}>
             <span style={{ fontSize: 11, color: "#0369a1", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em" }}>
@@ -1045,12 +1029,11 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   key={kIdx}
                   className="hero-kpi-card"
                   style={{
-                    background: "linear-gradient(180deg, rgba(14, 34, 72, 0.8) 0%, rgba(8, 20, 42, 0.9) 100%)",
-                    border: "1px solid #7dd3fc",
+                    background: "#ffffff",
+                    border: "1px solid #cfe4ff",
                     borderRadius: 14,
                     padding: "24px 20px",
-                    backdropFilter: "blur(14px)",
-                    boxShadow: "0 8px 30px rgba(0, 0, 0, 0.35)",
+                    boxShadow: "0 4px 16px rgba(2, 132, 199, 0.06)",
                     textAlign: "left",
                     display: "flex",
                     flexDirection: "column",

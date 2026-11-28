@@ -496,11 +496,11 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
                 }}
                 style={{
                   display: "inline-flex", alignItems: "center", gap: 6,
-                  background: "rgba(14, 34, 72, 0.85)", border: "1px solid #7dd3fc",
+                  background: "#f5faff", border: "1px solid #cfe4ff",
                   borderRadius: 8, padding: "7px 10px", color: "#0f172a", fontSize: 11.5, fontWeight: 600, cursor: "pointer",
                 }}
               >
-                <ShieldCheck size={13} color="#38bdf8" /> {p.label}
+                <ShieldCheck size={13} color="#0284c7" /> {p.label}
               </button>
             ))}
           </div>
@@ -537,11 +537,11 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
                 }}
                 style={{
                   display: "inline-flex", alignItems: "center", gap: 6,
-                  background: "rgba(14, 34, 72, 0.85)", border: "1px solid #7dd3fc",
+                  background: "#f5faff", border: "1px solid #cfe4ff",
                   borderRadius: 8, padding: "7px 10px", color: "#0f172a", fontSize: 11.5, fontWeight: 600, cursor: "pointer",
                 }}
               >
-                <UserCheck size={13} color="#38bdf8" /> {p.label}
+                <UserCheck size={13} color="#0284c7" /> {p.label}
               </button>
             ))}
           </div>
