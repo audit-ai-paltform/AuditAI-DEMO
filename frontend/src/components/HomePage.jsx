@@ -715,7 +715,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
           transition: all 0.2s ease;
         }
         .hero-nav-pill:hover {
-          background: rgba(56, 189, 248, 0.16);
+          background: #E0F2FE;
           border-color: #7dd3fc;
           color: #38bdf8;
           transform: translateY(-1px);
@@ -737,7 +737,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
           transform: "translateX(-50%)",
           width: "650px",
           height: "320px",
-          background: "radial-gradient(circle, rgba(56, 189, 248, 0.16) 0%, rgba(37, 99, 235, 0.08) 50%, transparent 75%)",
+          background: "radial-gradient(circle, #E0F2FE 0%, rgba(37, 99, 235, 0.08) 50%, transparent 75%)",
           filter: "blur(70px)",
           pointerEvents: "none",
           zIndex: 0,
@@ -832,8 +832,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 10,
-                background: "linear-gradient(135deg, #0284c7 0%, #2563eb 55%, #4f46e5 100%)",
-                color: "#000000",
+                background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
+                color: "#0F172A",
                 textDecoration: "none",
                 borderRadius: 10,
                 padding: "14px 30px",
@@ -855,7 +855,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 gap: 8,
                 background: "#ffffff",
                 border: "1px solid #cfe4ff",
-                color: "#000000",
+                color: "#0F172A",
                 textDecoration: "none",
                 borderRadius: 10,
                 padding: "14px 26px",
@@ -877,7 +877,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 gap: 8,
                 background: "#ffffff",
                 border: "1px solid #cfe4ff",
-                color: "#000000",
+                color: "#0F172A",
                 borderRadius: 10,
                 padding: "14px 24px",
                 fontSize: 14.5,
@@ -914,7 +914,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 gap: 6,
                 background: "transparent",
                 border: "none",
-                color: "#000000",
+                color: "#0F172A",
                 fontSize: 12,
                 fontWeight: 600,
                 cursor: "pointer",
@@ -924,9 +924,9 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
               onMouseEnter={e => e.currentTarget.style.color = "#38bdf8"}
               onMouseLeave={e => e.currentTarget.style.color = "#ffffff"}
             >
-              <ShieldCheck size={13} color="#38bdf8" /> Administrator Login
+              <ShieldCheck size={13} color="#0284C7" /> Administrator Login
             </button>
-            <div style={{ width: 1, height: 14, background: "rgba(96, 165, 250, 0.3)" }} />
+            <div style={{ width: 1, height: 14, background: "#BAE6FD" }} />
             <button
               onClick={() => onOpenClientLogin && onOpenClientLogin()}
               style={{
@@ -935,7 +935,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 gap: 6,
                 background: "transparent",
                 border: "none",
-                color: "#000000",
+                color: "#0F172A",
                 fontSize: 12,
                 fontWeight: 600,
                 cursor: "pointer",
@@ -945,35 +945,35 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
               onMouseEnter={e => e.currentTarget.style.color = "#38bdf8"}
               onMouseLeave={e => e.currentTarget.style.color = "#ffffff"}
             >
-              <UserCheck size={13} color="#38bdf8" /> Partner / Client Login
+              <UserCheck size={13} color="#0284C7" /> Partner / Client Login
             </button>
           </div>
 
           {/* Quick-Jump Section Navigation Grid (Symmetric, No Awkward Solitary Wrapping) */}
           <nav aria-label="Section Navigation" className="hero-nav-grid">
             <a href="#how-it-works" className="hero-nav-pill">
-              <Activity size={13} color="#38bdf8" /> Architecture
+              <Activity size={13} color="#0284C7" /> Architecture
             </a>
             <a href="#features" className="hero-nav-pill">
-              <Layers size={13} color="#38bdf8" /> Capabilities
+              <Layers size={13} color="#0284C7" /> Capabilities
             </a>
             <a href="#roi-calculator" className="hero-nav-pill">
-              <Calculator size={13} color="#38bdf8" /> ROI Simulator
+              <Calculator size={13} color="#0284C7" /> ROI Simulator
             </a>
             <a href="#iso-standards" className="hero-nav-pill">
-              <Shield size={13} color="#38bdf8" /> ISO Standards
+              <Shield size={13} color="#0284C7" /> ISO Standards
             </a>
             <a href="#pricing-enquiry" className="hero-nav-pill">
-              <CreditCard size={13} color="#38bdf8" /> Pricing & Trial
+              <CreditCard size={13} color="#0284C7" /> Pricing & Trial
             </a>
             <a href="#team" className="hero-nav-pill">
-              <Users size={13} color="#38bdf8" /> Leadership
+              <Users size={13} color="#0284C7" /> Leadership
             </a>
             <a href="#faqs" className="hero-nav-pill">
-              <HelpCircle size={13} color="#38bdf8" /> FAQs
+              <HelpCircle size={13} color="#0284C7" /> FAQs
             </a>
             <a href="#contact" className="hero-nav-pill">
-              <Headphones size={13} color="#38bdf8" /> Contact & SLA
+              <Headphones size={13} color="#0284C7" /> Contact & SLA
             </a>
           </nav>
 
@@ -992,7 +992,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 subtext: "Continuous 100% inspection with zero sampling blindspots",
                 tag: "FULL COVERAGE",
                 tagcolor: "#0369a1",
-                tagBg: "rgba(56, 189, 248, 0.15)",
+                tagBg: "#E0F2FE",
                 Icon: CheckCircle2,
               },
               {
@@ -1001,7 +1001,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 subtext: "ISO 9001:2015 calibrated mathematical reproducibility",
                 tag: "CALIBRATED",
                 tagcolor: "#0369a1",
-                tagBg: "rgba(56, 189, 248, 0.15)",
+                tagBg: "#E0F2FE",
                 Icon: Award,
               },
               {
@@ -1010,7 +1010,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 subtext: "Direct reduction in manual listening and scorecard turnaround",
                 tag: "EFFICIENCY",
                 tagColor: "#16a34a",
-                tagBg: "rgba(52, 211, 153, 0.15)",
+                tagBg: "#ECFDF5",
                 Icon: TrendingUp,
               },
               {
@@ -1019,7 +1019,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 subtext: "Enterprise multi-region resilience & D1 encrypted vault",
                 tag: "ACTIVE SLA",
                 tagcolor: "#0369a1",
-                tagBg: "rgba(56, 189, 248, 0.15)",
+                tagBg: "#E0F2FE",
                 Icon: ShieldCheck,
               },
             ].map((kpi, kIdx) => {
@@ -1101,7 +1101,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   </div>
 
                   {/* Subtext description */}
-                  <div style={{ fontSize: 11.5, color: "#334155", lineHeight: 1.45, borderTop: "1px solid rgba(96, 165, 250, 0.15)", paddingTop: 10, marginTop: 10 }}>
+                  <div style={{ fontSize: 11.5, color: "#334155", lineHeight: 1.45, borderTop: "1px solid #BAE6FD", paddingTop: 10, marginTop: 10 }}>
                     {kpi.subtext}
                   </div>
                 </div>
@@ -1112,12 +1112,12 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       </section>
 
       {/* -------------------- 2. The 4-Stage Autonomous Pipeline -------------------- */}
-      <section id="how-it-works" style={{ maxWidth: 1320, margin: "0 auto", padding: "75px 24px", borderTop: "1px solid rgba(96, 165, 250, 0.2)" }}>
+      <section id="how-it-works" style={{ maxWidth: 1320, margin: "0 auto", padding: "75px 24px", borderTop: "1px solid #BAE6FD" }}>
         <div style={{ textAlign: "center", marginBottom: 44 }}>
           <div style={{
             display: "inline-block",
-            background: "rgba(56, 189, 248, 0.15)",
-            border: "1px solid rgba(56, 189, 248, 0.3)",
+            background: "#E0F2FE",
+            border: "1px solid #BAE6FD",
             color: "#0369a1",
             padding: "4px 14px",
             borderRadius: 16,
@@ -1151,14 +1151,14 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 key={idx}
                 onClick={() => setActivePipelineStage(idx)}
                 style={{
-                  background: active ? "rgba(21, 50, 101, 0.9)" : "rgba(13, 36, 78, 0.5)",
-                  border: active ? "2px solid #38bdf8" : "1px solid rgba(96, 165, 250, 0.25)",
+                  background: active ? "#E0F2FE" : "#FFFFFF",
+                  border: active ? "2px solid #38bdf8" : "1px solid #BAE6FD",
                   borderRadius: 12,
                   padding: "16px 18px",
                   textAlign: "left",
                   cursor: "pointer",
                   transition: "all 0.2s ease",
-                  boxShadow: active ? "0 8px 25px rgba(56, 189, 248, 0.2)" : "none",
+                  boxShadow: active ? "0 8px 25px #BAE6FD" : "none",
                 }}
               >
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
@@ -1167,7 +1167,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   </span>
                   {active && <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#38bdf8", boxShadow: "0 0 8px #38bdf8" }} />}
                 </div>
-                <div style={{ fontSize: 15, fontWeight: 700, color: "#000000", fontFamily: "Space Grotesk", marginBottom: 4 }}>
+                <div style={{ fontSize: 15, fontWeight: 700, color: "#0F172A", fontFamily: "Space Grotesk", marginBottom: 4 }}>
                   {stage.title}
                 </div>
                 <div style={{ fontSize: 12, color: "#334155", lineHeight: 1.4 }}>
@@ -1184,7 +1184,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
           return (
             <div style={{
               background: "#ffffff",
-              border: "1px solid rgba(96, 165, 250, 0.35)",
+              border: "1px solid #BAE6FD",
               borderRadius: 16,
               padding: 30,
               display: "grid",
@@ -1192,7 +1192,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
               gap: 30,
               alignItems: "center",
               backdropFilter: "blur(12px)",
-              boxShadow: "0 12px 40px rgba(0,0,0,0.4)"
+              boxShadow: "0 12px 40px rgba(2, 132, 199, 0.10)"
             }}>
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
@@ -1210,8 +1210,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
 
                 <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                   {current.bullets.map((b, bIdx) => (
-                    <div key={bIdx} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 13.5, color: "#000000" }}>
-                      <CheckCircle2 size={16} color="#38bdf8" style={{ flexShrink: 0 }} />
+                    <div key={bIdx} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 13.5, color: "#0F172A" }}>
+                      <CheckCircle2 size={16} color="#0284C7" style={{ flexShrink: 0 }} />
                       <span>{b}</span>
                     </div>
                   ))}
@@ -1221,7 +1221,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
               {/* Live Architectural Payload Terminal */}
               <div style={{
                 background: "#f0f9ff",
-                border: "1px solid rgba(96, 165, 250, 0.3)",
+                border: "1px solid #BAE6FD",
                 borderRadius: 12,
                 padding: 20,
                 fontFamily: "JetBrains Mono, monospace",
@@ -1229,8 +1229,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 color: "#0369a1",
                 overflowX: "auto"
               }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid rgba(96, 165, 250, 0.2)", paddingBottom: 8, marginBottom: 12 }}>
-                  <span style={{ color: "#000000", fontWeight: 700 }}>Telemetry Event Payload</span>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #BAE6FD", paddingBottom: 8, marginBottom: 12 }}>
+                  <span style={{ color: "#0F172A", fontWeight: 700 }}>Telemetry Event Payload</span>
                   <span style={{ fontSize: 11, color: "#16a34a", display: "flex", alignItems: "center", gap: 5 }}>
                     <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#16a34a" }} /> LIVE 200 OK
                   </span>
@@ -1245,12 +1245,12 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       </section>
 
       {/* -------------------- 3. Interactive ROI & Cost Savings Calculator -------------------- */}
-      <section id="roi-calculator" style={{ maxWidth: 1320, margin: "0 auto", padding: "75px 24px", borderTop: "1px solid rgba(96, 165, 250, 0.2)" }}>
+      <section id="roi-calculator" style={{ maxWidth: 1320, margin: "0 auto", padding: "75px 24px", borderTop: "1px solid #BAE6FD" }}>
         <div style={{ textAlign: "center", marginBottom: 44 }}>
           <div style={{
             display: "inline-block",
-            background: "rgba(56, 189, 248, 0.15)",
-            border: "1px solid rgba(56, 189, 248, 0.3)",
+            background: "#E0F2FE",
+            border: "1px solid #BAE6FD",
             color: "#0369a1",
             padding: "4px 14px",
             borderRadius: 16,
@@ -1272,7 +1272,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
 
         <div style={{
           background: "#ffffff",
-          border: "1px solid rgba(96, 165, 250, 0.35)",
+          border: "1px solid #BAE6FD",
           borderRadius: 18,
           padding: 34,
           display: "grid",
@@ -1280,7 +1280,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
           gap: 36,
           alignItems: "center",
           backdropFilter: "blur(12px)",
-          boxShadow: "0 12px 40px rgba(0,0,0,0.4)"
+          boxShadow: "0 12px 40px rgba(2, 132, 199, 0.10)"
         }}>
           {/* Controls */}
           <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
@@ -1356,8 +1356,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
 
           {/* Results Card */}
           <div style={{
-            background: "rgba(13, 36, 78, 0.8)",
-            border: "1px solid rgba(96, 165, 250, 0.35)",
+            background: "#FFFFFF",
+            border: "1px solid #BAE6FD",
             borderRadius: 14,
             padding: 26,
             display: "flex",
@@ -1369,28 +1369,28 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-              <div style={{ background: "#ffffff", padding: 14, borderRadius: 10, border: "1px solid rgba(96, 165, 250, 0.2)" }}>
+              <div style={{ background: "#ffffff", padding: 14, borderRadius: 10, border: "1px solid #BAE6FD" }}>
                 <div style={{ fontSize: 11.5, color: "#334155" }}>Monthly Hours Saved</div>
                 <div style={{ fontSize: 24, fontWeight: 800, fontFamily: "Space Grotesk", color: "#0369a1", marginTop: 4 }}>
                   {hoursSavedPerMonth.toLocaleString()} hrs
                 </div>
               </div>
 
-              <div style={{ background: "#ffffff", padding: 14, borderRadius: 10, border: "1px solid rgba(96, 165, 250, 0.2)" }}>
+              <div style={{ background: "#ffffff", padding: 14, borderRadius: 10, border: "1px solid #BAE6FD" }}>
                 <div style={{ fontSize: 11.5, color: "#334155" }}>Audit Coverage Gain</div>
                 <div style={{ fontSize: 24, fontWeight: 800, fontFamily: "Space Grotesk", color: "#16a34a", marginTop: 4 }}>
                   +{coverageGain}%
                 </div>
               </div>
 
-              <div style={{ background: "#ffffff", padding: 14, borderRadius: 10, border: "1px solid rgba(96, 165, 250, 0.2)" }}>
+              <div style={{ background: "#ffffff", padding: 14, borderRadius: 10, border: "1px solid #BAE6FD" }}>
                 <div style={{ fontSize: 11.5, color: "#334155" }}>Projected Annual Cost Reduction</div>
-                <div style={{ fontSize: 22, fontWeight: 800, fontFamily: "Space Grotesk", color: "#000000", marginTop: 4 }}>
+                <div style={{ fontSize: 22, fontWeight: 800, fontFamily: "Space Grotesk", color: "#0F172A", marginTop: 4 }}>
                   ₹{estimatedAnnualSavingsINR.toLocaleString()}
                 </div>
               </div>
 
-              <div style={{ background: "#ffffff", padding: 14, borderRadius: 10, border: "1px solid rgba(96, 165, 250, 0.2)" }}>
+              <div style={{ background: "#ffffff", padding: 14, borderRadius: 10, border: "1px solid #BAE6FD" }}>
                 <div style={{ fontSize: 11.5, color: "#334155" }}>Estimated Rescued Deals</div>
                 <div style={{ fontSize: 22, fontWeight: 800, fontFamily: "Space Grotesk", color: "#0369a1", marginTop: 4 }}>
                   ₹{potentialRecoveredRevenueINR.toLocaleString()}
@@ -1402,9 +1402,9 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
               onClick={() => handleSelectPricing("Growth Professional")}
               style={{
                 width: "100%",
-                background: "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)",
+                background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
                 border: "none",
-                color: "#000000",
+                color: "#0F172A",
                 borderRadius: 8,
                 padding: "12px",
                 fontSize: 13.5,
@@ -1424,12 +1424,12 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       </section>
 
       {/* -------------------- 4. ISO Standards & Quality Governance -------------------- */}
-      <section id="iso-standards" style={{ maxWidth: 1320, margin: "0 auto", padding: "75px 24px", borderTop: "1px solid rgba(96, 165, 250, 0.2)" }}>
+      <section id="iso-standards" style={{ maxWidth: 1320, margin: "0 auto", padding: "75px 24px", borderTop: "1px solid #BAE6FD" }}>
         <div style={{ textAlign: "center", marginBottom: 44 }}>
           <div style={{
             display: "inline-block",
-            background: "rgba(56, 189, 248, 0.15)",
-            border: "1px solid rgba(56, 189, 248, 0.3)",
+            background: "#E0F2FE",
+            border: "1px solid #BAE6FD",
             color: "#0369a1",
             padding: "4px 14px",
             borderRadius: 16,
@@ -1450,8 +1450,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))", gap: 22 }}>
-          <div style={{ background: "rgba(13, 36, 78, 0.65)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 14, padding: 24, backdropFilter: "blur(8px)" }}>
-            <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(56, 189, 248, 0.2)", color: "#0369a1", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+          <div style={{ background: "#FFFFFF", border: "1px solid #BAE6FD", borderRadius: 14, padding: 24, backdropFilter: "blur(8px)" }}>
+            <div style={{ width: 40, height: 40, borderRadius: 10, background: "#BAE6FD", color: "#0369a1", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
               <Award size={20} />
             </div>
             <div style={{ fontSize: 17, fontWeight: 700, fontFamily: "Space Grotesk", marginBottom: 8 }}>ISO 9001:2015 QMS</div>
@@ -1460,8 +1460,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             </p>
           </div>
 
-          <div style={{ background: "rgba(13, 36, 78, 0.65)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 14, padding: 24, backdropFilter: "blur(8px)" }}>
-            <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(56, 189, 248, 0.2)", color: "#0369a1", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+          <div style={{ background: "#FFFFFF", border: "1px solid #BAE6FD", borderRadius: 14, padding: 24, backdropFilter: "blur(8px)" }}>
+            <div style={{ width: 40, height: 40, borderRadius: 10, background: "#BAE6FD", color: "#0369a1", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
               <Lock size={20} />
             </div>
             <div style={{ fontSize: 17, fontWeight: 700, fontFamily: "Space Grotesk", marginBottom: 8 }}>ISO/IEC 27001 ISMS</div>
@@ -1470,8 +1470,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             </p>
           </div>
 
-          <div style={{ background: "rgba(13, 36, 78, 0.65)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 14, padding: 24, backdropFilter: "blur(8px)" }}>
-            <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(56, 189, 248, 0.2)", color: "#0369a1", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+          <div style={{ background: "#FFFFFF", border: "1px solid #BAE6FD", borderRadius: 14, padding: 24, backdropFilter: "blur(8px)" }}>
+            <div style={{ width: 40, height: 40, borderRadius: 10, background: "#BAE6FD", color: "#0369a1", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
               <ShieldCheck size={20} />
             </div>
             <div style={{ fontSize: 17, fontWeight: 700, fontFamily: "Space Grotesk", marginBottom: 8 }}>PCI-DSS & HIPAA Masking</div>
@@ -1480,8 +1480,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             </p>
           </div>
 
-          <div style={{ background: "rgba(13, 36, 78, 0.65)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 14, padding: 24, backdropFilter: "blur(8px)" }}>
-            <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(56, 189, 248, 0.2)", color: "#0369a1", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+          <div style={{ background: "#FFFFFF", border: "1px solid #BAE6FD", borderRadius: 14, padding: 24, backdropFilter: "blur(8px)" }}>
+            <div style={{ width: 40, height: 40, borderRadius: 10, background: "#BAE6FD", color: "#0369a1", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
               <Layers size={20} />
             </div>
             <div style={{ fontSize: 17, fontWeight: 700, fontFamily: "Space Grotesk", marginBottom: 8 }}>Two-Party Consent Check</div>
@@ -1493,12 +1493,12 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       </section>
 
       {/* -------------------- 5. Features Showcase Grid -------------------- */}
-      <section id="features" style={{ maxWidth: 1320, margin: "0 auto", padding: "75px 24px", borderTop: "1px solid rgba(96, 165, 250, 0.2)" }}>
+      <section id="features" style={{ maxWidth: 1320, margin: "0 auto", padding: "75px 24px", borderTop: "1px solid #BAE6FD" }}>
         <div style={{ textAlign: "center", marginBottom: 44 }}>
           <div style={{
             display: "inline-block",
-            background: "rgba(56, 189, 248, 0.15)",
-            border: "1px solid rgba(56, 189, 248, 0.3)",
+            background: "#E0F2FE",
+            border: "1px solid #BAE6FD",
             color: "#0369a1",
             padding: "4px 14px",
             borderRadius: 16,
@@ -1523,8 +1523,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             <div
               key={feat.id}
               style={{
-                background: "rgba(13, 36, 78, 0.65)",
-                border: "1px solid rgba(96, 165, 250, 0.22)",
+                background: "#FFFFFF",
+                border: "1px solid #BAE6FD",
                 borderRadius: 14,
                 padding: 24,
                 backdropFilter: "blur(10px)",
@@ -1539,8 +1539,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   width: 40,
                   height: 40,
                   borderRadius: 10,
-                  background: "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)",
-                  color: "#000000",
+                  background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
+                  color: "#0F172A",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -1552,8 +1552,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   <span style={{
                     fontSize: 10.5,
                     fontWeight: 700,
-                    background: "rgba(96, 165, 250, 0.2)",
-                    border: "1px solid rgba(96, 165, 250, 0.35)",
+                    background: "#BAE6FD",
+                    border: "1px solid #BAE6FD",
                     color: "#0369a1",
                     padding: "3px 8px",
                     borderRadius: 10,
@@ -1574,12 +1574,12 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       </section>
 
       {/* -------------------- 6. Unified Pricing Plans & Consultation Booking -------------------- */}
-      <section id="pricing-enquiry" style={{ maxWidth: 1320, margin: "0 auto", padding: "75px 24px", borderTop: "1px solid rgba(96, 165, 250, 0.2)" }}>
+      <section id="pricing-enquiry" style={{ maxWidth: 1320, margin: "0 auto", padding: "75px 24px", borderTop: "1px solid #BAE6FD" }}>
         <div style={{ textAlign: "center", marginBottom: 44 }}>
           <div style={{
             display: "inline-block",
-            background: "rgba(56, 189, 248, 0.15)",
-            border: "1px solid rgba(56, 189, 248, 0.3)",
+            background: "#E0F2FE",
+            border: "1px solid #BAE6FD",
             color: "#0369a1",
             padding: "4px 14px",
             borderRadius: 16,
@@ -1607,8 +1607,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
               <div
                 key={plan.id}
                 style={{
-                  background: isSelected ? "rgba(21, 50, 101, 0.95)" : "rgba(13, 36, 78, 0.65)",
-                  border: isSelected ? "2px solid #38bdf8" : "1px solid rgba(96, 165, 250, 0.25)",
+                  background: isSelected ? "#E0F2FE" : "#FFFFFF",
+                  border: isSelected ? "2px solid #38bdf8" : "1px solid #BAE6FD",
                   borderRadius: 16,
                   padding: 30,
                   display: "flex",
@@ -1646,7 +1646,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   Includes {typeof plan.callMinutes === "number" ? plan.callMinutes.toLocaleString() : plan.callMinutes} call minutes and {plan.agentSeats} seats.
                 </div>
 
-                <div style={{ height: 1, background: "rgba(96, 165, 250, 0.2)", marginBottom: 18 }} />
+                <div style={{ height: 1, background: "#BAE6FD", marginBottom: 18 }} />
 
                 <div style={{ display: "flex", flexDirection: "column", gap: 11, flex: 1, marginBottom: 26 }}>
                   {plan.features?.map((f, fIdx) => (
@@ -1663,8 +1663,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     style={{
                       width: "100%",
                       background: "linear-gradient(135deg, #0284c7 0%, #2563eb 100%)",
-                      color: "#000000",
-                      border: "1px solid rgba(56, 189, 248, 0.4)",
+                      color: "#0F172A",
+                      border: "1px solid #BAE6FD",
                       borderRadius: 8,
                       padding: "12px 18px",
                       fontSize: 13.5,
@@ -1687,9 +1687,9 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     onClick={() => handleSelectPricing(plan.name)}
                     style={{
                       width: "100%",
-                      background: isSelected ? "rgba(56, 189, 248, 0.15)" : "#bae6fd",
+                      background: isSelected ? "#E0F2FE" : "#bae6fd",
                       color: isSelected ? "#38bdf8" : "#cbd5e1",
-                      border: `1px solid ${isSelected ? "#38bdf8" : "rgba(96, 165, 250, 0.25)"}`,
+                      border: `1px solid ${isSelected ? "#38bdf8" : "#BAE6FD"}`,
                       borderRadius: 8,
                       padding: "10px 18px",
                       fontSize: 12.5,
@@ -1703,7 +1703,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   >
                     {isSelected ? (
                       <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
-                        <CheckCircle2 size={14} color="#38bdf8" /> Selected for Consultation
+                        <CheckCircle2 size={14} color="#0284C7" /> Selected for Consultation
                       </span>
                     ) : (
                       <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
@@ -1725,18 +1725,18 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
           maxWidth: 900,
           margin: "0 auto",
           background: "#ffffff",
-          border: "2px solid rgba(56, 189, 248, 0.4)",
+          border: "2px solid #BAE6FD",
           borderRadius: 20,
           padding: "36px 36px",
           backdropFilter: "blur(14px)",
-          boxShadow: "0 16px 45px rgba(0,0,0,0.5)"
+          boxShadow: "0 16px 45px rgba(2, 132, 199, 0.10)"
         }}>
           <div style={{ textAlign: "center", marginBottom: 26 }}>
             <div style={{
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
-              background: "rgba(56, 189, 248, 0.15)",
+              background: "#E0F2FE",
               border: "1px solid #38bdf8",
               color: "#0369a1",
               padding: "4px 14px",
@@ -1779,7 +1779,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 placeholder="e.g. Vikram Singhania"
                 value={formData.name}
                 onChange={e => setFormData({ ...formData, name: e.target.value })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#000000", fontSize: 13.5, boxSizing: "border-box" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid #BAE6FD", borderRadius: 7, padding: "11px 13px", color: "#0F172A", fontSize: 13.5, boxSizing: "border-box" }}
               />
             </div>
 
@@ -1791,7 +1791,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 placeholder="e.g. vikram@enterprise.com"
                 value={formData.email}
                 onChange={e => setFormData({ ...formData, email: e.target.value })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#000000", fontSize: 13.5, boxSizing: "border-box" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid #BAE6FD", borderRadius: 7, padding: "11px 13px", color: "#0F172A", fontSize: 13.5, boxSizing: "border-box" }}
               />
             </div>
 
@@ -1803,7 +1803,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 placeholder="e.g. +91 98200 12345"
                 value={formData.phone}
                 onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#000000", fontSize: 13.5, boxSizing: "border-box" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid #BAE6FD", borderRadius: 7, padding: "11px 13px", color: "#0F172A", fontSize: 13.5, boxSizing: "border-box" }}
               />
             </div>
 
@@ -1814,7 +1814,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 placeholder="e.g. Acme Financial / Global BPO"
                 value={formData.company_name}
                 onChange={e => setFormData({ ...formData, company_name: e.target.value })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#000000", fontSize: 13.5, boxSizing: "border-box" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid #BAE6FD", borderRadius: 7, padding: "11px 13px", color: "#0F172A", fontSize: 13.5, boxSizing: "border-box" }}
               />
             </div>
 
@@ -1823,7 +1823,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
               <select
                 value={formData.team_size}
                 onChange={e => setFormData({ ...formData, team_size: e.target.value })}
-                style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#000000", fontSize: 13.5 }}
+                style={{ width: "100%", background: "#f0f9ff", border: "1px solid #BAE6FD", borderRadius: 7, padding: "11px 13px", color: "#0F172A", fontSize: 13.5 }}
               >
                 <option value="1-5 Agents">1 - 5 Agents (Starter)</option>
                 <option value="5-20 Agents">5 - 20 Agents (Growth)</option>
@@ -1840,7 +1840,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 placeholder="e.g. Tomorrow 3:00 PM IST"
                 value={formData.preferred_schedule}
                 onChange={e => setFormData({ ...formData, preferred_schedule: e.target.value })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#000000", fontSize: 13.5, boxSizing: "border-box" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid #BAE6FD", borderRadius: 7, padding: "11px 13px", color: "#0F172A", fontSize: 13.5, boxSizing: "border-box" }}
               />
             </div>
 
@@ -1852,7 +1852,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 placeholder="Describe your current QA challenges (e.g. Hindi/English speech accuracy, Knowlarity integration, missed upsells detection, ISO 9001 governance)..."
                 value={formData.message}
                 onChange={e => setFormData({ ...formData, message: e.target.value })}
-                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#000000", fontSize: 13.5, boxSizing: "border-box", fontFamily: "inherit" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid #BAE6FD", borderRadius: 7, padding: "11px 13px", color: "#0F172A", fontSize: 13.5, boxSizing: "border-box", fontFamily: "inherit" }}
               />
             </div>
 
@@ -1861,8 +1861,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 type="submit"
                 disabled={submittingEnquiry}
                 style={{
-                  background: "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)",
-                  color: "#000000",
+                  background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
+                  color: "#0F172A",
                   border: "none",
                   borderRadius: 8,
                   padding: "13px 36px",
@@ -1872,7 +1872,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   display: "flex",
                   alignItems: "center",
                   gap: 8,
-                  boxShadow: "0 6px 20px rgba(56, 189, 248, 0.4)",
+                  boxShadow: "0 6px 20px #BAE6FD",
                 }}
               >
                 {submittingEnquiry ? <RefreshCw size={16} className="spin" /> : <Mail size={16} />}
@@ -1884,9 +1884,9 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       </section>
 
       {/* -------------------- 6B. Clients With Us Showcase (Managed by Admin) -------------------- */}
-      <section id="clients-with-us" style={{ maxWidth: 1320, margin: "0 auto", padding: "65px 24px", borderTop: "1px solid rgba(96, 165, 250, 0.2)" }}>
+      <section id="clients-with-us" style={{ maxWidth: 1320, margin: "0 auto", padding: "65px 24px", borderTop: "1px solid #BAE6FD" }}>
         <div style={{ textAlign: "center", marginBottom: 38 }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(56, 189, 248, 0.1)", border: "1px solid rgba(56, 189, 248, 0.3)", color: "#0369a1", padding: "4px 14px", borderRadius: 16, fontSize: 11, fontWeight: 700, letterSpacing: 0.6, textTransform: "uppercase", marginBottom: 12 }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(56, 189, 248, 0.1)", border: "1px solid #BAE6FD", color: "#0369a1", padding: "4px 14px", borderRadius: 16, fontSize: 11, fontWeight: 700, letterSpacing: 0.6, textTransform: "uppercase", marginBottom: 12 }}>
             Trusted Enterprise Network
           </div>
           <h2 style={{ fontSize: 32, fontWeight: 800, fontFamily: "Space Grotesk" }}>Clients With Us</h2>
@@ -1902,13 +1902,13 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             { id: "c3", name: "NovaPay Financial Services", industry: "Digital Banking", seats: "400+ Agents", badge: "Enterprise Ultra" },
             { id: "c4", name: "Vanguard Insurance Corp", industry: "Insurance Advisory", seats: "120+ Agents", badge: "Growth Pro" },
           ]).filter((c) => c.active !== false).map((cl) => (
-            <div key={cl.id} style={{ background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 14, padding: 22, display: "flex", flexDirection: "column", justifyContent: "space-between", gap: 12 }}>
+            <div key={cl.id} style={{ background: "#ffffff", border: "1px solid #BAE6FD", borderRadius: 14, padding: 22, display: "flex", flexDirection: "column", justifyContent: "space-between", gap: 12 }}>
               <div>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-                  <span style={{ fontSize: 10.5, fontWeight: 700, background: "rgba(56, 189, 248, 0.15)", color: "#0369a1", padding: "3px 9px", borderRadius: 10 }}>{cl.badge}</span>
+                  <span style={{ fontSize: 10.5, fontWeight: 700, background: "#E0F2FE", color: "#0369a1", padding: "3px 9px", borderRadius: 10 }}>{cl.badge}</span>
                   <span style={{ fontSize: 11.5, color: "#0369a1", fontWeight: 600 }}>{cl.seats}</span>
                 </div>
-                <div style={{ fontSize: 17, fontWeight: 800, fontFamily: "Space Grotesk", color: "#000000" }}>{cl.name}</div>
+                <div style={{ fontSize: 17, fontWeight: 800, fontFamily: "Space Grotesk", color: "#0F172A" }}>{cl.name}</div>
                 <div style={{ fontSize: 12.5, color: "#334155", marginTop: 4 }}>{cl.industry}</div>
               </div>
             </div>
@@ -1917,12 +1917,12 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       </section>
 
       {/* -------------------- 7. Leadership & Engineering Team -------------------- */}
-      <section id="team" style={{ maxWidth: 1320, margin: "0 auto", padding: "75px 24px", borderTop: "1px solid rgba(96, 165, 250, 0.2)" }}>
+      <section id="team" style={{ maxWidth: 1320, margin: "0 auto", padding: "75px 24px", borderTop: "1px solid #BAE6FD" }}>
         <div style={{ textAlign: "center", marginBottom: 44 }}>
           <div style={{
             display: "inline-block",
-            background: "rgba(56, 189, 248, 0.15)",
-            border: "1px solid rgba(56, 189, 248, 0.3)",
+            background: "#E0F2FE",
+            border: "1px solid #BAE6FD",
             color: "#0369a1",
             padding: "4px 14px",
             borderRadius: 16,
@@ -1947,8 +1947,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             <div
               key={m.id}
               style={{
-                background: "rgba(13, 36, 78, 0.65)",
-                border: "1px solid rgba(96, 165, 250, 0.22)",
+                background: "#FFFFFF",
+                border: "1px solid #BAE6FD",
                 borderRadius: 14,
                 padding: 24,
                 textAlign: "center",
@@ -1972,9 +1972,9 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   href={m.linkedin || m.linkedin_url}
                   target="_blank"
                   rel="noreferrer"
-                  style={{ display: "inline-flex", alignItems: "center", gap: 4, color: "#000000", fontSize: 11.5, fontWeight: 600, textDecoration: "none", background: "rgba(96, 165, 250, 0.18)", border: "1px solid rgba(96, 165, 250, 0.35)", padding: "4px 10px", borderRadius: 6 }}
+                  style={{ display: "inline-flex", alignItems: "center", gap: 4, color: "#0F172A", fontSize: 11.5, fontWeight: 600, textDecoration: "none", background: "#BAE6FD", border: "1px solid #BAE6FD", padding: "4px 10px", borderRadius: 6 }}
                 >
-                  Connect on LinkedIn <ArrowUpRight size={12} color="#38bdf8" />
+                  Connect on LinkedIn <ArrowUpRight size={12} color="#0284C7" />
                 </a>
               )}
             </div>
@@ -1983,12 +1983,12 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       </section>
 
       {/* -------------------- 8. Executive FAQs Section -------------------- */}
-      <section id="faqs" style={{ maxWidth: 1050, margin: "0 auto", padding: "75px 24px", borderTop: "1px solid rgba(96, 165, 250, 0.2)" }}>
+      <section id="faqs" style={{ maxWidth: 1050, margin: "0 auto", padding: "75px 24px", borderTop: "1px solid #BAE6FD" }}>
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <div style={{
             display: "inline-block",
-            background: "rgba(56, 189, 248, 0.15)",
-            border: "1px solid rgba(56, 189, 248, 0.3)",
+            background: "#E0F2FE",
+            border: "1px solid #BAE6FD",
             color: "#0369a1",
             padding: "4px 14px",
             borderRadius: 16,
@@ -2012,8 +2012,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
               <div
                 key={f.id || idx}
                 style={{
-                  background: "rgba(13, 36, 78, 0.65)",
-                  border: "1px solid rgba(96, 165, 250, 0.22)",
+                  background: "#FFFFFF",
+                  border: "1px solid #BAE6FD",
                   borderRadius: 10,
                   overflow: "hidden",
                   transition: "all 0.2s ease",
@@ -2031,17 +2031,17 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
-                    color: "#000000",
+                    color: "#0F172A",
                     fontSize: 15,
                     fontWeight: 600,
                     cursor: "pointer",
                   }}
                 >
                   <span>{f.question}</span>
-                  {isOpen ? <ChevronUp size={18} color="#38bdf8" /> : <ChevronDown size={18} color="#38bdf8" />}
+                  {isOpen ? <ChevronUp size={18} color="#0284C7" /> : <ChevronDown size={18} color="#0284C7" />}
                 </button>
                 {isOpen && (
-                  <div style={{ padding: "0 20px 18px", color: "#334155", fontSize: 13.5, lineHeight: 1.6, borderTop: "1px solid rgba(96, 165, 250, 0.15)", paddingTop: 12 }}>
+                  <div style={{ padding: "0 20px 18px", color: "#334155", fontSize: 13.5, lineHeight: 1.6, borderTop: "1px solid #BAE6FD", paddingTop: 12 }}>
                     {f.answer}
                   </div>
                 )}
@@ -2052,29 +2052,29 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       </section>
 
       {/* -------------------- 9. Contact Info Section -------------------- */}
-      <section id="contact" style={{ maxWidth: 1320, margin: "0 auto", padding: "75px 24px", borderTop: "1px solid rgba(96, 165, 250, 0.2)" }}>
+      <section id="contact" style={{ maxWidth: 1320, margin: "0 auto", padding: "75px 24px", borderTop: "1px solid #BAE6FD" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24 }}>
-          <div style={{ background: "rgba(13, 36, 78, 0.65)", border: "1px solid rgba(96, 165, 250, 0.22)", borderRadius: 12, padding: 22, backdropFilter: "blur(8px)" }}>
+          <div style={{ background: "#FFFFFF", border: "1px solid #BAE6FD", borderRadius: 12, padding: 22, backdropFilter: "blur(8px)" }}>
             <Mail size={22} style={{ marginBottom: 10, color: "#0369a1" }} />
             <div style={{ fontSize: 15, fontWeight: 700, fontFamily: "Space Grotesk" }}>Email Support & Sales</div>
             <div style={{ fontSize: 13, color: "#334155", marginTop: 4 }}>General: {contactInfo.email}</div>
             <div style={{ fontSize: 13, color: "#334155" }}>Enterprise Sales: {contactInfo.salesEmail}</div>
           </div>
 
-          <div style={{ background: "rgba(13, 36, 78, 0.65)", border: "1px solid rgba(96, 165, 250, 0.22)", borderRadius: 12, padding: 22, backdropFilter: "blur(8px)" }}>
+          <div style={{ background: "#FFFFFF", border: "1px solid #BAE6FD", borderRadius: 12, padding: 22, backdropFilter: "blur(8px)" }}>
             <Phone size={22} style={{ marginBottom: 10, color: "#0369a1" }} />
             <div style={{ fontSize: 15, fontWeight: 700, fontFamily: "Space Grotesk" }}>Corporate Phone Lines</div>
             <div style={{ fontSize: 13, color: "#334155", marginTop: 4 }}>Main: {contactInfo.phone}</div>
             <div style={{ fontSize: 13, color: "#334155" }}>24/7 SLA Hotline: {contactInfo.emergencyHotline}</div>
           </div>
 
-          <div style={{ background: "rgba(13, 36, 78, 0.65)", border: "1px solid rgba(96, 165, 250, 0.22)", borderRadius: 12, padding: 22, backdropFilter: "blur(8px)" }}>
+          <div style={{ background: "#FFFFFF", border: "1px solid #BAE6FD", borderRadius: 12, padding: 22, backdropFilter: "blur(8px)" }}>
             <Clock size={22} style={{ marginBottom: 10, color: "#0369a1" }} />
             <div style={{ fontSize: 15, fontWeight: 700, fontFamily: "Space Grotesk" }}>Operating Hours</div>
             <div style={{ fontSize: 13, color: "#334155", marginTop: 4 }}>{contactInfo.supportHours}</div>
           </div>
 
-          <div style={{ background: "rgba(13, 36, 78, 0.65)", border: "1px solid rgba(96, 165, 250, 0.22)", borderRadius: 12, padding: 22, backdropFilter: "blur(8px)" }}>
+          <div style={{ background: "#FFFFFF", border: "1px solid #BAE6FD", borderRadius: 12, padding: 22, backdropFilter: "blur(8px)" }}>
             <MapPin size={22} style={{ marginBottom: 10, color: "#0369a1" }} />
             <div style={{ fontSize: 15, fontWeight: 700, fontFamily: "Space Grotesk" }}>Headquarters</div>
             <div style={{ fontSize: 12.5, color: "#334155", marginTop: 4, lineHeight: 1.4 }}>{contactInfo.address}</div>
@@ -2083,11 +2083,11 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       </section>
 
       {/* -------------------- 10. Premium ISO Standard Footer -------------------- */}
-      <footer style={{ borderTop: "1px solid rgba(96, 165, 250, 0.25)", background: "#ffffff", padding: "45px 24px 34px" }}>
+      <footer style={{ borderTop: "1px solid #BAE6FD", background: "#ffffff", padding: "45px 24px 34px" }}>
         <div style={{ maxWidth: 1320, margin: "0 auto", display: "flex", flexDirection: "column", gap: 26 }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 20 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <div style={{ width: 32, height: 32, borderRadius: 6, background: "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)", color: "#ffffff", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <div style={{ width: 32, height: 32, borderRadius: 6, background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)", color: "#ffffff", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <Sparkles size={18} />
               </div>
               <span style={{ fontSize: 18, fontWeight: 800, fontFamily: "Space Grotesk" }}>AuditAI Qalyzer v2.0</span>
@@ -2105,8 +2105,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   alignItems: "center",
                   gap: 6,
                   background: "#bae6fd",
-                  border: "1px solid rgba(96, 165, 250, 0.35)",
-                  color: "#000000",
+                  border: "1px solid #BAE6FD",
+                  color: "#0F172A",
                   borderRadius: 6,
                   padding: "8px 14px",
                   fontSize: 12,
@@ -2114,7 +2114,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   cursor: "pointer",
                 }}
               >
-                <ShieldCheck size={13} color="#38bdf8" /> Administrator Login
+                <ShieldCheck size={13} color="#0284C7" /> Administrator Login
               </button>
 
               <button
@@ -2123,9 +2123,9 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   display: "flex",
                   alignItems: "center",
                   gap: 6,
-                  background: "rgba(96, 165, 250, 0.18)",
+                  background: "#BAE6FD",
                   border: "1px solid #38bdf8",
-                  color: "#000000",
+                  color: "#0F172A",
                   borderRadius: 6,
                   padding: "8px 14px",
                   fontSize: 12,
@@ -2133,7 +2133,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   cursor: "pointer",
                 }}
               >
-                <UserCheck size={13} color="#38bdf8" /> Partner / Client Login
+                <UserCheck size={13} color="#0284C7" /> Partner / Client Login
               </button>
 
               <button
@@ -2142,8 +2142,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   display: "flex",
                   alignItems: "center",
                   gap: 6,
-                  background: "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)",
-                  color: "#000000",
+                  background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
+                  color: "#0F172A",
                   border: "none",
                   borderRadius: 6,
                   padding: "8px 16px",
@@ -2158,7 +2158,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             </div>
           </div>
 
-          <div style={{ height: 1, background: "rgba(96, 165, 250, 0.2)" }} />
+          <div style={{ height: 1, background: "#BAE6FD" }} />
 
           {/* Legal Policies Quick Links */}
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 14, fontSize: 12, color: "#334155" }}>
@@ -2181,14 +2181,14 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       {/* -------------------- Interactive Dual-Gateway Direct Checkout Modal -------------------- */}
       {showCheckoutModal && checkoutPlan && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(4, 12, 25, 0.88)", backdropFilter: "blur(10px)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1100, padding: 16 }}>
-          <div style={{ width: 560, maxWidth: "100%", maxHeight: "90vh", background: "#0b1f3d", border: "2px solid #38bdf8", borderRadius: 16, padding: 28, display: "flex", flexDirection: "column", color: "#000000", boxShadow: "0 20px 50px rgba(0,0,0,0.7)", overflowY: "auto" }}>
+          <div style={{ width: 560, maxWidth: "100%", maxHeight: "90vh", background: "#0b1f3d", border: "2px solid #0284C7", borderRadius: 16, padding: 28, display: "flex", flexDirection: "column", color: "#0F172A", boxShadow: "0 20px 50px rgba(0,0,0,0.7)", overflowY: "auto" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20, borderBottom: "1px solid #1e3a66", paddingBottom: 14 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <div style={{ width: 34, height: 34, borderRadius: 8, background: "rgba(56,189,248,0.15)", border: "1px solid #38bdf8", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <CreditCard size={18} color="#38bdf8" />
+                <div style={{ width: 34, height: 34, borderRadius: 8, background: "#E0F2FE", border: "1px solid #38bdf8", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <CreditCard size={18} color="#0284C7" />
                 </div>
                 <div>
-                  <h3 style={{ margin: 0, fontSize: 18, color: "#000000", fontWeight: 700 }}>
+                  <h3 style={{ margin: 0, fontSize: 18, color: "#0F172A", fontWeight: 700 }}>
                     Instant Checkout & Activation
                   </h3>
                   <div style={{ fontSize: 12, color: "#334155" }}>Dual Gateway: PayU & Razorpay Supported</div>
@@ -2202,7 +2202,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             {/* Plan Summary Badge */}
             <div style={{ background: "#f0f9ff", border: "1px solid #1e3a66", borderRadius: 12, padding: 16, marginBottom: 20, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div>
-                <div style={{ fontSize: 16, fontWeight: 700, color: "#000000" }}>{checkoutPlan.name}</div>
+                <div style={{ fontSize: 16, fontWeight: 700, color: "#0F172A" }}>{checkoutPlan.name}</div>
                 <div style={{ fontSize: 12, color: "#0369a1", marginTop: 2 }}>
                   {typeof checkoutPlan.callMinutes === "number" ? checkoutPlan.callMinutes.toLocaleString() : checkoutPlan.callMinutes} Call Audits / Month • 30-Day Period
                 </div>
@@ -2229,7 +2229,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                       key={gw.id}
                       onClick={() => setSelectedGateway(gw.id)}
                       style={{
-                        background: isSel ? "rgba(56,189,248,0.15)" : "#f0f9ff",
+                        background: isSel ? "#E0F2FE" : "#f0f9ff",
                         border: `2px solid ${isSel ? "#38bdf8" : "#1e3a66"}`,
                         borderRadius: 10,
                         padding: "12px 14px",
@@ -2267,7 +2267,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     border: "1px solid #1e3a66",
                     borderRadius: 8,
                     padding: "9px 12px",
-                    color: "#000000",
+                    color: "#0F172A",
                     fontSize: 13.5,
                     outline: "none",
                   }}
@@ -2290,7 +2290,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                       border: "1px solid #1e3a66",
                       borderRadius: 8,
                       padding: "9px 12px",
-                      color: "#000000",
+                      color: "#0F172A",
                       fontSize: 13.5,
                       outline: "none",
                     }}
@@ -2312,7 +2312,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                       border: "1px solid #1e3a66",
                       borderRadius: 8,
                       padding: "9px 12px",
-                      color: "#000000",
+                      color: "#0F172A",
                       fontSize: 13.5,
                       outline: "none",
                     }}
@@ -2334,7 +2334,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 disabled={checkoutLoading}
                 style={{
                   background: "linear-gradient(135deg, #0284c7 0%, #2563eb 100%)",
-                  color: "#000000",
+                  color: "#0F172A",
                   border: "none",
                   borderRadius: 8,
                   padding: "13px",
@@ -2356,7 +2356,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 onClick={handleSimulateInstantPayment}
                 disabled={checkoutLoading}
                 style={{
-                  background: "rgba(56,189,248,0.12)",
+                  background: "#E0F2FE",
                   color: "#0369a1",
                   border: "1px solid #38bdf8",
                   borderRadius: 8,
@@ -2376,12 +2376,12 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       {/* -------------------- Payment Success Modal -------------------- */}
       {paymentSuccessData && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(4, 12, 25, 0.92)", backdropFilter: "blur(12px)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1200, padding: 16 }}>
-          <div style={{ width: 500, maxWidth: "100%", background: "#0b1f3d", border: "2px solid #10b981", borderRadius: 16, padding: 32, textAlign: "center", color: "#000000", boxShadow: "0 25px 60px rgba(16, 185, 129, 0.25)" }}>
+          <div style={{ width: 500, maxWidth: "100%", background: "#0b1f3d", border: "2px solid #10b981", borderRadius: 16, padding: 32, textAlign: "center", color: "#0F172A", boxShadow: "0 25px 60px rgba(16, 185, 129, 0.25)" }}>
             <div style={{ width: 64, height: 64, borderRadius: "50%", background: "rgba(16, 185, 129, 0.15)", border: "2px solid #10b981", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
               <CheckCircle2 size={36} color="#16a34a" />
             </div>
 
-            <h2 style={{ margin: "0 0 10px 0", fontSize: 24, fontWeight: 800, color: "#000000" }}>
+            <h2 style={{ margin: "0 0 10px 0", fontSize: 24, fontWeight: 800, color: "#0F172A" }}>
               Subscription Successfully Activated!
             </h2>
 
@@ -2397,7 +2397,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 }}
                 style={{
                   background: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
-                  color: "#000000",
+                  color: "#0F172A",
                   border: "none",
                   borderRadius: 8,
                   padding: "12px 26px",
@@ -2435,15 +2435,15 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       {/* -------------------- Legal Policy Dialog Modal -------------------- */}
       {activeLegalModal && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(4, 12, 25, 0.85)", backdropFilter: "blur(8px)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000, padding: 16 }}>
-          <div style={{ width: 680, maxWidth: "100%", maxHeight: "85vh", background: "#ffffff", border: "2px solid #38bdf8", borderRadius: 14, padding: 26, display: "flex", flexDirection: "column", color: "#000000", boxShadow: "0 16px 40px rgba(0,0,0,0.6)" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16, borderBottom: "1px solid rgba(96, 165, 250, 0.25)", paddingBottom: 10 }}>
+          <div style={{ width: 680, maxWidth: "100%", maxHeight: "85vh", background: "#ffffff", border: "2px solid #0284C7", borderRadius: 14, padding: 26, display: "flex", flexDirection: "column", color: "#0F172A", boxShadow: "0 16px 40px rgba(2, 132, 199, 0.10)" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16, borderBottom: "1px solid #BAE6FD", paddingBottom: 10 }}>
               <div style={{ fontSize: 19, fontWeight: 700, fontFamily: "Space Grotesk", color: "#0369a1" }}>
                 {activeLegalModal === "privacy" && "Privacy Policy (ISO 27001)"}
                 {activeLegalModal === "terms" && "Terms and Conditions of Service"}
                 {activeLegalModal === "usage" && "Platform Usage Rights & SLA"}
                 {activeLegalModal === "refund" && "Subscription & Refund Policy"}
               </div>
-              <button onClick={() => setActiveLegalModal(null)} style={{ background: "none", border: "none", color: "#000000", cursor: "pointer" }}><X size={20} /></button>
+              <button onClick={() => setActiveLegalModal(null)} style={{ background: "none", border: "none", color: "#0F172A", cursor: "pointer" }}><X size={20} /></button>
             </div>
 
             <div style={{ flex: 1, overflowY: "auto", fontSize: 13, lineHeight: 1.65, whiteSpace: "pre-line", color: "#334155", paddingRight: 6 }}>
@@ -2454,7 +2454,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             </div>
 
             <div style={{ marginTop: 16, display: "flex", justifyContent: "flex-end" }}>
-              <button onClick={() => setActiveLegalModal(null)} style={{ background: "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)", color: "#ffffff", border: "none", borderRadius: 6, padding: "8px 20px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>
+              <button onClick={() => setActiveLegalModal(null)} style={{ background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)", color: "#ffffff", border: "none", borderRadius: 6, padding: "8px 20px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>
                 Close Document
               </button>
             </div>
