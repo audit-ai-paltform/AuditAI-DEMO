@@ -44,23 +44,23 @@ import AdminUserActivityModule from "./components/AdminUserActivityModule";
 import AskAuditAIChatbot from "./components/AskAuditAIChatbot";
 
 /* ---------------------------------------------------------------- */
-/*  Design tokens — Premium Light Sky-Blue & Dark Slate UI          */
+/*  Design tokens — Pure Sky Blue & Crisp Dark-Ink SaaS UI          */
 /*  Status Colour Standard: Red = Risk, Grey = Neutral, Green = Good*/
 /* ---------------------------------------------------------------- */
 const C = {
-  bg: "#e6f4fe",          // Clean light sky-blue canvas
-  panel: "#ffffff",       // Crisp white card & sidebar surface
-  panel2: "#f0f9ff",      // Soft ice-blue elevated surface / table header
-  panelHover: "#bae6fd",  // Sky highlight on hover
-  border: "#bae6fd",      // Clean sky-blue border
-  borderSoft: "#dbeafe",  // Subtle light divider
-  text: "#0f172a",        // Deep slate dark text (high contrast)
-  muted: "#1e293b",       // Secondary dark slate text
-  faint: "#475569",       // Muted slate label text
+  bg: "#bae6fd",          // Complete pure sky-blue canvas
+  panel: "#ffffff",       // Crisp white card & table surface
+  panel2: "#e0f2fe",      // Soft sky-blue elevated surface / table header
+  panelHover: "#7dd3fc",  // Vibrant sky-blue hover highlight
+  border: "#7dd3fc",      // Clean sky-blue border
+  borderSoft: "#bae6fd",  // Subtle sky divider
+  text: "#0c1e35",        // Deep navy-slate text (crisp & readable)
+  muted: "#1e3a5f",       // Secondary deep sky-slate text
+  faint: "#335c81",       // Muted sky-slate labels
   white: "#ffffff",       // Pure white
-  black: "#0f172a",       // Deep slate ink
+  black: "#0c1e35",       // Deep navy-slate ink
   teal: "#0284c7",        // Vibrant sky-blue primary accent
-  tealSoft: "rgba(2, 132, 199, 0.12)",
+  tealSoft: "rgba(2, 132, 199, 0.14)",
   red: "#dc2626",         // Red = Risk
   redSoft: "rgba(220, 38, 38, 0.12)",
   amber: "#475569",       // Grey = Neutral
@@ -72,22 +72,30 @@ const C = {
 };
 
 const FONT_STYLE = `
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 * {
   box-sizing: border-box;
+}
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background-color: #bae6fd;
+  color: #0c1e35;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #e0f2fe;
+  background: #bae6fd;
 }
 ::-webkit-scrollbar-thumb {
-  background: #7dd3fc;
+  background: #38bdf8;
   border-radius: 6px;
-  border: 1px solid #bae6fd;
+  border: 1px solid #7dd3fc;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #0284c7;
@@ -101,32 +109,27 @@ const FONT_STYLE = `
   animation: spin 1s linear infinite;
 }
 
-/* Light sky-blue small checkbox/grid pattern background */
+/* Complete pure sky-blue background */
 .auditai-grid-bg {
-  background-color: #e6f4fe;
-  background-image:
-    radial-gradient(rgba(2, 132, 199, 0.14) 1px, transparent 1px),
-    linear-gradient(to right, rgba(2, 132, 199, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(2, 132, 199, 0.07) 1px, transparent 1px);
-  background-size: 20px 20px, 20px 20px, 20px 20px;
-  background-position: 10px 10px, 0 0, 0 0;
+  background-color: #bae6fd;
 }
 
-/* Unified Table Contrast for Light Sky-Blue + Dark Slate Theme */
+/* Unified Table Contrast for Sky-Blue + Dark-Ink Theme */
 table {
   width: 100%;
   border-collapse: collapse;
-  color: #0f172a;
+  color: #0c1e35;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 thead th {
   background: #e0f2fe;
   color: #0c4a6e;
-  border-bottom: 1.5px solid #bae6fd;
+  border-bottom: 1.5px solid #7dd3fc;
   font-weight: 700;
 }
 tbody td {
-  color: #0f172a;
-  border-bottom: 1px solid #e2e8f0;
+  color: #0c1e35;
+  border-bottom: 1px solid #e0f2fe;
 }
 tbody tr:hover {
   background: #f0f9ff;
@@ -134,12 +137,16 @@ tbody tr:hover {
 
 /* Modern Stylish Buttons */
 button {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   transition: transform 0.14s ease, box-shadow 0.16s ease, background-color 0.16s ease, border-color 0.16s ease;
 }
 button:active:not(:disabled) {
   transform: scale(0.98);
 }
 
+input, select, textarea {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
 input:focus, select:focus, textarea:focus {
   outline: 1.5px solid #0284c7 !important;
   border-color: #0284c7 !important;
@@ -5195,7 +5202,7 @@ export default function AuditAIConsole() {
   return (
     <>
       <style>{FONT_STYLE}</style>
-      <div className="auditai-grid-bg" style={{ display: "flex", height: "100vh", overflow: "hidden", color: C.text, fontFamily: "Inter, sans-serif", position: "relative" }}>
+      <div className="auditai-grid-bg" style={{ display: "flex", height: "100vh", overflow: "hidden", color: C.text, fontFamily: "'Plus Jakarta Sans', sans-serif", position: "relative" }}>
         {mobileNavOpen && (
           <div
             onClick={() => setMobileNavOpen(false)}
@@ -5209,7 +5216,7 @@ export default function AuditAIConsole() {
             width: sidebarCollapsed ? 72 : 254,
             flexShrink: 0,
             height: "100vh",
-            background: "linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%)",
+            background: "#e0f2fe",
             borderRight: `1px solid ${C.border}`,
             padding: sidebarCollapsed ? "18px 10px" : "18px 14px",
             display: fullscreenPane ? "none" : "flex",
@@ -5335,7 +5342,7 @@ export default function AuditAIConsole() {
         {/* Main Content Pane — scrolls independently of the sidebar */}
         <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", height: "100vh", overflow: "hidden" }}>
           {/* Top Bar Header — fixed within the content pane */}
-          <div style={{ height: 58, flexShrink: 0, borderBottom: `1px solid ${C.border}`, background: "rgba(255, 255, 255, 0.92)", backdropFilter: "blur(10px)", padding: "0 20px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, boxShadow: "0 2px 10px rgba(2, 132, 199, 0.05)" }}>
+          <div style={{ height: 58, flexShrink: 0, borderBottom: `1px solid ${C.border}`, background: "#e0f2fe", padding: "0 20px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, boxShadow: "0 2px 10px rgba(2, 132, 199, 0.06)" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, minWidth: 0 }}>
               <button
                 type="button"
