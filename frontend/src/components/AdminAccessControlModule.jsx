@@ -187,14 +187,14 @@ export default function AdminAccessControlModule({ currentUser, onRoleFeaturesUp
     : ROLE_OPTIONS;
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 18, fontFamily: "Inter, sans-serif", color: "#ffffff" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 18, fontFamily: "Inter, sans-serif", color: "#0f172a" }}>
       {/* Header */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
         <div>
-          <h2 style={{ fontSize: 22, fontWeight: 800, fontFamily: "Space Grotesk", margin: 0, display: "flex", alignItems: "center", gap: 10, color: "#ffffff" }}>
-            <Shield size={22} color="#38bdf8" /> Role Dashboards & Access Governance
+          <h2 style={{ fontSize: 22, fontWeight: 800, fontFamily: "Space Grotesk", margin: 0, display: "flex", alignItems: "center", gap: 10, color: "#0f172a" }}>
+            <Shield size={22} color="#0284c7" /> Role Dashboards & Access Governance
           </h2>
-          <div style={{ fontSize: 13, color: "#e0f2fe", marginTop: 2 }}>
+          <div style={{ fontSize: 13, color: "#334155", marginTop: 2 }}>
             Manage Employee roles (Super Admin, Administrator, Manager, Sales Team), Client Organization panels, and per-role dashboard feature visibility.
           </div>
         </div>
@@ -204,9 +204,9 @@ export default function AdminAccessControlModule({ currentUser, onRoleFeaturesUp
             onClick={() => setSubTab("users")}
             style={{
               display: "flex", alignItems: "center", gap: 6,
-              background: subTab === "users" ? "linear-gradient(135deg, #38bdf8 0%, #0284c7 100%)" : "#0c2856",
-              color: "#ffffff",
-              border: `1px solid ${subTab === "users" ? "#38bdf8" : "rgba(56, 189, 248, 0.35)"}`,
+              background: subTab === "users" ? "linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)" : "#ffffff",
+              color: subTab === "users" ? "#ffffff" : "#0f172a",
+              border: `1px solid ${subTab === "users" ? "#0284c7" : "#bae6fd"}`,
               borderRadius: 999, padding: "8px 16px", fontSize: 12.5, fontWeight: 700, cursor: "pointer",
             }}
           >
@@ -216,9 +216,9 @@ export default function AdminAccessControlModule({ currentUser, onRoleFeaturesUp
             onClick={() => setSubTab("matrix")}
             style={{
               display: "flex", alignItems: "center", gap: 6,
-              background: subTab === "matrix" ? "linear-gradient(135deg, #38bdf8 0%, #0284c7 100%)" : "#0c2856",
-              color: "#ffffff",
-              border: `1px solid ${subTab === "matrix" ? "#38bdf8" : "rgba(56, 189, 248, 0.35)"}`,
+              background: subTab === "matrix" ? "linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)" : "#ffffff",
+              color: subTab === "matrix" ? "#ffffff" : "#0f172a",
+              border: `1px solid ${subTab === "matrix" ? "#0284c7" : "#bae6fd"}`,
               borderRadius: 999, padding: "8px 16px", fontSize: 12.5, fontWeight: 700, cursor: "pointer",
             }}
           >
@@ -228,12 +228,12 @@ export default function AdminAccessControlModule({ currentUser, onRoleFeaturesUp
       </div>
 
       {successMsg && (
-        <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(52, 211, 153, 0.16)", border: "1px solid #34d399", borderRadius: 10, padding: "10px 14px", color: "#a7f3d0", fontSize: 13, fontWeight: 600 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(22, 163, 74, 0.12)", border: "1px solid #16a34a", borderRadius: 10, padding: "10px 14px", color: "#15803d", fontSize: 13, fontWeight: 600 }}>
           <CheckCircle2 size={16} /> {successMsg}
         </div>
       )}
       {errorMsg && (
-        <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(248, 113, 113, 0.16)", border: "1px solid #f87171", borderRadius: 10, padding: "10px 14px", color: "#fecaca", fontSize: 13, fontWeight: 600 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(220, 38, 38, 0.12)", border: "1px solid #dc2626", borderRadius: 10, padding: "10px 14px", color: "#b91c1c", fontSize: 13, fontWeight: 600 }}>
           <AlertCircle size={16} /> {errorMsg}
         </div>
       )}
@@ -248,16 +248,16 @@ export default function AdminAccessControlModule({ currentUser, onRoleFeaturesUp
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search name, email, company, role..."
-                style={{ background: "#0c2856", border: "1px solid rgba(56, 189, 248, 0.35)", borderRadius: 10, padding: "8px 12px", fontSize: 12.5, width: 250, color: "#ffffff" }}
+                style={{ background: "#ffffff", border: "1px solid #bae6fd", borderRadius: 10, padding: "8px 12px", fontSize: 12.5, width: 250, color: "#0f172a" }}
               />
               {["ALL", "employee", "client"].map((ft) => (
                 <button
                   key={ft}
                   onClick={() => setFilterType(ft)}
                   style={{
-                    background: filterType === ft ? "#11356e" : "#0c2856",
-                    border: `1px solid ${filterType === ft ? "#38bdf8" : "rgba(56, 189, 248, 0.25)"}`,
-                    color: filterType === ft ? "#ffffff" : "#bae6fd",
+                    background: filterType === ft ? "#e0f2fe" : "#ffffff",
+                    border: `1px solid ${filterType === ft ? "#0284c7" : "#bae6fd"}`,
+                    color: filterType === ft ? "#0369a1" : "#334155",
                     borderRadius: 999, padding: "7px 14px", fontSize: 12, fontWeight: 600, cursor: "pointer",
                   }}
                 >
@@ -268,23 +268,23 @@ export default function AdminAccessControlModule({ currentUser, onRoleFeaturesUp
 
             <button
               onClick={() => setShowAddModal(true)}
-              style={{ display: "flex", alignItems: "center", gap: 6, background: "linear-gradient(135deg, #38bdf8 0%, #0284c7 100%)", color: "#ffffff", border: "none", borderRadius: 999, padding: "9px 18px", fontSize: 12.5, fontWeight: 700, cursor: "pointer", boxShadow: "0 4px 12px rgba(56, 189, 248, 0.25)" }}
+              style={{ display: "flex", alignItems: "center", gap: 6, background: "linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)", color: "#ffffff", border: "none", borderRadius: 999, padding: "9px 18px", fontSize: 12.5, fontWeight: 700, cursor: "pointer", boxShadow: "0 4px 12px rgba(2, 132, 199, 0.22)" }}
             >
               <UserPlus size={14} /> Grant New Role / Access
             </button>
           </div>
 
           {showAddModal && (
-            <form onSubmit={handleCreateUser} style={{ background: "#0c2856", border: "1.5px solid #38bdf8", borderRadius: 12, padding: 20 }}>
-              <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 14, color: "#ffffff" }}>Provision New Employee or Client Organization User</div>
+            <form onSubmit={handleCreateUser} style={{ background: "#ffffff", border: "1.5px solid #0284c7", borderRadius: 12, padding: 20, boxShadow: "0 8px 24px rgba(2, 132, 199, 0.1)" }}>
+              <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 14, color: "#0f172a" }}>Provision New Employee or Client Organization User</div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 12, marginBottom: 14 }}>
-                <input required placeholder="Full Name" value={newUser.name} onChange={(e) => setNewUser({ ...newUser, name: e.target.value })} style={{ background: "#11356e", border: "1px solid rgba(56, 189, 248, 0.35)", borderRadius: 8, padding: "8px 10px", fontSize: 12.5, color: "#ffffff" }} />
-                <input required type="email" placeholder="Work Email" value={newUser.email} onChange={(e) => setNewUser({ ...newUser, email: e.target.value })} style={{ background: "#11356e", border: "1px solid rgba(56, 189, 248, 0.35)", borderRadius: 8, padding: "8px 10px", fontSize: 12.5, color: "#ffffff" }} />
-                <input placeholder="Company / Organization" value={newUser.company_name} onChange={(e) => setNewUser({ ...newUser, company_name: e.target.value })} style={{ background: "#11356e", border: "1px solid rgba(56, 189, 248, 0.35)", borderRadius: 8, padding: "8px 10px", fontSize: 12.5, color: "#ffffff" }} />
+                <input required placeholder="Full Name" value={newUser.name} onChange={(e) => setNewUser({ ...newUser, name: e.target.value })} style={{ background: "#f0f9ff", border: "1px solid #bae6fd", borderRadius: 8, padding: "8px 10px", fontSize: 12.5, color: "#0f172a" }} />
+                <input required type="email" placeholder="Work Email" value={newUser.email} onChange={(e) => setNewUser({ ...newUser, email: e.target.value })} style={{ background: "#f0f9ff", border: "1px solid #bae6fd", borderRadius: 8, padding: "8px 10px", fontSize: 12.5, color: "#0f172a" }} />
+                <input placeholder="Company / Organization" value={newUser.company_name} onChange={(e) => setNewUser({ ...newUser, company_name: e.target.value })} style={{ background: "#f0f9ff", border: "1px solid #bae6fd", borderRadius: 8, padding: "8px 10px", fontSize: 12.5, color: "#0f172a" }} />
                 <select
                   value={newUser.user_type}
                   onChange={(e) => setNewUser({ ...newUser, user_type: e.target.value, role: e.target.value === "client" ? "client_super_admin" : "manager" })}
-                  style={{ background: "#11356e", border: "1px solid rgba(56, 189, 248, 0.35)", borderRadius: 8, padding: "8px 10px", fontSize: 12.5, color: "#ffffff" }}
+                  style={{ background: "#f0f9ff", border: "1px solid #bae6fd", borderRadius: 8, padding: "8px 10px", fontSize: 12.5, color: "#0f172a" }}
                 >
                   <option value="employee">Platform Employee</option>
                   <option value="client">Client Organization</option>
@@ -292,7 +292,7 @@ export default function AdminAccessControlModule({ currentUser, onRoleFeaturesUp
                 <select
                   value={newUser.role}
                   onChange={(e) => setNewUser({ ...newUser, role: e.target.value })}
-                  style={{ background: "#11356e", border: "1px solid rgba(56, 189, 248, 0.35)", borderRadius: 8, padding: "8px 10px", fontSize: 12.5, color: "#ffffff" }}
+                  style={{ background: "#f0f9ff", border: "1px solid #bae6fd", borderRadius: 8, padding: "8px 10px", fontSize: 12.5, color: "#0f172a" }}
                 >
                   {newUser.user_type === "employee" ? (
                     <>
@@ -312,20 +312,20 @@ export default function AdminAccessControlModule({ currentUser, onRoleFeaturesUp
                 </select>
               </div>
               <div style={{ display: "flex", gap: 8 }}>
-                <button type="submit" disabled={addingUser} style={{ background: "linear-gradient(135deg, #38bdf8 0%, #0284c7 100%)", color: "#ffffff", border: "none", borderRadius: 999, padding: "8px 18px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>
+                <button type="submit" disabled={addingUser} style={{ background: "linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)", color: "#ffffff", border: "none", borderRadius: 999, padding: "8px 18px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>
                   {addingUser ? "Provisioning..." : "Create & Send Access Email"}
                 </button>
-                <button type="button" onClick={() => setShowAddModal(false)} style={{ background: "#11356e", color: "#e0f2fe", border: "1px solid rgba(56, 189, 248, 0.35)", borderRadius: 999, padding: "8px 16px", fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>
+                <button type="button" onClick={() => setShowAddModal(false)} style={{ background: "#e0f2fe", color: "#0369a1", border: "1px solid #bae6fd", borderRadius: 999, padding: "8px 16px", fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>
                   Cancel
                 </button>
               </div>
             </form>
           )}
 
-          <div style={{ background: "#0c2856", border: "1px solid rgba(56, 189, 248, 0.32)", borderRadius: 12, overflowX: "auto" }}>
+          <div style={{ background: "#ffffff", border: "1px solid #bae6fd", borderRadius: 12, overflowX: "auto", boxShadow: "0 4px 16px rgba(2, 132, 199, 0.06)" }}>
             <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left" }}>
               <thead>
-                <tr style={{ background: "#11356e", borderBottom: "1px solid rgba(56, 189, 248, 0.35)", fontSize: 11, color: "#e0f2fe", textTransform: "uppercase" }}>
+                <tr style={{ background: "#e0f2fe", borderBottom: "1.5px solid #bae6fd", fontSize: 11, color: "#0c4a6e", textTransform: "uppercase" }}>
                   <th style={{ padding: "12px 14px" }}>User & Organization</th>
                   <th style={{ padding: "12px 14px" }}>Type & Dashboard Role</th>
                   <th style={{ padding: "12px 14px" }}>Status (Red/Grey/Green)</th>
@@ -334,27 +334,27 @@ export default function AdminAccessControlModule({ currentUser, onRoleFeaturesUp
               </thead>
               <tbody>
                 {loading ? (
-                  <tr><td colSpan={4} style={{ padding: 24, textAlign: "center", color: "#bae6fd" }}>Loading access records...</td></tr>
+                  <tr><td colSpan={4} style={{ padding: 24, textAlign: "center", color: "#475569" }}>Loading access records...</td></tr>
                 ) : filteredUsers.length === 0 ? (
-                  <tr><td colSpan={4} style={{ padding: 24, textAlign: "center", color: "#bae6fd" }}>No users found.</td></tr>
+                  <tr><td colSpan={4} style={{ padding: 24, textAlign: "center", color: "#475569" }}>No users found.</td></tr>
                 ) : (
                   filteredUsers.map((u) => {
                     const isActive = u.status === "ACTIVE";
                     return (
-                      <tr key={u.id} style={{ borderBottom: "1px solid rgba(255, 255, 255, 0.1)", fontSize: 13 }}>
+                      <tr key={u.id} style={{ borderBottom: "1px solid #e2e8f0", fontSize: 13 }}>
                         <td style={{ padding: "12px 14px" }}>
-                          <div style={{ fontWeight: 700, color: "#ffffff" }}>{u.name}</div>
-                          <div style={{ fontSize: 11.5, color: "#bae6fd" }}>{u.email} · {u.company_name}</div>
+                          <div style={{ fontWeight: 700, color: "#0f172a" }}>{u.name}</div>
+                          <div style={{ fontSize: 11.5, color: "#475569" }}>{u.email} · {u.company_name}</div>
                         </td>
                         <td style={{ padding: "12px 14px" }}>
-                          <span style={{ background: "rgba(56, 189, 248, 0.18)", color: "#7dd3fc", border: "1px solid rgba(56, 189, 248, 0.35)", padding: "3px 10px", borderRadius: 999, fontSize: 11.5, fontWeight: 700 }}>
+                          <span style={{ background: "#e0f2fe", color: "#0369a1", border: "1px solid #bae6fd", padding: "3px 10px", borderRadius: 999, fontSize: 11.5, fontWeight: 700 }}>
                             {u.role}
                           </span>
                         </td>
                         <td style={{ padding: "12px 14px" }}>
                           <span style={{
-                            background: isActive ? "rgba(52, 211, 153, 0.16)" : "rgba(248, 113, 113, 0.16)",
-                            color: isActive ? "#34d399" : "#f87171",
+                            background: isActive ? "rgba(22, 163, 74, 0.12)" : "rgba(220, 38, 38, 0.12)",
+                            color: isActive ? "#16a34a" : "#dc2626",
                             padding: "3px 10px", borderRadius: 999, fontSize: 11.5, fontWeight: 700,
                           }}>
                             {u.status}
@@ -365,9 +365,9 @@ export default function AdminAccessControlModule({ currentUser, onRoleFeaturesUp
                             disabled={actionLoadingId === u.id}
                             onClick={() => handleToggleStatus(u)}
                             style={{
-                              background: isActive ? "rgba(248, 113, 113, 0.14)" : "rgba(52, 211, 153, 0.14)",
-                              color: isActive ? "#f87171" : "#34d399",
-                              border: `1px solid ${isActive ? "#f87171" : "#34d399"}`,
+                              background: isActive ? "rgba(220, 38, 38, 0.10)" : "rgba(22, 163, 74, 0.10)",
+                              color: isActive ? "#dc2626" : "#16a34a",
+                              border: `1px solid ${isActive ? "#dc2626" : "#16a34a"}`,
                               borderRadius: 999, padding: "5px 12px", fontSize: 11.5, fontWeight: 700, cursor: "pointer",
                             }}
                           >
@@ -378,7 +378,7 @@ export default function AdminAccessControlModule({ currentUser, onRoleFeaturesUp
                               disabled={actionLoadingId === u.id}
                               onClick={() => handleAllocateClientPanel(u)}
                               style={{
-                                background: "linear-gradient(135deg, #38bdf8 0%, #0284c7 100%)", color: "#ffffff", border: "none",
+                                background: "linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)", color: "#ffffff", border: "none",
                                 borderRadius: 999, padding: "5px 12px", fontSize: 11.5, fontWeight: 600, cursor: "pointer",
                               }}
                             >
@@ -400,7 +400,7 @@ export default function AdminAccessControlModule({ currentUser, onRoleFeaturesUp
       {subTab === "matrix" && (
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 18 }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            <div style={{ fontSize: 11.5, fontWeight: 700, color: "#7dd3fc", textTransform: "uppercase", marginBottom: 4 }}>
+            <div style={{ fontSize: 11.5, fontWeight: 700, color: "#0369a1", textTransform: "uppercase", marginBottom: 4 }}>
               Select Role Dashboard to Configure
             </div>
             {editableRoles.map((r) => (
@@ -411,34 +411,34 @@ export default function AdminAccessControlModule({ currentUser, onRoleFeaturesUp
                   textAlign: "left",
                   padding: "11px 14px",
                   borderRadius: 10,
-                  background: selectedMatrixRole === r.id ? "linear-gradient(135deg, #38bdf8 0%, #0284c7 100%)" : "#0c2856",
-                  color: "#ffffff",
-                  border: `1px solid ${selectedMatrixRole === r.id ? "#38bdf8" : "rgba(56, 189, 248, 0.30)"}`,
+                  background: selectedMatrixRole === r.id ? "linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)" : "#ffffff",
+                  color: selectedMatrixRole === r.id ? "#ffffff" : "#0f172a",
+                  border: `1px solid ${selectedMatrixRole === r.id ? "#0284c7" : "#bae6fd"}`,
                   cursor: "pointer",
                 }}
               >
                 <div style={{ fontSize: 13, fontWeight: 700 }}>{r.label}</div>
-                <div style={{ fontSize: 11, opacity: 0.9, color: "#e0f2fe", marginTop: 2 }}>
+                <div style={{ fontSize: 11, opacity: 0.9, color: selectedMatrixRole === r.id ? "#e0f2fe" : "#475569", marginTop: 2 }}>
                   {(roleFeatures[r.id] || []).length} features enabled
                 </div>
               </button>
             ))}
           </div>
 
-          <div style={{ gridColumn: "span 2", background: "#0c2856", border: "1px solid rgba(56, 189, 248, 0.32)", borderRadius: 12, padding: 22 }}>
+          <div style={{ gridColumn: "span 2", background: "#ffffff", border: "1px solid #bae6fd", borderRadius: 12, padding: 22, boxShadow: "0 4px 16px rgba(2, 132, 199, 0.06)" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16, flexWrap: "wrap", gap: 10 }}>
               <div>
-                <h3 style={{ margin: 0, fontSize: 16, fontWeight: 700, color: "#ffffff" }}>
-                  Features Visible to: <span style={{ color: "#38bdf8" }}>{selectedMatrixRole}</span>
+                <h3 style={{ margin: 0, fontSize: 16, fontWeight: 700, color: "#0f172a" }}>
+                  Features Visible to: <span style={{ color: "#0284c7" }}>{selectedMatrixRole}</span>
                 </h3>
-                <div style={{ fontSize: 12, color: "#bae6fd", marginTop: 2 }}>
+                <div style={{ fontSize: 12, color: "#475569", marginTop: 2 }}>
                   Toggle which modules & tabs appear in this role's sidebar and Ask AuditAI navigator.
                 </div>
               </div>
               <button
                 onClick={handleSaveMatrix}
                 disabled={savingMatrix}
-                style={{ display: "flex", alignItems: "center", gap: 6, background: "linear-gradient(135deg, #38bdf8 0%, #0284c7 100%)", color: "#ffffff", border: "none", borderRadius: 999, padding: "9px 18px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}
+                style={{ display: "flex", alignItems: "center", gap: 6, background: "linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)", color: "#ffffff", border: "none", borderRadius: 999, padding: "9px 18px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}
               >
                 <Save size={14} /> {savingMatrix ? "Saving..." : "Save Role Visibility"}
               </button>
@@ -456,9 +456,9 @@ export default function AdminAccessControlModule({ currentUser, onRoleFeaturesUp
                       gap: 10,
                       padding: "10px 12px",
                       borderRadius: 10,
-                      border: `1px solid ${enabled ? "#38bdf8" : "rgba(255, 255, 255, 0.14)"}`,
-                      background: enabled ? "#11356e" : "rgba(9, 33, 71, 0.6)",
-                      color: "#ffffff",
+                      border: `1px solid ${enabled ? "#0284c7" : "#e2e8f0"}`,
+                      background: enabled ? "#f0f9ff" : "#f8fafc",
+                      color: "#0f172a",
                       cursor: "pointer",
                       fontSize: 12.5,
                       fontWeight: enabled ? 700 : 500,
@@ -468,7 +468,7 @@ export default function AdminAccessControlModule({ currentUser, onRoleFeaturesUp
                       type="checkbox"
                       checked={enabled}
                       onChange={() => toggleFeatureInMatrix(feat.id)}
-                      style={{ accentColor: "#38bdf8", width: 15, height: 15 }}
+                      style={{ accentColor: "#0284c7", width: 15, height: 15 }}
                     />
                     {feat.label}
                   </label>

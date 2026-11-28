@@ -406,11 +406,11 @@ export default function AdminEmailConfigModule() {
 
   const inputStyle = {
     width: "100%",
-    background: "#08162d",
+    background: "#f0f9ff",
     border: "1px solid rgba(96, 165, 250, 0.3)",
     borderRadius: 8,
     padding: "9px 12px",
-    color: "#ffffff",
+    color: "#0f172a",
     fontSize: 12.5,
     boxSizing: "border-box",
     outline: "none",
@@ -421,13 +421,13 @@ export default function AdminEmailConfigModule() {
       {/* Header + Year Audit Filter */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 16 }}>
         <div>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 11, color: "#38bdf8", fontWeight: 700, textTransform: "uppercase", letterSpacing: 0.6 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 11, color: "#0369a1", fontWeight: 700, textTransform: "uppercase", letterSpacing: 0.6 }}>
             <Mail size={13} /> Automated Email Studio, Live Preview & Yearly Audit
           </div>
-          <h1 style={{ fontSize: 23, fontWeight: 800, margin: "4px 0", fontFamily: "Space Grotesk", color: "#ffffff" }}>
+          <h1 style={{ fontSize: 23, fontWeight: 800, margin: "4px 0", fontFamily: "Space Grotesk", color: "#0f172a" }}>
             Email Automation, Branding & Delivery Audit
           </h1>
-          <p style={{ fontSize: 13, color: "#bae6fd", margin: 0 }}>
+          <p style={{ fontSize: 13, color: "#334155", margin: 0 }}>
             Preview templates in real time, configure CC/BCC & schedules, manage Logo/Signature placement, select Resend/Brevo & custom domains, and audit yearly delivery.
           </p>
         </div>
@@ -450,9 +450,9 @@ export default function AdminEmailConfigModule() {
               display: "flex",
               alignItems: "center",
               gap: 6,
-              background: "#0f2752",
+              background: "#e0f2fe",
               border: "1px solid rgba(96, 165, 250, 0.3)",
-              color: "#ffffff",
+              color: "#0f172a",
               borderRadius: 8,
               padding: "8px 14px",
               fontSize: 12.5,
@@ -468,16 +468,16 @@ export default function AdminEmailConfigModule() {
       {/* Yearly Email Audit KPI Strip */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(175px, 1fr))", gap: 12 }}>
         {[
-          { label: `Total Dispatched (${auditYear})`, value: stats.total, color: "#38bdf8", sub: `${stats.deliveryRate}% Success Rate` },
-          { label: "Sent Successfully", value: stats.sent, color: "#34d399", sub: "Verified API 200 OK" },
-          { label: "Failed / Bounced", value: stats.failed, color: "#f87171", sub: "Requires Review" },
+          { label: `Total Dispatched (${auditYear})`, value: stats.total, color: "#0369a1", sub: `${stats.deliveryRate}% Success Rate` },
+          { label: "Sent Successfully", value: stats.sent, color: "#16a34a", sub: "Verified API 200 OK" },
+          { label: "Failed / Bounced", value: stats.failed, color: "#dc2626", sub: "Requires Review" },
           { label: "Scheduled / Queued", value: stats.queued, color: "#fbbf24", sub: `${stats.scheduled?.filter((j) => j.status === "SCHEDULED").length || 0} Pending Jobs` },
           { label: "Resend vs Brevo", value: `${stats.byProvider?.resend || 0} / ${stats.byProvider?.brevo || 0}`, color: "#a78bfa", sub: `Active: ${config.active_provider.toUpperCase()}` },
         ].map((kpi, i) => (
-          <div key={i} style={{ background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 10, padding: "14px 16px" }}>
-            <div style={{ fontSize: 11, color: "#7dd3fc", fontWeight: 600, textTransform: "uppercase" }}>{kpi.label}</div>
+          <div key={i} style={{ background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 10, padding: "14px 16px" }}>
+            <div style={{ fontSize: 11, color: "#0369a1", fontWeight: 600, textTransform: "uppercase" }}>{kpi.label}</div>
             <div style={{ fontSize: 22, fontWeight: 800, color: kpi.color, margin: "4px 0", fontFamily: "Space Grotesk" }}>{kpi.value}</div>
-            <div style={{ fontSize: 11, color: "#bae6fd" }}>{kpi.sub}</div>
+            <div style={{ fontSize: 11, color: "#334155" }}>{kpi.sub}</div>
           </div>
         ))}
       </div>
@@ -492,7 +492,7 @@ export default function AdminEmailConfigModule() {
           borderRadius: 10,
           background: feedback.type === "success" ? "rgba(16, 185, 129, 0.15)" : "rgba(239, 68, 68, 0.15)",
           border: `1px solid ${feedback.type === "success" ? "rgba(16, 185, 129, 0.4)" : "rgba(239, 68, 68, 0.4)"}`,
-          color: feedback.type === "success" ? "#34d399" : "#f87171",
+          color: feedback.type === "success" ? "#16a34a" : "#dc2626",
           fontSize: 13,
           fontWeight: 600,
         }}>
@@ -521,9 +521,9 @@ export default function AdminEmailConfigModule() {
                 display: "flex",
                 alignItems: "center",
                 gap: 7,
-                background: active ? "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)" : "rgba(15, 39, 82, 0.55)",
+                background: active ? "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)" : "#ffffff",
                 border: `1px solid ${active ? "#38bdf8" : "rgba(96, 165, 250, 0.25)"}`,
-                color: "#ffffff",
+                color: "#0f172a",
                 borderRadius: 8,
                 padding: "8px 13px",
                 fontSize: 12,
@@ -550,7 +550,7 @@ export default function AdminEmailConfigModule() {
                   key={key}
                   onClick={() => setSelectedTemplateKey(key)}
                   style={{
-                    background: isSelected ? "rgba(56, 189, 248, 0.16)" : "#0b1d3e",
+                    background: isSelected ? "rgba(56, 189, 248, 0.16)" : "#ffffff",
                     border: `1px solid ${isSelected ? "#38bdf8" : "rgba(96, 165, 250, 0.2)"}`,
                     borderRadius: 9,
                     padding: "10px 12px",
@@ -562,8 +562,8 @@ export default function AdminEmailConfigModule() {
                   }}
                 >
                   <div style={{ minWidth: 0 }}>
-                    <div style={{ fontSize: 12.5, fontWeight: 700, color: "#ffffff", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{tpl.label}</div>
-                    <div style={{ fontSize: 10.5, color: "#7dd3fc", marginTop: 2 }}>{tpl.recipientType}</div>
+                    <div style={{ fontSize: 12.5, fontWeight: 700, color: "#0f172a", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{tpl.label}</div>
+                    <div style={{ fontSize: 10.5, color: "#0369a1", marginTop: 2 }}>{tpl.recipientType}</div>
                   </div>
                   <button
                     type="button"
@@ -571,7 +571,7 @@ export default function AdminEmailConfigModule() {
                       e.stopPropagation();
                       handleToggleTemplate(key);
                     }}
-                    style={{ background: "transparent", border: "none", cursor: "pointer", color: tpl.enabled ? "#34d399" : "#64748b", padding: 2, flexShrink: 0 }}
+                    style={{ background: "transparent", border: "none", cursor: "pointer", color: tpl.enabled ? "#16a34a" : "#64748b", padding: 2, flexShrink: 0 }}
                   >
                     {tpl.enabled ? <ToggleRight size={20} /> : <ToggleLeft size={20} />}
                   </button>
@@ -582,17 +582,17 @@ export default function AdminEmailConfigModule() {
 
           {/* Template Editor */}
           {activeTemplate && (
-            <div style={{ background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 12, padding: 20 }}>
+            <div style={{ background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 12, padding: 20 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
-                <h3 style={{ fontSize: 15.5, fontWeight: 700, color: "#ffffff", margin: 0 }}>{activeTemplate.label}</h3>
-                <span style={{ fontSize: 10.5, fontWeight: 700, padding: "3px 8px", borderRadius: 10, background: activeTemplate.enabled ? "rgba(16, 185, 129, 0.15)" : "rgba(100, 116, 139, 0.2)", color: activeTemplate.enabled ? "#34d399" : "#94a3b8" }}>
+                <h3 style={{ fontSize: 15.5, fontWeight: 700, color: "#0f172a", margin: 0 }}>{activeTemplate.label}</h3>
+                <span style={{ fontSize: 10.5, fontWeight: 700, padding: "3px 8px", borderRadius: 10, background: activeTemplate.enabled ? "rgba(16, 185, 129, 0.15)" : "rgba(100, 116, 139, 0.2)", color: activeTemplate.enabled ? "#16a34a" : "#94a3b8" }}>
                   {activeTemplate.enabled ? "ACTIVE" : "PAUSED"}
                 </span>
               </div>
 
               <div style={{ display: "flex", flexDirection: "column", gap: 11 }}>
                 <div>
-                  <label style={{ display: "block", fontSize: 11.5, color: "#7dd3fc", marginBottom: 4, fontWeight: 600 }}>Subject Line</label>
+                  <label style={{ display: "block", fontSize: 11.5, color: "#0369a1", marginBottom: 4, fontWeight: 600 }}>Subject Line</label>
                   <input
                     type="text"
                     value={activeTemplate.subject}
@@ -604,7 +604,7 @@ export default function AdminEmailConfigModule() {
                 {/* CC & BCC */}
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
                   <div>
-                    <label style={{ display: "block", fontSize: 11.5, color: "#7dd3fc", marginBottom: 4, fontWeight: 600 }}>CC (comma-separated)</label>
+                    <label style={{ display: "block", fontSize: 11.5, color: "#0369a1", marginBottom: 4, fontWeight: 600 }}>CC (comma-separated)</label>
                     <input
                       type="text"
                       placeholder="manager@company.com"
@@ -614,7 +614,7 @@ export default function AdminEmailConfigModule() {
                     />
                   </div>
                   <div>
-                    <label style={{ display: "block", fontSize: 11.5, color: "#7dd3fc", marginBottom: 4, fontWeight: 600 }}>BCC (comma-separated)</label>
+                    <label style={{ display: "block", fontSize: 11.5, color: "#0369a1", marginBottom: 4, fontWeight: 600 }}>BCC (comma-separated)</label>
                     <input
                       type="text"
                       placeholder="audit@company.com"
@@ -628,7 +628,7 @@ export default function AdminEmailConfigModule() {
                 {/* Provider & Domain Override */}
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
                   <div>
-                    <label style={{ display: "block", fontSize: 11.5, color: "#7dd3fc", marginBottom: 4, fontWeight: 600 }}>Platform (Resend / Brevo)</label>
+                    <label style={{ display: "block", fontSize: 11.5, color: "#0369a1", marginBottom: 4, fontWeight: 600 }}>Platform (Resend / Brevo)</label>
                     <select
                       value={activeTemplate.provider || ""}
                       onChange={(e) => setTemplates((prev) => ({ ...prev, [selectedTemplateKey]: { ...prev[selectedTemplateKey], provider: e.target.value } }))}
@@ -640,7 +640,7 @@ export default function AdminEmailConfigModule() {
                     </select>
                   </div>
                   <div>
-                    <label style={{ display: "block", fontSize: 11.5, color: "#7dd3fc", marginBottom: 4, fontWeight: 600 }}>Sending Domain</label>
+                    <label style={{ display: "block", fontSize: 11.5, color: "#0369a1", marginBottom: 4, fontWeight: 600 }}>Sending Domain</label>
                     <select
                       value={activeTemplate.from_domain || ""}
                       onChange={(e) => setTemplates((prev) => ({ ...prev, [selectedTemplateKey]: { ...prev[selectedTemplateKey], from_domain: e.target.value } }))}
@@ -657,21 +657,21 @@ export default function AdminEmailConfigModule() {
                 {/* Plain-English Simple Editor vs Advanced HTML */}
                 <div>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6, flexWrap: "wrap", gap: 4 }}>
-                    <label style={{ fontSize: 11.5, color: "#7dd3fc", fontWeight: 600 }}>
+                    <label style={{ fontSize: 11.5, color: "#0369a1", fontWeight: 600 }}>
                       Email Content ({editorMode === "simple" ? "Simple Plain-English Mode" : "HTML Mode"})
                     </label>
                     <div style={{ display: "flex", gap: 6 }}>
                       <button
                         type="button"
                         onClick={() => setEditorMode("simple")}
-                        style={{ fontSize: 10.5, padding: "2px 8px", borderRadius: 5, border: "1px solid #38bdf8", background: editorMode === "simple" ? "#38bdf8" : "transparent", color: editorMode === "simple" ? "#08162d" : "#38bdf8", fontWeight: 700, cursor: "pointer" }}
+                        style={{ fontSize: 10.5, padding: "2px 8px", borderRadius: 5, border: "1px solid #38bdf8", background: editorMode === "simple" ? "#38bdf8" : "transparent", color: editorMode === "simple" ? "#f0f9ff" : "#38bdf8", fontWeight: 700, cursor: "pointer" }}
                       >
                         Simple Editor
                       </button>
                       <button
                         type="button"
                         onClick={() => setEditorMode("html")}
-                        style={{ fontSize: 10.5, padding: "2px 8px", borderRadius: 5, border: "1px solid #38bdf8", background: editorMode === "html" ? "#38bdf8" : "transparent", color: editorMode === "html" ? "#08162d" : "#38bdf8", fontWeight: 700, cursor: "pointer" }}
+                        style={{ fontSize: 10.5, padding: "2px 8px", borderRadius: 5, border: "1px solid #38bdf8", background: editorMode === "html" ? "#38bdf8" : "transparent", color: editorMode === "html" ? "#f0f9ff" : "#38bdf8", fontWeight: 700, cursor: "pointer" }}
                       >
                         Advanced HTML
                       </button>
@@ -679,13 +679,13 @@ export default function AdminEmailConfigModule() {
                   </div>
 
                   {editorMode === "simple" ? (
-                    <div style={{ display: "flex", flexDirection: "column", gap: 8, background: "rgba(8, 22, 45, 0.55)", padding: 12, borderRadius: 8, border: "1px solid rgba(96, 165, 250, 0.25)" }}>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 8, background: "#ffffff", padding: 12, borderRadius: 8, border: "1px solid rgba(96, 165, 250, 0.25)" }}>
                       {(() => {
                         const applySimple = (next) => {
                           setSimpleBlocks(next);
                           const generatedHtml = `<p>${next.greeting}</p>
 <p>${next.intro}</p>
-${next.highlight ? `<div style="background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); padding: 14px; border-radius: 8px; margin: 14px 0;">${next.highlight}</div>` : ""}
+${next.highlight ? `<div style="background: rgba(56, 189, 248, 0.12); border: 1px solid #7dd3fc; padding: 14px; border-radius: 8px; margin: 14px 0;">${next.highlight}</div>` : ""}
 ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" style="background: #0284c7; color: #ffffff; text-decoration: none; padding: 10px 22px; border-radius: 7px; font-weight: bold; display: inline-block;">${next.ctaLabel} →</a></p>` : ""}
 <p>${next.closing}</p>`;
                           setTemplates((prev) => ({
@@ -720,7 +720,7 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
                                 [selectedTemplateKey]: { ...prev[selectedTemplateKey], body: prev[selectedTemplateKey].body + ` {{${v}}}` },
                               }))
                             }
-                            style={{ fontSize: 10, background: "rgba(56, 189, 248, 0.12)", border: "1px solid rgba(56, 189, 248, 0.3)", color: "#38bdf8", borderRadius: 4, padding: "1px 5px", cursor: "pointer" }}
+                            style={{ fontSize: 10, background: "rgba(56, 189, 248, 0.12)", border: "1px solid rgba(56, 189, 248, 0.3)", color: "#0369a1", borderRadius: 4, padding: "1px 5px", cursor: "pointer" }}
                           >
                             {`{{${v}}}`}
                           </button>
@@ -747,7 +747,7 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
                       type="button"
                       onClick={handleSendOrScheduleTemplate}
                       disabled={loading}
-                      style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 6, background: "rgba(56, 189, 248, 0.15)", border: "1px solid rgba(56, 189, 248, 0.4)", color: "#38bdf8", borderRadius: 8, padding: "9px 12px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}
+                      style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 6, background: "rgba(56, 189, 248, 0.15)", border: "1px solid rgba(56, 189, 248, 0.4)", color: "#0369a1", borderRadius: 8, padding: "9px 12px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}
                     >
                       <Send size={13} /> {templateScheduleAt ? "Schedule Email" : "Send Test Email"}
                     </button>
@@ -766,21 +766,21 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
           )}
 
           {/* Live Visual Email Preview Pane */}
-          <div style={{ background: "#0b1d3e", border: "1px solid rgba(56, 189, 248, 0.35)", borderRadius: 12, overflow: "hidden" }}>
+          <div style={{ background: "#ffffff", border: "1px solid #7dd3fc", borderRadius: 12, overflow: "hidden" }}>
             <div style={{ padding: "12px 16px", background: "rgba(56, 189, 248, 0.1)", borderBottom: "1px solid rgba(96, 165, 250, 0.25)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-              <span style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12.5, fontWeight: 700, color: "#38bdf8" }}>
+              <span style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12.5, fontWeight: 700, color: "#0369a1" }}>
                 <Eye size={15} /> Live Email Preview
               </span>
-              <span style={{ fontSize: 11, color: "#bae6fd" }}>
+              <span style={{ fontSize: 11, color: "#334155" }}>
                 via {(activeTemplate?.provider || config.active_provider).toUpperCase()}
               </span>
             </div>
 
-            <div style={{ padding: "12px 16px", borderBottom: "1px solid rgba(96, 165, 250, 0.15)", fontSize: 12, display: "flex", flexDirection: "column", gap: 4, background: "#08162d" }}>
-              <div><span style={{ color: "#7dd3fc" }}>From:</span> <span style={{ color: "#ffffff" }}>{config.from_name} &lt;{config.from_local}@{activeTemplate?.from_domain || config.selected_domain}&gt;</span></div>
-              {activeTemplate?.cc && <div><span style={{ color: "#7dd3fc" }}>CC:</span> <span style={{ color: "#bae6fd" }}>{activeTemplate.cc}</span></div>}
-              {activeTemplate?.bcc && <div><span style={{ color: "#7dd3fc" }}>BCC:</span> <span style={{ color: "#bae6fd" }}>{activeTemplate.bcc}</span></div>}
-              <div><span style={{ color: "#7dd3fc" }}>Subject:</span> <strong style={{ color: "#ffffff" }}>{previewData.subject || activeTemplate?.subject}</strong></div>
+            <div style={{ padding: "12px 16px", borderBottom: "1px solid rgba(96, 165, 250, 0.15)", fontSize: 12, display: "flex", flexDirection: "column", gap: 4, background: "#f0f9ff" }}>
+              <div><span style={{ color: "#0369a1" }}>From:</span> <span style={{ color: "#ffffff" }}>{config.from_name} &lt;{config.from_local}@{activeTemplate?.from_domain || config.selected_domain}&gt;</span></div>
+              {activeTemplate?.cc && <div><span style={{ color: "#0369a1" }}>CC:</span> <span style={{ color: "#334155" }}>{activeTemplate.cc}</span></div>}
+              {activeTemplate?.bcc && <div><span style={{ color: "#0369a1" }}>BCC:</span> <span style={{ color: "#334155" }}>{activeTemplate.bcc}</span></div>}
+              <div><span style={{ color: "#0369a1" }}>Subject:</span> <strong style={{ color: "#0f172a" }}>{previewData.subject || activeTemplate?.subject}</strong></div>
             </div>
 
             <div
@@ -796,17 +796,17 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
             {/* Logo & Placement */}
-            <div style={{ background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 12, padding: 22 }}>
-              <h3 style={{ fontSize: 15.5, fontWeight: 700, color: "#38bdf8", margin: "0 0 14px", display: "flex", alignItems: "center", gap: 8 }}>
+            <div style={{ background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 12, padding: 22 }}>
+              <h3 style={{ fontSize: 15.5, fontWeight: 700, color: "#0369a1", margin: "0 0 14px", display: "flex", alignItems: "center", gap: 8 }}>
                 <Image size={16} /> Email Logo & Placement
               </h3>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                 <div>
-                  <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Brand Logo Image URL</label>
+                  <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Brand Logo Image URL</label>
                   <input type="url" value={config.logo_url} onChange={(e) => setConfig({ ...config, logo_url: e.target.value })} placeholder="https://..." style={inputStyle} />
                 </div>
                 <div>
-                  <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Logo Placement Position</label>
+                  <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Logo Placement Position</label>
                   <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8 }}>
                     {[
                       { id: "top-left", label: "Top Left" },
@@ -822,8 +822,8 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
                           padding: "8px 6px",
                           borderRadius: 7,
                           border: `1px solid ${config.logo_placement === pos.id ? "#38bdf8" : "rgba(96, 165, 250, 0.25)"}`,
-                          background: config.logo_placement === pos.id ? "rgba(56, 189, 248, 0.2)" : "#08162d",
-                          color: "#ffffff",
+                          background: config.logo_placement === pos.id ? "rgba(56, 189, 248, 0.2)" : "#f0f9ff",
+                          color: "#0f172a",
                           fontSize: 11.5,
                           fontWeight: 600,
                           cursor: "pointer",
@@ -838,17 +838,17 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
             </div>
 
             {/* Signature & Placement */}
-            <div style={{ background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 12, padding: 22 }}>
-              <h3 style={{ fontSize: 15.5, fontWeight: 700, color: "#38bdf8", margin: "0 0 14px", display: "flex", alignItems: "center", gap: 8 }}>
+            <div style={{ background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 12, padding: 22 }}>
+              <h3 style={{ fontSize: 15.5, fontWeight: 700, color: "#0369a1", margin: "0 0 14px", display: "flex", alignItems: "center", gap: 8 }}>
                 <PenTool size={16} /> Email Signature & Placement
               </h3>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                 <div>
-                  <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Signature HTML / Footer Sign-off</label>
+                  <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Signature HTML / Footer Sign-off</label>
                   <textarea rows={4} value={config.signature_html} onChange={(e) => setConfig({ ...config, signature_html: e.target.value })} style={{ ...inputStyle, fontFamily: "JetBrains Mono, monospace", fontSize: 11.5 }} />
                 </div>
                 <div>
-                  <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Signature Placement Position</label>
+                  <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Signature Placement Position</label>
                   <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8 }}>
                     {[
                       { id: "bottom-left", label: "Bottom Left" },
@@ -864,8 +864,8 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
                           padding: "8px 6px",
                           borderRadius: 7,
                           border: `1px solid ${config.signature_placement === pos.id ? "#38bdf8" : "rgba(96, 165, 250, 0.25)"}`,
-                          background: config.signature_placement === pos.id ? "rgba(56, 189, 248, 0.2)" : "#08162d",
-                          color: "#ffffff",
+                          background: config.signature_placement === pos.id ? "rgba(56, 189, 248, 0.2)" : "#f0f9ff",
+                          color: "#0f172a",
                           fontSize: 11.5,
                           fontWeight: 600,
                           cursor: "pointer",
@@ -882,17 +882,17 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
 
           {/* Domains & Providers */}
           <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-            <div style={{ background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 12, padding: 22 }}>
-              <h3 style={{ fontSize: 15.5, fontWeight: 700, color: "#38bdf8", margin: "0 0 14px", display: "flex", alignItems: "center", gap: 8 }}>
+            <div style={{ background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 12, padding: 22 }}>
+              <h3 style={{ fontSize: 15.5, fontWeight: 700, color: "#0369a1", margin: "0 0 14px", display: "flex", alignItems: "center", gap: 8 }}>
                 <Globe size={16} /> Sending Domain Selection
               </h3>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 12 }}>
                 <div>
-                  <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Sender Prefix (Before @)</label>
+                  <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Sender Prefix (Before @)</label>
                   <input type="text" value={config.from_local} onChange={(e) => setConfig({ ...config, from_local: e.target.value })} style={inputStyle} />
                 </div>
                 <div>
-                  <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Select Active Domain</label>
+                  <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Select Active Domain</label>
                   <select value={config.selected_domain} onChange={(e) => setConfig({ ...config, selected_domain: e.target.value })} style={inputStyle}>
                     {config.available_domains.map((d) => (
                       <option key={d} value={d}>@{d}</option>
@@ -910,19 +910,19 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
                     handleSaveGlobalConfig({ add_domain: newDomainInput.trim() });
                     setNewDomainInput("");
                   }}
-                  style={{ background: "#0f2752", border: "1px solid #38bdf8", color: "#38bdf8", borderRadius: 8, padding: "0 16px", fontSize: 12, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}
+                  style={{ background: "#e0f2fe", border: "1px solid #38bdf8", color: "#0369a1", borderRadius: 8, padding: "0 16px", fontSize: 12, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}
                 >
                   + Add Domain
                 </button>
               </div>
-              <div style={{ fontSize: 12, color: "#34d399" }}>
+              <div style={{ fontSize: 12, color: "#16a34a" }}>
                 Active Sender Address: <strong>{config.from_local}@{config.selected_domain}</strong>
               </div>
             </div>
 
             {/* Resend vs Brevo Platform Selection */}
-            <div style={{ background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 12, padding: 22 }}>
-              <h3 style={{ fontSize: 15.5, fontWeight: 700, color: "#38bdf8", margin: "0 0 14px", display: "flex", alignItems: "center", gap: 8 }}>
+            <div style={{ background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 12, padding: 22 }}>
+              <h3 style={{ fontSize: 15.5, fontWeight: 700, color: "#0369a1", margin: "0 0 14px", display: "flex", alignItems: "center", gap: 8 }}>
                 <Key size={16} /> Email Platform Selection (Resend or Brevo)
               </h3>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 14 }}>
@@ -934,17 +934,17 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
                       type="button"
                       onClick={() => setConfig({ ...config, active_provider: p })}
                       style={{
-                        background: active ? "rgba(56, 189, 248, 0.16)" : "#08162d",
+                        background: active ? "rgba(56, 189, 248, 0.16)" : "#f0f9ff",
                         border: `1.5px solid ${active ? "#38bdf8" : "rgba(96, 165, 250, 0.2)"}`,
                         borderRadius: 10,
                         padding: 12,
                         textAlign: "left",
-                        color: "#ffffff",
+                        color: "#0f172a",
                         cursor: "pointer",
                       }}
                     >
                       <div style={{ fontWeight: 700, fontSize: 14, textTransform: "uppercase" }}>{p}</div>
-                      <div style={{ fontSize: 11, color: "#7dd3fc", marginTop: 2 }}>{active ? "ACTIVE PLATFORM" : "Click to Select"}</div>
+                      <div style={{ fontSize: 11, color: "#0369a1", marginTop: 2 }}>{active ? "ACTIVE PLATFORM" : "Click to Select"}</div>
                     </button>
                   );
                 })}
@@ -952,11 +952,11 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
 
               <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 16 }}>
                 <div>
-                  <label style={{ display: "block", fontSize: 11.5, color: "#7dd3fc", marginBottom: 4 }}>Resend API Key</label>
+                  <label style={{ display: "block", fontSize: 11.5, color: "#0369a1", marginBottom: 4 }}>Resend API Key</label>
                   <input type="password" value={config.resend_api_key} onChange={(e) => setConfig({ ...config, resend_api_key: e.target.value })} style={inputStyle} />
                 </div>
                 <div>
-                  <label style={{ display: "block", fontSize: 11.5, color: "#7dd3fc", marginBottom: 4 }}>Brevo API Key</label>
+                  <label style={{ display: "block", fontSize: 11.5, color: "#0369a1", marginBottom: 4 }}>Brevo API Key</label>
                   <input type="password" value={config.brevo_api_key} onChange={(e) => setConfig({ ...config, brevo_api_key: e.target.value })} style={inputStyle} />
                 </div>
               </div>
@@ -976,39 +976,39 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
 
       {/* TAB 3: Payment Reminder with Link, CC/BCC, Domain, Provider & Schedule */}
       {activeTab === "reminder" && (
-        <form onSubmit={handleSendPaymentReminder} style={{ background: "#0b1d3e", border: "1px solid rgba(245, 158, 11, 0.35)", borderRadius: 12, padding: 26, maxWidth: 760 }}>
+        <form onSubmit={handleSendPaymentReminder} style={{ background: "#ffffff", border: "1px solid rgba(245, 158, 11, 0.35)", borderRadius: 12, padding: 26, maxWidth: 760 }}>
           <h3 style={{ fontSize: 17, fontWeight: 700, margin: "0 0 8px 0", color: "#fbbf24", display: "flex", alignItems: "center", gap: 8 }}>
             <Link2 size={18} /> Payment Reminder with Link, CC/BCC & Schedule
           </h3>
-          <p style={{ fontSize: 13, color: "#bae6fd", margin: "0 0 18px 0" }}>
+          <p style={{ fontSize: 13, color: "#334155", margin: "0 0 18px 0" }}>
             Send immediately or schedule a payment reminder email with CC/BCC, domain selection, and PayU/Razorpay checkout link.
           </p>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 12 }}>
             <div>
-              <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Client Email (To)</label>
+              <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Client Email (To)</label>
               <input type="email" required value={reminder.to} onChange={(e) => setReminder({ ...reminder, to: e.target.value })} style={inputStyle} />
             </div>
             <div>
-              <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Client / Contact Name</label>
+              <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Client / Contact Name</label>
               <input type="text" required value={reminder.userName} onChange={(e) => setReminder({ ...reminder, userName: e.target.value })} style={inputStyle} />
             </div>
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 12 }}>
             <div>
-              <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>CC (optional)</label>
+              <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>CC (optional)</label>
               <input type="text" value={reminder.cc} onChange={(e) => setReminder({ ...reminder, cc: e.target.value })} placeholder="accounts@client.com" style={inputStyle} />
             </div>
             <div>
-              <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>BCC (optional)</label>
+              <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>BCC (optional)</label>
               <input type="text" value={reminder.bcc} onChange={(e) => setReminder({ ...reminder, bcc: e.target.value })} placeholder="billing-archive@auditai.in" style={inputStyle} />
             </div>
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12, marginBottom: 12 }}>
             <div>
-              <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Plan</label>
+              <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Plan</label>
               <select value={reminder.planName} onChange={(e) => setReminder({ ...reminder, planName: e.target.value })} style={inputStyle}>
                 <option value="Starter Pilot">Starter Pilot (₹4,999)</option>
                 <option value="Growth Professional">Growth Professional (₹9,999)</option>
@@ -1016,18 +1016,18 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
               </select>
             </div>
             <div>
-              <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Amount Due (₹)</label>
+              <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Amount Due (₹)</label>
               <input type="number" required value={reminder.amountDueINR} onChange={(e) => setReminder({ ...reminder, amountDueINR: e.target.value })} style={inputStyle} />
             </div>
             <div>
-              <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Due Date</label>
+              <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Due Date</label>
               <input type="text" required value={reminder.dueDate} onChange={(e) => setReminder({ ...reminder, dueDate: e.target.value })} style={inputStyle} />
             </div>
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12, marginBottom: 12 }}>
             <div>
-              <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Send Via Platform</label>
+              <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Send Via Platform</label>
               <select value={reminder.provider} onChange={(e) => setReminder({ ...reminder, provider: e.target.value })} style={inputStyle}>
                 <option value="">Default ({config.active_provider.toUpperCase()})</option>
                 <option value="resend">Resend</option>
@@ -1035,20 +1035,20 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
               </select>
             </div>
             <div>
-              <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Send From Domain</label>
+              <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Send From Domain</label>
               <select value={reminder.fromDomain} onChange={(e) => setReminder({ ...reminder, fromDomain: e.target.value })} style={inputStyle}>
                 <option value="">Default ({config.selected_domain})</option>
                 {config.available_domains.map((d) => <option key={d} value={d}>{d}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Schedule Date/Time (Optional)</label>
+              <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Schedule Date/Time (Optional)</label>
               <input type="datetime-local" value={reminder.scheduledAt} onChange={(e) => setReminder({ ...reminder, scheduledAt: e.target.value })} style={inputStyle} />
             </div>
           </div>
 
           <div style={{ marginBottom: 18 }}>
-            <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Direct Payment Link URL</label>
+            <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Direct Payment Link URL</label>
             <input type="url" required value={reminder.paymentLink} onChange={(e) => setReminder({ ...reminder, paymentLink: e.target.value })} style={inputStyle} />
           </div>
 
@@ -1060,46 +1060,46 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
 
       {/* TAB 4: Maintenance & Updates */}
       {activeTab === "maintenance" && (
-        <form onSubmit={handleSendMaintenance} style={{ background: "#0b1d3e", border: "1px solid rgba(56, 189, 248, 0.35)", borderRadius: 12, padding: 26, maxWidth: 760 }}>
-          <h3 style={{ fontSize: 17, fontWeight: 700, margin: "0 0 8px 0", color: "#38bdf8", display: "flex", alignItems: "center", gap: 8 }}>
+        <form onSubmit={handleSendMaintenance} style={{ background: "#ffffff", border: "1px solid #7dd3fc", borderRadius: 12, padding: 26, maxWidth: 760 }}>
+          <h3 style={{ fontSize: 17, fontWeight: 700, margin: "0 0 8px 0", color: "#0369a1", display: "flex", alignItems: "center", gap: 8 }}>
             <Megaphone size={18} /> Maintenance & Platform Update Notification
           </h3>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 18 }}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
               <div>
-                <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Recipients (To / ALL)</label>
+                <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Recipients (To / ALL)</label>
                 <input type="text" required value={maintenance.recipients} onChange={(e) => setMaintenance({ ...maintenance, recipients: e.target.value })} style={inputStyle} />
               </div>
               <div>
-                <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>CC (optional)</label>
+                <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>CC (optional)</label>
                 <input type="text" value={maintenance.cc} onChange={(e) => setMaintenance({ ...maintenance, cc: e.target.value })} style={inputStyle} />
               </div>
               <div>
-                <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>BCC (optional)</label>
+                <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>BCC (optional)</label>
                 <input type="text" value={maintenance.bcc} onChange={(e) => setMaintenance({ ...maintenance, bcc: e.target.value })} style={inputStyle} />
               </div>
             </div>
 
             <div>
-              <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Notification Title</label>
+              <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Notification Title</label>
               <input type="text" required value={maintenance.title} onChange={(e) => setMaintenance({ ...maintenance, title: e.target.value })} style={inputStyle} />
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
               <div>
-                <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Window</label>
+                <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Window</label>
                 <input type="text" required value={maintenance.maintenanceWindow} onChange={(e) => setMaintenance({ ...maintenance, maintenanceWindow: e.target.value })} style={inputStyle} />
               </div>
               <div>
-                <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Expected Impact</label>
+                <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Expected Impact</label>
                 <input type="text" required value={maintenance.impact} onChange={(e) => setMaintenance({ ...maintenance, impact: e.target.value })} style={inputStyle} />
               </div>
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
               <div>
-                <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Platform</label>
+                <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Platform</label>
                 <select value={maintenance.provider} onChange={(e) => setMaintenance({ ...maintenance, provider: e.target.value })} style={inputStyle}>
                   <option value="">Default ({config.active_provider.toUpperCase()})</option>
                   <option value="resend">Resend</option>
@@ -1107,20 +1107,20 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
                 </select>
               </div>
               <div>
-                <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>From Domain</label>
+                <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>From Domain</label>
                 <select value={maintenance.fromDomain} onChange={(e) => setMaintenance({ ...maintenance, fromDomain: e.target.value })} style={inputStyle}>
                   <option value="">Default ({config.selected_domain})</option>
                   {config.available_domains.map((d) => <option key={d} value={d}>{d}</option>)}
                 </select>
               </div>
               <div>
-                <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Schedule Date/Time</label>
+                <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Schedule Date/Time</label>
                 <input type="datetime-local" value={maintenance.scheduledAt} onChange={(e) => setMaintenance({ ...maintenance, scheduledAt: e.target.value })} style={inputStyle} />
               </div>
             </div>
 
             <div>
-              <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 5 }}>Announcement Details</label>
+              <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 5 }}>Announcement Details</label>
               <textarea rows={4} required value={maintenance.details} onChange={(e) => setMaintenance({ ...maintenance, details: e.target.value })} style={inputStyle} />
             </div>
           </div>
@@ -1134,19 +1134,19 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
       {/* TAB 5: Critical Alerts & Daily Reports */}
       {activeTab === "reports" && (
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
-          <div style={{ background: "#0b1d3e", border: "1px solid rgba(239, 68, 68, 0.35)", borderRadius: 12, padding: 24 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, color: "#f87171", fontWeight: 700, fontSize: 16, marginBottom: 8 }}>
+          <div style={{ background: "#ffffff", border: "1px solid rgba(239, 68, 68, 0.35)", borderRadius: 12, padding: 24 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, color: "#dc2626", fontWeight: 700, fontSize: 16, marginBottom: 8 }}>
               <Shield size={18} /> Instant Critical Alert Automation
             </div>
-            <p style={{ fontSize: 13, color: "#bae6fd", lineHeight: 1.6, marginBottom: 16 }}>
+            <p style={{ fontSize: 13, color: "#334155", lineHeight: 1.6, marginBottom: 16 }}>
               Whenever a <strong>CRITICAL</strong> or <strong>HIGH</strong> compliance flag is mapped, AuditAI sends a structured email directly to the Administrator below.
             </p>
             <div style={{ marginBottom: 16 }}>
-              <label style={{ display: "block", fontSize: 12, color: "#7dd3fc", marginBottom: 6 }}>Administrator Alert Email</label>
+              <label style={{ display: "block", fontSize: 12, color: "#0369a1", marginBottom: 6 }}>Administrator Alert Email</label>
               <input type="email" value={config.admin_email} onChange={(e) => setConfig({ ...config, admin_email: e.target.value })} style={inputStyle} />
             </div>
             <div style={{ display: "flex", gap: 10 }}>
-              <button onClick={() => handleSaveGlobalConfig()} disabled={loading} style={{ background: "#0f2752", border: "1px solid rgba(96, 165, 250, 0.4)", color: "#ffffff", borderRadius: 8, padding: "9px 14px", fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>
+              <button onClick={() => handleSaveGlobalConfig()} disabled={loading} style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.4)", color: "#0f172a", borderRadius: 8, padding: "9px 14px", fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>
                 Save Admin Email
               </button>
               <button onClick={handleTriggerCriticalAlertTest} disabled={loading} style={{ background: "rgba(239, 68, 68, 0.2)", border: "1px solid rgba(239, 68, 68, 0.5)", color: "#fca5a5", borderRadius: 8, padding: "9px 14px", fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>
@@ -1155,23 +1155,23 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
             </div>
           </div>
 
-          <div style={{ background: "#0b1d3e", border: "1px solid rgba(56, 189, 248, 0.35)", borderRadius: 12, padding: 24 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, color: "#38bdf8", fontWeight: 700, fontSize: 16, marginBottom: 8 }}>
+          <div style={{ background: "#ffffff", border: "1px solid #7dd3fc", borderRadius: 12, padding: 24 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, color: "#0369a1", fontWeight: 700, fontSize: 16, marginBottom: 8 }}>
               <BarChart3 size={18} /> Automated Day-to-Day Executive Reports
             </div>
-            <p style={{ fontSize: 13, color: "#bae6fd", lineHeight: 1.6, marginBottom: 16 }}>
+            <p style={{ fontSize: 13, color: "#334155", lineHeight: 1.6, marginBottom: 16 }}>
               Automatically emails a daily executive digest (Calls, Avg QA Score, Open Flags, Active Agents, Top Performer) to the Administrator.
             </p>
 
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "#08162d", padding: "10px 14px", borderRadius: 8, border: "1px solid rgba(96, 165, 250, 0.2)", marginBottom: 14 }}>
-              <span style={{ fontSize: 13, fontWeight: 600, color: "#ffffff" }}>Auto-Send Daily Executive Digest</span>
-              <button type="button" onClick={() => setConfig({ ...config, daily_report_enabled: !config.daily_report_enabled })} style={{ background: "transparent", border: "none", cursor: "pointer", color: config.daily_report_enabled ? "#34d399" : "#64748b" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "#f0f9ff", padding: "10px 14px", borderRadius: 8, border: "1px solid rgba(96, 165, 250, 0.2)", marginBottom: 14 }}>
+              <span style={{ fontSize: 13, fontWeight: 600, color: "#0f172a" }}>Auto-Send Daily Executive Digest</span>
+              <button type="button" onClick={() => setConfig({ ...config, daily_report_enabled: !config.daily_report_enabled })} style={{ background: "transparent", border: "none", cursor: "pointer", color: config.daily_report_enabled ? "#16a34a" : "#64748b" }}>
                 {config.daily_report_enabled ? <ToggleRight size={24} /> : <ToggleLeft size={24} />}
               </button>
             </div>
 
             <div style={{ display: "flex", gap: 10 }}>
-              <button onClick={() => handleSaveGlobalConfig()} disabled={loading} style={{ background: "#0f2752", border: "1px solid rgba(96, 165, 250, 0.4)", color: "#ffffff", borderRadius: 8, padding: "9px 14px", fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>
+              <button onClick={() => handleSaveGlobalConfig()} disabled={loading} style={{ background: "#e0f2fe", border: "1px solid rgba(96, 165, 250, 0.4)", color: "#0f172a", borderRadius: 8, padding: "9px 14px", fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>
                 Save Schedule
               </button>
               <button onClick={handleTriggerDailyReport} disabled={loading} style={{ background: "linear-gradient(135deg, #0284c7 0%, #2563eb 100%)", border: "none", color: "#ffffff", borderRadius: 8, padding: "9px 16px", fontSize: 12.5, fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", gap: 6 }}>
@@ -1187,7 +1187,7 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
           {/* Scheduled Queue if any */}
           {stats.scheduled && stats.scheduled.filter((j) => j.status === "SCHEDULED").length > 0 && (
-            <div style={{ background: "#0b1d3e", border: "1px solid rgba(245, 158, 11, 0.35)", borderRadius: 12, padding: 18 }}>
+            <div style={{ background: "#ffffff", border: "1px solid rgba(245, 158, 11, 0.35)", borderRadius: 12, padding: 18 }}>
               <h4 style={{ margin: "0 0 12px", color: "#fbbf24", fontSize: 14, display: "flex", alignItems: "center", gap: 7 }}>
                 <Calendar size={15} /> Pending Scheduled Emails
               </h4>
@@ -1195,16 +1195,16 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
                 {stats.scheduled
                   .filter((j) => j.status === "SCHEDULED")
                   .map((job) => (
-                    <div key={job.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "#08162d", padding: "10px 14px", borderRadius: 8, fontSize: 12.5 }}>
+                    <div key={job.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "#f0f9ff", padding: "10px 14px", borderRadius: 8, fontSize: 12.5 }}>
                       <div>
-                        <strong style={{ color: "#ffffff" }}>{job.payload?.subject}</strong>
-                        <div style={{ color: "#7dd3fc", fontSize: 11.5 }}>
+                        <strong style={{ color: "#0f172a" }}>{job.payload?.subject}</strong>
+                        <div style={{ color: "#0369a1", fontSize: 11.5 }}>
                           To: {Array.isArray(job.payload?.to) ? job.payload.to.join(", ") : job.payload?.to} · Scheduled: {new Date(job.scheduled_at).toLocaleString()}
                         </div>
                       </div>
                       <button
                         onClick={() => handleCancelScheduled(job.id)}
-                        style={{ display: "inline-flex", alignItems: "center", gap: 5, background: "rgba(239, 68, 68, 0.15)", border: "1px solid rgba(239, 68, 68, 0.4)", color: "#f87171", borderRadius: 6, padding: "5px 10px", fontSize: 11.5, cursor: "pointer" }}
+                        style={{ display: "inline-flex", alignItems: "center", gap: 5, background: "rgba(239, 68, 68, 0.15)", border: "1px solid rgba(239, 68, 68, 0.4)", color: "#dc2626", borderRadius: 6, padding: "5px 10px", fontSize: 11.5, cursor: "pointer" }}
                       >
                         <XCircle size={13} /> Cancel
                       </button>
@@ -1216,7 +1216,7 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
 
           {/* Filter Bar */}
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#7dd3fc", fontSize: 12, fontWeight: 600 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#0369a1", fontSize: 12, fontWeight: 600 }}>
               <Filter size={14} /> Audit Filters:
             </div>
             <select value={logStatusFilter} onChange={(e) => setLogStatusFilter(e.target.value)} style={{ ...inputStyle, width: 150 }}>
@@ -1233,10 +1233,10 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
             <input type="text" value={logSearch} onChange={(e) => setLogSearch(e.target.value)} placeholder="Search recipient or subject..." style={{ ...inputStyle, width: 260 }} />
           </div>
 
-          <div style={{ background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 12, overflow: "hidden" }}>
+          <div style={{ background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 12, overflow: "hidden" }}>
             <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left" }}>
               <thead>
-                <tr style={{ background: "rgba(56, 189, 248, 0.08)", borderBottom: "1px solid rgba(96, 165, 250, 0.2)", fontSize: 11.5, color: "#7dd3fc", textTransform: "uppercase" }}>
+                <tr style={{ background: "rgba(56, 189, 248, 0.08)", borderBottom: "1px solid rgba(96, 165, 250, 0.2)", fontSize: 11.5, color: "#0369a1", textTransform: "uppercase" }}>
                   <th style={{ padding: "12px 14px" }}>Recipient / CC / BCC</th>
                   <th style={{ padding: "12px 14px" }}>From Domain</th>
                   <th style={{ padding: "12px 14px" }}>Subject</th>
@@ -1248,19 +1248,19 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
               </thead>
               <tbody>
                 {filteredLogs.length === 0 ? (
-                  <tr><td colSpan={7} style={{ padding: 30, textAlign: "center", color: "#bae6fd" }}>No email audit records match your filter.</td></tr>
+                  <tr><td colSpan={7} style={{ padding: 30, textAlign: "center", color: "#334155" }}>No email audit records match your filter.</td></tr>
                 ) : (
                   filteredLogs.map((log, i) => (
                     <tr key={log.id || i} style={{ borderBottom: "1px solid rgba(96, 165, 250, 0.12)", fontSize: 12.5 }}>
-                      <td style={{ padding: "11px 14px", color: "#ffffff" }}>
+                      <td style={{ padding: "11px 14px", color: "#0f172a" }}>
                         <div style={{ fontWeight: 600 }}>{log.recipient}</div>
-                        {log.cc && <div style={{ fontSize: 11, color: "#7dd3fc" }}>CC: {log.cc}</div>}
-                        {log.bcc && <div style={{ fontSize: 11, color: "#7dd3fc" }}>BCC: {log.bcc}</div>}
+                        {log.cc && <div style={{ fontSize: 11, color: "#0369a1" }}>CC: {log.cc}</div>}
+                        {log.bcc && <div style={{ fontSize: 11, color: "#0369a1" }}>BCC: {log.bcc}</div>}
                       </td>
-                      <td style={{ padding: "11px 14px", color: "#bae6fd", fontSize: 11.5 }}>{log.from_email || config.from_address}</td>
-                      <td style={{ padding: "11px 14px", color: "#bae6fd" }}>{log.subject}</td>
-                      <td style={{ padding: "11px 14px", color: "#38bdf8", fontFamily: "monospace", fontSize: 11.5 }}>{log.template_type}</td>
-                      <td style={{ padding: "11px 14px", textTransform: "uppercase", fontSize: 11.5, color: "#e0f2fe" }}>{log.provider}</td>
+                      <td style={{ padding: "11px 14px", color: "#334155", fontSize: 11.5 }}>{log.from_email || config.from_address}</td>
+                      <td style={{ padding: "11px 14px", color: "#334155" }}>{log.subject}</td>
+                      <td style={{ padding: "11px 14px", color: "#0369a1", fontFamily: "monospace", fontSize: 11.5 }}>{log.template_type}</td>
+                      <td style={{ padding: "11px 14px", textTransform: "uppercase", fontSize: 11.5, color: "#334155" }}>{log.provider}</td>
                       <td style={{ padding: "11px 14px" }}>
                         <span style={{
                           padding: "3px 8px",
@@ -1268,12 +1268,12 @@ ${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" s
                           fontSize: 11,
                           fontWeight: 700,
                           background: log.status === "SENT" ? "rgba(16, 185, 129, 0.15)" : log.status === "QUEUED" ? "rgba(245, 158, 11, 0.15)" : "rgba(239, 68, 68, 0.15)",
-                          color: log.status === "SENT" ? "#34d399" : log.status === "QUEUED" ? "#fbbf24" : "#f87171",
+                          color: log.status === "SENT" ? "#16a34a" : log.status === "QUEUED" ? "#fbbf24" : "#dc2626",
                         }}>
                           {log.status}
                         </span>
                       </td>
-                      <td style={{ padding: "11px 14px", color: "#7dd3fc", fontSize: 11.5 }}>
+                      <td style={{ padding: "11px 14px", color: "#0369a1", fontSize: 11.5 }}>
                         {log.created_at ? new Date(log.created_at).toLocaleString() : "—"}
                       </td>
                     </tr>

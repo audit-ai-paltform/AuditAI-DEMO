@@ -107,7 +107,7 @@ export default function AdminTeamEditorModule() {
       {/* Header */}
       <div
         style={{
-          background: "linear-gradient(135deg, #0b1f3d 0%, #08162d 100%)",
+          background: "linear-gradient(135deg, #0b1f3d 0%, #f0f9ff 100%)",
           border: "1px solid #1e3a66",
           borderRadius: 14,
           padding: "24px 28px",
@@ -123,11 +123,11 @@ export default function AdminTeamEditorModule() {
             <div style={{ width: 36, height: 36, borderRadius: 8, background: "rgba(56,189,248,0.15)", border: "1px solid #38bdf8", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <Users size={20} color="#38bdf8" />
             </div>
-            <h1 style={{ margin: 0, fontSize: 22, fontWeight: 700, color: "#ffffff" }}>
+            <h1 style={{ margin: 0, fontSize: 22, fontWeight: 700, color: "#0f172a" }}>
               "Team Behind" Leadership & Executive Directory
             </h1>
           </div>
-          <p style={{ margin: 0, fontSize: 14, color: "#94a3b8" }}>
+          <p style={{ margin: 0, fontSize: 14, color: "#334155" }}>
             Manage the founders, AI scientists, and executive architects featured on the public homepage. Real-time synced to Supabase database.
           </p>
         </div>
@@ -139,7 +139,7 @@ export default function AdminTeamEditorModule() {
             style={{
               background: "rgba(56,189,248,0.12)",
               border: "1px solid #38bdf8",
-              color: "#38bdf8",
+              color: "#0369a1",
               borderRadius: 8,
               padding: "9px 18px",
               fontSize: 13,
@@ -159,7 +159,7 @@ export default function AdminTeamEditorModule() {
             style={{
               background: "#38bdf8",
               border: "none",
-              color: "#08162d",
+              color: "#f0f9ff",
               borderRadius: 8,
               padding: "9px 18px",
               fontSize: 13,
@@ -181,7 +181,7 @@ export default function AdminTeamEditorModule() {
           style={{
             background: feedback.type === "success" ? "rgba(16,185,129,0.15)" : "rgba(239,68,68,0.15)",
             border: `1px solid ${feedback.type === "success" ? "#10b981" : "#ef4444"}`,
-            color: feedback.type === "success" ? "#34d399" : "#f87171",
+            color: feedback.type === "success" ? "#16a34a" : "#dc2626",
             padding: "12px 18px",
             borderRadius: 8,
             fontSize: 14,
@@ -207,12 +207,12 @@ export default function AdminTeamEditorModule() {
           }}
         >
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
-            <h3 style={{ margin: 0, fontSize: 18, color: "#ffffff", fontWeight: 700 }}>
+            <h3 style={{ margin: 0, fontSize: 18, color: "#0f172a", fontWeight: 700 }}>
               {isCreating ? "Add New Leadership Member" : `Edit Member: ${editingMember.name}`}
             </h3>
             <button
               onClick={() => setEditingMember(null)}
-              style={{ background: "transparent", border: "none", color: "#94a3b8", fontSize: 14, cursor: "pointer" }}
+              style={{ background: "transparent", border: "none", color: "#334155", fontSize: 14, cursor: "pointer" }}
             >
               Cancel
             </button>
@@ -223,7 +223,7 @@ export default function AdminTeamEditorModule() {
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
                 <div>
-                  <label style={{ display: "block", fontSize: 13, color: "#cbd5e1", marginBottom: 6, fontWeight: 600 }}>
+                  <label style={{ display: "block", fontSize: 13, color: "#334155", marginBottom: 6, fontWeight: 600 }}>
                     Full Name *
                   </label>
                   <input
@@ -234,11 +234,11 @@ export default function AdminTeamEditorModule() {
                     style={{
                       width: "100%",
                       boxSizing: "border-box",
-                      background: "#08162d",
+                      background: "#f0f9ff",
                       border: "1px solid #1e3a66",
                       borderRadius: 8,
                       padding: "10px 14px",
-                      color: "#ffffff",
+                      color: "#0f172a",
                       fontSize: 14,
                       outline: "none",
                     }}
@@ -246,7 +246,7 @@ export default function AdminTeamEditorModule() {
                 </div>
 
                 <div>
-                  <label style={{ display: "block", fontSize: 13, color: "#cbd5e1", marginBottom: 6, fontWeight: 600 }}>
+                  <label style={{ display: "block", fontSize: 13, color: "#334155", marginBottom: 6, fontWeight: 600 }}>
                     Role / Position Title *
                   </label>
                   <input
@@ -257,11 +257,11 @@ export default function AdminTeamEditorModule() {
                     style={{
                       width: "100%",
                       boxSizing: "border-box",
-                      background: "#08162d",
+                      background: "#f0f9ff",
                       border: "1px solid #1e3a66",
                       borderRadius: 8,
                       padding: "10px 14px",
-                      color: "#ffffff",
+                      color: "#0f172a",
                       fontSize: 14,
                       outline: "none",
                     }}
@@ -270,7 +270,7 @@ export default function AdminTeamEditorModule() {
               </div>
 
               <div>
-                <label style={{ display: "block", fontSize: 13, color: "#cbd5e1", marginBottom: 6, fontWeight: 600 }}>
+                <label style={{ display: "block", fontSize: 13, color: "#334155", marginBottom: 6, fontWeight: 600 }}>
                   Bio & Background Description
                 </label>
                 <textarea
@@ -281,11 +281,11 @@ export default function AdminTeamEditorModule() {
                   style={{
                     width: "100%",
                     boxSizing: "border-box",
-                    background: "#08162d",
+                    background: "#f0f9ff",
                     border: "1px solid #1e3a66",
                     borderRadius: 8,
                     padding: "10px 14px",
-                    color: "#ffffff",
+                    color: "#0f172a",
                     fontSize: 14,
                     outline: "none",
                     resize: "vertical",
@@ -294,7 +294,7 @@ export default function AdminTeamEditorModule() {
               </div>
 
               <div>
-                <label style={{ display: "block", fontSize: 13, color: "#cbd5e1", marginBottom: 6, fontWeight: 600 }}>
+                <label style={{ display: "block", fontSize: 13, color: "#334155", marginBottom: 6, fontWeight: 600 }}>
                   Profile Image URL (Avatar)
                 </label>
                 <input
@@ -305,11 +305,11 @@ export default function AdminTeamEditorModule() {
                   style={{
                     width: "100%",
                     boxSizing: "border-box",
-                    background: "#08162d",
+                    background: "#f0f9ff",
                     border: "1px solid #1e3a66",
                     borderRadius: 8,
                     padding: "10px 14px",
-                    color: "#ffffff",
+                    color: "#0f172a",
                     fontSize: 14,
                     outline: "none",
                   }}
@@ -318,7 +318,7 @@ export default function AdminTeamEditorModule() {
 
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
                 <div>
-                  <label style={{ display: "block", fontSize: 12, color: "#cbd5e1", marginBottom: 4, fontWeight: 600 }}>
+                  <label style={{ display: "block", fontSize: 12, color: "#334155", marginBottom: 4, fontWeight: 600 }}>
                     LinkedIn URL
                   </label>
                   <input
@@ -328,11 +328,11 @@ export default function AdminTeamEditorModule() {
                     style={{
                       width: "100%",
                       boxSizing: "border-box",
-                      background: "#08162d",
+                      background: "#f0f9ff",
                       border: "1px solid #1e3a66",
                       borderRadius: 8,
                       padding: "8px 12px",
-                      color: "#ffffff",
+                      color: "#0f172a",
                       fontSize: 13,
                       outline: "none",
                     }}
@@ -340,7 +340,7 @@ export default function AdminTeamEditorModule() {
                 </div>
 
                 <div>
-                  <label style={{ display: "block", fontSize: 12, color: "#cbd5e1", marginBottom: 4, fontWeight: 600 }}>
+                  <label style={{ display: "block", fontSize: 12, color: "#334155", marginBottom: 4, fontWeight: 600 }}>
                     Twitter / X URL
                   </label>
                   <input
@@ -350,11 +350,11 @@ export default function AdminTeamEditorModule() {
                     style={{
                       width: "100%",
                       boxSizing: "border-box",
-                      background: "#08162d",
+                      background: "#f0f9ff",
                       border: "1px solid #1e3a66",
                       borderRadius: 8,
                       padding: "8px 12px",
-                      color: "#ffffff",
+                      color: "#0f172a",
                       fontSize: 13,
                       outline: "none",
                     }}
@@ -362,7 +362,7 @@ export default function AdminTeamEditorModule() {
                 </div>
 
                 <div>
-                  <label style={{ display: "block", fontSize: 12, color: "#cbd5e1", marginBottom: 4, fontWeight: 600 }}>
+                  <label style={{ display: "block", fontSize: 12, color: "#334155", marginBottom: 4, fontWeight: 600 }}>
                     GitHub URL
                   </label>
                   <input
@@ -372,11 +372,11 @@ export default function AdminTeamEditorModule() {
                     style={{
                       width: "100%",
                       boxSizing: "border-box",
-                      background: "#08162d",
+                      background: "#f0f9ff",
                       border: "1px solid #1e3a66",
                       borderRadius: 8,
                       padding: "8px 12px",
-                      color: "#ffffff",
+                      color: "#0f172a",
                       fontSize: 13,
                       outline: "none",
                     }}
@@ -393,7 +393,7 @@ export default function AdminTeamEditorModule() {
                     onChange={(e) => setEditingMember({ ...editingMember, active: e.target.checked })}
                     style={{ width: 18, height: 18, cursor: "pointer" }}
                   />
-                  <label htmlFor="member_active" style={{ fontSize: 14, color: "#ffffff", fontWeight: 600, cursor: "pointer" }}>
+                  <label htmlFor="member_active" style={{ fontSize: 14, color: "#0f172a", fontWeight: 600, cursor: "pointer" }}>
                     Publish publicly on Homepage
                   </label>
                 </div>
@@ -404,7 +404,7 @@ export default function AdminTeamEditorModule() {
                     style={{
                       background: "transparent",
                       border: "1px solid #1e3a66",
-                      color: "#cbd5e1",
+                      color: "#334155",
                       borderRadius: 8,
                       padding: "9px 18px",
                       fontSize: 13,
@@ -419,7 +419,7 @@ export default function AdminTeamEditorModule() {
                     style={{
                       background: "#38bdf8",
                       border: "none",
-                      color: "#08162d",
+                      color: "#f0f9ff",
                       borderRadius: 8,
                       padding: "9px 24px",
                       fontSize: 13,
@@ -438,8 +438,8 @@ export default function AdminTeamEditorModule() {
             </div>
 
             {/* Live Preview Card */}
-            <div style={{ background: "#08162d", border: "1px solid #1e3a66", borderRadius: 12, padding: 20, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-              <div style={{ fontSize: 12, color: "#38bdf8", fontWeight: 700, marginBottom: 14, textTransform: "uppercase", letterSpacing: "0.08em" }}>
+            <div style={{ background: "#f0f9ff", border: "1px solid #1e3a66", borderRadius: 12, padding: 20, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+              <div style={{ fontSize: 12, color: "#0369a1", fontWeight: 700, marginBottom: 14, textTransform: "uppercase", letterSpacing: "0.08em" }}>
                 Homepage Card Live Preview
               </div>
               <img
@@ -451,23 +451,23 @@ export default function AdminTeamEditorModule() {
                   borderRadius: "50%",
                   objectFit: "cover",
                   border: "3px solid #38bdf8",
-                  boxShadow: "0 8px 24px rgba(56,189,248,0.25)",
+                  boxShadow: "0 8px 24px #7dd3fc",
                   marginBottom: 14,
                 }}
               />
-              <h4 style={{ margin: "0 0 4px 0", fontSize: 17, color: "#ffffff", fontWeight: 700 }}>
+              <h4 style={{ margin: "0 0 4px 0", fontSize: 17, color: "#0f172a", fontWeight: 700 }}>
                 {editingMember.name || "Executive Name"}
               </h4>
-              <div style={{ color: "#38bdf8", fontSize: 13, fontWeight: 600, marginBottom: 10 }}>
+              <div style={{ color: "#0369a1", fontSize: 13, fontWeight: 600, marginBottom: 10 }}>
                 {editingMember.role || "Executive Role"}
               </div>
-              <p style={{ margin: "0 0 16px 0", fontSize: 12, color: "#94a3b8", lineHeight: 1.5, maxWidth: 260 }}>
+              <p style={{ margin: "0 0 16px 0", fontSize: 12, color: "#334155", lineHeight: 1.5, maxWidth: 260 }}>
                 {editingMember.bio || "Member bio and background will appear here on the public website."}
               </p>
               <div style={{ display: "flex", gap: 12 }}>
-                <span style={{ color: "#38bdf8" }}><Linkedin size={18} /></span>
-                <span style={{ color: "#38bdf8" }}><Twitter size={18} /></span>
-                <span style={{ color: "#38bdf8" }}><Github size={18} /></span>
+                <span style={{ color: "#0369a1" }}><Linkedin size={18} /></span>
+                <span style={{ color: "#0369a1" }}><Twitter size={18} /></span>
+                <span style={{ color: "#0369a1" }}><Github size={18} /></span>
               </div>
             </div>
           </div>
@@ -498,14 +498,14 @@ export default function AdminTeamEditorModule() {
                   style={{ width: 56, height: 56, borderRadius: "50%", objectFit: "cover", border: "2px solid #38bdf8" }}
                 />
                 <div>
-                  <h4 style={{ margin: 0, fontSize: 16, color: "#ffffff", fontWeight: 700 }}>{m.name}</h4>
-                  <div style={{ color: "#38bdf8", fontSize: 13, fontWeight: 600 }}>{m.role}</div>
+                  <h4 style={{ margin: 0, fontSize: 16, color: "#0f172a", fontWeight: 700 }}>{m.name}</h4>
+                  <div style={{ color: "#0369a1", fontSize: 13, fontWeight: 600 }}>{m.role}</div>
                   <span
                     style={{
                       display: "inline-block",
                       marginTop: 4,
                       background: m.active ? "rgba(16,185,129,0.2)" : "rgba(148,163,184,0.2)",
-                      color: m.active ? "#34d399" : "#94a3b8",
+                      color: m.active ? "#16a34a" : "#94a3b8",
                       padding: "2px 8px",
                       borderRadius: 4,
                       fontSize: 10,
@@ -517,7 +517,7 @@ export default function AdminTeamEditorModule() {
                 </div>
               </div>
 
-              <p style={{ margin: 0, fontSize: 13, color: "#94a3b8", lineHeight: 1.5 }}>
+              <p style={{ margin: 0, fontSize: 13, color: "#334155", lineHeight: 1.5 }}>
                 {m.bio}
               </p>
             </div>
@@ -525,17 +525,17 @@ export default function AdminTeamEditorModule() {
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid #152b4d", paddingTop: 14 }}>
               <div style={{ display: "flex", gap: 10 }}>
                 {m.linkedin_url && (
-                  <a href={m.linkedin_url} target="_blank" rel="noreferrer" style={{ color: "#38bdf8" }}>
+                  <a href={m.linkedin_url} target="_blank" rel="noreferrer" style={{ color: "#0369a1" }}>
                     <Linkedin size={16} />
                   </a>
                 )}
                 {m.twitter_url && (
-                  <a href={m.twitter_url} target="_blank" rel="noreferrer" style={{ color: "#38bdf8" }}>
+                  <a href={m.twitter_url} target="_blank" rel="noreferrer" style={{ color: "#0369a1" }}>
                     <Twitter size={16} />
                   </a>
                 )}
                 {m.github_url && (
-                  <a href={m.github_url} target="_blank" rel="noreferrer" style={{ color: "#38bdf8" }}>
+                  <a href={m.github_url} target="_blank" rel="noreferrer" style={{ color: "#0369a1" }}>
                     <Github size={16} />
                   </a>
                 )}
@@ -547,7 +547,7 @@ export default function AdminTeamEditorModule() {
                   style={{
                     background: "rgba(56,189,248,0.12)",
                     border: "1px solid #38bdf8",
-                    color: "#38bdf8",
+                    color: "#0369a1",
                     borderRadius: 6,
                     padding: "6px 12px",
                     fontSize: 12,
@@ -567,7 +567,7 @@ export default function AdminTeamEditorModule() {
                   style={{
                     background: "rgba(239,68,68,0.12)",
                     border: "1px solid #ef4444",
-                    color: "#f87171",
+                    color: "#dc2626",
                     borderRadius: 6,
                     padding: "6px 12px",
                     fontSize: 12,

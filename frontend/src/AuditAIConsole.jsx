@@ -44,31 +44,31 @@ import AdminUserActivityModule from "./components/AdminUserActivityModule";
 import AskAuditAIChatbot from "./components/AskAuditAIChatbot";
 
 /* ---------------------------------------------------------------- */
-/*  Design tokens — Unified Enterprise Sky-Blue Grid & White UI     */
+/*  Design tokens — Premium Light Sky-Blue & Dark Slate UI          */
 /*  Status Colour Standard: Red = Risk, Grey = Neutral, Green = Good*/
 /* ---------------------------------------------------------------- */
 const C = {
-  bg: "#092147",          // Deep sky-blue canvas
-  panel: "#0c2856",       // Crisp sky-navy panel & sidebar
-  panel2: "#11356e",      // Elevated sky-blue card / table header
-  panelHover: "#174287",  // Hover sky highlight
-  border: "rgba(56, 189, 248, 0.30)",      // Clean sky border
-  borderSoft: "rgba(255, 255, 255, 0.14)", // Soft white divider
-  text: "#ffffff",        // Crisp white text
-  muted: "#e0f2fe",       // Soft sky-white secondary text
-  faint: "#7dd3fc",       // Light sky-blue labels
+  bg: "#e6f4fe",          // Clean light sky-blue canvas
+  panel: "#ffffff",       // Crisp white card & sidebar surface
+  panel2: "#f0f9ff",      // Soft ice-blue elevated surface / table header
+  panelHover: "#bae6fd",  // Sky highlight on hover
+  border: "#bae6fd",      // Clean sky-blue border
+  borderSoft: "#dbeafe",  // Subtle light divider
+  text: "#0f172a",        // Deep slate dark text (high contrast)
+  muted: "#1e293b",       // Secondary dark slate text
+  faint: "#475569",       // Muted slate label text
   white: "#ffffff",       // Pure white
-  black: "#08162d",       // Deep contrast ink (for bright sky-blue buttons)
-  teal: "#38bdf8",        // Sky-blue primary accent
-  tealSoft: "rgba(56, 189, 248, 0.16)",
-  red: "#f87171",         // Red = Risk
-  redSoft: "rgba(248, 113, 113, 0.16)",
-  amber: "#94a3b8",       // Grey = Neutral
-  amberSoft: "rgba(148, 163, 184, 0.18)",
-  grey: "#94a3b8",        // Grey = Neutral
-  greySoft: "rgba(148, 163, 184, 0.18)",
-  green: "#34d399",       // Green = Good
-  greenSoft: "rgba(52, 211, 153, 0.16)",
+  black: "#0f172a",       // Deep slate ink
+  teal: "#0284c7",        // Vibrant sky-blue primary accent
+  tealSoft: "rgba(2, 132, 199, 0.12)",
+  red: "#dc2626",         // Red = Risk
+  redSoft: "rgba(220, 38, 38, 0.12)",
+  amber: "#475569",       // Grey = Neutral
+  amberSoft: "rgba(71, 85, 105, 0.12)",
+  grey: "#475569",        // Grey = Neutral
+  greySoft: "rgba(71, 85, 105, 0.12)",
+  green: "#16a34a",       // Green = Good
+  greenSoft: "rgba(22, 163, 74, 0.12)",
 };
 
 const FONT_STYLE = `
@@ -78,19 +78,19 @@ const FONT_STYLE = `
   box-sizing: border-box;
 }
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #081e40;
+  background: #e0f2fe;
 }
 ::-webkit-scrollbar-thumb {
-  background: #174287;
+  background: #7dd3fc;
   border-radius: 6px;
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  border: 1px solid #bae6fd;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #38bdf8;
+  background: #0284c7;
 }
 
 @keyframes spin {
@@ -101,34 +101,35 @@ const FONT_STYLE = `
   animation: spin 1s linear infinite;
 }
 
-/* Sky-blue small checkbox/grid pattern background */
+/* Light sky-blue small checkbox/grid pattern background */
 .auditai-grid-bg {
-  background-color: #092147;
+  background-color: #e6f4fe;
   background-image:
-    radial-gradient(rgba(125, 211, 252, 0.14) 1px, transparent 1px),
-    linear-gradient(to right, rgba(56, 189, 248, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+    radial-gradient(rgba(2, 132, 199, 0.14) 1px, transparent 1px),
+    linear-gradient(to right, rgba(2, 132, 199, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(2, 132, 199, 0.07) 1px, transparent 1px);
   background-size: 20px 20px, 20px 20px, 20px 20px;
   background-position: 10px 10px, 0 0, 0 0;
 }
 
-/* Unified Table Contrast for Sky-Blue + White Theme */
+/* Unified Table Contrast for Light Sky-Blue + Dark Slate Theme */
 table {
   width: 100%;
   border-collapse: collapse;
-  color: #ffffff;
+  color: #0f172a;
 }
 thead th {
-  background: rgba(17, 53, 110, 0.92);
-  color: #e0f2fe;
-  border-bottom: 1px solid rgba(56, 189, 248, 0.35);
+  background: #e0f2fe;
+  color: #0c4a6e;
+  border-bottom: 1.5px solid #bae6fd;
+  font-weight: 700;
 }
 tbody td {
-  color: #ffffff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  color: #0f172a;
+  border-bottom: 1px solid #e2e8f0;
 }
 tbody tr:hover {
-  background: rgba(56, 189, 248, 0.10);
+  background: #f0f9ff;
 }
 
 /* Modern Stylish Buttons */
@@ -140,8 +141,8 @@ button:active:not(:disabled) {
 }
 
 input:focus, select:focus, textarea:focus {
-  outline: 1px solid #38bdf8 !important;
-  border-color: #38bdf8 !important;
+  outline: 1.5px solid #0284c7 !important;
+  border-color: #0284c7 !important;
 }
 
 /* Responsive Breakpoints: Smaller, Larger & Ultra-Wide Screens */
@@ -5208,25 +5209,26 @@ export default function AuditAIConsole() {
             width: sidebarCollapsed ? 72 : 254,
             flexShrink: 0,
             height: "100vh",
-            background: "linear-gradient(180deg, #0c2856 0%, #092147 100%)",
+            background: "linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%)",
             borderRight: `1px solid ${C.border}`,
             padding: sidebarCollapsed ? "18px 10px" : "18px 14px",
             display: fullscreenPane ? "none" : "flex",
             flexDirection: "column",
             gap: 16,
             overflow: "hidden",
+            boxShadow: "4px 0 20px rgba(2, 132, 199, 0.06)",
             transition: "width 0.2s ease, padding 0.2s ease, transform 0.2s ease",
           }}
         >
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, color: C.teal, fontFamily: "Space Grotesk", fontSize: 18, fontWeight: 700, minWidth: 0 }}>
-              <div style={{ width: 22, height: 22, flexShrink: 0, borderRadius: 6, background: "#ffffff", display: "flex", alignItems: "center", justifyContent: "center", color: "#0369a1" }}>
-                <Sparkles size={14} color="#0369a1" />
+              <div style={{ width: 24, height: 24, flexShrink: 0, borderRadius: 7, background: "linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)", display: "flex", alignItems: "center", justifyContent: "center", color: "#ffffff" }}>
+                <Sparkles size={14} color="#ffffff" />
               </div>
               {!sidebarCollapsed && (
-                <span style={{ display: "flex", flexDirection: "column", lineHeight: 1.15 }}>
+                <span style={{ display: "flex", flexDirection: "column", lineHeight: 1.15, color: "#0f172a" }}>
                   AuditAI
-                  <span style={{ color: "#e0f2fe", fontSize: 11, fontFamily: "Inter", fontWeight: 500 }}>NA Enterprise</span>
+                  <span style={{ color: "#0369a1", fontSize: 11, fontFamily: "Inter", fontWeight: 600 }}>NA Enterprise</span>
                 </span>
               )}
             </div>
@@ -5235,7 +5237,7 @@ export default function AuditAIConsole() {
                 onClick={() => setSidebarCollapsed(true)}
                 title="Collapse sidebar"
                 aria-label="Collapse sidebar"
-                style={{ background: "transparent", border: "none", color: "#e0f2fe", cursor: "pointer", padding: 4, display: "flex", flexShrink: 0 }}
+                style={{ background: "#e0f2fe", border: `1px solid ${C.border}`, borderRadius: 7, color: "#0369a1", cursor: "pointer", padding: 4, display: "flex", flexShrink: 0 }}
               >
                 <ChevronLeft size={16} />
               </button>
@@ -5247,7 +5249,7 @@ export default function AuditAIConsole() {
               onClick={() => setSidebarCollapsed(false)}
               title="Expand sidebar"
               aria-label="Expand sidebar"
-              style={{ background: C.panel2, border: `1px solid ${C.border}`, color: "#ffffff", borderRadius: 6, cursor: "pointer", padding: "6px 0", display: "flex", justifyContent: "center" }}
+              style={{ background: C.panel2, border: `1px solid ${C.border}`, color: "#0369a1", borderRadius: 6, cursor: "pointer", padding: "6px 0", display: "flex", justifyContent: "center" }}
             >
               <ChevronRight size={14} />
             </button>
@@ -5261,7 +5263,7 @@ export default function AuditAIConsole() {
                 {gIdx > 0 && <div style={{ height: 1, background: C.borderSoft, margin: sidebarCollapsed ? "4px 4px 8px" : "4px 0 8px" }} />}
                 {!sidebarCollapsed && (
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "2px 6px 4px 8px", gap: 6 }}>
-                    <span style={{ color: C.faint, fontSize: 10, fontFamily: "Inter", fontWeight: 700, letterSpacing: 0.7 }}>
+                    <span style={{ color: "#0369a1", fontSize: 10, fontFamily: "Inter", fontWeight: 800, letterSpacing: 0.7 }}>
                       {group.title}
                     </span>
                     <button
@@ -5274,8 +5276,8 @@ export default function AuditAIConsole() {
                         height: 20,
                         borderRadius: 6,
                         border: `1px solid ${C.border}`,
-                        background: isGroupCollapsed ? "rgba(56, 189, 248, 0.20)" : C.panel2,
-                        color: "#ffffff",
+                        background: isGroupCollapsed ? "#bae6fd" : "#e0f2fe",
+                        color: "#0369a1",
                         display: "inline-flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -5283,7 +5285,7 @@ export default function AuditAIConsole() {
                         flexShrink: 0,
                       }}
                     >
-                      {isGroupCollapsed ? <Plus size={12} color="#38bdf8" /> : <Minus size={12} color="#e0f2fe" />}
+                      {isGroupCollapsed ? <Plus size={12} color="#0284c7" /> : <Minus size={12} color="#0369a1" />}
                     </button>
                   </div>
                 )}
@@ -5299,16 +5301,16 @@ export default function AuditAIConsole() {
                       style={{
                         display: "flex", alignItems: "center", gap: 10, width: "100%", textAlign: "left",
                         justifyContent: sidebarCollapsed ? "center" : "flex-start",
-                        background: active ? "linear-gradient(135deg, #38bdf8 0%, #7dd3fc 100%)" : "transparent",
-                        color: active ? "#08162d" : "#ffffff",
-                        border: active ? "1px solid rgba(255, 255, 255, 0.45)" : "1px solid transparent",
+                        background: active ? "linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)" : "transparent",
+                        color: active ? "#ffffff" : "#0f172a",
+                        border: active ? "1px solid #0284c7" : "1px solid transparent",
                         borderRadius: 10, padding: sidebarCollapsed ? "9px 0" : "8px 11px",
                         fontFamily: "Inter", fontSize: 12.5, fontWeight: active ? 700 : 500,
                         cursor: "pointer", transition: "all 0.15s ease",
-                        boxShadow: active ? "0 4px 14px rgba(56, 189, 248, 0.35)" : "none",
+                        boxShadow: active ? "0 4px 12px rgba(2, 132, 199, 0.25)" : "none",
                       }}
                     >
-                      <Icon size={15} style={{ flexShrink: 0, color: active ? "#08162d" : C.teal }} />
+                      <Icon size={15} style={{ flexShrink: 0, color: active ? "#ffffff" : "#0284c7" }} />
                       {!sidebarCollapsed && <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{item.label}</span>}
                     </button>
                   );
@@ -5333,7 +5335,7 @@ export default function AuditAIConsole() {
         {/* Main Content Pane — scrolls independently of the sidebar */}
         <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", height: "100vh", overflow: "hidden" }}>
           {/* Top Bar Header — fixed within the content pane */}
-          <div style={{ height: 58, flexShrink: 0, borderBottom: `1px solid ${C.border}`, background: "rgba(12, 40, 86, 0.94)", backdropFilter: "blur(8px)", padding: "0 20px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
+          <div style={{ height: 58, flexShrink: 0, borderBottom: `1px solid ${C.border}`, background: "rgba(255, 255, 255, 0.92)", backdropFilter: "blur(10px)", padding: "0 20px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, boxShadow: "0 2px 10px rgba(2, 132, 199, 0.05)" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, minWidth: 0 }}>
               <button
                 type="button"
@@ -5341,9 +5343,9 @@ export default function AuditAIConsole() {
                 onClick={() => setMobileNavOpen((v) => !v)}
                 aria-label="Toggle navigation menu"
                 style={{
-                  background: C.panel2,
+                  background: "#e0f2fe",
                   border: `1px solid ${C.border}`,
-                  color: "#ffffff",
+                  color: "#0369a1",
                   borderRadius: 10,
                   padding: "6px 8px",
                   cursor: "pointer",
@@ -5362,12 +5364,12 @@ export default function AuditAIConsole() {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: 5,
-                  background: fullscreenPane ? "linear-gradient(135deg, #38bdf8 0%, #0284c7 100%)" : C.panel2,
+                  background: fullscreenPane ? "linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)" : "#e0f2fe",
                   border: `1px solid ${C.border}`,
-                  color: "#ffffff",
+                  color: fullscreenPane ? "#ffffff" : "#0369a1",
                   borderRadius: 999,
-                  padding: "5px 10px",
-                  fontSize: 11,
+                  padding: "5px 12px",
+                  fontSize: 11.5,
                   fontWeight: 700,
                   cursor: "pointer",
                   flexShrink: 0,

@@ -100,7 +100,7 @@ export default function AdminUserActivityModule() {
       {/* Header */}
       <div
         style={{
-          background: "linear-gradient(135deg, #0b1f3d 0%, #08162d 100%)",
+          background: "linear-gradient(135deg, #0b1f3d 0%, #f0f9ff 100%)",
           border: "1px solid #1e3a66",
           borderRadius: 14,
           padding: "24px 28px",
@@ -116,19 +116,19 @@ export default function AdminUserActivityModule() {
             <div style={{ width: 36, height: 36, borderRadius: 8, background: "rgba(56,189,248,0.15)", border: "1px solid #38bdf8", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <Activity size={20} color="#38bdf8" />
             </div>
-            <h1 style={{ margin: 0, fontSize: 22, fontWeight: 700, color: "#ffffff" }}>
+            <h1 style={{ margin: 0, fontSize: 22, fontWeight: 700, color: "#0f172a" }}>
               User Authentication & Active Session Analytics
             </h1>
           </div>
-          <p style={{ margin: 0, fontSize: 14, color: "#94a3b8" }}>
+          <p style={{ margin: 0, fontSize: 14, color: "#334155" }}>
             Real-time Supabase authentication tracking, heartbeat ping sessions, total active time accumulation, and instant access grant/revoke.
           </p>
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, background: "#08162d", padding: "8px 14px", borderRadius: 8, border: "1px solid #1e3a66" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8, background: "#f0f9ff", padding: "8px 14px", borderRadius: 8, border: "1px solid #1e3a66" }}>
             <Radio size={15} color={onlineCount > 0 ? "#10b981" : "#94a3b8"} className={onlineCount > 0 ? "animate-pulse" : ""} />
-            <span style={{ fontSize: 13, fontWeight: 700, color: onlineCount > 0 ? "#34d399" : "#94a3b8" }}>
+            <span style={{ fontSize: 13, fontWeight: 700, color: onlineCount > 0 ? "#16a34a" : "#94a3b8" }}>
               {onlineCount} Online Now
             </span>
           </div>
@@ -139,7 +139,7 @@ export default function AdminUserActivityModule() {
             style={{
               background: "rgba(56,189,248,0.12)",
               border: "1px solid #38bdf8",
-              color: "#38bdf8",
+              color: "#0369a1",
               borderRadius: 8,
               padding: "9px 18px",
               fontSize: 13,
@@ -161,7 +161,7 @@ export default function AdminUserActivityModule() {
           style={{
             background: feedback.type === "success" ? "rgba(16,185,129,0.15)" : "rgba(239,68,68,0.15)",
             border: `1px solid ${feedback.type === "success" ? "#10b981" : "#ef4444"}`,
-            color: feedback.type === "success" ? "#34d399" : "#f87171",
+            color: feedback.type === "success" ? "#16a34a" : "#dc2626",
             padding: "12px 18px",
             borderRadius: 8,
             fontSize: 14,
@@ -191,7 +191,7 @@ export default function AdminUserActivityModule() {
               border: "1px solid #1e3a66",
               borderRadius: 8,
               padding: "10px 14px 10px 38px",
-              color: "#ffffff",
+              color: "#0f172a",
               fontSize: 14,
               outline: "none",
             }}
@@ -206,7 +206,7 @@ export default function AdminUserActivityModule() {
             border: "1px solid #1e3a66",
             borderRadius: 8,
             padding: "10px 14px",
-            color: "#ffffff",
+            color: "#0f172a",
             fontSize: 14,
             outline: "none",
           }}
@@ -225,7 +225,7 @@ export default function AdminUserActivityModule() {
         <div style={{ overflowX: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left", fontSize: 13 }}>
             <thead>
-              <tr style={{ background: "#08162d", color: "#94a3b8", borderBottom: "1px solid #1e3a66" }}>
+              <tr style={{ background: "#f0f9ff", color: "#334155", borderBottom: "1px solid #1e3a66" }}>
                 <th style={{ padding: "14px 20px", fontWeight: 600 }}>User / Identity</th>
                 <th style={{ padding: "14px 20px", fontWeight: 600 }}>Role</th>
                 <th style={{ padding: "14px 20px", fontWeight: 600 }}>Status</th>
@@ -238,7 +238,7 @@ export default function AdminUserActivityModule() {
             <tbody>
               {filtered.length === 0 ? (
                 <tr>
-                  <td colSpan={7} style={{ padding: 32, textAlign: "center", color: "#94a3b8" }}>
+                  <td colSpan={7} style={{ padding: 32, textAlign: "center", color: "#334155" }}>
                     No matching user activity records found.
                   </td>
                 </tr>
@@ -261,14 +261,14 @@ export default function AdminUserActivityModule() {
                             title={online ? "Active Session Right Now" : "Offline"}
                           />
                           <div>
-                            <div style={{ color: "#ffffff", fontWeight: 600 }}>{act.user_name || "Enterprise User"}</div>
-                            <div style={{ fontSize: 12, color: "#94a3b8" }}>{act.email}</div>
+                            <div style={{ color: "#0f172a", fontWeight: 600 }}>{act.user_name || "Enterprise User"}</div>
+                            <div style={{ fontSize: 12, color: "#334155" }}>{act.email}</div>
                           </div>
                         </div>
                       </td>
 
                       <td style={{ padding: "16px 20px" }}>
-                        <span style={{ textTransform: "uppercase", background: "rgba(56,189,248,0.1)", color: "#38bdf8", padding: "3px 8px", borderRadius: 4, fontSize: 11, fontWeight: 700 }}>
+                        <span style={{ textTransform: "uppercase", background: "rgba(56,189,248,0.1)", color: "#0369a1", padding: "3px 8px", borderRadius: 4, fontSize: 11, fontWeight: 700 }}>
                           {act.role || "ANALYST"}
                         </span>
                       </td>
@@ -277,7 +277,7 @@ export default function AdminUserActivityModule() {
                         <span
                           style={{
                             background: !isRevoked ? "rgba(16,185,129,0.2)" : "rgba(239,68,68,0.2)",
-                            color: !isRevoked ? "#34d399" : "#f87171",
+                            color: !isRevoked ? "#16a34a" : "#dc2626",
                             padding: "4px 10px",
                             borderRadius: 6,
                             fontSize: 11,
@@ -288,15 +288,15 @@ export default function AdminUserActivityModule() {
                         </span>
                       </td>
 
-                      <td style={{ padding: "16px 20px", color: "#cbd5e1" }}>
+                      <td style={{ padding: "16px 20px", color: "#334155" }}>
                         {act.last_login ? new Date(act.last_login).toLocaleString() : "Never"}
                       </td>
 
-                      <td style={{ padding: "16px 20px", color: "#38bdf8", fontWeight: 600 }}>
+                      <td style={{ padding: "16px 20px", color: "#0369a1", fontWeight: 600 }}>
                         {formatDuration(act.total_active_seconds)}
                       </td>
 
-                      <td style={{ padding: "16px 20px", color: "#94a3b8", fontFamily: "monospace" }}>
+                      <td style={{ padding: "16px 20px", color: "#334155", fontFamily: "monospace" }}>
                         {act.ip_address || "127.0.0.1"}
                       </td>
 
@@ -307,7 +307,7 @@ export default function AdminUserActivityModule() {
                           style={{
                             background: isRevoked ? "rgba(16,185,129,0.15)" : "rgba(239,68,68,0.15)",
                             border: `1px solid ${isRevoked ? "#10b981" : "#ef4444"}`,
-                            color: isRevoked ? "#34d399" : "#f87171",
+                            color: isRevoked ? "#16a34a" : "#dc2626",
                             borderRadius: 6,
                             padding: "6px 14px",
                             fontSize: 12,

@@ -627,14 +627,14 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
     <div style={{
       minHeight: "100vh",
       backgroundColor: "#061224",
-      color: "#ffffff",
+      color: "#0f172a",
       fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
       backgroundImage: `
         radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12) 0%, transparent 50%),
         radial-gradient(circle at 85% 30%, rgba(37, 99, 235, 0.08) 0%, transparent 45%),
         linear-gradient(to right, rgba(25, 38, 60, 0.4) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(25, 38, 60, 0.4) 1px, transparent 1px),
-        linear-gradient(145deg, #061224 0%, #08162d 30%, #0a1a38 60%, #0c2146 100%)
+        linear-gradient(145deg, #061224 0%, #f0f9ff 30%, #0a1a38 60%, #0c2146 100%)
       `,
       backgroundSize: "100% 100%, 100% 100%, 24px 24px, 24px 24px, 100% 100%",
       backgroundAttachment: "fixed",
@@ -667,7 +667,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
           transform: translateY(-2px);
           border-color: #38bdf8 !important;
           background: rgba(14, 34, 72, 0.95) !important;
-          box-shadow: 0 6px 20px rgba(56, 189, 248, 0.25) !important;
+          box-shadow: 0 6px 20px #7dd3fc !important;
         }
         .hero-dock-pill {
           transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -684,7 +684,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
         .hero-kpi-card:hover {
           transform: translateY(-5px);
           border-color: rgba(56, 189, 248, 0.55) !important;
-          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(56, 189, 248, 0.25) !important;
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 25px #7dd3fc !important;
         }
         .hero-nav-grid {
           display: grid;
@@ -726,7 +726,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
         }
         .hero-nav-pill:hover {
           background: rgba(56, 189, 248, 0.16);
-          border-color: rgba(56, 189, 248, 0.45);
+          border-color: #7dd3fc;
           color: #38bdf8;
           transform: translateY(-1px);
         }
@@ -761,12 +761,12 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             alignItems: "center",
             gap: 12,
             background: "linear-gradient(135deg, rgba(14, 34, 72, 0.85) 0%, rgba(20, 50, 102, 0.6) 100%)",
-            border: "1px solid rgba(56, 189, 248, 0.35)",
+            border: "1px solid #7dd3fc",
             borderRadius: 9999,
             padding: "6px 18px 6px 8px",
             marginBottom: 28,
             backdropFilter: "blur(16px)",
-            boxShadow: "0 8px 30px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15)",
+            boxShadow: "0 8px 30px rgba(0, 0, 0, 0.35), inset 0 1px 0 #bae6fd",
             animation: "floatSlow 6s ease-in-out infinite",
           }}>
             <div style={{
@@ -774,7 +774,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
               alignItems: "center",
               gap: 6,
               background: "linear-gradient(135deg, #0284c7 0%, #2563eb 100%)",
-              color: "#ffffff",
+              color: "#0f172a",
               padding: "4px 11px",
               borderRadius: 9999,
               fontSize: 10.5,
@@ -792,12 +792,12 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
               gap: 8,
               fontSize: 12,
               fontWeight: 600,
-              color: "#e0f2fe",
+              color: "#334155",
               letterSpacing: "0.01em",
             }}>
               <span>ISO 9001:2015 & ISO/IEC 27001 Certified Quality Platform</span>
               <span style={{ width: 4, height: 4, borderRadius: "50%", background: "#38bdf8", boxShadow: "0 0 6px #38bdf8" }} />
-              <span style={{ color: "#7dd3fc" }}>SOC-2 Type II Verified</span>
+              <span style={{ color: "#0369a1" }}>SOC-2 Type II Verified</span>
             </div>
           </div>
 
@@ -821,7 +821,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
           {/* Refined High-Contrast Subtitle */}
           <p style={{
             fontSize: "clamp(15px, 1.8vw, 17.5px)",
-            color: "#cbd5e1",
+            color: "#334155",
             maxWidth: 820,
             margin: "0 auto 36px",
             lineHeight: 1.7,
@@ -848,7 +848,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 alignItems: "center",
                 gap: 10,
                 background: "linear-gradient(135deg, #0284c7 0%, #2563eb 55%, #4f46e5 100%)",
-                color: "#ffffff",
+                color: "#0f172a",
                 textDecoration: "none",
                 borderRadius: 10,
                 padding: "14px 30px",
@@ -870,7 +870,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 gap: 8,
                 background: "rgba(14, 34, 72, 0.8)",
                 border: "1px solid rgba(56, 189, 248, 0.4)",
-                color: "#ffffff",
+                color: "#0f172a",
                 textDecoration: "none",
                 borderRadius: 10,
                 padding: "14px 26px",
@@ -891,9 +891,9 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 8,
-                background: "rgba(255, 255, 255, 0.06)",
-                border: "1px solid rgba(255, 255, 255, 0.22)",
-                color: "#ffffff",
+                background: "#bae6fd",
+                border: "1px solid #bae6fd",
+                color: "#0f172a",
                 borderRadius: 10,
                 padding: "14px 24px",
                 fontSize: 14.5,
@@ -919,7 +919,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             backdropFilter: "blur(12px)",
             marginBottom: 44,
           }}>
-            <span style={{ fontSize: 11, color: "#7dd3fc", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+            <span style={{ fontSize: 11, color: "#0369a1", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em" }}>
               Enterprise Portals:
             </span>
             <button
@@ -930,7 +930,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 gap: 6,
                 background: "transparent",
                 border: "none",
-                color: "#ffffff",
+                color: "#0f172a",
                 fontSize: 12,
                 fontWeight: 600,
                 cursor: "pointer",
@@ -951,7 +951,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 gap: 6,
                 background: "transparent",
                 border: "none",
-                color: "#ffffff",
+                color: "#0f172a",
                 fontSize: 12,
                 fontWeight: 600,
                 cursor: "pointer",
@@ -1007,7 +1007,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 label: "Automated Interaction Audits",
                 subtext: "Continuous 100% inspection with zero sampling blindspots",
                 tag: "FULL COVERAGE",
-                tagColor: "#38bdf8",
+                tagcolor: "#0369a1",
                 tagBg: "rgba(56, 189, 248, 0.15)",
                 Icon: CheckCircle2,
               },
@@ -1016,7 +1016,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 label: "Rubric Scoring Precision",
                 subtext: "ISO 9001:2015 calibrated mathematical reproducibility",
                 tag: "CALIBRATED",
-                tagColor: "#38bdf8",
+                tagcolor: "#0369a1",
                 tagBg: "rgba(56, 189, 248, 0.15)",
                 Icon: Award,
               },
@@ -1025,7 +1025,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 label: "QA Operational Cost Reduction",
                 subtext: "Direct reduction in manual listening and scorecard turnaround",
                 tag: "EFFICIENCY",
-                tagColor: "#34d399",
+                tagColor: "#16a34a",
                 tagBg: "rgba(52, 211, 153, 0.15)",
                 Icon: TrendingUp,
               },
@@ -1034,7 +1034,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 label: "Cloudflare Edge SLA Uptime",
                 subtext: "Enterprise multi-region resilience & D1 encrypted vault",
                 tag: "ACTIVE SLA",
-                tagColor: "#38bdf8",
+                tagcolor: "#0369a1",
                 tagBg: "rgba(56, 189, 248, 0.15)",
                 Icon: ShieldCheck,
               },
@@ -1046,7 +1046,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   className="hero-kpi-card"
                   style={{
                     background: "linear-gradient(180deg, rgba(14, 34, 72, 0.8) 0%, rgba(8, 20, 42, 0.9) 100%)",
-                    border: "1px solid rgba(56, 189, 248, 0.28)",
+                    border: "1px solid #7dd3fc",
                     borderRadius: 14,
                     padding: "24px 20px",
                     backdropFilter: "blur(14px)",
@@ -1104,7 +1104,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                       fontWeight: 850,
                       fontFamily: "'Space Grotesk', -apple-system, sans-serif",
                       letterSpacing: "-0.03em",
-                      color: "#ffffff",
+                      color: "#0f172a",
                       lineHeight: 1,
                       marginBottom: 8,
                     }}>
@@ -1112,13 +1112,13 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     </div>
 
                     {/* Metric Title */}
-                    <div style={{ fontSize: 13.5, fontWeight: 700, color: "#e0f2fe", marginBottom: 6 }}>
+                    <div style={{ fontSize: 13.5, fontWeight: 700, color: "#334155", marginBottom: 6 }}>
                       {kpi.label}
                     </div>
                   </div>
 
                   {/* Subtext description */}
-                  <div style={{ fontSize: 11.5, color: "#94a3b8", lineHeight: 1.45, borderTop: "1px solid rgba(96, 165, 250, 0.15)", paddingTop: 10, marginTop: 10 }}>
+                  <div style={{ fontSize: 11.5, color: "#334155", lineHeight: 1.45, borderTop: "1px solid rgba(96, 165, 250, 0.15)", paddingTop: 10, marginTop: 10 }}>
                     {kpi.subtext}
                   </div>
                 </div>
@@ -1135,7 +1135,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             display: "inline-block",
             background: "rgba(56, 189, 248, 0.15)",
             border: "1px solid rgba(56, 189, 248, 0.3)",
-            color: "#38bdf8",
+            color: "#0369a1",
             padding: "4px 14px",
             borderRadius: 16,
             fontSize: 11,
@@ -1149,7 +1149,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
           <h2 style={{ fontSize: 34, fontWeight: 800, fontFamily: "Space Grotesk" }}>
             The 4-Stage Qalyzer v2.0 Architecture
           </h2>
-          <p style={{ fontSize: 15, color: "#bae6fd", maxWidth: 720, margin: "10px auto 0", lineHeight: 1.6 }}>
+          <p style={{ fontSize: 15, color: "#334155", maxWidth: 720, margin: "10px auto 0", lineHeight: 1.6 }}>
             From raw telephony packet ingestion to predictive win-probability forecasting and micro-coaching dispatch in under 45 seconds.
           </p>
         </div>
@@ -1184,10 +1184,10 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   </span>
                   {active && <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#38bdf8", boxShadow: "0 0 8px #38bdf8" }} />}
                 </div>
-                <div style={{ fontSize: 15, fontWeight: 700, color: "#ffffff", fontFamily: "Space Grotesk", marginBottom: 4 }}>
+                <div style={{ fontSize: 15, fontWeight: 700, color: "#0f172a", fontFamily: "Space Grotesk", marginBottom: 4 }}>
                   {stage.title}
                 </div>
-                <div style={{ fontSize: 12, color: "#bae6fd", lineHeight: 1.4 }}>
+                <div style={{ fontSize: 12, color: "#334155", lineHeight: 1.4 }}>
                   {stage.shortDesc}
                 </div>
               </button>
@@ -1200,7 +1200,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
           const current = pipelineStages[activePipelineStage];
           return (
             <div style={{
-              background: "rgba(11, 29, 62, 0.88)",
+              background: "#ffffff",
               border: "1px solid rgba(96, 165, 250, 0.35)",
               borderRadius: 16,
               padding: 30,
@@ -1213,21 +1213,21 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             }}>
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-                  <span style={{ fontSize: 12, fontWeight: 800, background: "#38bdf8", color: "#08162d", padding: "2px 8px", borderRadius: 6 }}>
+                  <span style={{ fontSize: 12, fontWeight: 800, background: "#38bdf8", color: "#f0f9ff", padding: "2px 8px", borderRadius: 6 }}>
                     ACTIVE PIPELINE STEP {current.step}
                   </span>
-                  <span style={{ fontSize: 13, color: "#7dd3fc", fontWeight: 600 }}>Real-Time Automated Execution</span>
+                  <span style={{ fontSize: 13, color: "#0369a1", fontWeight: 600 }}>Real-Time Automated Execution</span>
                 </div>
                 <h3 style={{ fontSize: 24, fontWeight: 800, fontFamily: "Space Grotesk", marginBottom: 14 }}>
                   {current.title}
                 </h3>
-                <p style={{ fontSize: 14.5, color: "#bae6fd", lineHeight: 1.6, marginBottom: 20 }}>
+                <p style={{ fontSize: 14.5, color: "#334155", lineHeight: 1.6, marginBottom: 20 }}>
                   {current.shortDesc}
                 </p>
 
                 <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                   {current.bullets.map((b, bIdx) => (
-                    <div key={bIdx} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 13.5, color: "#ffffff" }}>
+                    <div key={bIdx} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 13.5, color: "#0f172a" }}>
                       <CheckCircle2 size={16} color="#38bdf8" style={{ flexShrink: 0 }} />
                       <span>{b}</span>
                     </div>
@@ -1237,22 +1237,22 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
 
               {/* Live Architectural Payload Terminal */}
               <div style={{
-                background: "#08162d",
+                background: "#f0f9ff",
                 border: "1px solid rgba(96, 165, 250, 0.3)",
                 borderRadius: 12,
                 padding: 20,
                 fontFamily: "JetBrains Mono, monospace",
                 fontSize: 12,
-                color: "#7dd3fc",
+                color: "#0369a1",
                 overflowX: "auto"
               }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid rgba(96, 165, 250, 0.2)", paddingBottom: 8, marginBottom: 12 }}>
-                  <span style={{ color: "#ffffff", fontWeight: 700 }}>Telemetry Event Payload</span>
-                  <span style={{ fontSize: 11, color: "#34d399", display: "flex", alignItems: "center", gap: 5 }}>
-                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#34d399" }} /> LIVE 200 OK
+                  <span style={{ color: "#0f172a", fontWeight: 700 }}>Telemetry Event Payload</span>
+                  <span style={{ fontSize: 11, color: "#16a34a", display: "flex", alignItems: "center", gap: 5 }}>
+                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#16a34a" }} /> LIVE 200 OK
                   </span>
                 </div>
-                <pre style={{ margin: 0, color: "#e0f2fe", whiteSpace: "pre-wrap", lineHeight: 1.55 }}>
+                <pre style={{ margin: 0, color: "#334155", whiteSpace: "pre-wrap", lineHeight: 1.55 }}>
                   {JSON.stringify(current.payload, null, 2)}
                 </pre>
               </div>
@@ -1268,7 +1268,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             display: "inline-block",
             background: "rgba(56, 189, 248, 0.15)",
             border: "1px solid rgba(56, 189, 248, 0.3)",
-            color: "#38bdf8",
+            color: "#0369a1",
             padding: "4px 14px",
             borderRadius: 16,
             fontSize: 11,
@@ -1282,13 +1282,13 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
           <h2 style={{ fontSize: 34, fontWeight: 800, fontFamily: "Space Grotesk" }}>
             Simulate Your Enterprise QA ROI & Hours Saved
           </h2>
-          <p style={{ fontSize: 15, color: "#bae6fd", maxWidth: 680, margin: "10px auto 0" }}>
+          <p style={{ fontSize: 15, color: "#334155", maxWidth: 680, margin: "10px auto 0" }}>
             Adjust your monthly call volume and current QA team metrics to calculate projected cost reductions and revenue impact.
           </p>
         </div>
 
         <div style={{
-          background: "rgba(11, 29, 62, 0.85)",
+          background: "#ffffff",
           border: "1px solid rgba(96, 165, 250, 0.35)",
           borderRadius: 18,
           padding: 34,
@@ -1304,7 +1304,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             <div>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8, fontSize: 13.5, fontWeight: 600 }}>
                 <span>Monthly Call Interactions:</span>
-                <span style={{ color: "#38bdf8", fontFamily: "Space Grotesk", fontSize: 17, fontWeight: 700 }}>
+                <span style={{ color: "#0369a1", fontFamily: "Space Grotesk", fontSize: 17, fontWeight: 700 }}>
                   {roiCallVolume.toLocaleString()} calls
                 </span>
               </div>
@@ -1315,9 +1315,9 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 step={5000}
                 value={roiCallVolume}
                 onChange={e => setRoiCallVolume(Number(e.target.value))}
-                style={{ width: "100%", accentColor: "#38bdf8", cursor: "pointer" }}
+                style={{ width: "100%", accentcolor: "#0369a1", cursor: "pointer" }}
               />
-              <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "#7dd3fc", marginTop: 4 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "#0369a1", marginTop: 4 }}>
                 <span>5k calls</span>
                 <span>150k calls</span>
                 <span>300k+ calls</span>
@@ -1327,7 +1327,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             <div>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8, fontSize: 13.5, fontWeight: 600 }}>
                 <span>Current QA Auditor Staff:</span>
-                <span style={{ color: "#38bdf8", fontFamily: "Space Grotesk", fontSize: 17, fontWeight: 700 }}>
+                <span style={{ color: "#0369a1", fontFamily: "Space Grotesk", fontSize: 17, fontWeight: 700 }}>
                   {roiTeamSize} Auditors
                 </span>
               </div>
@@ -1338,9 +1338,9 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 step={1}
                 value={roiTeamSize}
                 onChange={e => setRoiTeamSize(Number(e.target.value))}
-                style={{ width: "100%", accentColor: "#38bdf8", cursor: "pointer" }}
+                style={{ width: "100%", accentcolor: "#0369a1", cursor: "pointer" }}
               />
-              <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "#7dd3fc", marginTop: 4 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "#0369a1", marginTop: 4 }}>
                 <span>2 auditors</span>
                 <span>25 auditors</span>
                 <span>50+ auditors</span>
@@ -1350,7 +1350,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             <div>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8, fontSize: 13.5, fontWeight: 600 }}>
                 <span>Current Manual Sampling Rate:</span>
-                <span style={{ color: "#38bdf8", fontFamily: "Space Grotesk", fontSize: 17, fontWeight: 700 }}>
+                <span style={{ color: "#0369a1", fontFamily: "Space Grotesk", fontSize: 17, fontWeight: 700 }}>
                   {roiAuditRate}% of calls
                 </span>
               </div>
@@ -1361,9 +1361,9 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 step={0.5}
                 value={roiAuditRate}
                 onChange={e => setRoiAuditRate(Number(e.target.value))}
-                style={{ width: "100%", accentColor: "#38bdf8", cursor: "pointer" }}
+                style={{ width: "100%", accentcolor: "#0369a1", cursor: "pointer" }}
               />
-              <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "#7dd3fc", marginTop: 4 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "#0369a1", marginTop: 4 }}>
                 <span>1% (Standard)</span>
                 <span>5%</span>
                 <span>10% (High Cost)</span>
@@ -1381,35 +1381,35 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             flexDirection: "column",
             gap: 18
           }}>
-            <div style={{ fontSize: 12, color: "#7dd3fc", textTransform: "uppercase", letterSpacing: 0.6, fontWeight: 700 }}>
+            <div style={{ fontSize: 12, color: "#0369a1", textTransform: "uppercase", letterSpacing: 0.6, fontWeight: 700 }}>
               Calculated Impact Simulation
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-              <div style={{ background: "rgba(8, 22, 45, 0.85)", padding: 14, borderRadius: 10, border: "1px solid rgba(96, 165, 250, 0.2)" }}>
-                <div style={{ fontSize: 11.5, color: "#bae6fd" }}>Monthly Hours Saved</div>
-                <div style={{ fontSize: 24, fontWeight: 800, fontFamily: "Space Grotesk", color: "#38bdf8", marginTop: 4 }}>
+              <div style={{ background: "#ffffff", padding: 14, borderRadius: 10, border: "1px solid rgba(96, 165, 250, 0.2)" }}>
+                <div style={{ fontSize: 11.5, color: "#334155" }}>Monthly Hours Saved</div>
+                <div style={{ fontSize: 24, fontWeight: 800, fontFamily: "Space Grotesk", color: "#0369a1", marginTop: 4 }}>
                   {hoursSavedPerMonth.toLocaleString()} hrs
                 </div>
               </div>
 
-              <div style={{ background: "rgba(8, 22, 45, 0.85)", padding: 14, borderRadius: 10, border: "1px solid rgba(96, 165, 250, 0.2)" }}>
-                <div style={{ fontSize: 11.5, color: "#bae6fd" }}>Audit Coverage Gain</div>
-                <div style={{ fontSize: 24, fontWeight: 800, fontFamily: "Space Grotesk", color: "#34d399", marginTop: 4 }}>
+              <div style={{ background: "#ffffff", padding: 14, borderRadius: 10, border: "1px solid rgba(96, 165, 250, 0.2)" }}>
+                <div style={{ fontSize: 11.5, color: "#334155" }}>Audit Coverage Gain</div>
+                <div style={{ fontSize: 24, fontWeight: 800, fontFamily: "Space Grotesk", color: "#16a34a", marginTop: 4 }}>
                   +{coverageGain}%
                 </div>
               </div>
 
-              <div style={{ background: "rgba(8, 22, 45, 0.85)", padding: 14, borderRadius: 10, border: "1px solid rgba(96, 165, 250, 0.2)" }}>
-                <div style={{ fontSize: 11.5, color: "#bae6fd" }}>Projected Annual Cost Reduction</div>
-                <div style={{ fontSize: 22, fontWeight: 800, fontFamily: "Space Grotesk", color: "#ffffff", marginTop: 4 }}>
+              <div style={{ background: "#ffffff", padding: 14, borderRadius: 10, border: "1px solid rgba(96, 165, 250, 0.2)" }}>
+                <div style={{ fontSize: 11.5, color: "#334155" }}>Projected Annual Cost Reduction</div>
+                <div style={{ fontSize: 22, fontWeight: 800, fontFamily: "Space Grotesk", color: "#0f172a", marginTop: 4 }}>
                   ₹{estimatedAnnualSavingsINR.toLocaleString()}
                 </div>
               </div>
 
-              <div style={{ background: "rgba(8, 22, 45, 0.85)", padding: 14, borderRadius: 10, border: "1px solid rgba(96, 165, 250, 0.2)" }}>
-                <div style={{ fontSize: 11.5, color: "#bae6fd" }}>Estimated Rescued Deals</div>
-                <div style={{ fontSize: 22, fontWeight: 800, fontFamily: "Space Grotesk", color: "#38bdf8", marginTop: 4 }}>
+              <div style={{ background: "#ffffff", padding: 14, borderRadius: 10, border: "1px solid rgba(96, 165, 250, 0.2)" }}>
+                <div style={{ fontSize: 11.5, color: "#334155" }}>Estimated Rescued Deals</div>
+                <div style={{ fontSize: 22, fontWeight: 800, fontFamily: "Space Grotesk", color: "#0369a1", marginTop: 4 }}>
                   ₹{potentialRecoveredRevenueINR.toLocaleString()}
                 </div>
               </div>
@@ -1421,7 +1421,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 width: "100%",
                 background: "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)",
                 border: "none",
-                color: "#ffffff",
+                color: "#0f172a",
                 borderRadius: 8,
                 padding: "12px",
                 fontSize: 13.5,
@@ -1431,7 +1431,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 alignItems: "center",
                 justifyContent: "center",
                 gap: 8,
-                boxShadow: "0 4px 15px rgba(56, 189, 248, 0.35)",
+                boxShadow: "0 4px 15px #7dd3fc",
               }}
             >
               Lock In These Savings With Free Trial <ArrowRight size={14} />
@@ -1447,7 +1447,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             display: "inline-block",
             background: "rgba(56, 189, 248, 0.15)",
             border: "1px solid rgba(56, 189, 248, 0.3)",
-            color: "#38bdf8",
+            color: "#0369a1",
             padding: "4px 14px",
             borderRadius: 16,
             fontSize: 11,
@@ -1461,48 +1461,48 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
           <h2 style={{ fontSize: 34, fontWeight: 800, fontFamily: "Space Grotesk" }}>
             Certified Enterprise Regulatory & Quality Controls
           </h2>
-          <p style={{ fontSize: 15, color: "#bae6fd", maxWidth: 700, margin: "10px auto 0" }}>
+          <p style={{ fontSize: 15, color: "#334155", maxWidth: 700, margin: "10px auto 0" }}>
             Every interaction is calibrated against formalized ISO standards, zero-tolerance auto-fails, and multi-tenant data sovereignty.
           </p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))", gap: 22 }}>
           <div style={{ background: "rgba(13, 36, 78, 0.65)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 14, padding: 24, backdropFilter: "blur(8px)" }}>
-            <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(56, 189, 248, 0.2)", color: "#38bdf8", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+            <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(56, 189, 248, 0.2)", color: "#0369a1", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
               <Award size={20} />
             </div>
             <div style={{ fontSize: 17, fontWeight: 700, fontFamily: "Space Grotesk", marginBottom: 8 }}>ISO 9001:2015 QMS</div>
-            <p style={{ fontSize: 13, color: "#bae6fd", lineHeight: 1.55 }}>
+            <p style={{ fontSize: 13, color: "#334155", lineHeight: 1.55 }}>
               Standardized rubric versioning with immutable audit trails. Guarantees reproducible scoring across agent cohorts and eliminates evaluator subjectivity.
             </p>
           </div>
 
           <div style={{ background: "rgba(13, 36, 78, 0.65)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 14, padding: 24, backdropFilter: "blur(8px)" }}>
-            <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(56, 189, 248, 0.2)", color: "#38bdf8", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+            <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(56, 189, 248, 0.2)", color: "#0369a1", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
               <Lock size={20} />
             </div>
             <div style={{ fontSize: 17, fontWeight: 700, fontFamily: "Space Grotesk", marginBottom: 8 }}>ISO/IEC 27001 ISMS</div>
-            <p style={{ fontSize: 13, color: "#bae6fd", lineHeight: 1.55 }}>
+            <p style={{ fontSize: 13, color: "#334155", lineHeight: 1.55 }}>
               End-to-end data encryption at rest (AES-256) and in transit (TLS 1.3). Strict multi-tenant logical partitioning in Cloudflare D1 SQL.
             </p>
           </div>
 
           <div style={{ background: "rgba(13, 36, 78, 0.65)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 14, padding: 24, backdropFilter: "blur(8px)" }}>
-            <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(56, 189, 248, 0.2)", color: "#38bdf8", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+            <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(56, 189, 248, 0.2)", color: "#0369a1", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
               <ShieldCheck size={20} />
             </div>
             <div style={{ fontSize: 17, fontWeight: 700, fontFamily: "Space Grotesk", marginBottom: 8 }}>PCI-DSS & HIPAA Masking</div>
-            <p style={{ fontSize: 13, color: "#bae6fd", lineHeight: 1.55 }}>
+            <p style={{ fontSize: 13, color: "#334155", lineHeight: 1.55 }}>
               Automated cardholder data (PAN/CVV) and Protected Health Information (PHI) acoustic redaction before transcripts are committed to storage.
             </p>
           </div>
 
           <div style={{ background: "rgba(13, 36, 78, 0.65)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 14, padding: 24, backdropFilter: "blur(8px)" }}>
-            <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(56, 189, 248, 0.2)", color: "#38bdf8", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+            <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(56, 189, 248, 0.2)", color: "#0369a1", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
               <Layers size={20} />
             </div>
             <div style={{ fontSize: 17, fontWeight: 700, fontFamily: "Space Grotesk", marginBottom: 8 }}>Two-Party Consent Check</div>
-            <p style={{ fontSize: 13, color: "#bae6fd", lineHeight: 1.55 }}>
+            <p style={{ fontSize: 13, color: "#334155", lineHeight: 1.55 }}>
               Detects mandatory recording disclosure statements within the first 15 seconds. Flags missing disclaimers immediately to protect corporate indemnity.
             </p>
           </div>
@@ -1516,7 +1516,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             display: "inline-block",
             background: "rgba(56, 189, 248, 0.15)",
             border: "1px solid rgba(56, 189, 248, 0.3)",
-            color: "#38bdf8",
+            color: "#0369a1",
             padding: "4px 14px",
             borderRadius: 16,
             fontSize: 11,
@@ -1530,7 +1530,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
           <h2 style={{ fontSize: 34, fontWeight: 800, fontFamily: "Space Grotesk" }}>
             Engineered for Precision Conversational Intelligence
           </h2>
-          <p style={{ fontSize: 15, color: "#bae6fd", maxWidth: 680, margin: "10px auto 0" }}>
+          <p style={{ fontSize: 15, color: "#334155", maxWidth: 680, margin: "10px auto 0" }}>
             Every module complies with client-customized SOPs, real-time emotion detection, and high-speed telemetry.
           </p>
         </div>
@@ -1557,11 +1557,11 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   height: 40,
                   borderRadius: 10,
                   background: "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)",
-                  color: "#ffffff",
+                  color: "#0f172a",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  boxShadow: "0 0 12px rgba(56, 189, 248, 0.35)"
+                  boxShadow: "0 0 12px #7dd3fc"
                 }}>
                   <Sparkles size={20} />
                 </div>
@@ -1571,7 +1571,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     fontWeight: 700,
                     background: "rgba(96, 165, 250, 0.2)",
                     border: "1px solid rgba(96, 165, 250, 0.35)",
-                    color: "#38bdf8",
+                    color: "#0369a1",
                     padding: "3px 8px",
                     borderRadius: 10,
                     textTransform: "uppercase",
@@ -1582,9 +1582,9 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 )}
               </div>
 
-              <div style={{ fontSize: 11, color: "#7dd3fc", textTransform: "uppercase", letterSpacing: 0.5, fontWeight: 600 }}>{feat.category}</div>
+              <div style={{ fontSize: 11, color: "#0369a1", textTransform: "uppercase", letterSpacing: 0.5, fontWeight: 600 }}>{feat.category}</div>
               <div style={{ fontSize: 17, fontWeight: 700, fontFamily: "Space Grotesk", marginTop: 4, marginBottom: 10 }}>{feat.title}</div>
-              <div style={{ fontSize: 13, color: "#bae6fd", lineHeight: 1.55, flex: 1 }}>{feat.description}</div>
+              <div style={{ fontSize: 13, color: "#334155", lineHeight: 1.55, flex: 1 }}>{feat.description}</div>
             </div>
           ))}
         </div>
@@ -1597,7 +1597,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             display: "inline-block",
             background: "rgba(56, 189, 248, 0.15)",
             border: "1px solid rgba(56, 189, 248, 0.3)",
-            color: "#38bdf8",
+            color: "#0369a1",
             padding: "4px 14px",
             borderRadius: 16,
             fontSize: 11,
@@ -1611,7 +1611,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
           <h2 style={{ fontSize: 34, fontWeight: 800, fontFamily: "Space Grotesk" }}>
             Select Your Plan & Book Your Enterprise Trial
           </h2>
-          <p style={{ fontSize: 15, color: "#bae6fd", maxWidth: 660, margin: "10px auto 0" }}>
+          <p style={{ fontSize: 15, color: "#334155", maxWidth: 660, margin: "10px auto 0" }}>
             Click "Select Plan" on any tier to immediately customize your free trial or proceed to secure PayU gateway registration.
           </p>
         </div>
@@ -1632,7 +1632,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   flexDirection: "column",
                   position: "relative",
                   backdropFilter: "blur(10px)",
-                  boxShadow: isSelected ? "0 12px 35px rgba(56, 189, 248, 0.25)" : "none",
+                  boxShadow: isSelected ? "0 12px 35px #7dd3fc" : "none",
                   transition: "all 0.2s ease"
                 }}
               >
@@ -1642,7 +1642,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     top: -12,
                     right: 24,
                     background: "#38bdf8",
-                    color: "#08162d",
+                    color: "#f0f9ff",
                     fontSize: 10.5,
                     fontWeight: 800,
                     padding: "3px 12px",
@@ -1657,9 +1657,9 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 <div style={{ fontSize: 19, fontWeight: 700, fontFamily: "Space Grotesk" }}>{plan.name}</div>
                 <div style={{ display: "flex", alignItems: "baseline", gap: 4, margin: "14px 0 6px" }}>
                   <span style={{ fontSize: 36, fontWeight: 800, fontFamily: "Space Grotesk" }}>₹{Number(plan.price).toLocaleString()}</span>
-                  <span style={{ fontSize: 13, color: "#7dd3fc" }}>/ {plan.interval || "month"}</span>
+                  <span style={{ fontSize: 13, color: "#0369a1" }}>/ {plan.interval || "month"}</span>
                 </div>
-                <div style={{ fontSize: 12.5, color: "#bae6fd", marginBottom: 20 }}>
+                <div style={{ fontSize: 12.5, color: "#334155", marginBottom: 20 }}>
                   Includes {typeof plan.callMinutes === "number" ? plan.callMinutes.toLocaleString() : plan.callMinutes} call minutes and {plan.agentSeats} seats.
                 </div>
 
@@ -1668,7 +1668,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 <div style={{ display: "flex", flexDirection: "column", gap: 11, flex: 1, marginBottom: 26 }}>
                   {plan.features?.map((f, fIdx) => (
                     <div key={fIdx} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 13, color: "#f0f9ff" }}>
-                      <Check size={14} style={{ flexShrink: 0, color: "#38bdf8" }} />
+                      <Check size={14} style={{ flexShrink: 0, color: "#0369a1" }} />
                       <span>{f}</span>
                     </div>
                   ))}
@@ -1680,7 +1680,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     style={{
                       width: "100%",
                       background: "linear-gradient(135deg, #0284c7 0%, #2563eb 100%)",
-                      color: "#ffffff",
+                      color: "#0f172a",
                       border: "1px solid rgba(56, 189, 248, 0.4)",
                       borderRadius: 8,
                       padding: "12px 18px",
@@ -1704,7 +1704,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     onClick={() => handleSelectPricing(plan.name)}
                     style={{
                       width: "100%",
-                      background: isSelected ? "rgba(56, 189, 248, 0.15)" : "rgba(255, 255, 255, 0.05)",
+                      background: isSelected ? "rgba(56, 189, 248, 0.15)" : "#bae6fd",
                       color: isSelected ? "#38bdf8" : "#cbd5e1",
                       border: `1px solid ${isSelected ? "#38bdf8" : "rgba(96, 165, 250, 0.25)"}`,
                       borderRadius: 8,
@@ -1741,7 +1741,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
           style={{
           maxWidth: 900,
           margin: "0 auto",
-          background: "rgba(11, 29, 62, 0.9)",
+          background: "#ffffff",
           border: "2px solid rgba(56, 189, 248, 0.4)",
           borderRadius: 20,
           padding: "36px 36px",
@@ -1755,7 +1755,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
               gap: 8,
               background: "rgba(56, 189, 248, 0.15)",
               border: "1px solid #38bdf8",
-              color: "#38bdf8",
+              color: "#0369a1",
               padding: "4px 14px",
               borderRadius: 16,
               fontSize: 11.5,
@@ -1768,7 +1768,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             <h3 style={{ fontSize: 26, fontWeight: 800, fontFamily: "Space Grotesk" }}>
               Request Your Pilot Setup & Migration Consultation
             </h3>
-            <p style={{ fontSize: 13.5, color: "#bae6fd", marginTop: 4 }}>
+            <p style={{ fontSize: 13.5, color: "#334155", marginTop: 4 }}>
               Submit your team requirements. An enterprise solutions engineer will deploy your custom acoustic sandbox within 2 business hours.
             </p>
           </div>
@@ -1789,58 +1789,58 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
 
           <form onSubmit={handleEnquirySubmit} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: 18 }}>
             <div>
-              <label style={{ display: "block", fontSize: 12, fontWeight: 600, marginBottom: 6, color: "#bae6fd" }}>Full Name *</label>
+              <label style={{ display: "block", fontSize: 12, fontWeight: 600, marginBottom: 6, color: "#334155" }}>Full Name *</label>
               <input
                 required
                 type="text"
                 placeholder="e.g. Vikram Singhania"
                 value={formData.name}
                 onChange={e => setFormData({ ...formData, name: e.target.value })}
-                style={{ width: "100%", background: "rgba(8, 22, 45, 0.9)", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#ffffff", fontSize: 13.5, boxSizing: "border-box" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#0f172a", fontSize: 13.5, boxSizing: "border-box" }}
               />
             </div>
 
             <div>
-              <label style={{ display: "block", fontSize: 12, fontWeight: 600, marginBottom: 6, color: "#bae6fd" }}>Business Email *</label>
+              <label style={{ display: "block", fontSize: 12, fontWeight: 600, marginBottom: 6, color: "#334155" }}>Business Email *</label>
               <input
                 required
                 type="email"
                 placeholder="e.g. vikram@enterprise.com"
                 value={formData.email}
                 onChange={e => setFormData({ ...formData, email: e.target.value })}
-                style={{ width: "100%", background: "rgba(8, 22, 45, 0.9)", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#ffffff", fontSize: 13.5, boxSizing: "border-box" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#0f172a", fontSize: 13.5, boxSizing: "border-box" }}
               />
             </div>
 
             <div>
-              <label style={{ display: "block", fontSize: 12, fontWeight: 600, marginBottom: 6, color: "#bae6fd" }}>Phone Number *</label>
+              <label style={{ display: "block", fontSize: 12, fontWeight: 600, marginBottom: 6, color: "#334155" }}>Phone Number *</label>
               <input
                 required
                 type="tel"
                 placeholder="e.g. +91 98200 12345"
                 value={formData.phone}
                 onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                style={{ width: "100%", background: "rgba(8, 22, 45, 0.9)", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#ffffff", fontSize: 13.5, boxSizing: "border-box" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#0f172a", fontSize: 13.5, boxSizing: "border-box" }}
               />
             </div>
 
             <div>
-              <label style={{ display: "block", fontSize: 12, fontWeight: 600, marginBottom: 6, color: "#bae6fd" }}>Company Name</label>
+              <label style={{ display: "block", fontSize: 12, fontWeight: 600, marginBottom: 6, color: "#334155" }}>Company Name</label>
               <input
                 type="text"
                 placeholder="e.g. Acme Financial / Global BPO"
                 value={formData.company_name}
                 onChange={e => setFormData({ ...formData, company_name: e.target.value })}
-                style={{ width: "100%", background: "rgba(8, 22, 45, 0.9)", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#ffffff", fontSize: 13.5, boxSizing: "border-box" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#0f172a", fontSize: 13.5, boxSizing: "border-box" }}
               />
             </div>
 
             <div>
-              <label style={{ display: "block", fontSize: 12, fontWeight: 600, marginBottom: 6, color: "#bae6fd" }}>Agent Seat Size</label>
+              <label style={{ display: "block", fontSize: 12, fontWeight: 600, marginBottom: 6, color: "#334155" }}>Agent Seat Size</label>
               <select
                 value={formData.team_size}
                 onChange={e => setFormData({ ...formData, team_size: e.target.value })}
-                style={{ width: "100%", background: "#08162d", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#ffffff", fontSize: 13.5 }}
+                style={{ width: "100%", background: "#f0f9ff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#0f172a", fontSize: 13.5 }}
               >
                 <option value="1-5 Agents">1 - 5 Agents (Starter)</option>
                 <option value="5-20 Agents">5 - 20 Agents (Growth)</option>
@@ -1851,25 +1851,25 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             </div>
 
             <div>
-              <label style={{ display: "block", fontSize: 12, fontWeight: 600, marginBottom: 6, color: "#bae6fd" }}>Preferred Consultation Timeline</label>
+              <label style={{ display: "block", fontSize: 12, fontWeight: 600, marginBottom: 6, color: "#334155" }}>Preferred Consultation Timeline</label>
               <input
                 type="text"
                 placeholder="e.g. Tomorrow 3:00 PM IST"
                 value={formData.preferred_schedule}
                 onChange={e => setFormData({ ...formData, preferred_schedule: e.target.value })}
-                style={{ width: "100%", background: "rgba(8, 22, 45, 0.9)", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#ffffff", fontSize: 13.5, boxSizing: "border-box" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#0f172a", fontSize: 13.5, boxSizing: "border-box" }}
               />
             </div>
 
             <div style={{ gridColumn: "1 / -1" }}>
-              <label style={{ display: "block", fontSize: 12, fontWeight: 600, marginBottom: 6, color: "#bae6fd" }}>Telephony & Compliance Requirements *</label>
+              <label style={{ display: "block", fontSize: 12, fontWeight: 600, marginBottom: 6, color: "#334155" }}>Telephony & Compliance Requirements *</label>
               <textarea
                 required
                 rows={3}
                 placeholder="Describe your current QA challenges (e.g. Hindi/English speech accuracy, Knowlarity integration, missed upsells detection, ISO 9001 governance)..."
                 value={formData.message}
                 onChange={e => setFormData({ ...formData, message: e.target.value })}
-                style={{ width: "100%", background: "rgba(8, 22, 45, 0.9)", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#ffffff", fontSize: 13.5, boxSizing: "border-box", fontFamily: "inherit" }}
+                style={{ width: "100%", background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.3)", borderRadius: 7, padding: "11px 13px", color: "#0f172a", fontSize: 13.5, boxSizing: "border-box", fontFamily: "inherit" }}
               />
             </div>
 
@@ -1879,7 +1879,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 disabled={submittingEnquiry}
                 style={{
                   background: "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)",
-                  color: "#ffffff",
+                  color: "#0f172a",
                   border: "none",
                   borderRadius: 8,
                   padding: "13px 36px",
@@ -1903,11 +1903,11 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       {/* -------------------- 6B. Clients With Us Showcase (Managed by Admin) -------------------- */}
       <section id="clients-with-us" style={{ maxWidth: 1320, margin: "0 auto", padding: "65px 24px", borderTop: "1px solid rgba(96, 165, 250, 0.2)" }}>
         <div style={{ textAlign: "center", marginBottom: 38 }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(56, 189, 248, 0.1)", border: "1px solid rgba(56, 189, 248, 0.3)", color: "#38bdf8", padding: "4px 14px", borderRadius: 16, fontSize: 11, fontWeight: 700, letterSpacing: 0.6, textTransform: "uppercase", marginBottom: 12 }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(56, 189, 248, 0.1)", border: "1px solid rgba(56, 189, 248, 0.3)", color: "#0369a1", padding: "4px 14px", borderRadius: 16, fontSize: 11, fontWeight: 700, letterSpacing: 0.6, textTransform: "uppercase", marginBottom: 12 }}>
             Trusted Enterprise Network
           </div>
           <h2 style={{ fontSize: 32, fontWeight: 800, fontFamily: "Space Grotesk" }}>Clients With Us</h2>
-          <p style={{ fontSize: 14.5, color: "#bae6fd", maxWidth: 620, margin: "8px auto 0" }}>
+          <p style={{ fontSize: 14.5, color: "#334155", maxWidth: 620, margin: "8px auto 0" }}>
             High-velocity contact centers, fintech leaders, and healthcare BPOs running 100% automated QA on AuditAI Qalyzer.
           </p>
         </div>
@@ -1919,14 +1919,14 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             { id: "c3", name: "NovaPay Financial Services", industry: "Digital Banking", seats: "400+ Agents", badge: "Enterprise Ultra" },
             { id: "c4", name: "Vanguard Insurance Corp", industry: "Insurance Advisory", seats: "120+ Agents", badge: "Growth Pro" },
           ]).filter((c) => c.active !== false).map((cl) => (
-            <div key={cl.id} style={{ background: "rgba(11, 29, 62, 0.8)", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 14, padding: 22, display: "flex", flexDirection: "column", justifyContent: "space-between", gap: 12 }}>
+            <div key={cl.id} style={{ background: "#ffffff", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 14, padding: 22, display: "flex", flexDirection: "column", justifyContent: "space-between", gap: 12 }}>
               <div>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-                  <span style={{ fontSize: 10.5, fontWeight: 700, background: "rgba(56, 189, 248, 0.15)", color: "#38bdf8", padding: "3px 9px", borderRadius: 10 }}>{cl.badge}</span>
-                  <span style={{ fontSize: 11.5, color: "#7dd3fc", fontWeight: 600 }}>{cl.seats}</span>
+                  <span style={{ fontSize: 10.5, fontWeight: 700, background: "rgba(56, 189, 248, 0.15)", color: "#0369a1", padding: "3px 9px", borderRadius: 10 }}>{cl.badge}</span>
+                  <span style={{ fontSize: 11.5, color: "#0369a1", fontWeight: 600 }}>{cl.seats}</span>
                 </div>
-                <div style={{ fontSize: 17, fontWeight: 800, fontFamily: "Space Grotesk", color: "#ffffff" }}>{cl.name}</div>
-                <div style={{ fontSize: 12.5, color: "#bae6fd", marginTop: 4 }}>{cl.industry}</div>
+                <div style={{ fontSize: 17, fontWeight: 800, fontFamily: "Space Grotesk", color: "#0f172a" }}>{cl.name}</div>
+                <div style={{ fontSize: 12.5, color: "#334155", marginTop: 4 }}>{cl.industry}</div>
               </div>
             </div>
           ))}
@@ -1940,7 +1940,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             display: "inline-block",
             background: "rgba(56, 189, 248, 0.15)",
             border: "1px solid rgba(56, 189, 248, 0.3)",
-            color: "#38bdf8",
+            color: "#0369a1",
             padding: "4px 14px",
             borderRadius: 16,
             fontSize: 11,
@@ -1954,7 +1954,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
           <h2 style={{ fontSize: 34, fontWeight: 800, fontFamily: "Space Grotesk" }}>
             The Pioneers Behind AuditAI
           </h2>
-          <p style={{ fontSize: 15, color: "#bae6fd", maxWidth: 650, margin: "10px auto 0" }}>
+          <p style={{ fontSize: 15, color: "#334155", maxWidth: 650, margin: "10px auto 0" }}>
             Combining world-class speech analytics research, telecom infrastructure, and enterprise ISO quality governance.
           </p>
         </div>
@@ -1978,18 +1978,18 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
               <img
                 src={m.avatar || m.avatar_url || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"}
                 alt={m.name}
-                style={{ width: 84, height: 84, borderRadius: "50%", objectFit: "cover", border: "3px solid #38bdf8", marginBottom: 14, boxShadow: "0 0 16px rgba(56, 189, 248, 0.35)" }}
+                style={{ width: 84, height: 84, borderRadius: "50%", objectFit: "cover", border: "3px solid #38bdf8", marginBottom: 14, boxShadow: "0 0 16px #7dd3fc" }}
               />
               <div style={{ fontSize: 17, fontWeight: 700, fontFamily: "Space Grotesk" }}>{m.name}</div>
-              <div style={{ fontSize: 12, color: "#7dd3fc", fontWeight: 600, marginTop: 2, marginBottom: 10 }}>{m.role}</div>
-              <div style={{ fontSize: 12.5, color: "#bae6fd", lineHeight: 1.5, marginBottom: 14 }}>{m.bio}</div>
+              <div style={{ fontSize: 12, color: "#0369a1", fontWeight: 600, marginTop: 2, marginBottom: 10 }}>{m.role}</div>
+              <div style={{ fontSize: 12.5, color: "#334155", lineHeight: 1.5, marginBottom: 14 }}>{m.bio}</div>
 
               {(m.linkedin || m.linkedin_url) && (
                 <a
                   href={m.linkedin || m.linkedin_url}
                   target="_blank"
                   rel="noreferrer"
-                  style={{ display: "inline-flex", alignItems: "center", gap: 4, color: "#ffffff", fontSize: 11.5, fontWeight: 600, textDecoration: "none", background: "rgba(96, 165, 250, 0.18)", border: "1px solid rgba(96, 165, 250, 0.35)", padding: "4px 10px", borderRadius: 6 }}
+                  style={{ display: "inline-flex", alignItems: "center", gap: 4, color: "#0f172a", fontSize: 11.5, fontWeight: 600, textDecoration: "none", background: "rgba(96, 165, 250, 0.18)", border: "1px solid rgba(96, 165, 250, 0.35)", padding: "4px 10px", borderRadius: 6 }}
                 >
                   Connect on LinkedIn <ArrowUpRight size={12} color="#38bdf8" />
                 </a>
@@ -2006,7 +2006,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             display: "inline-block",
             background: "rgba(56, 189, 248, 0.15)",
             border: "1px solid rgba(56, 189, 248, 0.3)",
-            color: "#38bdf8",
+            color: "#0369a1",
             padding: "4px 14px",
             borderRadius: 16,
             fontSize: 11,
@@ -2048,7 +2048,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
-                    color: "#ffffff",
+                    color: "#0f172a",
                     fontSize: 15,
                     fontWeight: 600,
                     cursor: "pointer",
@@ -2058,7 +2058,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   {isOpen ? <ChevronUp size={18} color="#38bdf8" /> : <ChevronDown size={18} color="#38bdf8" />}
                 </button>
                 {isOpen && (
-                  <div style={{ padding: "0 20px 18px", color: "#bae6fd", fontSize: 13.5, lineHeight: 1.6, borderTop: "1px solid rgba(96, 165, 250, 0.15)", paddingTop: 12 }}>
+                  <div style={{ padding: "0 20px 18px", color: "#334155", fontSize: 13.5, lineHeight: 1.6, borderTop: "1px solid rgba(96, 165, 250, 0.15)", paddingTop: 12 }}>
                     {f.answer}
                   </div>
                 )}
@@ -2072,35 +2072,35 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       <section id="contact" style={{ maxWidth: 1320, margin: "0 auto", padding: "75px 24px", borderTop: "1px solid rgba(96, 165, 250, 0.2)" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24 }}>
           <div style={{ background: "rgba(13, 36, 78, 0.65)", border: "1px solid rgba(96, 165, 250, 0.22)", borderRadius: 12, padding: 22, backdropFilter: "blur(8px)" }}>
-            <Mail size={22} style={{ marginBottom: 10, color: "#38bdf8" }} />
+            <Mail size={22} style={{ marginBottom: 10, color: "#0369a1" }} />
             <div style={{ fontSize: 15, fontWeight: 700, fontFamily: "Space Grotesk" }}>Email Support & Sales</div>
-            <div style={{ fontSize: 13, color: "#bae6fd", marginTop: 4 }}>General: {contactInfo.email}</div>
-            <div style={{ fontSize: 13, color: "#bae6fd" }}>Enterprise Sales: {contactInfo.salesEmail}</div>
+            <div style={{ fontSize: 13, color: "#334155", marginTop: 4 }}>General: {contactInfo.email}</div>
+            <div style={{ fontSize: 13, color: "#334155" }}>Enterprise Sales: {contactInfo.salesEmail}</div>
           </div>
 
           <div style={{ background: "rgba(13, 36, 78, 0.65)", border: "1px solid rgba(96, 165, 250, 0.22)", borderRadius: 12, padding: 22, backdropFilter: "blur(8px)" }}>
-            <Phone size={22} style={{ marginBottom: 10, color: "#38bdf8" }} />
+            <Phone size={22} style={{ marginBottom: 10, color: "#0369a1" }} />
             <div style={{ fontSize: 15, fontWeight: 700, fontFamily: "Space Grotesk" }}>Corporate Phone Lines</div>
-            <div style={{ fontSize: 13, color: "#bae6fd", marginTop: 4 }}>Main: {contactInfo.phone}</div>
-            <div style={{ fontSize: 13, color: "#bae6fd" }}>24/7 SLA Hotline: {contactInfo.emergencyHotline}</div>
+            <div style={{ fontSize: 13, color: "#334155", marginTop: 4 }}>Main: {contactInfo.phone}</div>
+            <div style={{ fontSize: 13, color: "#334155" }}>24/7 SLA Hotline: {contactInfo.emergencyHotline}</div>
           </div>
 
           <div style={{ background: "rgba(13, 36, 78, 0.65)", border: "1px solid rgba(96, 165, 250, 0.22)", borderRadius: 12, padding: 22, backdropFilter: "blur(8px)" }}>
-            <Clock size={22} style={{ marginBottom: 10, color: "#38bdf8" }} />
+            <Clock size={22} style={{ marginBottom: 10, color: "#0369a1" }} />
             <div style={{ fontSize: 15, fontWeight: 700, fontFamily: "Space Grotesk" }}>Operating Hours</div>
-            <div style={{ fontSize: 13, color: "#bae6fd", marginTop: 4 }}>{contactInfo.supportHours}</div>
+            <div style={{ fontSize: 13, color: "#334155", marginTop: 4 }}>{contactInfo.supportHours}</div>
           </div>
 
           <div style={{ background: "rgba(13, 36, 78, 0.65)", border: "1px solid rgba(96, 165, 250, 0.22)", borderRadius: 12, padding: 22, backdropFilter: "blur(8px)" }}>
-            <MapPin size={22} style={{ marginBottom: 10, color: "#38bdf8" }} />
+            <MapPin size={22} style={{ marginBottom: 10, color: "#0369a1" }} />
             <div style={{ fontSize: 15, fontWeight: 700, fontFamily: "Space Grotesk" }}>Headquarters</div>
-            <div style={{ fontSize: 12.5, color: "#bae6fd", marginTop: 4, lineHeight: 1.4 }}>{contactInfo.address}</div>
+            <div style={{ fontSize: 12.5, color: "#334155", marginTop: 4, lineHeight: 1.4 }}>{contactInfo.address}</div>
           </div>
         </div>
       </section>
 
       {/* -------------------- 10. Premium ISO Standard Footer -------------------- */}
-      <footer style={{ borderTop: "1px solid rgba(96, 165, 250, 0.25)", background: "rgba(8, 22, 45, 0.98)", padding: "45px 24px 34px" }}>
+      <footer style={{ borderTop: "1px solid rgba(96, 165, 250, 0.25)", background: "#ffffff", padding: "45px 24px 34px" }}>
         <div style={{ maxWidth: 1320, margin: "0 auto", display: "flex", flexDirection: "column", gap: 26 }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 20 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
@@ -2108,7 +2108,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 <Sparkles size={18} />
               </div>
               <span style={{ fontSize: 18, fontWeight: 800, fontFamily: "Space Grotesk" }}>AuditAI Qalyzer v2.0</span>
-              <span style={{ fontSize: 10, color: "#38bdf8", border: "1px solid rgba(56, 189, 248, 0.35)", padding: "2px 6px", borderRadius: 4, marginLeft: 6 }}>
+              <span style={{ fontSize: 10, color: "#0369a1", border: "1px solid #7dd3fc", padding: "2px 6px", borderRadius: 4, marginLeft: 6 }}>
                 ISO 9001:2015 & 27001
               </span>
             </div>
@@ -2121,9 +2121,9 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   display: "flex",
                   alignItems: "center",
                   gap: 6,
-                  background: "rgba(255, 255, 255, 0.08)",
+                  background: "#bae6fd",
                   border: "1px solid rgba(96, 165, 250, 0.35)",
-                  color: "#ffffff",
+                  color: "#0f172a",
                   borderRadius: 6,
                   padding: "8px 14px",
                   fontSize: 12,
@@ -2142,7 +2142,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   gap: 6,
                   background: "rgba(96, 165, 250, 0.18)",
                   border: "1px solid #38bdf8",
-                  color: "#ffffff",
+                  color: "#0f172a",
                   borderRadius: 6,
                   padding: "8px 14px",
                   fontSize: 12,
@@ -2160,14 +2160,14 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   alignItems: "center",
                   gap: 6,
                   background: "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)",
-                  color: "#ffffff",
+                  color: "#0f172a",
                   border: "none",
                   borderRadius: 6,
                   padding: "8px 16px",
                   fontSize: 12,
                   fontWeight: 700,
                   cursor: "pointer",
-                  boxShadow: "0 2px 10px rgba(56, 189, 248, 0.35)",
+                  boxShadow: "0 2px 10px #7dd3fc",
                 }}
               >
                 Launch Console <ArrowRight size={13} />
@@ -2178,18 +2178,18 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
           <div style={{ height: 1, background: "rgba(96, 165, 250, 0.2)" }} />
 
           {/* Legal Policies Quick Links */}
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 14, fontSize: 12, color: "#bae6fd" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 14, fontSize: 12, color: "#334155" }}>
             <div>{footer.copyright}</div>
 
             <div style={{ display: "flex", gap: 18, flexWrap: "wrap" }}>
-              <button onClick={() => setActiveLegalModal("privacy")} style={{ background: "none", border: "none", color: "#38bdf8", fontSize: 12, cursor: "pointer", textDecoration: "underline" }}>Privacy Policy</button>
-              <button onClick={() => setActiveLegalModal("terms")} style={{ background: "none", border: "none", color: "#38bdf8", fontSize: 12, cursor: "pointer", textDecoration: "underline" }}>Terms & Conditions</button>
-              <button onClick={() => setActiveLegalModal("usage")} style={{ background: "none", border: "none", color: "#38bdf8", fontSize: 12, cursor: "pointer", textDecoration: "underline" }}>Platform Usage Rights</button>
-              <button onClick={() => setActiveLegalModal("refund")} style={{ background: "none", border: "none", color: "#38bdf8", fontSize: 12, cursor: "pointer", textDecoration: "underline" }}>Refund Policy</button>
+              <button onClick={() => setActiveLegalModal("privacy")} style={{ background: "none", border: "none", color: "#0369a1", fontSize: 12, cursor: "pointer", textDecoration: "underline" }}>Privacy Policy</button>
+              <button onClick={() => setActiveLegalModal("terms")} style={{ background: "none", border: "none", color: "#0369a1", fontSize: 12, cursor: "pointer", textDecoration: "underline" }}>Terms & Conditions</button>
+              <button onClick={() => setActiveLegalModal("usage")} style={{ background: "none", border: "none", color: "#0369a1", fontSize: 12, cursor: "pointer", textDecoration: "underline" }}>Platform Usage Rights</button>
+              <button onClick={() => setActiveLegalModal("refund")} style={{ background: "none", border: "none", color: "#0369a1", fontSize: 12, cursor: "pointer", textDecoration: "underline" }}>Refund Policy</button>
             </div>
           </div>
 
-          <div style={{ fontSize: 11, color: "#7dd3fc", textAlign: "center", lineHeight: 1.5 }}>
+          <div style={{ fontSize: 11, color: "#0369a1", textAlign: "center", lineHeight: 1.5 }}>
             {footer.disclaimer}
           </div>
         </div>
@@ -2198,41 +2198,41 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       {/* -------------------- Interactive Dual-Gateway Direct Checkout Modal -------------------- */}
       {showCheckoutModal && checkoutPlan && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(4, 12, 25, 0.88)", backdropFilter: "blur(10px)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1100, padding: 16 }}>
-          <div style={{ width: 560, maxWidth: "100%", maxHeight: "90vh", background: "#0b1f3d", border: "2px solid #38bdf8", borderRadius: 16, padding: 28, display: "flex", flexDirection: "column", color: "#ffffff", boxShadow: "0 20px 50px rgba(0,0,0,0.7)", overflowY: "auto" }}>
+          <div style={{ width: 560, maxWidth: "100%", maxHeight: "90vh", background: "#0b1f3d", border: "2px solid #38bdf8", borderRadius: 16, padding: 28, display: "flex", flexDirection: "column", color: "#0f172a", boxShadow: "0 20px 50px rgba(0,0,0,0.7)", overflowY: "auto" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20, borderBottom: "1px solid #1e3a66", paddingBottom: 14 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <div style={{ width: 34, height: 34, borderRadius: 8, background: "rgba(56,189,248,0.15)", border: "1px solid #38bdf8", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <CreditCard size={18} color="#38bdf8" />
                 </div>
                 <div>
-                  <h3 style={{ margin: 0, fontSize: 18, color: "#ffffff", fontWeight: 700 }}>
+                  <h3 style={{ margin: 0, fontSize: 18, color: "#0f172a", fontWeight: 700 }}>
                     Instant Checkout & Activation
                   </h3>
-                  <div style={{ fontSize: 12, color: "#94a3b8" }}>Dual Gateway: PayU & Razorpay Supported</div>
+                  <div style={{ fontSize: 12, color: "#334155" }}>Dual Gateway: PayU & Razorpay Supported</div>
                 </div>
               </div>
-              <button onClick={() => setShowCheckoutModal(false)} style={{ background: "none", border: "none", color: "#94a3b8", cursor: "pointer" }}>
+              <button onClick={() => setShowCheckoutModal(false)} style={{ background: "none", border: "none", color: "#334155", cursor: "pointer" }}>
                 <X size={20} />
               </button>
             </div>
 
             {/* Plan Summary Badge */}
-            <div style={{ background: "#08162d", border: "1px solid #1e3a66", borderRadius: 12, padding: 16, marginBottom: 20, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div style={{ background: "#f0f9ff", border: "1px solid #1e3a66", borderRadius: 12, padding: 16, marginBottom: 20, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div>
-                <div style={{ fontSize: 16, fontWeight: 700, color: "#ffffff" }}>{checkoutPlan.name}</div>
-                <div style={{ fontSize: 12, color: "#38bdf8", marginTop: 2 }}>
+                <div style={{ fontSize: 16, fontWeight: 700, color: "#0f172a" }}>{checkoutPlan.name}</div>
+                <div style={{ fontSize: 12, color: "#0369a1", marginTop: 2 }}>
                   {typeof checkoutPlan.callMinutes === "number" ? checkoutPlan.callMinutes.toLocaleString() : checkoutPlan.callMinutes} Call Audits / Month • 30-Day Period
                 </div>
               </div>
               <div style={{ textAlign: "right" }}>
-                <div style={{ fontSize: 22, fontWeight: 800, color: "#38bdf8" }}>₹{Number(checkoutPlan.price).toLocaleString()}</div>
-                <div style={{ fontSize: 11, color: "#94a3b8" }}>+ 18% GST Invoiced</div>
+                <div style={{ fontSize: 22, fontWeight: 800, color: "#0369a1" }}>₹{Number(checkoutPlan.price).toLocaleString()}</div>
+                <div style={{ fontSize: 11, color: "#334155" }}>+ 18% GST Invoiced</div>
               </div>
             </div>
 
             {/* Gateway Selection */}
             <div style={{ marginBottom: 20 }}>
-              <label style={{ display: "block", fontSize: 13, color: "#cbd5e1", marginBottom: 8, fontWeight: 600 }}>
+              <label style={{ display: "block", fontSize: 13, color: "#334155", marginBottom: 8, fontWeight: 600 }}>
                 Select Payment Gateway
               </label>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
@@ -2246,7 +2246,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                       key={gw.id}
                       onClick={() => setSelectedGateway(gw.id)}
                       style={{
-                        background: isSel ? "rgba(56,189,248,0.15)" : "#08162d",
+                        background: isSel ? "rgba(56,189,248,0.15)" : "#f0f9ff",
                         border: `2px solid ${isSel ? "#38bdf8" : "#1e3a66"}`,
                         borderRadius: 10,
                         padding: "12px 14px",
@@ -2258,7 +2258,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                       <div style={{ fontSize: 13, fontWeight: 700, color: isSel ? "#38bdf8" : "#ffffff" }}>
                         {gw.title}
                       </div>
-                      <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 4 }}>
+                      <div style={{ fontSize: 11, color: "#334155", marginTop: 4 }}>
                         {gw.desc}
                       </div>
                     </button>
@@ -2270,7 +2270,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             {/* Contact Details Form */}
             <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 20 }}>
               <div>
-                <label style={{ display: "block", fontSize: 12.5, color: "#cbd5e1", marginBottom: 4, fontWeight: 600 }}>
+                <label style={{ display: "block", fontSize: 12.5, color: "#334155", marginBottom: 4, fontWeight: 600 }}>
                   Billing Contact Name
                 </label>
                 <input
@@ -2280,11 +2280,11 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   style={{
                     width: "100%",
                     boxSizing: "border-box",
-                    background: "#08162d",
+                    background: "#f0f9ff",
                     border: "1px solid #1e3a66",
                     borderRadius: 8,
                     padding: "9px 12px",
-                    color: "#ffffff",
+                    color: "#0f172a",
                     fontSize: 13.5,
                     outline: "none",
                   }}
@@ -2293,7 +2293,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
 
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                 <div>
-                  <label style={{ display: "block", fontSize: 12.5, color: "#cbd5e1", marginBottom: 4, fontWeight: 600 }}>
+                  <label style={{ display: "block", fontSize: 12.5, color: "#334155", marginBottom: 4, fontWeight: 600 }}>
                     Work Email (For Tax Invoice)
                   </label>
                   <input
@@ -2303,11 +2303,11 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     style={{
                       width: "100%",
                       boxSizing: "border-box",
-                      background: "#08162d",
+                      background: "#f0f9ff",
                       border: "1px solid #1e3a66",
                       borderRadius: 8,
                       padding: "9px 12px",
-                      color: "#ffffff",
+                      color: "#0f172a",
                       fontSize: 13.5,
                       outline: "none",
                     }}
@@ -2315,7 +2315,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 </div>
 
                 <div>
-                  <label style={{ display: "block", fontSize: 12.5, color: "#cbd5e1", marginBottom: 4, fontWeight: 600 }}>
+                  <label style={{ display: "block", fontSize: 12.5, color: "#334155", marginBottom: 4, fontWeight: 600 }}>
                     Phone Number
                   </label>
                   <input
@@ -2325,11 +2325,11 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     style={{
                       width: "100%",
                       boxSizing: "border-box",
-                      background: "#08162d",
+                      background: "#f0f9ff",
                       border: "1px solid #1e3a66",
                       borderRadius: 8,
                       padding: "9px 12px",
-                      color: "#ffffff",
+                      color: "#0f172a",
                       fontSize: 13.5,
                       outline: "none",
                     }}
@@ -2339,7 +2339,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             </div>
 
             {checkoutError && (
-              <div style={{ background: "rgba(239,68,68,0.15)", border: "1px solid #ef4444", color: "#f87171", padding: "10px 14px", borderRadius: 8, fontSize: 13, marginBottom: 16 }}>
+              <div style={{ background: "rgba(239,68,68,0.15)", border: "1px solid #ef4444", color: "#dc2626", padding: "10px 14px", borderRadius: 8, fontSize: 13, marginBottom: 16 }}>
                 {checkoutError}
               </div>
             )}
@@ -2351,7 +2351,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 disabled={checkoutLoading}
                 style={{
                   background: "linear-gradient(135deg, #0284c7 0%, #2563eb 100%)",
-                  color: "#ffffff",
+                  color: "#0f172a",
                   border: "none",
                   borderRadius: 8,
                   padding: "13px",
@@ -2374,7 +2374,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 disabled={checkoutLoading}
                 style={{
                   background: "rgba(56,189,248,0.12)",
-                  color: "#38bdf8",
+                  color: "#0369a1",
                   border: "1px solid #38bdf8",
                   borderRadius: 8,
                   padding: "10px",
@@ -2393,16 +2393,16 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       {/* -------------------- Payment Success Modal -------------------- */}
       {paymentSuccessData && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(4, 12, 25, 0.92)", backdropFilter: "blur(12px)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1200, padding: 16 }}>
-          <div style={{ width: 500, maxWidth: "100%", background: "#0b1f3d", border: "2px solid #10b981", borderRadius: 16, padding: 32, textAlign: "center", color: "#ffffff", boxShadow: "0 25px 60px rgba(16, 185, 129, 0.25)" }}>
+          <div style={{ width: 500, maxWidth: "100%", background: "#0b1f3d", border: "2px solid #10b981", borderRadius: 16, padding: 32, textAlign: "center", color: "#0f172a", boxShadow: "0 25px 60px rgba(16, 185, 129, 0.25)" }}>
             <div style={{ width: 64, height: 64, borderRadius: "50%", background: "rgba(16, 185, 129, 0.15)", border: "2px solid #10b981", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
-              <CheckCircle2 size={36} color="#34d399" />
+              <CheckCircle2 size={36} color="#16a34a" />
             </div>
 
-            <h2 style={{ margin: "0 0 10px 0", fontSize: 24, fontWeight: 800, color: "#ffffff" }}>
+            <h2 style={{ margin: "0 0 10px 0", fontSize: 24, fontWeight: 800, color: "#0f172a" }}>
               Subscription Successfully Activated!
             </h2>
 
-            <p style={{ margin: "0 0 20px 0", fontSize: 14, color: "#94a3b8", lineHeight: 1.6 }}>
+            <p style={{ margin: "0 0 20px 0", fontSize: 14, color: "#334155", lineHeight: 1.6 }}>
               Your transaction <strong>{paymentSuccessData.txnid}</strong> has been cryptographically verified through <strong>{paymentSuccessData.gateway.toUpperCase()}</strong>. Your multi-tenant quota has been updated and a GST tax invoice dispatched to your email.
             </p>
 
@@ -2414,7 +2414,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                 }}
                 style={{
                   background: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
-                  color: "#ffffff",
+                  color: "#0f172a",
                   border: "none",
                   borderRadius: 8,
                   padding: "12px 26px",
@@ -2433,9 +2433,9 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
               <button
                 onClick={() => setPaymentSuccessData(null)}
                 style={{
-                  background: "rgba(255, 255, 255, 0.08)",
+                  background: "#bae6fd",
                   border: "1px solid #1e3a66",
-                  color: "#cbd5e1",
+                  color: "#334155",
                   borderRadius: 8,
                   padding: "12px 20px",
                   fontSize: 14,
@@ -2452,18 +2452,18 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
       {/* -------------------- Legal Policy Dialog Modal -------------------- */}
       {activeLegalModal && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(4, 12, 25, 0.85)", backdropFilter: "blur(8px)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000, padding: 16 }}>
-          <div style={{ width: 680, maxWidth: "100%", maxHeight: "85vh", background: "#0b1d3e", border: "2px solid #38bdf8", borderRadius: 14, padding: 26, display: "flex", flexDirection: "column", color: "#ffffff", boxShadow: "0 16px 40px rgba(0,0,0,0.6)" }}>
+          <div style={{ width: 680, maxWidth: "100%", maxHeight: "85vh", background: "#ffffff", border: "2px solid #38bdf8", borderRadius: 14, padding: 26, display: "flex", flexDirection: "column", color: "#0f172a", boxShadow: "0 16px 40px rgba(0,0,0,0.6)" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16, borderBottom: "1px solid rgba(96, 165, 250, 0.25)", paddingBottom: 10 }}>
-              <div style={{ fontSize: 19, fontWeight: 700, fontFamily: "Space Grotesk", color: "#38bdf8" }}>
+              <div style={{ fontSize: 19, fontWeight: 700, fontFamily: "Space Grotesk", color: "#0369a1" }}>
                 {activeLegalModal === "privacy" && "Privacy Policy (ISO 27001)"}
                 {activeLegalModal === "terms" && "Terms and Conditions of Service"}
                 {activeLegalModal === "usage" && "Platform Usage Rights & SLA"}
                 {activeLegalModal === "refund" && "Subscription & Refund Policy"}
               </div>
-              <button onClick={() => setActiveLegalModal(null)} style={{ background: "none", border: "none", color: "#ffffff", cursor: "pointer" }}><X size={20} /></button>
+              <button onClick={() => setActiveLegalModal(null)} style={{ background: "none", border: "none", color: "#0f172a", cursor: "pointer" }}><X size={20} /></button>
             </div>
 
-            <div style={{ flex: 1, overflowY: "auto", fontSize: 13, lineHeight: 1.65, whiteSpace: "pre-line", color: "#bae6fd", paddingRight: 6 }}>
+            <div style={{ flex: 1, overflowY: "auto", fontSize: 13, lineHeight: 1.65, whiteSpace: "pre-line", color: "#334155", paddingRight: 6 }}>
               {activeLegalModal === "privacy" && (legal.privacyPolicy || "Privacy Policy details active.")}
               {activeLegalModal === "terms" && (legal.termsConditions || "Terms and conditions active.")}
               {activeLegalModal === "usage" && (legal.platformUsageRights || "Platform usage rights active.")}

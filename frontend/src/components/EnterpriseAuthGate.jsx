@@ -93,14 +93,14 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
         style={{
           width: 480,
           maxWidth: "100%",
-          background: "linear-gradient(145deg, #08162d 0%, #0b1d3e 50%, #0e244d 100%)",
-          border: "1px solid rgba(56, 189, 248, 0.35)",
+          background: "linear-gradient(145deg, #f0f9ff 0%, #ffffff 50%, #0e244d 100%)",
+          border: "1px solid #7dd3fc",
           borderRadius: 16,
           padding: 32,
           boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.75), 0 0 35px rgba(56, 189, 248, 0.15)",
           position: "relative",
           fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
-          color: "#ffffff",
+          color: "#0f172a",
         }}
       >
         {onClose && (
@@ -111,15 +111,15 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
               position: "absolute",
               top: 18,
               right: 18,
-              background: "rgba(255, 255, 255, 0.06)",
-              border: "1px solid rgba(255, 255, 255, 0.15)",
+              background: "#bae6fd",
+              border: "1px solid #bae6fd",
               borderRadius: 8,
               width: 32,
               height: 32,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "#bae6fd",
+              color: "#334155",
               cursor: "pointer",
               transition: "all 0.2s",
             }}
@@ -128,7 +128,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
               e.currentTarget.style.color = "#ffffff";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = "rgba(255, 255, 255, 0.06)";
+              e.currentTarget.style.background = "#bae6fd";
               e.currentTarget.style.color = "#bae6fd";
             }}
           >
@@ -144,11 +144,11 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
               height: 38,
               borderRadius: 10,
               background: "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)",
-              color: "#ffffff",
+              color: "#0f172a",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              boxShadow: "0 4px 15px rgba(56, 189, 248, 0.35)",
+              boxShadow: "0 4px 15px #7dd3fc",
             }}
           >
             <ShieldCheck size={20} />
@@ -156,11 +156,11 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
           <div>
             <div style={{ fontSize: 18, fontWeight: 800, fontFamily: "Space Grotesk", letterSpacing: -0.3, display: "flex", alignItems: "center", gap: 8 }}>
               AuditAI Qalyzer
-              <span style={{ fontSize: 10.5, color: "#38bdf8", border: "1px solid rgba(56, 189, 248, 0.35)", padding: "2px 6px", borderRadius: 4, textTransform: "uppercase", fontWeight: 700 }}>
+              <span style={{ fontSize: 10.5, color: "#0369a1", border: "1px solid #7dd3fc", padding: "2px 6px", borderRadius: 4, textTransform: "uppercase", fontWeight: 700 }}>
                 Enterprise
               </span>
             </div>
-            <div style={{ fontSize: 11.5, color: "#bae6fd", marginTop: 2 }}>
+            <div style={{ fontSize: 11.5, color: "#334155", marginTop: 2 }}>
               Secure SSO & Role-Based Access Governance
             </div>
           </div>
@@ -226,7 +226,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
 
         {/* Mode Switcher */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-          <div style={{ fontSize: 13.5, fontWeight: 700, color: "#ffffff" }}>
+          <div style={{ fontSize: 13.5, fontWeight: 700, color: "#0f172a" }}>
             {mode === "login" ? `${role === "admin" ? "Super Administrator" : "Partner / Client"} Portal` : "Register Partner Account"}
           </div>
           <button
@@ -239,7 +239,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
             style={{
               background: "transparent",
               border: "none",
-              color: "#38bdf8",
+              color: "#0369a1",
               fontSize: 12,
               fontWeight: 600,
               cursor: "pointer",
@@ -267,7 +267,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
               lineHeight: 1.4,
             }}
           >
-            <AlertCircle size={16} style={{ flexShrink: 0, marginTop: 1, color: "#f87171" }} />
+            <AlertCircle size={16} style={{ flexShrink: 0, marginTop: 1, color: "#dc2626" }} />
             <div>{error}</div>
           </div>
         )}
@@ -287,7 +287,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
               fontSize: 12.5,
             }}
           >
-            <CheckCircle2 size={16} style={{ color: "#34d399", flexShrink: 0 }} />
+            <CheckCircle2 size={16} style={{ color: "#16a34a", flexShrink: 0 }} />
             <div>{successMsg}</div>
           </div>
         )}
@@ -296,9 +296,9 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
           {mode === "register" && (
             <>
               <div>
-                <label style={{ display: "block", fontSize: 11.5, color: "#bae6fd", marginBottom: 5, fontWeight: 600 }}>Full Name</label>
+                <label style={{ display: "block", fontSize: 11.5, color: "#334155", marginBottom: 5, fontWeight: 600 }}>Full Name</label>
                 <div style={{ position: "relative" }}>
-                  <User size={15} style={{ position: "absolute", left: 12, top: 11, color: "#7dd3fc" }} />
+                  <User size={15} style={{ position: "absolute", left: 12, top: 11, color: "#0369a1" }} />
                   <input
                     type="text"
                     required
@@ -311,7 +311,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
                       border: "1px solid rgba(96, 165, 250, 0.3)",
                       borderRadius: 8,
                       padding: "10px 14px 10px 36px",
-                      color: "#ffffff",
+                      color: "#0f172a",
                       fontSize: 13,
                       boxSizing: "border-box",
                       outline: "none",
@@ -321,9 +321,9 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
               </div>
 
               <div>
-                <label style={{ display: "block", fontSize: 11.5, color: "#bae6fd", marginBottom: 5, fontWeight: 600 }}>Company / Enterprise Name</label>
+                <label style={{ display: "block", fontSize: 11.5, color: "#334155", marginBottom: 5, fontWeight: 600 }}>Company / Enterprise Name</label>
                 <div style={{ position: "relative" }}>
-                  <Building size={15} style={{ position: "absolute", left: 12, top: 11, color: "#7dd3fc" }} />
+                  <Building size={15} style={{ position: "absolute", left: 12, top: 11, color: "#0369a1" }} />
                   <input
                     type="text"
                     value={company}
@@ -335,7 +335,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
                       border: "1px solid rgba(96, 165, 250, 0.3)",
                       borderRadius: 8,
                       padding: "10px 14px 10px 36px",
-                      color: "#ffffff",
+                      color: "#0f172a",
                       fontSize: 13,
                       boxSizing: "border-box",
                       outline: "none",
@@ -345,9 +345,9 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
               </div>
 
               <div>
-                <label style={{ display: "block", fontSize: 11.5, color: "#bae6fd", marginBottom: 5, fontWeight: 600 }}>Phone Number</label>
+                <label style={{ display: "block", fontSize: 11.5, color: "#334155", marginBottom: 5, fontWeight: 600 }}>Phone Number</label>
                 <div style={{ position: "relative" }}>
-                  <Phone size={15} style={{ position: "absolute", left: 12, top: 11, color: "#7dd3fc" }} />
+                  <Phone size={15} style={{ position: "absolute", left: 12, top: 11, color: "#0369a1" }} />
                   <input
                     type="text"
                     value={phone}
@@ -359,7 +359,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
                       border: "1px solid rgba(96, 165, 250, 0.3)",
                       borderRadius: 8,
                       padding: "10px 14px 10px 36px",
-                      color: "#ffffff",
+                      color: "#0f172a",
                       fontSize: 13,
                       boxSizing: "border-box",
                       outline: "none",
@@ -371,9 +371,9 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
           )}
 
           <div>
-            <label style={{ display: "block", fontSize: 11.5, color: "#bae6fd", marginBottom: 5, fontWeight: 600 }}>Authorized Email</label>
+            <label style={{ display: "block", fontSize: 11.5, color: "#334155", marginBottom: 5, fontWeight: 600 }}>Authorized Email</label>
             <div style={{ position: "relative" }}>
-              <Mail size={15} style={{ position: "absolute", left: 12, top: 11, color: "#7dd3fc" }} />
+              <Mail size={15} style={{ position: "absolute", left: 12, top: 11, color: "#0369a1" }} />
               <input
                 type="email"
                 required
@@ -386,7 +386,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
                   border: "1px solid rgba(96, 165, 250, 0.3)",
                   borderRadius: 8,
                   padding: "10px 14px 10px 36px",
-                  color: "#ffffff",
+                  color: "#0f172a",
                   fontSize: 13,
                   boxSizing: "border-box",
                   outline: "none",
@@ -396,9 +396,9 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
           </div>
 
           <div>
-            <label style={{ display: "block", fontSize: 11.5, color: "#bae6fd", marginBottom: 5, fontWeight: 600 }}>Password</label>
+            <label style={{ display: "block", fontSize: 11.5, color: "#334155", marginBottom: 5, fontWeight: 600 }}>Password</label>
             <div style={{ position: "relative" }}>
-              <Lock size={15} style={{ position: "absolute", left: 12, top: 11, color: "#7dd3fc" }} />
+              <Lock size={15} style={{ position: "absolute", left: 12, top: 11, color: "#0369a1" }} />
               <input
                 type={showPassword ? "text" : "password"}
                 required
@@ -411,7 +411,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
                   border: "1px solid rgba(96, 165, 250, 0.3)",
                   borderRadius: 8,
                   padding: "10px 40px 10px 36px",
-                  color: "#ffffff",
+                  color: "#0f172a",
                   fontSize: 13,
                   boxSizing: "border-box",
                   outline: "none",
@@ -426,7 +426,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
                   top: 10,
                   background: "transparent",
                   border: "none",
-                  color: "#7dd3fc",
+                  color: "#0369a1",
                   cursor: "pointer",
                 }}
               >
@@ -441,7 +441,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
             style={{
               marginTop: 8,
               background: "linear-gradient(135deg, #0284c7 0%, #2563eb 100%)",
-              color: "#ffffff",
+              color: "#0f172a",
               border: "none",
               borderRadius: 8,
               padding: "12px 18px",
@@ -464,7 +464,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
 
         {/* Demo Fast Login Pills */}
         <div style={{ marginTop: 20, paddingTop: 14, borderTop: "1px solid rgba(96, 165, 250, 0.2)" }}>
-          <div style={{ fontSize: 10.5, color: "#7dd3fc", marginBottom: 8, textTransform: "uppercase", letterSpacing: 0.6, fontWeight: 700 }}>
+          <div style={{ fontSize: 10.5, color: "#0369a1", marginBottom: 8, textTransform: "uppercase", letterSpacing: 0.6, fontWeight: 700 }}>
             Platform Employee Panels (1-Click Demo):
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6, marginBottom: 12 }}>
@@ -496,8 +496,8 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
                 }}
                 style={{
                   display: "inline-flex", alignItems: "center", gap: 6,
-                  background: "rgba(14, 34, 72, 0.85)", border: "1px solid rgba(56, 189, 248, 0.38)",
-                  borderRadius: 8, padding: "7px 10px", color: "#ffffff", fontSize: 11.5, fontWeight: 600, cursor: "pointer",
+                  background: "rgba(14, 34, 72, 0.85)", border: "1px solid #7dd3fc",
+                  borderRadius: 8, padding: "7px 10px", color: "#0f172a", fontSize: 11.5, fontWeight: 600, cursor: "pointer",
                 }}
               >
                 <ShieldCheck size={13} color="#38bdf8" /> {p.label}
@@ -505,7 +505,7 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
             ))}
           </div>
 
-          <div style={{ fontSize: 10.5, color: "#7dd3fc", marginBottom: 8, textTransform: "uppercase", letterSpacing: 0.6, fontWeight: 700 }}>
+          <div style={{ fontSize: 10.5, color: "#0369a1", marginBottom: 8, textTransform: "uppercase", letterSpacing: 0.6, fontWeight: 700 }}>
             Client Organization Panels (1-Click Demo):
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6 }}>
@@ -537,8 +537,8 @@ export default function EnterpriseAuthGate({ isOpen, onClose, onLoginSuccess, in
                 }}
                 style={{
                   display: "inline-flex", alignItems: "center", gap: 6,
-                  background: "rgba(14, 34, 72, 0.85)", border: "1px solid rgba(56, 189, 248, 0.38)",
-                  borderRadius: 8, padding: "7px 10px", color: "#ffffff", fontSize: 11.5, fontWeight: 600, cursor: "pointer",
+                  background: "rgba(14, 34, 72, 0.85)", border: "1px solid #7dd3fc",
+                  borderRadius: 8, padding: "7px 10px", color: "#0f172a", fontSize: 11.5, fontWeight: 600, cursor: "pointer",
                 }}
               >
                 <UserCheck size={13} color="#38bdf8" /> {p.label}
