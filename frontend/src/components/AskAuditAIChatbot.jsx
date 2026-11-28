@@ -4,6 +4,7 @@ import { aiApi, emailAdminApi, agentsApi } from "../lib/api";
 
 export default function AskAuditAIChatbot({ currentUser, allowedTabs = [], onNavigate, onActionExecuted }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [avatarError, setAvatarError] = useState(false);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState([
@@ -95,52 +96,88 @@ export default function AskAuditAIChatbot({ currentUser, allowedTabs = [], onNav
           50% { transform: translateY(-6px); }
         }
         @keyframes auditAiPulse {
-          0% { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.55); }
-          70% { box-shadow: 0 0 0 14px rgba(2, 132, 199, 0); }
+          0% { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.45); }
+          70% { box-shadow: 0 0 0 12px rgba(2, 132, 199, 0); }
           100% { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0); }
+        }
+        @keyframes feddyFloat {
+          0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+          50% { transform: translateY(-7px) rotate(-2deg) scale(1.04); }
         }
       `}</style>
 
-      {/* Floating Animated Character Trigger */}
+      {/* Floating Animated & Transparent Character Trigger */}
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
           title="Ask AuditAI Assistant"
+          aria-label="Open Ask AuditAI Assistant"
           style={{
             position: "fixed",
-            bottom: 24,
+            bottom: 22,
             right: 24,
             zIndex: 9990,
             display: "flex",
             alignItems: "center",
-            gap: 10,
-            background: "linear-gradient(135deg, #0284c7 0%, #2563eb 100%)",
-            color: "#ffffff",
-            border: "2px solid #bae6fd",
-            borderRadius: 9999,
-            padding: "10px 18px 10px 12px",
+            gap: 8,
+            background: "transparent",
+            border: "none",
+            padding: 0,
             cursor: "pointer",
-            animation: "auditAiFloat 3.4s ease-in-out infinite, auditAiPulse 2.6s infinite",
-            boxShadow: "0 10px 30px rgba(2, 132, 199, 0.45)",
           }}
         >
-          <div style={{
-            width: 34,
-            height: 34,
-            borderRadius: "50%",
-            background: "#ffffff",
-            color: "#0284c7",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            position: "relative",
-          }}>
-            <Bot size={20} />
-            <span style={{ position: "absolute", top: -2, right: -2, width: 10, height: 10, borderRadius: "50%", background: "#16a34a", border: "2px solid #ffffff" }} />
+          <div
+            style={{
+              background: "#FFFFFF",
+              color: "#0F172A",
+              border: "1px solid #BAE6FD",
+              borderRadius: 9999,
+              padding: "7px 14px",
+              boxShadow: "0 8px 24px rgba(2, 132, 199, 0.16)",
+              textAlign: "left",
+              animation: "auditAiPulse 2.8s infinite",
+            }}
+          >
+            <div style={{ fontSize: 12.5, fontWeight: 800, fontFamily: "'Plus Jakarta Sans', sans-serif", color: "#0F172A", lineHeight: 1.15 }}>
+              Ask AuditAI
+            </div>
+            <div style={{ fontSize: 10, color: "#0284C7", fontWeight: 700 }}>
+              AI Copilot & Navigator
+            </div>
           </div>
-          <div style={{ textAlign: "left" }}>
-            <div style={{ fontSize: 13, fontWeight: 800, fontFamily: "Space Grotesk", lineHeight: 1.1 }}>Ask AuditAI</div>
-            <div style={{ fontSize: 10, color: "#0F172A", fontWeight: 600 }}>AI Copilot & Navigator</div>
+
+          <div
+            style={{
+              width: 66,
+              height: 66,
+              background: "transparent",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              position: "relative",
+              animation: "feddyFloat 3.2s ease-in-out infinite",
+              filter: "drop-shadow(0 8px 16px rgba(2, 132, 199, 0.30))",
+            }}
+          >
+            {!avatarError ? (
+              <img
+                src="https://jamieswaranilkumarportfolio.live/images/feddy-avatar.png"
+                alt="Ask AuditAI Avatar"
+                onError={() => setAvatarError(true)}
+                style={{
+                  width: 64,
+                  height: 64,
+                  objectFit: "contain",
+                  background: "transparent",
+                  pointerEvents: "none",
+                }}
+              />
+            ) : (
+              <div style={{ width: 48, height: 48, borderRadius: "50%", background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <Bot size={26} />
+              </div>
+            )}
+            <span style={{ position: "absolute", bottom: 4, right: 4, width: 11, height: 11, borderRadius: "50%", background: "#059669", border: "2px solid #FFFFFF" }} />
           </div>
         </button>
       )}
@@ -157,42 +194,51 @@ export default function AskAuditAIChatbot({ currentUser, allowedTabs = [], onNav
             height: 540,
             maxHeight: "calc(100vh - 48px)",
             zIndex: 9995,
-            background: "#ffffff",
-            border: "1.5px solid #bae6fd",
+            background: "#FFFFFF",
+            border: "1.5px solid #BAE6FD",
             borderRadius: 16,
-            boxShadow: "0 20px 50px rgba(2, 132, 199, 0.22)",
+            boxShadow: "0 20px 50px rgba(15, 23, 42, 0.16)",
             display: "flex",
             flexDirection: "column",
             overflow: "hidden",
-            fontFamily: "Inter, sans-serif",
-            color: "#0f172a",
+            fontFamily: "'Plus Jakarta Sans', sans-serif",
+            color: "#0F172A",
           }}
         >
           {/* Header */}
           <div style={{
-            background: "linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)",
-            padding: "14px 16px",
-            color: "#ffffff",
+            background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
+            padding: "12px 16px",
+            color: "#FFFFFF",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
           }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <div style={{ width: 34, height: 34, borderRadius: "50%", background: "#ffffff", color: "#0284c7", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <Bot size={20} />
+              <div style={{ width: 40, height: 40, background: "transparent", display: "flex", alignItems: "center", justifyContent: "center", animation: "feddyFloat 3.2s ease-in-out infinite" }}>
+                {!avatarError ? (
+                  <img
+                    src="https://jamieswaranilkumarportfolio.live/images/feddy-avatar.png"
+                    alt="Ask AuditAI Avatar"
+                    onError={() => setAvatarError(true)}
+                    style={{ width: 38, height: 38, objectFit: "contain", background: "transparent" }}
+                  />
+                ) : (
+                  <Bot size={22} color="#FFFFFF" />
+                )}
               </div>
               <div>
-                <div style={{ fontSize: 14.5, fontWeight: 800, fontFamily: "Space Grotesk", display: "flex", alignItems: "center", gap: 6 }}>
+                <div style={{ fontSize: 14.5, fontWeight: 800, fontFamily: "'Plus Jakarta Sans', sans-serif", display: "flex", alignItems: "center", gap: 6, color: "#FFFFFF" }}>
                   Ask AuditAI <Sparkles size={13} />
                 </div>
-                <div style={{ fontSize: 11, color: "#0F172A" }}>
+                <div style={{ fontSize: 11, color: "#E0F2FE" }}>
                   Role: {(currentUser?.role || "super_admin").replace(/_/g, " ").toUpperCase()}
                 </div>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              style={{ background: "rgba(255,255,255,0.22)", border: "none", borderRadius: 8, width: 28, height: 28, color: "#0F172A", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}
+              style={{ background: "rgba(255,255,255,0.22)", border: "none", borderRadius: 8, width: 28, height: 28, color: "#FFFFFF", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}
             >
               <X size={16} />
             </button>
