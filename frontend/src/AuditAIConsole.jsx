@@ -44,32 +44,33 @@ import AdminUserActivityModule from "./components/AdminUserActivityModule";
 import AskAuditAIChatbot from "./components/AskAuditAIChatbot";
 
 /* ---------------------------------------------------------------- */
-/*  Design tokens — Enterprise Sky-Blue (#F0F9FF) & Slate UI        */
+/*  Design tokens — Crisp SaaS & Fintech (Light Blue + Navy + White)*/
 /* ---------------------------------------------------------------- */
 const C = {
-  bg: "#F0F9FF",          // Primary Canvas (sky-50)
-  panel: "#FFFFFF",       // Elevated Card / Surface (Pure White)
-  panel2: "#E0F2FE",      // Subtle Tint / Secondary Container (sky-100)
-  panelHover: "#BAE6FD",  // Sky-200 hover state
-  border: "#BAE6FD",      // Card Borders & Dividers (sky-200)
-  borderSoft: "#CBD5E1",  // Hairline slate divider (slate-300)
-  text: "#0F172A",        // Primary Headlines & Ink (slate-900)
-  muted: "#334155",       // Body Copy & Subtitles (slate-700)
-  faint: "#64748B",       // Muted Labels & Captions (slate-500)
+  bg: "#F8FAFC",          // Crisp SaaS Canvas (slate-50)
+  panel: "#FFFFFF",       // Pure White Cards, Sidebar & Tables
+  panel2: "#E0F2FE",      // Light Blue Tint / Secondary Surface (sky-100)
+  panelHover: "#DBEAFE",  // Light Blue Hover (blue-100)
+  border: "#DBEAFE",      // Clean Blue-100 Hairline Border
+  borderSoft: "#E2E8F0",  // Soft Slate-200 Divider
+  text: "#0F172A",        // Dark Text / Primary Ink (slate-900)
+  muted: "#334155",       // Secondary Slate Text (slate-700)
+  faint: "#64748B",       // Muted Labels (slate-500)
   white: "#FFFFFF",       // Pure white
-  black: "#0F172A",       // Deep Slate Navy
-  teal: "#0284C7",        // Primary Brand / CTA Blue (sky-600)
-  blue: "#2563EB",        // Secondary Interactive Accent (blue-600)
+  black: "#0A2540",       // Deep Fintech Navy
+  navy: "#0A2540",        // Deep Fintech Navy Header
+  teal: "#0284C7",        // Primary Brand / CTA (sky-600)
+  blue: "#1D4ED8",        // Primary Brand Deep (blue-700)
   ctaGradient: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
   tealSoft: "#E0F2FE",    // sky-100 pill background
-  red: "#DC2626",         // Critical / Auto-Fail (red-600)
-  redSoft: "#FEF2F2",     // red-50
-  amber: "#D97706",       // Warning / At-Risk Leads (amber-600)
-  amberSoft: "#FFFBEB",   // amber-50
-  grey: "#64748B",        // Neutral (slate-500)
-  greySoft: "#F1F5F9",    // slate-100
-  green: "#059669",       // Success / Verified / SLA Active (emerald-600)
-  greenSoft: "#ECFDF5",   // emerald-50
+  red: "#DC2626",         // Critical / Risk
+  redSoft: "#FEF2F2",
+  amber: "#D97706",       // Warning
+  amberSoft: "#FFFBEB",
+  grey: "#64748B",        // Neutral
+  greySoft: "#F1F5F9",
+  green: "#059669",       // Verified / Good
+  greenSoft: "#ECFDF5",
 };
 
 const FONT_STYLE = `
@@ -81,7 +82,7 @@ const FONT_STYLE = `
 html, body, #root {
   margin: 0;
   padding: 0;
-  background-color: #F0F9FF;
+  background-color: #F8FAFC;
   color: #0F172A;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -91,10 +92,10 @@ html, body, #root {
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #F0F9FF;
+  background: #F8FAFC;
 }
 ::-webkit-scrollbar-thumb {
-  background: #BAE6FD;
+  background: #CBD5E1;
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -109,12 +110,12 @@ html, body, #root {
   animation: spin 1s linear infinite;
 }
 
-/* Primary Canvas (Light Sky-Blue #F0F9FF) */
+/* Crisp SaaS & Fintech Canvas */
 .auditai-grid-bg {
-  background-color: #F0F9FF;
+  background-color: #F8FAFC;
 }
 
-/* Unified Enterprise Table Styling */
+/* Unified Fintech Table Styling */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -123,7 +124,7 @@ table {
 }
 thead th {
   background: #E0F2FE;
-  color: #0F172A;
+  color: #0A2540;
   border-bottom: 1.5px solid #BAE6FD;
   font-weight: 700;
 }
@@ -134,11 +135,11 @@ tbody tr:nth-child(odd) {
   background: #F8FAFC;
 }
 tbody td {
-  color: #334155;
-  border-bottom: 1px solid #CBD5E1;
+  color: #0F172A;
+  border-bottom: 1px solid #E2E8F0;
 }
 tbody tr:hover {
-  background: #F0F9FF;
+  background: #E0F2FE;
 }
 
 /* Modern Stylish Buttons */
