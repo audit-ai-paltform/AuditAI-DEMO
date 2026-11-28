@@ -78,6 +78,14 @@ export interface HomePageCMS {
     autoReplyMessage: string;
     requirePhone: boolean;
   };
+  clientsWithUs: Array<{
+    id: string;
+    name: string;
+    industry: string;
+    seats: string;
+    badge: string;
+    active: boolean;
+  }>;
   updated_at: string;
 }
 
@@ -423,6 +431,12 @@ Due to server compute and third-party AI LLM token expenses incurred upon ingest
     autoReplyMessage: 'We have received your enquiry. An Enterprise Solutions Architect will connect with you within 2 business hours.',
     requirePhone: true,
   },
+  clientsWithUs: [
+    { id: 'cwu_1', name: 'Acme Telephony Solutions', industry: 'Fintech & Collections', seats: '250+ Agents', badge: 'ISO Verified', active: true },
+    { id: 'cwu_2', name: 'Apex Global HealthCare', industry: 'Healthcare BPO', seats: '180+ Agents', badge: 'HIPAA Ready', active: true },
+    { id: 'cwu_3', name: 'NovaPay Financial Services', industry: 'Digital Banking', seats: '400+ Agents', badge: 'Enterprise Ultra', active: true },
+    { id: 'cwu_4', name: 'Vanguard Insurance Corp', industry: 'Insurance Advisory', seats: '120+ Agents', badge: 'Growth Pro', active: true },
+  ],
   updated_at: new Date().toISOString(),
 };
 
@@ -823,6 +837,75 @@ export class AdminPortalService {
     return {
       success: true,
       message: `Automated payment reminder successfully sent to ${user.name} (${user.email}) for ${user.subscription_tier} renewal of ₹${user.amount_due || 24999}.`,
+      user,
+    };
+  }
+
+  private static roleFeaturesStore: Record<string, string[]> = {
+    super_admin: [
+      'dashboard', 'alerts', 'sales_forecasting', 'data_fishing', 'knowledge_hub',
+      'sop_parameters', 'scores', 'chattest', 'agents', 'qctools', 'csvupload',
+      'reports', 'audittrail', 'crm_setup', 'settings', 'cloudflare_db', 'payu_billing',
+      'admin_home_cms', 'admin_access', 'admin_search', 'admin_enquiries',
+      'admin_subscriptions', 'admin_email', 'admin_team', 'admin_activity', 'admin_users',
+    ],
+    admin: [
+      'dashboard', 'alerts', 'sales_forecasting', 'data_fishing', 'knowledge_hub',
+      'sop_parameters', 'scores', 'chattest', 'agents', 'qctools', 'csvupload',
+      'reports', 'audittrail', 'crm_setup', 'settings', 'admin_home_cms',
+      'admin_access', 'admin_search', 'admin_enquiries', 'admin_email', 'admin_team',
+    ],
+    manager: [
+      'dashboard', 'alerts', 'data_fishing', 'knowledge_hub',
+      'sop_parameters', 'scores', 'chattest', 'agents', 'qctools', 'csvupload',
+      'reports', 'audittrail',
+    ],
+    sales: [
+      'dashboard', 'sales_forecasting', 'data_fishing', 'scores',
+      'reports', 'admin_enquiries', 'admin_search',
+    ],
+    client_super_admin: [
+      'dashboard', 'alerts', 'sales_forecasting', 'data_fishing', 'knowledge_hub',
+      'sop_parameters', 'scores', 'chattest', 'agents', 'qctools', 'csvupload',
+      'reports', 'audittrail', 'crm_setup', 'settings', 'payu_billing', 'admin_access',
+    ],
+    client_admin: [
+      'dashboard', 'alerts', 'sales_forecasting', 'data_fishing', 'knowledge_hub',
+      'sop_parameters', 'scores', 'chattest', 'agents', 'qctools', 'csvupload',
+      'reports', 'audittrail', 'crm_setup', 'settings', 'admin_access',
+    ],
+    client_manager: [
+      'dashboard', 'alerts', 'sop_parameters', 'scores', 'chattest', 'agents', 'qctools', 'reports',
+    ],
+    client: [
+      'dashboard', 'scores', 'chattest', 'reports',
+    ],
+  };
+
+  static getRoleFeatures(): Record<string, string[]> {
+    return JSON.parse(JSON.stringify(this.roleFeaturesStore));
+  }
+
+  static updateRoleFeatures(role: string, features: string[]): Record<string, string[]> {
+    if (!role || !Array.isArray(features)) {
+      throw new Error('Valid role and features array are required.');
+    }
+    this.roleFeaturesStore[role] = [...new Set(features)];
+    return this.getRoleFeatures();
+  }
+
+  static allocateClientPanel(userId: string, clientRole: string = 'client_super_admin'): {
+    success: boolean;
+    message: string;
+    user?: PlatformUserAccess;
+  } {
+    const user = platformUsersStore.find((u) => u.id === userId);
+    if (!user) return { success: false, message: 'User not found.' };
+    user.status = 'ACTIVE';
+    user.role = clientRole;
+    return {
+      success: true,
+      message: `Allocated dedicated Client Admin Panel (${clientRole}) to ${user.name} (${user.company_name}).`,
       user,
     };
   }

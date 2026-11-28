@@ -51,7 +51,9 @@ const envSchema = z.object({
   PAYU_SUCCESS_URL: z.string().optional(),
   PAYU_FAILURE_URL: z.string().optional(),
 
-  // Dual AI / LLM Providers (Primary Gemini, Secondary Fallback OpenRouter)
+  // Dual AI / LLM Providers (Primary OpenAI, Safe Fallback Google Gemini, Tertiary OpenRouter)
+  OPENAI_API_KEY: z.string().default(process.env.OPENAI_API_KEY || ''),
+  OPENAI_MODEL: z.string().default(process.env.OPENAI_MODEL || 'gpt-4o-mini'),
   OPENROUTER_API_KEY: z.string().default(process.env.OPENROUTER_API_KEY || ''),
   OPENROUTER_MODEL: z.string().default(process.env.OPENROUTER_MODEL || 'anthropic/claude-3.5-sonnet'),
 

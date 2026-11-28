@@ -197,6 +197,7 @@ export const integrationsApi = {
 
 export const reportsApi = {
   list: () => get("/reports"),
+  periodSummary: (period = "weekly") => get("/reports/period-summary", { period }),
   generate: (businessDate, timezone) => post("/reports", { business_date: businessDate, timezone }),
   download: (id) => get(`/reports/${id}/download`),
   regenerate: (id) => post(`/reports/${id}/regenerate`),
@@ -207,6 +208,8 @@ export const aiApi = {
   /** RCA generation — routed through the backend, never a browser→AI call. */
   generateRca: ({ callId, defect, rootCauseHint, channel }) =>
     post("/ai/rca", { call_id: callId, defect, root_cause_hint: rootCauseHint, channel }),
+  askAuditAI: (body) => post("/ai/ask-auditai", body),
+  getProviders: () => get("/ai/providers"),
 };
 
 /* ------------------------------ Calls ------------------------------- */
@@ -231,6 +234,9 @@ export const agentsApi = {
   create: (body) => post("/agents", { client_id: TENANT_ID, ...body }),
   update: (id, patch) => patch(`/agents/${id}`, patch),
   remove: (id) => del(`/agents/${id}`),
+  getInactivityConfig: () => get("/agents/inactivity-config"),
+  updateInactivityConfig: (body) => put("/agents/inactivity-config", body),
+  runInactivitySweep: (body = {}) => post("/agents/inactivity-sweep", body),
 };
 
 export const parametersApi = {
@@ -288,6 +294,10 @@ export const adminPortalApi = {
   updateUserAccess: (id, patch) => patch(`/admin-portal/access-control/${id}`, patch),
   universalSearch: (q = "") => get("/admin-portal/universal-search", { q }),
   sendPaymentReminder: (userId) => post("/admin-portal/send-payment-reminder", { userId }),
+  getRoleFeatures: () => get("/admin-portal/role-features"),
+  updateRoleFeatures: (role, features) => put("/admin-portal/role-features", { role, features }),
+  allocateClientPanel: (userId, clientRole = "client_super_admin") =>
+    post("/admin-portal/allocate-client-panel", { userId, clientRole }),
 };
 
 /* ----------------- Dual Billing & Gateways (PayU + Razorpay) ----------------- */

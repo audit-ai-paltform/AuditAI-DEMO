@@ -285,4 +285,31 @@ export class AdminPortalController {
       res.status(500).json({ success: false, message: err.message });
     }
   }
+
+  /**
+   * Role-Based Dashboard Feature Visibility Matrix
+   */
+  static async getRoleFeatures(_req: Request, res: Response): Promise<void> {
+    res.status(200).json({ success: true, data: AdminPortalService.getRoleFeatures() });
+  }
+
+  static async updateRoleFeatures(req: Request, res: Response): Promise<void> {
+    try {
+      const { role, features } = req.body;
+      const updated = AdminPortalService.updateRoleFeatures(role, features);
+      res.status(200).json({ success: true, message: `Updated dashboard features for role ${role}.`, data: updated });
+    } catch (err: any) {
+      res.status(400).json({ success: false, message: err.message });
+    }
+  }
+
+  static async allocateClientPanel(req: Request, res: Response): Promise<void> {
+    try {
+      const { userId, clientRole } = req.body;
+      const result = AdminPortalService.allocateClientPanel(userId, clientRole);
+      res.status(result.success ? 200 : 404).json(result);
+    } catch (err: any) {
+      res.status(400).json({ success: false, message: err.message });
+    }
+  }
 }

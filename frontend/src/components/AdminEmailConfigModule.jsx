@@ -66,6 +66,15 @@ export default function AdminEmailConfigModule() {
   // Editable Automation Templates & Live Preview State
   const [templates, setTemplates] = useState({});
   const [selectedTemplateKey, setSelectedTemplateKey] = useState("enquiry_submitted");
+  const [editorMode, setEditorMode] = useState("simple"); // 'simple' | 'html'
+  const [simpleBlocks, setSimpleBlocks] = useState({
+    greeting: "Hello {{name}},",
+    intro: "Thank you for connecting with AuditAI Qalyzer Enterprise.",
+    highlight: "Plan: {{plan}} · Company: {{company}}",
+    ctaLabel: "Open AuditAI Portal",
+    ctaLink: "http://localhost:3001/",
+    closing: "Best regards, AuditAI Governance Team",
+  });
   const [previewData, setPreviewData] = useState({ subject: "", html: "", from_email: "" });
   const [testRecipient, setTestRecipient] = useState("admin@auditai.io");
   const [templateScheduleAt, setTemplateScheduleAt] = useState("");
@@ -645,34 +654,86 @@ export default function AdminEmailConfigModule() {
                   </div>
                 </div>
 
-                {/* HTML Body + Variable Chips */}
+                {/* Plain-English Simple Editor vs Advanced HTML */}
                 <div>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4, flexWrap: "wrap", gap: 4 }}>
-                    <label style={{ fontSize: 11.5, color: "#7dd3fc", fontWeight: 600 }}>Email Body HTML</label>
-                    <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
-                      {(activeTemplate.variables || []).map((v) => (
-                        <button
-                          key={v}
-                          type="button"
-                          onClick={() =>
-                            setTemplates((prev) => ({
-                              ...prev,
-                              [selectedTemplateKey]: { ...prev[selectedTemplateKey], body: prev[selectedTemplateKey].body + ` {{${v}}}` },
-                            }))
-                          }
-                          style={{ fontSize: 10, background: "rgba(56, 189, 248, 0.12)", border: "1px solid rgba(56, 189, 248, 0.3)", color: "#38bdf8", borderRadius: 4, padding: "1px 5px", cursor: "pointer" }}
-                        >
-                          {`{{${v}}}`}
-                        </button>
-                      ))}
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6, flexWrap: "wrap", gap: 4 }}>
+                    <label style={{ fontSize: 11.5, color: "#7dd3fc", fontWeight: 600 }}>
+                      Email Content ({editorMode === "simple" ? "Simple Plain-English Mode" : "HTML Mode"})
+                    </label>
+                    <div style={{ display: "flex", gap: 6 }}>
+                      <button
+                        type="button"
+                        onClick={() => setEditorMode("simple")}
+                        style={{ fontSize: 10.5, padding: "2px 8px", borderRadius: 5, border: "1px solid #38bdf8", background: editorMode === "simple" ? "#38bdf8" : "transparent", color: editorMode === "simple" ? "#08162d" : "#38bdf8", fontWeight: 700, cursor: "pointer" }}
+                      >
+                        Simple Editor
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setEditorMode("html")}
+                        style={{ fontSize: 10.5, padding: "2px 8px", borderRadius: 5, border: "1px solid #38bdf8", background: editorMode === "html" ? "#38bdf8" : "transparent", color: editorMode === "html" ? "#08162d" : "#38bdf8", fontWeight: 700, cursor: "pointer" }}
+                      >
+                        Advanced HTML
+                      </button>
                     </div>
                   </div>
-                  <textarea
-                    rows={8}
-                    value={activeTemplate.body}
-                    onChange={(e) => setTemplates((prev) => ({ ...prev, [selectedTemplateKey]: { ...prev[selectedTemplateKey], body: e.target.value } }))}
-                    style={{ ...inputStyle, fontFamily: "JetBrains Mono, monospace", fontSize: 11.5 }}
-                  />
+
+                  {editorMode === "simple" ? (
+                    <div style={{ display: "flex", flexDirection: "column", gap: 8, background: "rgba(8, 22, 45, 0.55)", padding: 12, borderRadius: 8, border: "1px solid rgba(96, 165, 250, 0.25)" }}>
+                      {(() => {
+                        const applySimple = (next) => {
+                          setSimpleBlocks(next);
+                          const generatedHtml = `<p>${next.greeting}</p>
+<p>${next.intro}</p>
+${next.highlight ? `<div style="background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); padding: 14px; border-radius: 8px; margin: 14px 0;">${next.highlight}</div>` : ""}
+${next.ctaLabel ? `<p style="margin: 18px 0;"><a href="${next.ctaLink || "#"}" style="background: #0284c7; color: #ffffff; text-decoration: none; padding: 10px 22px; border-radius: 7px; font-weight: bold; display: inline-block;">${next.ctaLabel} →</a></p>` : ""}
+<p>${next.closing}</p>`;
+                          setTemplates((prev) => ({
+                            ...prev,
+                            [selectedTemplateKey]: { ...prev[selectedTemplateKey], body: generatedHtml },
+                          }));
+                        };
+                        return (
+                          <>
+                            <input type="text" placeholder="Greeting (e.g. Hello {{name}},)" value={simpleBlocks.greeting} onChange={(e) => applySimple({ ...simpleBlocks, greeting: e.target.value })} style={inputStyle} />
+                            <textarea rows={2} placeholder="Main Message..." value={simpleBlocks.intro} onChange={(e) => applySimple({ ...simpleBlocks, intro: e.target.value })} style={inputStyle} />
+                            <input type="text" placeholder="Highlight Box Info (optional)" value={simpleBlocks.highlight} onChange={(e) => applySimple({ ...simpleBlocks, highlight: e.target.value })} style={inputStyle} />
+                            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+                              <input type="text" placeholder="Button Label" value={simpleBlocks.ctaLabel} onChange={(e) => applySimple({ ...simpleBlocks, ctaLabel: e.target.value })} style={inputStyle} />
+                              <input type="text" placeholder="Button Link URL" value={simpleBlocks.ctaLink} onChange={(e) => applySimple({ ...simpleBlocks, ctaLink: e.target.value })} style={inputStyle} />
+                            </div>
+                            <input type="text" placeholder="Closing Note" value={simpleBlocks.closing} onChange={(e) => applySimple({ ...simpleBlocks, closing: e.target.value })} style={inputStyle} />
+                          </>
+                        );
+                      })()}
+                    </div>
+                  ) : (
+                    <>
+                      <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 4 }}>
+                        {(activeTemplate.variables || []).map((v) => (
+                          <button
+                            key={v}
+                            type="button"
+                            onClick={() =>
+                              setTemplates((prev) => ({
+                                ...prev,
+                                [selectedTemplateKey]: { ...prev[selectedTemplateKey], body: prev[selectedTemplateKey].body + ` {{${v}}}` },
+                              }))
+                            }
+                            style={{ fontSize: 10, background: "rgba(56, 189, 248, 0.12)", border: "1px solid rgba(56, 189, 248, 0.3)", color: "#38bdf8", borderRadius: 4, padding: "1px 5px", cursor: "pointer" }}
+                          >
+                            {`{{${v}}}`}
+                          </button>
+                        ))}
+                      </div>
+                      <textarea
+                        rows={8}
+                        value={activeTemplate.body}
+                        onChange={(e) => setTemplates((prev) => ({ ...prev, [selectedTemplateKey]: { ...prev[selectedTemplateKey], body: e.target.value } }))}
+                        style={{ ...inputStyle, fontFamily: "JetBrains Mono, monospace", fontSize: 11.5 }}
+                      />
+                    </>
+                  )}
                 </div>
 
                 {/* Save & Test / Schedule */}

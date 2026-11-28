@@ -83,6 +83,7 @@ export default function HomePageCMSModule() {
     { id: "pricing", label: "Pricing & Plans", Icon: DollarSign },
     { id: "enquiry", label: "Enquiry Form Settings", Icon: Mail },
     { id: "team", label: "Leadership Team", Icon: Users },
+    { id: "clients_with_us", label: "Clients With Us", Icon: Award },
     { id: "faqs", label: "Executive FAQs", Icon: HelpCircle },
     { id: "contact", label: "Corporate Contact", Icon: Phone },
     { id: "legal", label: "ISO & Legal Policies", Icon: ShieldCheck },
@@ -871,6 +872,93 @@ export default function HomePageCMSModule() {
                 style={{ width: "100%", background: "rgba(8, 22, 45, 0.88)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 12px", color: "#ffffff", fontSize: 13 }}
               />
             </div>
+          </div>
+        </div>
+      )}
+
+      {activeSection === "clients_with_us" && (
+        <div style={{ background: "rgba(11, 29, 62, 0.85)", border: "1px solid rgba(96, 165, 250, 0.22)", borderRadius: 14, padding: 24 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+            <div>
+              <div style={{ fontSize: 16, fontWeight: 700, fontFamily: "Space Grotesk" }}>Clients With Us (Home Screen Showcase)</div>
+              <div style={{ fontSize: 12, color: "#bae6fd" }}>Manage enterprise client organizations showcased on the public Home Page.</div>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                const list = Array.isArray(cms.clientsWithUs) ? cms.clientsWithUs : [];
+                setCms({
+                  ...cms,
+                  clientsWithUs: [...list, { id: `cwu_${Date.now()}`, name: "New Enterprise Client", industry: "Fintech / BPO", seats: "100+ Agents", badge: "ISO Verified", active: true }],
+                });
+              }}
+              style={{ display: "flex", alignItems: "center", gap: 6, background: "#0284c7", color: "#ffffff", border: "none", borderRadius: 8, padding: "8px 14px", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
+            >
+              <Plus size={14} /> Add Client
+            </button>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 14 }}>
+            {(cms.clientsWithUs || []).map((cl, idx) => (
+              <div key={cl.id || idx} style={{ background: "rgba(8, 22, 45, 0.85)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 10, padding: 14, display: "flex", flexDirection: "column", gap: 8 }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <span style={{ fontSize: 11, color: "#38bdf8", fontWeight: 700 }}>Client #{idx + 1}</span>
+                  <button
+                    type="button"
+                    onClick={() => setCms({ ...cms, clientsWithUs: (cms.clientsWithUs || []).filter((_, i) => i !== idx) })}
+                    style={{ background: "transparent", border: "none", color: "#f87171", cursor: "pointer" }}
+                  >
+                    <Trash2 size={14} />
+                  </button>
+                </div>
+                <input
+                  type="text"
+                  placeholder="Client Organization Name"
+                  value={cl.name}
+                  onChange={e => {
+                    const next = [...(cms.clientsWithUs || [])];
+                    next[idx] = { ...next[idx], name: e.target.value };
+                    setCms({ ...cms, clientsWithUs: next });
+                  }}
+                  style={{ width: "100%", background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "7px 10px", color: "#ffffff", fontSize: 12.5, boxSizing: "border-box" }}
+                />
+                <input
+                  type="text"
+                  placeholder="Industry"
+                  value={cl.industry}
+                  onChange={e => {
+                    const next = [...(cms.clientsWithUs || [])];
+                    next[idx] = { ...next[idx], industry: e.target.value };
+                    setCms({ ...cms, clientsWithUs: next });
+                  }}
+                  style={{ width: "100%", background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "7px 10px", color: "#ffffff", fontSize: 12.5, boxSizing: "border-box" }}
+                />
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+                  <input
+                    type="text"
+                    placeholder="Seats (e.g. 250+ Agents)"
+                    value={cl.seats}
+                    onChange={e => {
+                      const next = [...(cms.clientsWithUs || [])];
+                      next[idx] = { ...next[idx], seats: e.target.value };
+                      setCms({ ...cms, clientsWithUs: next });
+                    }}
+                    style={{ width: "100%", background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "7px 10px", color: "#ffffff", fontSize: 12, boxSizing: "border-box" }}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Badge"
+                    value={cl.badge}
+                    onChange={e => {
+                      const next = [...(cms.clientsWithUs || [])];
+                      next[idx] = { ...next[idx], badge: e.target.value };
+                      setCms({ ...cms, clientsWithUs: next });
+                    }}
+                    style={{ width: "100%", background: "#0b1d3e", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "7px 10px", color: "#ffffff", fontSize: 12, boxSizing: "border-box" }}
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       )}

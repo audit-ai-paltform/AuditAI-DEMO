@@ -14,6 +14,7 @@ router.get('/sales-forecasting', asyncHandler(aiOperationController.getSalesFore
 
 // Qalyzer v2.0 "Data Fishing" (Semantic Search & Trend Discovery)
 router.post('/ask-qalyzer', asyncHandler(aiOperationController.askQalyzer));
+router.post('/ask-auditai', asyncHandler(aiOperationController.askAuditAI));
 router.get('/trends/clusters', asyncHandler(aiOperationController.getTrendClusters));
 
 // Qalyzer v2.0 "What Could Have Been Done Better" Coaching Engine

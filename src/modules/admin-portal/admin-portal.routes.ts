@@ -25,3 +25,8 @@ adminPortalRoutes.get('/admin-portal/universal-search', AdminPortalController.un
 
 // One-Click Automated Payment Reminder
 adminPortalRoutes.post('/admin-portal/send-payment-reminder', AdminPortalController.sendPaymentReminder);
+
+// Role-Based Dashboard Feature Visibility & Client Panel Allocation
+adminPortalRoutes.get('/admin-portal/role-features', AdminPortalController.getRoleFeatures);
+adminPortalRoutes.put('/admin-portal/role-features', AdminPortalController.updateRoleFeatures);
+adminPortalRoutes.post('/admin-portal/allocate-client-panel', AdminPortalController.allocateClientPanel);

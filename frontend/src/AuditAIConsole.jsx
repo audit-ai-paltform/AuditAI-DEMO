@@ -41,30 +41,34 @@ import AdminSubscriptionsModule from "./components/AdminSubscriptionsModule";
 import AdminEmailConfigModule from "./components/AdminEmailConfigModule";
 import AdminTeamEditorModule from "./components/AdminTeamEditorModule";
 import AdminUserActivityModule from "./components/AdminUserActivityModule";
+import AskAuditAIChatbot from "./components/AskAuditAIChatbot";
 
 /* ---------------------------------------------------------------- */
-/*  Design tokens — Midnight Cyber Sky Blue & White UI (Exact Match)*/
+/*  Design tokens — Lighter Enterprise Sky Blue & Crisp Slate UI    */
+/*  Status Colour Standard: Red = Risk, Grey = Neutral, Green = Good*/
 /* ---------------------------------------------------------------- */
 const C = {
-  bg: "#08162d",          // User image base night sky blue
-  panel: "#0b1d3e",       // Deep navy sky panel & sidebar
-  panel2: "#0f2752",      // Deep sky container
-  panelHover: "#133061",  // Active hover sky
-  border: "rgba(96, 165, 250, 0.22)",     // Sky blueprint border
-  borderSoft: "rgba(255, 255, 255, 0.12)", // Translucent white border
-  text: "#ffffff",        // Crisp pure white text
-  muted: "#bae6fd",       // Light sky text
-  faint: "#7dd3fc",       // Soft ice blue
+  bg: "#f0f7ff",          // Light sky-blue canvas
+  panel: "#ffffff",       // Crisp white panel & sidebar
+  panel2: "#e0f2fe",      // Soft ice-blue container
+  panelHover: "#bae6fd",  // Hover sky highlight
+  border: "#bae6fd",      // Clean sky border
+  borderSoft: "#e2e8f0",  // Soft slate divider
+  text: "#0f172a",        // Deep slate ink
+  muted: "#334155",       // Secondary slate text
+  faint: "#64748b",       // Neutral grey
   white: "#ffffff",       // Pure white
-  black: "#08162d",       // Deep sky tone
-  teal: "#ffffff",        // Pure white icons
-  tealSoft: "rgba(56, 189, 248, 0.15)",
-  red: "#ffffff",
-  redSoft: "rgba(239, 68, 68, 0.35)",
-  amber: "#ffffff",
-  amberSoft: "rgba(245, 158, 11, 0.35)",
-  green: "#ffffff",
-  greenSoft: "rgba(16, 185, 129, 0.35)",
+  black: "#0f172a",       // Deep slate
+  teal: "#0284c7",        // Sky blue primary accent
+  tealSoft: "rgba(2, 132, 199, 0.12)",
+  red: "#dc2626",         // Red = Risk (very high)
+  redSoft: "rgba(220, 38, 38, 0.12)",
+  amber: "#64748b",       // Grey = Neutral
+  amberSoft: "rgba(100, 116, 139, 0.14)",
+  grey: "#64748b",        // Grey = Neutral
+  greySoft: "rgba(100, 116, 139, 0.14)",
+  green: "#16a34a",       // Green = Good
+  greenSoft: "rgba(22, 163, 74, 0.12)",
 };
 
 const FONT_STYLE = `
@@ -755,79 +759,74 @@ function CriticalAlertsPage({ calls, goTo }) {
    Setup steps disappear from primary navigation once configuration is
    activated — they live under Settings instead. The setup_state comes
    from the backend tenant_config table, never React local state. */
+const CORE_NAV_ITEMS = [
+  { id: "dashboard", label: "Audit Dashboard", Icon: LayoutDashboard },
+  { id: "reports", label: "Reports (Daily/Weekly/Monthly)", Icon: FileText },
+  { id: "audittrail", label: "Audit Trail", Icon: History },
+];
+
+const OPERATIONS_NAV_ITEMS = [
+  { id: "sop_parameters", label: "SOP & Parameters", Icon: SlidersHorizontal },
+  { id: "scores", label: "Call Scores & Audits", Icon: ListChecks },
+  { id: "agents", label: "Agent Mapping", Icon: Users },
+  { id: "qctools", label: "7 QC Tools", Icon: Grid3x3 },
+  { id: "csvupload", label: "CSV Upload", Icon: FileSpreadsheet },
+];
+
 const QALYZER_V2_ITEMS = [
   { id: "sales_forecasting", label: "AI Sales Forecasting", Icon: TrendingUp },
   { id: "data_fishing", label: '"Ask Qalyzer" Data Fishing', Icon: Search },
   { id: "knowledge_hub", label: "Products & Effective SOPs", Icon: BookOpen },
 ];
 
-const MAIN_NAV_ITEMS = [
-  { id: "dashboard", label: "Audit Dashboard", Icon: LayoutDashboard },
-  { id: "alerts", label: "Critical Alerts", Icon: ShieldAlert },
-  { id: "agents", label: "Agent Mapping", Icon: Users },
-  { id: "transcripts", label: "Call Transcripts", Icon: Mic },
-  { id: "scores", label: "Call Scores", Icon: ListChecks },
-  { id: "chattest", label: "Chat & Email Audit", Icon: MessageSquare },
-  { id: "auditform", label: "Audit Form", Icon: ClipboardCheck },
-  { id: "revalidation", label: "Revalidation Requests", Icon: RotateCw },
-  { id: "qctools", label: "7 QC Tools", Icon: Grid3x3 },
-  { id: "audittrail", label: "Audit Trail", Icon: History },
-];
-
 const ADMIN_GOVERNANCE_ITEMS = [
+  { id: "admin_access", label: "Role Dashboards & Access", Icon: UserCheck },
   { id: "home_cms", label: "Edit & Update Home Page", Icon: Edit3 },
   { id: "admin_team", label: "Team Behind Profiles", Icon: Users },
   { id: "admin_subscriptions", label: "Billing & Dual Gateways", Icon: CreditCard },
-  { id: "admin_email", label: "Automated Email Engine", Icon: Send },
+  { id: "admin_email", label: "Email Automation Studio", Icon: Send },
   { id: "admin_activity", label: "Active Sessions & Sync", Icon: Activity },
-  { id: "admin_access", label: "Client & Staff Access", Icon: UserCheck },
   { id: "universal_search", label: "Universal Audit Search", Icon: Search },
   { id: "enquiries", label: "Inbound Enquiries", Icon: Mail },
   { id: "admin_users", label: "User & Login Controls", Icon: Shield },
-  { id: "payu_billing", label: "PayU Subscriptions", Icon: CreditCard },
-  { id: "cloudflare_db", label: "Cloudflare D1 & R2", Icon: Database },
-];
-
-const SETUP_NAV_ITEMS = [
-  { id: "upload", label: "1. Upload SOP", Icon: UploadCloud },
-  { id: "scripts", label: "2. Generated Scripts", Icon: FileText },
-  { id: "parameters", label: "3. Audit Parameters", Icon: SlidersHorizontal },
 ];
 
 const SETTINGS_NAV_ITEMS = [
-  { id: "payu_billing", label: "PayU Subscriptions", Icon: CreditCard },
-  { id: "cloudflare_db", label: "Cloudflare D1 & R2", Icon: Database },
-  { id: "onboarding", label: "Knowlarity Setup", Icon: Radio },
-  { id: "reports", label: "Daily Reports", Icon: FileText },
+  { id: "onboarding", label: "CRM Setup", Icon: Radio },
   { id: "settings", label: "Audit Configuration", Icon: SlidersHorizontal },
-  { id: "upload", label: "SOP Upload", Icon: UploadCloud },
-  { id: "parameters", label: "Parameters Review", Icon: SlidersHorizontal },
-  { id: "csvupload", label: "CSV Upload", Icon: FileSpreadsheet },
+  { id: "cloudflare_db", label: "Cloudflare D1 & R2", Icon: Database },
+  { id: "payu_billing", label: "PayU & Razorpay Billing", Icon: CreditCard },
 ];
 
-function navGroupsFor(_setupState, userRole = "admin") {
+function navGroupsFor(_setupState, userRole = "super_admin", roleFeaturesMap = null) {
+  const normalizedRole = userRole === "admin" ? "super_admin" : userRole;
+  const allowedIds = roleFeaturesMap && Array.isArray(roleFeaturesMap[normalizedRole])
+    ? new Set(roleFeaturesMap[normalizedRole])
+    : null;
+
+  const filterItems = (items) => (allowedIds ? items.filter((it) => allowedIds.has(it.id)) : items);
+
   const groups = [
-    { title: "OPERATIONS", items: MAIN_NAV_ITEMS },
-    { title: "QALYZER v2.0 INTELLIGENCE", items: QALYZER_V2_ITEMS },
+    { title: "OVERVIEW & REPORTS", items: filterItems(CORE_NAV_ITEMS) },
+    { title: "OPERATIONS", items: filterItems(OPERATIONS_NAV_ITEMS) },
+    { title: "QALYZER v2.0 INTELLIGENCE", items: filterItems(QALYZER_V2_ITEMS) },
   ];
 
-  if (userRole === "admin") {
-    groups.push({ title: "ADMINISTRATION & GOVERNANCE", items: ADMIN_GOVERNANCE_ITEMS });
-  } else {
+  const adminItems = filterItems(ADMIN_GOVERNANCE_ITEMS);
+  if (adminItems.length > 0) {
+    const isClientOrg = normalizedRole.startsWith("client");
     groups.push({
-      title: "CLIENT PORTAL",
-      items: [
-        { id: "payu_billing", label: "PayU Subscriptions", Icon: CreditCard },
-      ],
+      title: isClientOrg ? "CLIENT ORGANIZATION ADMIN" : "SUPER ADMIN & GOVERNANCE",
+      items: adminItems,
     });
   }
 
-  groups.push({
-    title: "SETTINGS & INFRASTRUCTURE",
-    items: SETTINGS_NAV_ITEMS,
-  });
+  const settingsItems = filterItems(SETTINGS_NAV_ITEMS);
+  if (settingsItems.length > 0) {
+    groups.push({ title: "SETTINGS & INFRASTRUCTURE", items: settingsItems });
+  }
 
-  return groups;
+  return groups.filter((g) => g.items.length > 0);
 }
 
 /* Real recording duration only. An unknown duration returns 0 so the call is
@@ -2321,13 +2320,20 @@ function AgentMapping({ agents, setAgents, calls, loading }) {
   const [showAdd, setShowAdd] = useState(false);
   const [form, setForm] = useState({ name: "", code: "", process: "Sales", tenure_minutes: 0, status: "Active" });
   const [error, setError] = useState("");
+  const [infoMsg, setInfoMsg] = useState("");
+  const [inactivityCfg, setInactivityCfg] = useState({ enabled: true, thresholdHours: 24, lastSweepAt: null, lastDisabledCount: 0 });
+  const [sweeping, setSweeping] = useState(false);
+
+  useEffect(() => {
+    agentsApi.getInactivityConfig().then((cfg) => {
+      if (cfg) setInactivityCfg(cfg);
+    }).catch(() => {});
+  }, []);
 
   async function addAgent() {
     if (!form.name || !form.code) { setError("Agent Name and Employee Code are required."); return; }
     setError("");
 
-    // Backend-only write: no direct-to-database fallback that could bypass
-    // validation or tenant scoping.
     try {
       const created = await agentsApi.create({
         name: form.name,
@@ -2344,13 +2350,59 @@ function AgentMapping({ agents, setAgents, calls, loading }) {
     }
   }
 
+  async function updateAgentField(id, patch) {
+    setError("");
+    setInfoMsg("");
+    const previous = agents;
+    setAgents((prev) => prev.map((a) => (a.id === id ? { ...a, ...patch } : a)));
+    try {
+      const updated = await agentsApi.update(id, patch);
+      setAgents((prev) => prev.map((a) => (a.id === id ? { ...a, ...(updated || patch) } : a)));
+      setInfoMsg("Agent updated successfully.");
+      setTimeout(() => setInfoMsg(""), 3000);
+    } catch (e) {
+      setAgents(previous);
+      setError(`Failed to update agent: ${e.message || e}`);
+    }
+  }
+
+  async function handleToggleInactivityConfig(nextPartial) {
+    try {
+      const updated = await agentsApi.updateInactivityConfig(nextPartial);
+      setInactivityCfg(updated);
+      setInfoMsg(`Auto-disable policy updated (${updated.enabled ? `Active @ ${updated.thresholdHours}h` : "Paused"}).`);
+      setTimeout(() => setInfoMsg(""), 4000);
+    } catch (e) {
+      setError(e.message || "Failed to update inactivity policy");
+    }
+  }
+
+  async function handleRunSweep() {
+    setSweeping(true);
+    setError("");
+    try {
+      const res = await agentsApi.runInactivitySweep({ thresholdHours: inactivityCfg.thresholdHours });
+      setInfoMsg(`Inactivity sweep complete: checked ${res.checkedCount} active agents, auto-disabled ${res.disabledCount} inactive (> ${res.thresholdHours}h).`);
+      if (res.disabledCount > 0 && res.disabledAgents) {
+        const disabledIds = new Set(res.disabledAgents.map((d) => d.id));
+        setAgents((prev) => prev.map((a) => (disabledIds.has(a.id) ? { ...a, status: "Inactive" } : a)));
+      }
+      const cfg = await agentsApi.getInactivityConfig();
+      if (cfg) setInactivityCfg(cfg);
+    } catch (e) {
+      setError(e.message || "Sweep failed");
+    } finally {
+      setSweeping(false);
+    }
+  }
+
   async function deleteAgent(id) {
     const previous = agents;
     setAgents(agents.filter((a) => a.id !== id));
     try {
       await agentsApi.remove(id);
     } catch (e) {
-      setAgents(previous); // restore the row if the backend refused
+      setAgents(previous);
       setError(`Failed to delete agent: ${e.message || e}`);
     }
   }
@@ -2360,46 +2412,97 @@ function AgentMapping({ agents, setAgents, calls, loading }) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <div>
-        <div style={{ color: C.text, fontFamily: "Space Grotesk", fontSize: 20, fontWeight: 700 }}>Agent Mapping</div>
-        <div style={{ color: C.muted, fontSize: 12.5, fontFamily: "Inter", marginTop: 2 }}>Agent roster, employee codes, process assignments, and individual quality scores.</div>
+        <div style={{ color: C.text, fontFamily: "Space Grotesk", fontSize: 20, fontWeight: 700 }}>Agent Mapping & Inactivity Governance</div>
+        <div style={{ color: C.muted, fontSize: 12.5, fontFamily: "Inter", marginTop: 2 }}>
+          Edit agent process & status (Red = Risk/Inactive, Grey = Neutral/Training, Green = Good/Active) and manage 24–48h inactivity auto-disable.
+        </div>
       </div>
+
+      {/* 24-48h Inactivity Auto-Disable Policy Card */}
+      <Card style={{ background: C.panel2, border: `1px solid ${C.border}` }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
+          <div>
+            <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, display: "flex", alignItems: "center", gap: 6 }}>
+              <Clock size={15} color={C.teal} /> Client-Side Agent Inactivity Auto-Disable (24h – 48h Rule)
+            </div>
+            <div style={{ fontSize: 12, color: C.muted, marginTop: 2 }}>
+              Automatically disables client-side agents with zero call activity for {inactivityCfg.thresholdHours} hours. Managed by Platform & Client Super Admins.
+            </div>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+            <select
+              value={inactivityCfg.thresholdHours}
+              onChange={(e) => handleToggleInactivityConfig({ thresholdHours: Number(e.target.value) })}
+              style={{ background: C.panel, border: `1px solid ${C.border}`, borderRadius: 6, padding: "6px 10px", color: C.text, fontSize: 12, fontWeight: 600 }}
+            >
+              <option value={24}>Threshold: 24 Hours</option>
+              <option value={48}>Threshold: 48 Hours</option>
+            </select>
+            <button
+              onClick={() => handleToggleInactivityConfig({ enabled: !inactivityCfg.enabled })}
+              style={{
+                background: inactivityCfg.enabled ? C.greenSoft : C.greySoft,
+                color: inactivityCfg.enabled ? C.green : C.grey,
+                border: `1px solid ${inactivityCfg.enabled ? C.green : C.grey}`,
+                borderRadius: 6,
+                padding: "6px 12px",
+                fontSize: 12,
+                fontWeight: 700,
+                cursor: "pointer",
+              }}
+            >
+              {inactivityCfg.enabled ? "Auto-Disable: ON" : "Auto-Disable: OFF"}
+            </button>
+            <button
+              onClick={handleRunSweep}
+              disabled={sweeping}
+              style={{ background: C.teal, color: "#ffffff", border: "none", borderRadius: 6, padding: "7px 14px", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
+            >
+              {sweeping ? "Scanning..." : "Run 24–48h Sweep Now"}
+            </button>
+          </div>
+        </div>
+      </Card>
 
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div style={{ color: C.text, fontFamily: "Space Grotesk", fontSize: 15, fontWeight: 600 }}>Active Roster ({agents.length})</div>
-        <button onClick={() => setShowAdd(true)} style={{ display: "flex", alignItems: "center", gap: 6, background: C.teal, color: "#000000", border: "none", borderRadius: 7, padding: "8px 14px", fontFamily: "Inter", fontWeight: 600, fontSize: 12.5, cursor: "pointer" }}>
+        <button onClick={() => setShowAdd(true)} style={{ display: "flex", alignItems: "center", gap: 6, background: C.teal, color: "#ffffff", border: "none", borderRadius: 7, padding: "8px 14px", fontFamily: "Inter", fontWeight: 600, fontSize: 12.5, cursor: "pointer" }}>
           <Plus size={14} /> Add Agent
         </button>
       </div>
 
-      {error && <div style={{ color: C.red, fontSize: 12 }}>{error}</div>}
+      {error && <div style={{ color: C.red, fontSize: 12, fontWeight: 600 }}>{error}</div>}
+      {infoMsg && <div style={{ color: C.green, fontSize: 12, fontWeight: 600 }}>{infoMsg}</div>}
 
       {showAdd && (
-        <Card style={{ border: `1px solid ${C.teal}66` }}>
+        <Card style={{ border: `1px solid ${C.teal}` }}>
           <div style={{ color: C.text, fontFamily: "Space Grotesk", fontSize: 13.5, fontWeight: 600, marginBottom: 10 }}>Register Agent</div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr", gap: 10 }}>
             <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Agent Name" style={{ background: C.panel2, border: `1px solid ${C.border}`, borderRadius: 6, padding: "7px 10px", color: C.text, fontSize: 12 }} />
-            <input value={form.code} onChange={(e) => setForm({ ...form, code: e.target.value })} placeholder="Code (e.g. EMP001)" style={{ background: C.panel2, border: `1px solid ${C.border}`, borderRadius: 6, padding: "7px 10px", color: C.text, fontSize: 12 }} />
+            <input value={form.code} onChange={(e) => setForm({ ...form, code: e.target.value })} placeholder="Code (e.g. AGT-101)" style={{ background: C.panel2, border: `1px solid ${C.border}`, borderRadius: 6, padding: "7px 10px", color: C.text, fontSize: 12 }} />
             <select value={form.process} onChange={(e) => setForm({ ...form, process: e.target.value })} style={{ background: C.panel2, border: `1px solid ${C.border}`, borderRadius: 6, padding: "7px 10px", color: C.text, fontSize: 12 }}>
               <option value="Sales">Sales</option>
-              <option value="Collections">Collections</option>
+              <option value="Collections & Billing">Collections & Billing</option>
               <option value="Customer Support">Customer Support</option>
-              <option value="Retention">Retention</option>
+              <option value="Customer Retention">Customer Retention</option>
+              <option value="Technical Support">Technical Support</option>
+              <option value="Sales & KYC">Sales & KYC</option>
             </select>
             <input type="number" value={form.tenure_minutes} onChange={(e) => setForm({ ...form, tenure_minutes: Number(e.target.value) })} placeholder="Tenure (Minutes)" style={{ background: C.panel2, border: `1px solid ${C.border}`, borderRadius: 6, padding: "7px 10px", color: C.text, fontSize: 12 }} />
-            <button onClick={addAgent} style={{ background: C.teal, color: "#000000", border: "none", borderRadius: 6, fontWeight: 600, fontSize: 12, cursor: "pointer" }}>Save Agent</button>
+            <button onClick={addAgent} style={{ background: C.teal, color: "#ffffff", border: "none", borderRadius: 6, fontWeight: 600, fontSize: 12, cursor: "pointer" }}>Save Agent</button>
           </div>
         </Card>
       )}
 
       <Card style={{ padding: 0 }}>
         {agents.length === 0 ? (
-          <EmptyState title="No agents registered yet" subtitle="Click 'Add Agent (Supabase)' above to register an employee code." />
+          <EmptyState title="No agents registered yet" subtitle="Click 'Add Agent' above to register an employee code." />
         ) : (
           <div style={{ overflowX: "auto" }}>
             <table style={{ width: "100%", borderCollapse: "collapse", fontFamily: "Inter" }}>
               <thead>
                 <tr style={{ borderBottom: `1px solid ${C.border}` }}>
-                  {["AGENT NAME", "EMPLOYEE CODE", "PROCESS", "STATUS", "AVG SCORE", "ACTIONS"].map((h) => (
+                  {["AGENT NAME", "EMPLOYEE CODE", "EDIT PROCESS", "EDIT STATUS (RED/GREY/GREEN)", "AVG SCORE", "ACTIONS"].map((h) => (
                     <th key={h} style={{ textAlign: "left", padding: "11px 14px", color: C.faint, fontSize: 11, fontWeight: 600, letterSpacing: 0.5 }}>{h}</th>
                   ))}
                 </tr>
@@ -2409,23 +2512,56 @@ function AgentMapping({ agents, setAgents, calls, loading }) {
                   const aCalls = calls.filter((c) => (c.agent || c.agent_id || "").toLowerCase() === (a.code || a.name || "").toLowerCase());
                   const aScored = aCalls.filter((c) => typeof c.score === "number");
                   const avgScore = aScored.length ? Math.round(aScored.reduce((sum, c) => sum + Number(c.score), 0) / aScored.length) : null;
+                  const statusColor = a.status === "Active" ? C.green : a.status === "Inactive" ? C.red : C.grey;
+                  const statusBg = a.status === "Active" ? C.greenSoft : a.status === "Inactive" ? C.redSoft : C.greySoft;
+
                   return (
                     <tr key={a.id || a.code} style={{ borderBottom: `1px solid ${C.borderSoft}` }}>
                       <td style={{ padding: "11px 14px", color: C.text, fontSize: 13, fontWeight: 600 }}>{a.name}</td>
-                      <td style={{ padding: "11px 14px", color: C.teal, fontSize: 12.5, fontFamily: "JetBrains Mono" }}>{a.code}</td>
-                      <td style={{ padding: "11px 14px", color: C.muted, fontSize: 12.5 }}>{a.process}</td>
+                      <td style={{ padding: "11px 14px", color: C.teal, fontSize: 12.5, fontFamily: "JetBrains Mono", fontWeight: 700 }}>{a.code}</td>
                       <td style={{ padding: "11px 14px" }}>
-                        <span style={{ background: a.status ? C.greenSoft : C.panel2, color: a.status ? C.green : C.faint, padding: "3px 9px", borderRadius: 12, fontSize: 11.5, fontWeight: 600 }}>{a.status || "—"}</span>
+                        <select
+                          value={a.process || "Inbound Support"}
+                          onChange={(e) => updateAgentField(a.id, { process: e.target.value })}
+                          style={{ background: C.panel2, border: `1px solid ${C.border}`, borderRadius: 6, padding: "5px 8px", color: C.text, fontSize: 12, fontWeight: 500 }}
+                        >
+                          <option value="Sales">Sales</option>
+                          <option value="Collections & Billing">Collections & Billing</option>
+                          <option value="Customer Retention">Customer Retention</option>
+                          <option value="Technical Support">Technical Support</option>
+                          <option value="Sales & KYC">Sales & KYC</option>
+                          <option value="Inbound Support">Inbound Support</option>
+                        </select>
+                      </td>
+                      <td style={{ padding: "11px 14px" }}>
+                        <select
+                          value={a.status || "Active"}
+                          onChange={(e) => updateAgentField(a.id, { status: e.target.value })}
+                          style={{
+                            background: statusBg,
+                            color: statusColor,
+                            border: `1px solid ${statusColor}`,
+                            borderRadius: 12,
+                            padding: "4px 10px",
+                            fontSize: 12,
+                            fontWeight: 700,
+                            cursor: "pointer",
+                          }}
+                        >
+                          <option value="Active">Active (Good)</option>
+                          <option value="Training">Training (Neutral)</option>
+                          <option value="Inactive">Inactive (Disabled)</option>
+                        </select>
                       </td>
                       <td style={{ padding: "11px 14px" }}>
                         {avgScore !== null ? (
-                          <span style={{ color: avgScore >= 80 ? C.green : avgScore >= 60 ? C.amber : C.red, fontFamily: "JetBrains Mono", fontWeight: 700, fontSize: 13 }}>{avgScore}%</span>
+                          <span style={{ color: avgScore >= 80 ? C.green : avgScore >= 60 ? C.grey : C.red, fontFamily: "JetBrains Mono", fontWeight: 700, fontSize: 13 }}>{avgScore}%</span>
                         ) : (
                           <span style={{ color: C.faint, fontSize: 11 }}>No Audits Yet</span>
                         )}
                       </td>
                       <td style={{ padding: "11px 14px" }}>
-                        <button onClick={() => deleteAgent(a.id)} style={{ background: "none", border: "none", color: C.faint, cursor: "pointer" }}><Trash2 size={15} /></button>
+                        <button onClick={() => deleteAgent(a.id)} style={{ background: "none", border: "none", color: C.red, cursor: "pointer" }} title="Delete Agent"><Trash2 size={15} /></button>
                       </td>
                     </tr>
                   );
@@ -3694,13 +3830,112 @@ function SettingsModule({ config, sopVersions, configError, onRefresh, goTo }) {
 }
 
 function ReportsModule() {
-  const [reports, setReports] = useState([]); const [error, setError] = useState(""); const [busy, setBusy] = useState(false);
+  const [periodTab, setPeriodTab] = useState("daily");
+  const [reports, setReports] = useState([]);
+  const [periodSummary, setPeriodSummary] = useState(null);
+  const [error, setError] = useState("");
+  const [busy, setBusy] = useState(false);
   const date = new Date().toISOString().slice(0, 10);
   const load = () => reportsApi.list().then(setReports).catch((e) => setError(e.message || "Unable to load reports."));
   useEffect(() => { load(); }, []);
+  useEffect(() => {
+    if (periodTab === "weekly" || periodTab === "monthly") {
+      setBusy(true);
+      reportsApi.periodSummary(periodTab)
+        .then((d) => setPeriodSummary(d))
+        .catch(() => setPeriodSummary(null))
+        .finally(() => setBusy(false));
+    }
+  }, [periodTab]);
   async function generate() { setBusy(true); setError(""); try { await reportsApi.generate(date, Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC"); load(); } catch (e) { setError(e.message || "Report generation could not be queued."); } finally { setBusy(false); } }
   async function download(id) { try { const { url } = await reportsApi.download(id); window.open(url, "_blank", "noopener,noreferrer"); } catch (e) { setError(e.message || "Download unavailable."); } }
-  return <div style={{ display: "flex", flexDirection: "column", gap: 16 }}><div><div style={{ color: C.text, fontFamily: "Space Grotesk", fontSize: 20, fontWeight: 700 }}>Daily Reports</div><div style={{ color: C.muted, fontSize: 12.5, marginTop: 2 }}>Tenant-scoped PDF snapshots remain independently available after temporary call evidence expires.</div></div>{error && <div style={{ color: C.red, fontSize: 12 }}>{error}</div>}<Card><button onClick={generate} disabled={busy} style={{ background: C.teal, color: "#000000", border: "none", borderRadius: 6, padding: "8px 12px", cursor: "pointer" }}>{busy ? "Queueing…" : `Generate ${date} report`}</button></Card><Card>{reports.length ? reports.map((report) => <div key={report.id} style={{ display: "flex", justifyContent: "space-between", gap: 10, padding: "10px 0", borderBottom: `1px solid ${C.borderSoft}` }}><span>{report.business_date} · {report.status}</span><div>{report.status === "READY" && <button onClick={() => download(report.id)}>Download PDF</button>} {report.status === "FAILED" && <button onClick={() => reportsApi.regenerate(report.id).then(load)}>Retry</button>}</div></div>) : <span style={{ color: C.faint, fontSize: 12 }}>No daily reports have been generated yet.</span>}</Card></div>;
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
+        <div>
+          <div style={{ color: C.text, fontFamily: "Space Grotesk", fontSize: 20, fontWeight: 700 }}>Reports (Daily, Weekly & Monthly)</div>
+          <div style={{ color: C.muted, fontSize: 12.5, marginTop: 2 }}>Unified reporting across Daily snapshots, 7-day Weekly rollups, and 30-day Monthly executive digests.</div>
+        </div>
+        <div style={{ display: "flex", gap: 6 }}>
+          {[
+            { id: "daily", label: "Daily Reports" },
+            { id: "weekly", label: "Weekly Report (7d)" },
+            { id: "monthly", label: "Monthly Report (30d)" },
+          ].map((t) => (
+            <button
+              key={t.id}
+              onClick={() => setPeriodTab(t.id)}
+              style={{
+                background: periodTab === t.id ? C.teal : C.panel,
+                color: periodTab === t.id ? "#ffffff" : C.text,
+                border: `1px solid ${periodTab === t.id ? C.teal : C.border}`,
+                borderRadius: 7,
+                padding: "7px 14px",
+                fontSize: 12.5,
+                fontWeight: 600,
+                cursor: "pointer",
+              }}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {error && <div style={{ color: C.red, fontSize: 12 }}>{error}</div>}
+
+      {periodTab === "daily" && (
+        <>
+          <Card>
+            <button onClick={generate} disabled={busy} style={{ background: C.teal, color: "#ffffff", border: "none", borderRadius: 6, padding: "8px 16px", fontWeight: 600, fontSize: 12.5, cursor: "pointer" }}>
+              {busy ? "Queueing…" : `Generate ${date} Daily Report`}
+            </button>
+          </Card>
+          <Card>
+            {reports.length ? reports.map((report) => (
+              <div key={report.id} style={{ display: "flex", justifyContent: "space-between", gap: 10, padding: "10px 0", borderBottom: `1px solid ${C.borderSoft}` }}>
+                <span style={{ fontWeight: 600, color: C.text }}>{report.business_date} · <span style={{ color: report.status === "READY" ? C.green : report.status === "FAILED" ? C.red : C.grey }}>{report.status}</span></span>
+                <div style={{ display: "flex", gap: 8 }}>
+                  {report.status === "READY" && <button onClick={() => download(report.id)} style={{ background: C.teal, color: "#ffffff", border: "none", borderRadius: 5, padding: "4px 10px", fontSize: 11.5, cursor: "pointer" }}>Download PDF</button>}
+                  {report.status === "FAILED" && <button onClick={() => reportsApi.regenerate(report.id).then(load)} style={{ background: C.greySoft, color: C.text, border: `1px solid ${C.border}`, borderRadius: 5, padding: "4px 10px", fontSize: 11.5, cursor: "pointer" }}>Retry</button>}
+                </div>
+              </div>
+            )) : <span style={{ color: C.faint, fontSize: 12 }}>No daily reports have been generated yet.</span>}
+          </Card>
+        </>
+      )}
+
+      {(periodTab === "weekly" || periodTab === "monthly") && (
+        <Card>
+          <div style={{ fontSize: 15, fontWeight: 700, fontFamily: "Space Grotesk", marginBottom: 14, color: C.text }}>
+            {periodTab === "weekly" ? "Weekly Quality & Compliance Digest (Last 7 Days)" : "Monthly Executive Governance Summary (Last 30 Days)"}
+          </div>
+          {busy ? (
+            <div style={{ color: C.muted, fontSize: 13 }}>Aggregating {periodTab} telemetry...</div>
+          ) : periodSummary ? (
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))", gap: 12 }}>
+              {[
+                { label: "Total Calls Audited", value: periodSummary.totalCalls, color: C.teal },
+                { label: "Average QA Score", value: `${periodSummary.avgScore}%`, color: periodSummary.avgScore >= 80 ? C.green : periodSummary.avgScore >= 60 ? C.grey : C.red },
+                { label: "Pass Calls (≥80%)", value: periodSummary.passCount, color: C.green },
+                { label: "High-Risk Calls (<60%)", value: periodSummary.riskCount, color: C.red },
+                { label: "Open Critical Flags", value: periodSummary.openCriticalFlags, color: C.red },
+                { label: "Total Flags Mapped", value: periodSummary.totalFlags, color: C.grey },
+              ].map((m, i) => (
+                <div key={i} style={{ background: C.panel2, border: `1px solid ${C.border}`, borderRadius: 8, padding: 14 }}>
+                  <div style={{ fontSize: 11, color: C.faint, fontWeight: 600, textTransform: "uppercase" }}>{m.label}</div>
+                  <div style={{ fontSize: 22, fontWeight: 800, color: m.color, marginTop: 4, fontFamily: "Space Grotesk" }}>{m.value}</div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div style={{ color: C.faint, fontSize: 12.5 }}>No period summary available yet.</div>
+          )}
+        </Card>
+      )}
+    </div>
+  );
 }
 
 function KnowlarityOnboardingPage() {
@@ -3775,9 +4010,9 @@ function KnowlarityOnboardingPage() {
     <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
         <div>
-          <div style={{ color: C.text, fontFamily: "Space Grotesk", fontSize: 20, fontWeight: 700 }}>Knowlarity Integration Setup</div>
+          <div style={{ color: C.text, fontFamily: "Space Grotesk", fontSize: 20, fontWeight: 700 }}>CRM Setup & Knowlarity Integration Overview</div>
           <div style={{ color: C.muted, fontSize: 12.5, fontFamily: "Inter", marginTop: 2 }}>
-            Connect your Knowlarity SuperReceptionist telephony system so that completed calls are automatically streamed and audited in real time.
+            Easy-to-understand CRM webhook setup, required credentials, and automatic call-to-agent matching workflow.
           </div>
         </div>
         <button
@@ -3788,6 +4023,39 @@ function KnowlarityOnboardingPage() {
           <RotateCw size={13} className={loading ? "spin" : ""} /> Refresh Status
         </button>
       </div>
+
+      {/* Knowlarity CRM Overview (Point 7) */}
+      <Card style={{ background: C.panel, border: `1px solid ${C.border}` }}>
+        <div style={{ fontSize: 15, fontWeight: 700, fontFamily: "Space Grotesk", color: C.text, marginBottom: 10 }}>
+          Knowlarity CRM Overview: How Integration & Agent Mapping Works
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 14 }}>
+          <div style={{ background: C.panel2, borderRadius: 8, padding: 14, border: `1px solid ${C.border}` }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: C.teal, marginBottom: 6 }}>1. What is Required From Our Side</div>
+            <ul style={{ margin: 0, paddingLeft: 18, fontSize: 12, color: C.muted, lineHeight: 1.6 }}>
+              <li><strong>Webhook URL</strong> &amp; <strong>Secret Header</strong> (provided below — copy &amp; paste into Knowlarity).</li>
+              <li><strong>Recording Host Whitelist</strong> (e.g. Knowlarity / Cloudinary / R2 audio URL).</li>
+              <li><strong>Agent Employee Codes</strong> registered in <em>Operations &gt; Agent Mapping</em>.</li>
+            </ul>
+          </div>
+          <div style={{ background: C.panel2, borderRadius: 8, padding: 14, border: `1px solid ${C.border}` }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: C.teal, marginBottom: 6 }}>2. How Calls Are Matched &amp; Mapped to Agents</div>
+            <ul style={{ margin: 0, paddingLeft: 18, fontSize: 12, color: C.muted, lineHeight: 1.6 }}>
+              <li>Knowlarity sends a call event with <code>agent_id</code> / extension / agent phone.</li>
+              <li>AuditAI matches it to <code>agents.code</code> &amp; resolves the agent's assigned <strong>Process</strong> (Sales, Support, etc.).</li>
+              <li>Audio is archived to Cloudflare R2, transcribed, and scored against that process's active SOP.</li>
+            </ul>
+          </div>
+          <div style={{ background: C.panel2, borderRadius: 8, padding: 14, border: `1px solid ${C.border}` }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: C.teal, marginBottom: 6 }}>3. Simple 3-Step Non-Technical Setup</div>
+            <ol style={{ margin: 0, paddingLeft: 18, fontSize: 12, color: C.muted, lineHeight: 1.6 }}>
+              <li>Copy the <strong>Webhook URL</strong> below.</li>
+              <li>In Knowlarity Dashboard &rarr; <em>Settings &gt; Webhooks</em>, paste URL and select <strong>Call Completed</strong>.</li>
+              <li>Paste the <strong>Webhook Secret</strong> and click <strong>Test Endpoint</strong> below!</li>
+            </ol>
+          </div>
+        </div>
+      </Card>
 
       {err && (
         <div style={{ background: C.redSoft, color: C.red, border: `1px solid ${C.red}44`, borderRadius: 8, padding: "10px 14px", fontSize: 12.5 }}>
@@ -4408,6 +4676,101 @@ function CsvUploadModule({ onImportComplete }) {
 }
 
 /* ---------------------------------------------------------------- */
+/*  Unified Operations Modules (SOP & Parameters + Call Scores)     */
+/* ---------------------------------------------------------------- */
+function SopAndParametersModule({ parameters, setParameters, loading, config, sopVersions, configError, onRefresh, goTo }) {
+  const [sub, setSub] = useState("parameters"); // 'parameters' | 'upload' | 'config'
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
+        <div>
+          <div style={{ color: C.text, fontFamily: "Space Grotesk", fontSize: 20, fontWeight: 700 }}>SOP &amp; Parameters (Operations)</div>
+          <div style={{ color: C.muted, fontSize: 12.5, marginTop: 2 }}>Unified workspace combining Parameter Review, SOP Upload, and Audit Configuration.</div>
+        </div>
+        <div style={{ display: "flex", gap: 6 }}>
+          {[
+            { id: "parameters", label: "Parameters Review" },
+            { id: "upload", label: "SOP Upload" },
+            { id: "config", label: "Audit Configuration" },
+          ].map((t) => (
+            <button
+              key={t.id}
+              onClick={() => setSub(t.id)}
+              style={{
+                background: sub === t.id ? C.teal : C.panel,
+                color: sub === t.id ? "#ffffff" : C.text,
+                border: `1px solid ${sub === t.id ? C.teal : C.border}`,
+                borderRadius: 7, padding: "7px 14px", fontSize: 12.5, fontWeight: 600, cursor: "pointer",
+              }}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {sub === "parameters" && <CustomParameters parameters={parameters} loading={loading} />}
+      {sub === "upload" && <ScriptUpload setParameters={setParameters} />}
+      {sub === "config" && <SettingsModule config={config} sopVersions={sopVersions} configError={configError} onRefresh={onRefresh} goTo={goTo} />}
+    </div>
+  );
+}
+
+function UnifiedCallScoresModule({ calls, parameters, loading, selectedId, setSelectedId, goTo, onOpenCoaching, onRefresh }) {
+  const [sub, setSub] = useState("scores"); // 'scores' | 'transcripts' | 'chat_email' | 'reaudit' | 'revalidation'
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
+        <div>
+          <div style={{ color: C.text, fontFamily: "Space Grotesk", fontSize: 20, fontWeight: 700 }}>Call Scores &amp; Omnichannel Audits</div>
+          <div style={{ color: C.muted, fontSize: 12.5, marginTop: 2 }}>Unified Call Scores, Call Transcripts, Chat &amp; Email Audits, 1-Click Re-audit, and Revalidation Requests.</div>
+        </div>
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+          {[
+            { id: "scores", label: "Call Scores" },
+            { id: "transcripts", label: "Call Transcripts" },
+            { id: "chat_email", label: "Chat & Email Audit" },
+            { id: "reaudit", label: "Re-audit Form" },
+            { id: "revalidation", label: "Revalidation Requests" },
+          ].map((t) => (
+            <button
+              key={t.id}
+              onClick={() => setSub(t.id)}
+              style={{
+                background: sub === t.id ? C.teal : C.panel,
+                color: sub === t.id ? "#ffffff" : C.text,
+                border: `1px solid ${sub === t.id ? C.teal : C.border}`,
+                borderRadius: 7, padding: "7px 13px", fontSize: 12, fontWeight: 600, cursor: "pointer",
+              }}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {sub === "scores" && (
+        <>
+          <div style={{ display: "flex", justifyContent: "flex-end" }}>
+            <button
+              onClick={() => setSub("reaudit")}
+              style={{ display: "inline-flex", alignItems: "center", gap: 6, background: C.teal, color: "#ffffff", border: "none", borderRadius: 7, padding: "7px 14px", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
+            >
+              <ClipboardCheck size={14} /> Open Re-audit (1-Click)
+            </button>
+          </div>
+          <CallScores calls={calls} loading={loading} onOpenCoaching={onOpenCoaching} />
+        </>
+      )}
+      {sub === "transcripts" && <CallTranscripts calls={calls} loading={loading} selectedId={selectedId} setSelectedId={setSelectedId} />}
+      {sub === "chat_email" && <ChatAndEmailAudit calls={calls} goTo={goTo} />}
+      {sub === "reaudit" && <AuditFormPage calls={calls} parameters={parameters} goTo={goTo} onAuditSaved={onRefresh} />}
+      {sub === "revalidation" && <RevalidationRequestsPage calls={calls} onRefresh={onRefresh} goTo={goTo} />}
+    </div>
+  );
+}
+
+/* ---------------------------------------------------------------- */
 /*  Main Production Console Shell Component                         */
 /* ---------------------------------------------------------------- */
 export default function AuditAIConsole() {
@@ -4424,6 +4787,14 @@ export default function AuditAIConsole() {
   });
   const [showAuthGate, setShowAuthGate] = useState(false);
   const [authGateRole, setAuthGateRole] = useState("admin");
+  const [roleFeatures, setRoleFeatures] = useState(null);
+
+  useEffect(() => {
+    adminPortalApi.getRoleFeatures().then((res) => {
+      const map = res?.data || res;
+      if (map && typeof map === "object") setRoleFeatures(map);
+    }).catch(() => {});
+  }, []);
 
   useEffect(() => {
     if (!currentUser?.id) return;
@@ -4795,11 +5166,11 @@ export default function AuditAIConsole() {
           )}
 
           <nav style={{ display: "flex", flexDirection: "column", gap: 16, flex: 1, minHeight: 0, overflowY: "auto", overflowX: "hidden" }}>
-            {navGroupsFor(tenantConfig?.setup_state, currentUser?.role).map((group, gIdx) => (
+            {navGroupsFor(tenantConfig?.setup_state, currentUser?.role, roleFeatures).map((group, gIdx) => (
               <div key={gIdx} style={{ display: "flex", flexDirection: "column", gap: 4 }}>
                 {gIdx > 0 && <div style={{ height: 1, background: C.borderSoft, margin: sidebarCollapsed ? "6px 4px 10px" : "6px 0 10px" }} />}
                 {!sidebarCollapsed && (
-                  <div style={{ color: "#bae6fd", fontSize: 10, fontFamily: "Inter", fontWeight: 700, letterSpacing: 0.6, padding: "0 8px 4px" }}>
+                  <div style={{ color: C.faint, fontSize: 10, fontFamily: "Inter", fontWeight: 700, letterSpacing: 0.6, padding: "0 8px 4px" }}>
                     {group.title}
                   </div>
                 )}
@@ -4815,16 +5186,16 @@ export default function AuditAIConsole() {
                       style={{
                         display: "flex", alignItems: "center", gap: 10, width: "100%", textAlign: "left",
                         justifyContent: sidebarCollapsed ? "center" : "flex-start",
-                        background: active ? "#38bdf8" : "transparent",
-                        color: active ? "#08162d" : "#ffffff",
+                        background: active ? C.teal : "transparent",
+                        color: active ? "#ffffff" : C.text,
                         border: "none",
                         borderRadius: 6, padding: sidebarCollapsed ? "9px 0" : "8px 10px",
                         fontFamily: "Inter", fontSize: 12.5, fontWeight: active ? 700 : 500,
                         cursor: "pointer", transition: "all 0.15s ease",
-                        boxShadow: active ? "0 2px 10px rgba(56, 189, 248, 0.35)" : "none",
+                        boxShadow: active ? "0 2px 8px rgba(2, 132, 199, 0.25)" : "none",
                       }}
                     >
-                      <Icon size={15} style={{ flexShrink: 0, color: active ? "#08162d" : "#ffffff" }} />
+                      <Icon size={15} style={{ flexShrink: 0, color: active ? "#ffffff" : C.teal }} />
                       {!sidebarCollapsed && <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{item.label}</span>}
                     </button>
                   );
@@ -4855,16 +5226,16 @@ export default function AuditAIConsole() {
                 <span style={{ color: C.text, fontSize: 13, fontFamily: "Inter", fontWeight: 600 }}>NA Enterprise</span>
               </div>
 
-              {/* Architecture Badges in Sky Blue & White */}
+              {/* Architecture Badges in Lighter Sky Blue */}
               <div style={{ alignItems: "center", gap: 6, display: sidebarCollapsed ? "none" : "flex" }}>
-                <span style={{ display: "inline-flex", alignItems: "center", gap: 4, background: "rgba(255, 255, 255, 0.12)", border: "1px solid rgba(255, 255, 255, 0.2)", borderRadius: 4, padding: "2px 8px", fontSize: 10.5, color: "#ffffff", fontFamily: "JetBrains Mono" }}>
-                  <Shield size={11} color="#ffffff" /> Auth DB
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 4, background: C.panel2, border: `1px solid ${C.border}`, borderRadius: 4, padding: "2px 8px", fontSize: 10.5, color: C.teal, fontWeight: 600, fontFamily: "JetBrains Mono" }}>
+                  <Shield size={11} color={C.teal} /> Auth DB
                 </span>
-                <span style={{ display: "inline-flex", alignItems: "center", gap: 4, background: "rgba(255, 255, 255, 0.12)", border: "1px solid rgba(255, 255, 255, 0.2)", borderRadius: 4, padding: "2px 8px", fontSize: 10.5, color: "#ffffff", fontFamily: "JetBrains Mono" }}>
-                  <Database size={11} color="#ffffff" /> Cloudflare D1
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 4, background: C.panel2, border: `1px solid ${C.border}`, borderRadius: 4, padding: "2px 8px", fontSize: 10.5, color: C.teal, fontWeight: 600, fontFamily: "JetBrains Mono" }}>
+                  <Database size={11} color={C.teal} /> Cloudflare D1
                 </span>
-                <span style={{ display: "inline-flex", alignItems: "center", gap: 4, background: "rgba(255, 255, 255, 0.12)", border: "1px solid rgba(255, 255, 255, 0.2)", borderRadius: 4, padding: "2px 8px", fontSize: 10.5, color: "#ffffff", fontFamily: "JetBrains Mono" }}>
-                  <HardDrive size={11} color="#ffffff" /> Cloudflare R2
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 4, background: C.panel2, border: `1px solid ${C.border}`, borderRadius: 4, padding: "2px 8px", fontSize: 10.5, color: C.teal, fontWeight: 600, fontFamily: "JetBrains Mono" }}>
+                  <HardDrive size={11} color={C.teal} /> Cloudflare R2
                 </span>
               </div>
             </div>
@@ -4898,8 +5269,8 @@ export default function AuditAIConsole() {
                   display: "flex",
                   alignItems: "center",
                   gap: 8,
-                  background: "rgba(255, 255, 255, 0.12)",
-                  border: "1px solid rgba(255, 255, 255, 0.25)",
+                  background: C.panel2,
+                  border: `1px solid ${C.border}`,
                   borderRadius: 20,
                   padding: "4px 12px 4px 6px",
                   fontSize: 12,
@@ -4910,8 +5281,8 @@ export default function AuditAIConsole() {
                     width: 22,
                     height: 22,
                     borderRadius: "50%",
-                    background: "#38bdf8",
-                    color: "#08162d",
+                    background: C.teal,
+                    color: "#ffffff",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -4921,8 +5292,8 @@ export default function AuditAIConsole() {
                 >
                   {currentUser?.full_name ? currentUser.full_name[0].toUpperCase() : "A"}
                 </div>
-                <span style={{ fontWeight: 600, color: "#ffffff", maxWidth: 120, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                  {currentUser?.full_name || currentUser?.email || "Administrator"}
+                <span style={{ fontWeight: 600, color: C.text, maxWidth: 120, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                  {currentUser?.full_name || currentUser?.email || "Super Admin"}
                 </span>
                 <span
                   style={{
@@ -4932,12 +5303,11 @@ export default function AuditAIConsole() {
                     borderRadius: 10,
                     textTransform: "uppercase",
                     letterSpacing: 0.5,
-                    background: "rgba(255, 255, 255, 0.2)",
+                    background: C.teal,
                     color: "#ffffff",
-                    border: "1px solid rgba(255, 255, 255, 0.35)",
                   }}
                 >
-                  {currentUser?.role || "ADMIN"}
+                  {(currentUser?.role === "admin" ? "super_admin" : currentUser?.role) || "SUPER_ADMIN"}
                 </span>
               </div>
 
@@ -4948,17 +5318,17 @@ export default function AuditAIConsole() {
                   display: "flex",
                   alignItems: "center",
                   gap: 5,
-                  background: "rgba(255, 255, 255, 0.15)",
-                  border: "1px solid rgba(255, 255, 255, 0.3)",
-                  color: "#ffffff",
+                  background: C.panel2,
+                  border: `1px solid ${C.border}`,
+                  color: C.text,
                   borderRadius: 6,
                   padding: "6px 10px",
                   fontSize: 11.5,
-                  fontWeight: 500,
+                  fontWeight: 600,
                   cursor: "pointer",
                 }}
               >
-                <LogOut size={12} color="#ffffff" />
+                <LogOut size={12} color={C.teal} />
                 Switch / Auth
               </button>
             </div>
@@ -4966,17 +5336,17 @@ export default function AuditAIConsole() {
 
           {/* Dynamic Content View — the only scrolling region in the app */}
           <div style={{ flex: 1, minHeight: 0, padding: 24, overflowY: "auto", overflowX: "hidden" }}>
-            {tab === "home_cms" && <HomePageCMSModule />}
+            {(tab === "home_cms" || tab === "admin_home_cms") && <HomePageCMSModule />}
             {tab === "admin_team" && <AdminTeamEditorModule />}
             {tab === "admin_subscriptions" && <AdminSubscriptionsModule />}
             {tab === "admin_email" && <AdminEmailConfigModule />}
             {tab === "admin_activity" && <AdminUserActivityModule />}
-            {tab === "admin_access" && <AdminAccessControlModule currentUser={currentUser} />}
-            {tab === "universal_search" && <UniversalSearchModule />}
-            {tab === "enquiries" && <EnquiriesManagementModule />}
+            {tab === "admin_access" && <AdminAccessControlModule currentUser={currentUser} onRoleFeaturesUpdated={(m) => setRoleFeatures(m)} />}
+            {(tab === "universal_search" || tab === "admin_search") && <UniversalSearchModule />}
+            {(tab === "enquiries" || tab === "admin_enquiries") && <EnquiriesManagementModule />}
 
             {tab === "admin_users" && <AdminUsersModule currentUser={currentUser} />}
-            {(tab === "payu_billing" || tab === "billing") && <PayUBillingModule currentUser={currentUser} isAdmin={currentUser?.role === "admin"} />}
+            {(tab === "payu_billing" || tab === "billing") && <PayUBillingModule currentUser={currentUser} isAdmin={currentUser?.role === "admin" || currentUser?.role === "super_admin"} />}
             {tab === "cloudflare_db" && <CloudflareDatabaseModule />}
 
             {tab === "sales_forecasting" && <SalesForecastingWidget />}
@@ -4985,23 +5355,33 @@ export default function AuditAIConsole() {
 
             {tab === "dashboard" && <AuditDashboard calls={calls} agents={agents} loading={loading} error={error} onRetry={loadData} goTo={goTo} triggerTestCall={triggerTestCall} isTriggering={isTriggering} testCallMsg={testCallMsg} testCallError={testCallError} flagCounts={flagCounts} alerts={alerts} alertsLoading={alertsLoading} onReviewFlag={handleReviewFlag} dataVersion={dataVersion} />}
             {tab === "alerts" && <CriticalAlertsPage calls={calls} goTo={goTo} />}
+            {tab === "sop_parameters" && <SopAndParametersModule parameters={parameters} setParameters={setParameters} loading={loading} config={tenantConfig} sopVersions={sopVersions} configError={configError} onRefresh={loadConfig} goTo={goTo} />}
             {tab === "upload" && <ScriptUpload setParameters={setParameters} />}
             {tab === "scripts" && <CallScriptsModule scripts={scripts} setScripts={setScripts} loading={loading} />}
             {tab === "parameters" && <CustomParameters parameters={parameters} loading={loading} />}
             {tab === "agents" && <AgentMapping agents={agents} setAgents={setAgents} calls={calls} loading={loading} />}
             {tab === "transcripts" && <CallTranscripts calls={calls} loading={loading} selectedId={selectedCallId} setSelectedId={setSelectedCallId} />}
-            {tab === "scores" && <CallScores calls={calls} loading={loading} onOpenCoaching={(c) => setCoachingCall(c)} />}
+            {tab === "scores" && <UnifiedCallScoresModule calls={calls} parameters={parameters} loading={loading} selectedId={selectedCallId} setSelectedId={setSelectedCallId} goTo={goTo} onOpenCoaching={(c) => setCoachingCall(c)} onRefresh={loadData} />}
             {tab === "chattest" && <ChatAndEmailAudit calls={calls} goTo={goTo} />}
             {tab === "auditform" && <AuditFormPage calls={calls} parameters={parameters} goTo={goTo} onAuditSaved={loadData} />}
             {tab === "revalidation" && <RevalidationRequestsPage calls={calls} onRefresh={loadData} goTo={goTo} />}
             {tab === "qctools" && <SevenQCTools calls={calls} agents={agents} />}
             {tab === "audittrail" && <AuditTrailPage calls={calls} />}
-            {tab === "onboarding" && <KnowlarityOnboardingPage />}
+            {(tab === "onboarding" || tab === "crm_setup") && <KnowlarityOnboardingPage />}
             {tab === "settings" && <SettingsModule config={tenantConfig} sopVersions={sopVersions} configError={configError} onRefresh={() => { loadConfig(); }} goTo={goTo} />}
             {tab === "reports" && <ReportsModule />}
             {tab === "csvupload" && <CsvUploadModule onImportComplete={loadData} />}
           </div>
         </div>
+
+        <AskAuditAIChatbot
+          currentUser={currentUser}
+          allowedTabs={navGroupsFor(tenantConfig?.setup_state, currentUser?.role, roleFeatures).flatMap((g) => g.items.map((i) => i.id))}
+          onNavigate={(targetTab) => setTab(targetTab)}
+          onActionExecuted={(act) => {
+            if (act === "refresh_agents") loadData();
+          }}
+        />
 
         {showPricing && <PricingModal onClose={() => setShowPricing(false)} />}
         {coachingCall && (

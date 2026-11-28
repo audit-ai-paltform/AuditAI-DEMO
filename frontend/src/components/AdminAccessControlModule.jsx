@@ -2,49 +2,97 @@ import React, { useState, useEffect } from "react";
 import {
   Shield, UserCheck, UserX, UserPlus, Search, CheckCircle2,
   AlertCircle, RefreshCw, Mail, Phone, Building2, CreditCard,
-  Clock, Send, BellRing, Users, ChevronDown, ChevronUp, Lock, Unlock
+  Clock, Send, BellRing, Users, Lock, Unlock, Sliders, LayoutGrid, Save
 } from "lucide-react";
 import { adminPortalApi } from "../lib/api";
 
-export default function AdminAccessControlModule({ currentUser }) {
+const ALL_PLATFORM_FEATURES = [
+  { id: "dashboard", label: "Audit Dashboard (with Critical Alerts)" },
+  { id: "sop_parameters", label: "SOP & Parameters (Operations)" },
+  { id: "scores", label: "Call Scores, Transcripts, Re-audit & Revalidation" },
+  { id: "agents", label: "Agent Mapping & 24–48h Auto-Disable" },
+  { id: "qctools", label: "7 QC Tools" },
+  { id: "csvupload", label: "CSV Upload" },
+  { id: "reports", label: "Reports (Daily, Weekly, Monthly)" },
+  { id: "audittrail", label: "Audit Trail" },
+  { id: "sales_forecasting", label: "AI Sales Forecasting" },
+  { id: "data_fishing", label: "Ask Qalyzer Data Fishing" },
+  { id: "knowledge_hub", label: "Products & Effective SOPs" },
+  { id: "crm_setup", label: "CRM Setup (Knowlarity & Webhooks)" },
+  { id: "settings", label: "Audit Configuration" },
+  { id: "cloudflare_db", label: "Cloudflare D1 & R2" },
+  { id: "payu_billing", label: "PayU & Razorpay Billing" },
+  { id: "admin_access", label: "Role Dashboards & Access Control" },
+  { id: "home_cms", label: "Edit & Update Home Page CMS" },
+  { id: "admin_email", label: "Email Automation Studio" },
+  { id: "admin_team", label: "Team Behind Profiles" },
+  { id: "admin_subscriptions", label: "Billing & Dual Gateways" },
+  { id: "admin_enquiries", label: "Inbound Enquiries" },
+  { id: "admin_search", label: "Universal Search" },
+];
+
+const ROLE_OPTIONS = [
+  { id: "admin", label: "Employee: Administrator", group: "Platform Employees" },
+  { id: "manager", label: "Employee: Manager", group: "Platform Employees" },
+  { id: "sales", label: "Employee: Sales Team", group: "Platform Employees" },
+  { id: "client_super_admin", label: "Client Org: Client Super Admin", group: "Client Organizations" },
+  { id: "client_admin", label: "Client Org: Client Admin", group: "Client Organizations" },
+  { id: "client_manager", label: "Client Org: Manager", group: "Client Organizations" },
+  { id: "client", label: "Client Org: Client Viewer/Analyst", group: "Client Organizations" },
+];
+
+export default function AdminAccessControlModule({ currentUser, onRoleFeaturesUpdated }) {
+  const [subTab, setSubTab] = useState("users"); // 'users' | 'matrix'
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [filterType, setFilterType] = useState("ALL"); // 'ALL' | 'client' | 'employee' | 'admin'
+  const [filterType, setFilterType] = useState("ALL");
   const [searchQuery, setSearchQuery] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const [actionLoadingId, setActionLoadingId] = useState(null);
 
-  // New User Modal State
+  // Role Feature Matrix State
+  const [roleFeatures, setRoleFeatures] = useState({});
+  const [selectedMatrixRole, setSelectedMatrixRole] = useState("admin");
+  const [savingMatrix, setSavingMatrix] = useState(false);
+
+  // New User Modal
   const [showAddModal, setShowAddModal] = useState(false);
   const [newUser, setNewUser] = useState({
     name: "",
     email: "",
     phone: "",
     company_name: "",
-    user_type: "client",
-    role: "Client Administrator",
+    user_type: "employee",
+    role: "manager",
     subscription_tier: "Growth Professional",
   });
   const [addingUser, setAddingUser] = useState(false);
 
-  // Expanded Team View
-  const [expandedTeamId, setExpandedTeamId] = useState(null);
-
   useEffect(() => {
     loadUsers();
+    loadRoleMatrix();
   }, [filterType]);
 
   async function loadUsers() {
     setLoading(true);
     try {
       const res = await adminPortalApi.getAccessUsers(filterType === "ALL" ? "" : filterType);
-      if (res.data) setUsers(res.data);
+      const list = res?.data || res;
+      if (Array.isArray(list)) setUsers(list);
     } catch (err) {
-      setErrorMsg(err.message || "Failed to load platform access users");
+      setErrorMsg(err.message || "Failed to load access users");
     } finally {
       setLoading(false);
     }
+  }
+
+  async function loadRoleMatrix() {
+    try {
+      const res = await adminPortalApi.getRoleFeatures();
+      const data = res?.data || res;
+      if (data && typeof data === "object") setRoleFeatures(data);
+    } catch {}
   }
 
   async function handleToggleStatus(user) {
@@ -54,27 +102,24 @@ export default function AdminAccessControlModule({ currentUser }) {
     setErrorMsg("");
     try {
       await adminPortalApi.updateUserAccess(user.id, { status: nextStatus });
-      setSuccessMsg(`Access for ${user.name} has been ${nextStatus === "ACTIVE" ? "GRANTED (Active)" : "REVOKED"}.`);
+      setSuccessMsg(`Access for ${user.name} updated to ${nextStatus}.`);
       loadUsers();
-      setTimeout(() => setSuccessMsg(""), 5000);
     } catch (err) {
-      setErrorMsg(err.message || "Failed to update access status");
+      setErrorMsg(err.message || "Failed to update access");
     } finally {
       setActionLoadingId(null);
     }
   }
 
-  async function handleSendReminder(user) {
+  async function handleAllocateClientPanel(user) {
     setActionLoadingId(user.id);
     setSuccessMsg("");
-    setErrorMsg("");
     try {
-      const res = await adminPortalApi.sendPaymentReminder(user.id);
-      setSuccessMsg(res.message || `Payment reminder dispatched to ${user.email}.`);
+      const res = await adminPortalApi.allocateClientPanel(user.id, "client_super_admin");
+      setSuccessMsg(res?.message || `Allocated Client Admin Panel to ${user.name}.`);
       loadUsers();
-      setTimeout(() => setSuccessMsg(""), 6000);
     } catch (err) {
-      setErrorMsg(err.message || "Failed to send payment reminder");
+      setErrorMsg(err.message || "Allocation failed");
     } finally {
       setActionLoadingId(null);
     }
@@ -83,23 +128,13 @@ export default function AdminAccessControlModule({ currentUser }) {
   async function handleCreateUser(e) {
     e.preventDefault();
     setAddingUser(true);
-    setSuccessMsg("");
     setErrorMsg("");
     try {
       await adminPortalApi.addAccessUser(newUser);
-      setSuccessMsg(`New ${newUser.user_type} "${newUser.name}" added successfully.`);
+      setSuccessMsg(`Provisioned ${newUser.name} with role "${newUser.role}".`);
       setShowAddModal(false);
-      setNewUser({
-        name: "",
-        email: "",
-        phone: "",
-        company_name: "",
-        user_type: "client",
-        role: "Client Administrator",
-        subscription_tier: "Growth Professional",
-      });
+      setNewUser({ name: "", email: "", phone: "", company_name: "", user_type: "employee", role: "manager", subscription_tier: "Growth Professional" });
       loadUsers();
-      setTimeout(() => setSuccessMsg(""), 5000);
     } catch (err) {
       setErrorMsg(err.message || "Failed to create user");
     } finally {
@@ -107,415 +142,338 @@ export default function AdminAccessControlModule({ currentUser }) {
     }
   }
 
+  function toggleFeatureInMatrix(featureId) {
+    setRoleFeatures((prev) => {
+      const current = Array.isArray(prev[selectedMatrixRole]) ? prev[selectedMatrixRole] : [];
+      const next = current.includes(featureId) ? current.filter((f) => f !== featureId) : [...current, featureId];
+      return { ...prev, [selectedMatrixRole]: next };
+    });
+  }
+
+  async function handleSaveMatrix() {
+    setSavingMatrix(true);
+    setSuccessMsg("");
+    setErrorMsg("");
+    try {
+      const features = roleFeatures[selectedMatrixRole] || [];
+      const updated = await adminPortalApi.updateRoleFeatures(selectedMatrixRole, features);
+      const map = updated?.data || updated;
+      if (map) {
+        setRoleFeatures(map);
+        if (onRoleFeaturesUpdated) onRoleFeaturesUpdated(map);
+      }
+      setSuccessMsg(`Dashboard feature visibility saved for role "${selectedMatrixRole}".`);
+    } catch (err) {
+      setErrorMsg(err.message || "Failed to save role feature matrix");
+    } finally {
+      setSavingMatrix(false);
+    }
+  }
+
   const filteredUsers = users.filter((u) => {
-    if (!searchQuery) return true;
+    if (!searchQuery.trim()) return true;
     const q = searchQuery.toLowerCase();
     return (
-      u.name.toLowerCase().includes(q) ||
-      u.email.toLowerCase().includes(q) ||
-      u.company_name.toLowerCase().includes(q) ||
-      u.phone.includes(q) ||
-      u.role.toLowerCase().includes(q)
+      (u.name || "").toLowerCase().includes(q) ||
+      (u.email || "").toLowerCase().includes(q) ||
+      (u.company_name || "").toLowerCase().includes(q) ||
+      (u.role || "").toLowerCase().includes(q)
     );
   });
 
+  const isClientAdmin = (currentUser?.role || "").startsWith("client");
+  const editableRoles = isClientAdmin
+    ? ROLE_OPTIONS.filter((r) => r.group === "Client Organizations" && r.id !== "client_super_admin")
+    : ROLE_OPTIONS;
+
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 20, color: "#ffffff", fontFamily: "Inter, sans-serif" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 18, fontFamily: "Inter, sans-serif", color: "#0f172a" }}>
       {/* Header */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 14 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
         <div>
-          <h2 style={{ fontSize: 22, fontWeight: 800, fontFamily: "Space Grotesk", display: "flex", alignItems: "center", gap: 10 }}>
-            <Shield size={22} /> Client & Employee Access Control
+          <h2 style={{ fontSize: 22, fontWeight: 800, fontFamily: "Space Grotesk", margin: 0, display: "flex", alignItems: "center", gap: 10 }}>
+            <Shield size={22} color="#0284c7" /> Role Dashboards & Access Governance
           </h2>
-          <div style={{ fontSize: 13, color: "#bae6fd", marginTop: 2 }}>
-            Provision, monitor, grant, and revoke platform access for client organizations and internal employees.
+          <div style={{ fontSize: 13, color: "#475569", marginTop: 2 }}>
+            Manage Employee roles (Super Admin, Administrator, Manager, Sales Team), Client Organization panels, and per-role dashboard feature visibility.
           </div>
         </div>
 
-        <div style={{ display: "flex", gap: 10 }}>
+        <div style={{ display: "flex", gap: 8 }}>
           <button
-            onClick={() => setShowAddModal(true)}
+            onClick={() => setSubTab("users")}
             style={{
-              background: "#ffffff",
-              color: "#38bdf8",
-              border: "none",
-              borderRadius: 8,
-              padding: "10px 18px",
-              fontSize: 13,
-              fontWeight: 700,
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              gap: 6,
-              boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+              display: "flex", alignItems: "center", gap: 6,
+              background: subTab === "users" ? "#0284c7" : "#ffffff",
+              color: subTab === "users" ? "#ffffff" : "#0f172a",
+              border: `1px solid ${subTab === "users" ? "#0284c7" : "#bae6fd"}`,
+              borderRadius: 8, padding: "8px 14px", fontSize: 12.5, fontWeight: 700, cursor: "pointer",
             }}
           >
-            <UserPlus size={15} /> Add Client / Employee
+            <Users size={14} /> Employees & Clients ({users.length})
           </button>
-
           <button
-            onClick={loadUsers}
+            onClick={() => setSubTab("matrix")}
             style={{
-              background: "rgba(255, 255, 255, 0.15)",
-              color: "#ffffff",
-              border: "1px solid rgba(96, 165, 250, 0.25)",
-              borderRadius: 8,
-              padding: "10px 14px",
-              fontSize: 13,
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              gap: 6,
+              display: "flex", alignItems: "center", gap: 6,
+              background: subTab === "matrix" ? "#0284c7" : "#ffffff",
+              color: subTab === "matrix" ? "#ffffff" : "#0f172a",
+              border: `1px solid ${subTab === "matrix" ? "#0284c7" : "#bae6fd"}`,
+              borderRadius: 8, padding: "8px 14px", fontSize: 12.5, fontWeight: 700, cursor: "pointer",
             }}
           >
-            <RefreshCw size={14} className={loading ? "spin" : ""} /> Refresh
+            <LayoutGrid size={14} /> Role Feature Visibility Matrix
           </button>
         </div>
       </div>
 
-      {/* Messages */}
       {successMsg && (
-        <div style={{ background: "rgba(34, 197, 94, 0.25)", border: "1px solid #86efac", borderRadius: 8, padding: "12px 16px", fontSize: 13, display: "flex", alignItems: "center", gap: 8 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(22, 163, 74, 0.1)", border: "1px solid #16a34a", borderRadius: 8, padding: "10px 14px", color: "#15803d", fontSize: 13, fontWeight: 600 }}>
           <CheckCircle2 size={16} /> {successMsg}
         </div>
       )}
       {errorMsg && (
-        <div style={{ background: "rgba(244, 63, 94, 0.25)", border: "1px solid #fda4af", borderRadius: 8, padding: "12px 16px", fontSize: 13, display: "flex", alignItems: "center", gap: 8 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(220, 38, 38, 0.1)", border: "1px solid #dc2626", borderRadius: 8, padding: "10px 14px", color: "#b91c1c", fontSize: 13, fontWeight: 600 }}>
           <AlertCircle size={16} /> {errorMsg}
         </div>
       )}
 
-      {/* Filters & Search Toolbar */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 14, background: "rgba(13, 36, 78, 0.6)", border: "1px solid rgba(96, 165, 250, 0.18)", borderRadius: 10, padding: 12 }}>
-        <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-          {["ALL", "client", "employee", "admin"].map((type) => (
-            <button
-              key={type}
-              onClick={() => setFilterType(type)}
-              style={{
-                background: filterType === type ? "#ffffff" : "rgba(255, 255, 255, 0.12)",
-                color: filterType === type ? "#0284c7" : "#ffffff",
-                border: "none",
-                borderRadius: 6,
-                padding: "6px 14px",
-                fontSize: 12,
-                fontWeight: 600,
-                textTransform: "capitalize",
-                cursor: "pointer",
-              }}
-            >
-              {type === "ALL" ? "All Users" : `${type}s`}
-            </button>
-          ))}
-        </div>
-
-        <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(0, 0, 0, 0.25)", border: "1px solid rgba(96, 165, 250, 0.22)", borderRadius: 6, padding: "6px 12px", minWidth: 260 }}>
-          <Search size={14} color="#bae6fd" />
-          <input
-            type="text"
-            placeholder="Search by name, email, company, phone..."
-            value={searchQuery}
-            onChange={e => setSearchQuery(e.target.value)}
-            style={{ background: "transparent", border: "none", color: "#ffffff", fontSize: 12.5, width: "100%", outline: "none" }}
-          />
-        </div>
-      </div>
-
-      {/* Users Table */}
-      <div style={{ background: "rgba(11, 29, 62, 0.85)", border: "1px solid rgba(96, 165, 250, 0.22)", borderRadius: 12, overflow: "hidden" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13, textAlign: "left" }}>
-          <thead>
-            <tr style={{ background: "rgba(3, 105, 161, 0.8)", borderBottom: "1px solid rgba(255, 255, 255, 0.2)", color: "#bae6fd", fontSize: 11.5, textTransform: "uppercase", letterSpacing: 0.5 }}>
-              <th style={{ padding: "12px 16px" }}>User & Organization</th>
-              <th style={{ padding: "12px 16px" }}>Type & Role</th>
-              <th style={{ padding: "12px 16px" }}>Access Status</th>
-              <th style={{ padding: "12px 16px" }}>Subscription & Due</th>
-              <th style={{ padding: "12px 16px" }}>Last Login</th>
-              <th style={{ padding: "12px 16px", textAlign: "right" }}>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredUsers.length === 0 ? (
-              <tr>
-                <td colSpan={6} style={{ padding: 30, textAlign: "center", color: "#e0f2fe" }}>
-                  No platform users found matching your query.
-                </td>
-              </tr>
-            ) : (
-              filteredUsers.map((user) => {
-                const isExpanded = expandedTeamId === user.id;
-                const isActive = user.status === "ACTIVE";
-                const isDue = user.subscription_status === "PAYMENT_DUE";
-
-                return (
-                  <React.Fragment key={user.id}>
-                    <tr style={{ borderBottom: "1px solid rgba(255, 255, 255, 0.12)", background: isExpanded ? "rgba(255,255,255,0.06)" : "transparent" }}>
-                      {/* Name & Contact */}
-                      <td style={{ padding: "14px 16px" }}>
-                        <div style={{ fontWeight: 700, color: "#ffffff" }}>{user.name}</div>
-                        <div style={{ fontSize: 11.5, color: "#bae6fd", marginTop: 2, display: "flex", alignItems: "center", gap: 10 }}>
-                          <span>{user.email}</span>
-                          <span>•</span>
-                          <span>{user.phone}</span>
-                        </div>
-                        <div style={{ fontSize: 11, color: "#e0f2fe", marginTop: 2, display: "flex", alignItems: "center", gap: 4 }}>
-                          <Building2 size={11} /> {user.company_name}
-                        </div>
-                      </td>
-
-                      {/* Role */}
-                      <td style={{ padding: "14px 16px" }}>
-                        <div style={{ display: "inline-block", background: "rgba(255, 255, 255, 0.18)", padding: "2px 8px", borderRadius: 4, fontSize: 11, fontWeight: 700, textTransform: "uppercase" }}>
-                          {user.user_type}
-                        </div>
-                        <div style={{ fontSize: 12, fontWeight: 600, color: "#ffffff", marginTop: 4 }}>{user.role}</div>
-                      </td>
-
-                      {/* Status */}
-                      <td style={{ padding: "14px 16px" }}>
-                        <span
-                          style={{
-                            display: "inline-flex",
-                            alignItems: "center",
-                            gap: 5,
-                            padding: "3px 10px",
-                            borderRadius: 14,
-                            fontSize: 11,
-                            fontWeight: 700,
-                            background: isActive ? "rgba(34, 197, 94, 0.25)" : "rgba(244, 63, 94, 0.25)",
-                            color: isActive ? "#86efac" : "#fda4af",
-                            border: `1px solid ${isActive ? "#86efac" : "#fda4af"}`,
-                          }}
-                        >
-                          {isActive ? <Unlock size={12} /> : <Lock size={12} />}
-                          {user.status}
-                        </span>
-                      </td>
-
-                      {/* Subscription & Amount Due */}
-                      <td style={{ padding: "14px 16px" }}>
-                        <div style={{ fontWeight: 600, fontSize: 12.5 }}>{user.subscription_tier}</div>
-                        {user.user_type === "client" ? (
-                          <div style={{ fontSize: 11.5, marginTop: 2 }}>
-                            {isDue ? (
-                              <span style={{ color: "#fda4af", fontWeight: 700 }}>Due: ₹{user.amount_due.toLocaleString()}</span>
-                            ) : (
-                              <span style={{ color: "#86efac" }}>Paid (Active)</span>
-                            )}
-                          </div>
-                        ) : (
-                          <div style={{ fontSize: 11, color: "#bae6fd" }}>Staff Seat</div>
-                        )}
-                        {user.last_payment_reminder_sent && (
-                          <div style={{ fontSize: 10, color: "#e0f2fe", marginTop: 2 }}>
-                            Reminder sent: {new Date(user.last_payment_reminder_sent).toLocaleDateString()}
-                          </div>
-                        )}
-                      </td>
-
-                      {/* Last Login */}
-                      <td style={{ padding: "14px 16px", color: "#e0f2fe", fontSize: 12 }}>
-                        {user.last_login_at === "Never" ? "Never logged in" : new Date(user.last_login_at).toLocaleString()}
-                        <div style={{ fontSize: 10.5, color: "#bae6fd" }}>{user.login_count} total sessions</div>
-                      </td>
-
-                      {/* Actions */}
-                      <td style={{ padding: "14px 16px", textAlign: "right" }}>
-                        <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", gap: 8 }}>
-                          {/* Toggle Access Button */}
-                          <button
-                            onClick={() => handleToggleStatus(user)}
-                            disabled={actionLoadingId === user.id}
-                            style={{
-                              display: "inline-flex",
-                              alignItems: "center",
-                              gap: 5,
-                              background: isActive ? "rgba(244, 63, 94, 0.25)" : "rgba(34, 197, 94, 0.25)",
-                              color: "#ffffff",
-                              border: `1px solid ${isActive ? "#fda4af" : "#86efac"}`,
-                              borderRadius: 6,
-                              padding: "5px 10px",
-                              fontSize: 11.5,
-                              fontWeight: 600,
-                              cursor: "pointer",
-                            }}
-                            title={isActive ? "Revoke user platform access immediately" : "Grant active access to user"}
-                          >
-                            {isActive ? <UserX size={12} /> : <UserCheck size={12} />}
-                            {isActive ? "Revoke Access" : "Grant Access"}
-                          </button>
-
-                          {/* One-Click Automated Payment Reminder */}
-                          {user.user_type === "client" && (
-                            <button
-                              onClick={() => handleSendReminder(user)}
-                              disabled={actionLoadingId === user.id}
-                              style={{
-                                display: "inline-flex",
-                                alignItems: "center",
-                                gap: 5,
-                                background: "#ffffff",
-                                color: "#38bdf8",
-                                border: "none",
-                                borderRadius: 6,
-                                padding: "5px 10px",
-                                fontSize: 11.5,
-                                fontWeight: 700,
-                                cursor: "pointer",
-                              }}
-                              title="Send automated email & webhook payment reminder for active or due renewal"
-                            >
-                              <Send size={12} /> Send Reminder
-                            </button>
-                          )}
-
-                          {/* Expand Organization Team */}
-                          <button
-                            onClick={() => setExpandedTeamId(isExpanded ? null : user.id)}
-                            style={{
-                              background: "rgba(255, 255, 255, 0.15)",
-                              border: "1px solid rgba(96, 165, 250, 0.25)",
-                              color: "#ffffff",
-                              borderRadius: 6,
-                              padding: "5px 8px",
-                              cursor: "pointer",
-                            }}
-                            title="View Associated Team & Seats"
-                          >
-                            {isExpanded ? <ChevronUp size={13} /> : <ChevronDown size={13} />}
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-
-                    {/* Expanded Organization Team Drawer */}
-                    {isExpanded && (
-                      <tr style={{ background: "rgba(2, 132, 199, 0.35)", borderBottom: "1px solid rgba(255, 255, 255, 0.2)" }}>
-                        <td colSpan={6} style={{ padding: "14px 20px" }}>
-                          <div style={{ fontSize: 12.5, fontWeight: 700, fontFamily: "Space Grotesk", marginBottom: 8, display: "flex", alignItems: "center", gap: 6 }}>
-                            <Users size={14} /> Organization Team Members & Seat Allocations for {user.company_name} ({user.organization_team?.length || 0} Members)
-                          </div>
-                          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 10 }}>
-                            {user.organization_team?.map((member) => (
-                              <div key={member.id} style={{ background: "rgba(0, 0, 0, 0.2)", border: "1px solid rgba(96, 165, 250, 0.18)", borderRadius: 6, padding: "8px 12px" }}>
-                                <div style={{ fontWeight: 600, fontSize: 12 }}>{member.name}</div>
-                                <div style={{ fontSize: 11, color: "#bae6fd" }}>{member.email}</div>
-                                <div style={{ fontSize: 10.5, color: "#e0f2fe", marginTop: 3, display: "flex", justifyContent: "space-between" }}>
-                                  <span>Role: {member.role}</span>
-                                  <span>{member.lastActive}</span>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </td>
-                      </tr>
-                    )}
-                  </React.Fragment>
-                );
-              })
-            )}
-          </tbody>
-        </table>
-      </div>
-
-      {/* -------------------- Add User Modal -------------------- */}
-      {showAddModal && (
-        <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.8)", backdropFilter: "blur(6px)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000, padding: 16 }}>
-          <div style={{ width: 480, maxWidth: "100%", background: "#08162d", border: "2px solid #ffffff", borderRadius: 14, padding: 24, color: "#ffffff" }}>
-            <div style={{ fontSize: 18, fontWeight: 700, fontFamily: "Space Grotesk", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
-              <UserPlus size={18} /> Provision New Client or Employee
+      {/* SUBTAB 1: Users & Client Panel Allocation */}
+      {subTab === "users" && (
+        <>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
+            <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search name, email, company, role..."
+                style={{ background: "#ffffff", border: "1px solid #bae6fd", borderRadius: 8, padding: "8px 12px", fontSize: 12.5, width: 250, color: "#0f172a" }}
+              />
+              {["ALL", "employee", "client"].map((ft) => (
+                <button
+                  key={ft}
+                  onClick={() => setFilterType(ft)}
+                  style={{
+                    background: filterType === ft ? "#e0f2fe" : "#ffffff",
+                    border: `1px solid ${filterType === ft ? "#0284c7" : "#bae6fd"}`,
+                    color: filterType === ft ? "#0369a1" : "#475569",
+                    borderRadius: 7, padding: "7px 12px", fontSize: 12, fontWeight: 600, cursor: "pointer",
+                  }}
+                >
+                  {ft === "ALL" ? "All Accounts" : ft === "employee" ? "Employees" : "Client Organizations"}
+                </button>
+              ))}
             </div>
 
-            <form onSubmit={handleCreateUser} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <div>
-                <label style={{ display: "block", fontSize: 11.5, color: "#bae6fd", marginBottom: 4 }}>Full Name *</label>
-                <input
-                  required
-                  type="text"
-                  placeholder="e.g. Sumanth Rao"
-                  value={newUser.name}
-                  onChange={e => setNewUser({ ...newUser, name: e.target.value })}
-                  style={{ width: "100%", background: "rgba(255, 255, 255, 0.15)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 10px", color: "#ffffff", fontSize: 12.5 }}
-                />
-              </div>
+            <button
+              onClick={() => setShowAddModal(true)}
+              style={{ display: "flex", alignItems: "center", gap: 6, background: "#0284c7", color: "#ffffff", border: "none", borderRadius: 8, padding: "9px 16px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}
+            >
+              <UserPlus size={14} /> Grant New Role / Access
+            </button>
+          </div>
 
-              <div>
-                <label style={{ display: "block", fontSize: 11.5, color: "#bae6fd", marginBottom: 4 }}>Email Address *</label>
-                <input
-                  required
-                  type="email"
-                  placeholder="e.g. sumanth@organization.com"
-                  value={newUser.email}
-                  onChange={e => setNewUser({ ...newUser, email: e.target.value })}
-                  style={{ width: "100%", background: "rgba(255, 255, 255, 0.15)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 10px", color: "#ffffff", fontSize: 12.5 }}
-                />
-              </div>
-
-              <div>
-                <label style={{ display: "block", fontSize: 11.5, color: "#bae6fd", marginBottom: 4 }}>Phone Number</label>
-                <input
-                  type="text"
-                  placeholder="e.g. +91 98220 33445"
-                  value={newUser.phone}
-                  onChange={e => setNewUser({ ...newUser, phone: e.target.value })}
-                  style={{ width: "100%", background: "rgba(255, 255, 255, 0.15)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 10px", color: "#ffffff", fontSize: 12.5 }}
-                />
-              </div>
-
-              <div>
-                <label style={{ display: "block", fontSize: 11.5, color: "#bae6fd", marginBottom: 4 }}>Company / Organization</label>
-                <input
-                  type="text"
-                  placeholder="e.g. Reliance Retail / AuditAI Internal"
-                  value={newUser.company_name}
-                  onChange={e => setNewUser({ ...newUser, company_name: e.target.value })}
-                  style={{ width: "100%", background: "rgba(255, 255, 255, 0.15)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 10px", color: "#ffffff", fontSize: 12.5 }}
-                />
-              </div>
-
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
-                <div>
-                  <label style={{ display: "block", fontSize: 11.5, color: "#bae6fd", marginBottom: 4 }}>Account Type</label>
-                  <select
-                    value={newUser.user_type}
-                    onChange={e => setNewUser({ ...newUser, user_type: e.target.value })}
-                    style={{ width: "100%", background: "linear-gradient(135deg, #38bdf8 0%, #2563eb 100%)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 10px", color: "#ffffff", fontSize: 12.5 }}
-                  >
-                    <option value="client">Client / Partner</option>
-                    <option value="employee">Staff Employee</option>
-                    <option value="admin">Administrator</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label style={{ display: "block", fontSize: 11.5, color: "#bae6fd", marginBottom: 4 }}>Functional Role</label>
-                  <input
-                    type="text"
-                    placeholder="e.g. QA Manager"
-                    value={newUser.role}
-                    onChange={e => setNewUser({ ...newUser, role: e.target.value })}
-                    style={{ width: "100%", background: "rgba(255, 255, 255, 0.15)", border: "1px solid rgba(96, 165, 250, 0.25)", borderRadius: 6, padding: "8px 10px", color: "#ffffff", fontSize: 12.5 }}
-                  />
-                </div>
-              </div>
-
-              <div style={{ display: "flex", justifyContent: "flex-end", gap: 10, marginTop: 10 }}>
-                <button
-                  type="button"
-                  onClick={() => setShowAddModal(false)}
-                  style={{ background: "transparent", border: "1px solid rgba(255,255,255,0.4)", color: "#ffffff", borderRadius: 6, padding: "8px 16px", fontSize: 12.5, cursor: "pointer" }}
+          {showAddModal && (
+            <form onSubmit={handleCreateUser} style={{ background: "#ffffff", border: "1.5px solid #0284c7", borderRadius: 12, padding: 20 }}>
+              <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 14 }}>Provision New Employee or Client Organization User</div>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 12, marginBottom: 14 }}>
+                <input required placeholder="Full Name" value={newUser.name} onChange={(e) => setNewUser({ ...newUser, name: e.target.value })} style={{ background: "#f8fafc", border: "1px solid #cbd5e1", borderRadius: 6, padding: "8px 10px", fontSize: 12.5 }} />
+                <input required type="email" placeholder="Work Email" value={newUser.email} onChange={(e) => setNewUser({ ...newUser, email: e.target.value })} style={{ background: "#f8fafc", border: "1px solid #cbd5e1", borderRadius: 6, padding: "8px 10px", fontSize: 12.5 }} />
+                <input placeholder="Company / Organization" value={newUser.company_name} onChange={(e) => setNewUser({ ...newUser, company_name: e.target.value })} style={{ background: "#f8fafc", border: "1px solid #cbd5e1", borderRadius: 6, padding: "8px 10px", fontSize: 12.5 }} />
+                <select
+                  value={newUser.user_type}
+                  onChange={(e) => setNewUser({ ...newUser, user_type: e.target.value, role: e.target.value === "client" ? "client_super_admin" : "manager" })}
+                  style={{ background: "#f8fafc", border: "1px solid #cbd5e1", borderRadius: 6, padding: "8px 10px", fontSize: 12.5 }}
                 >
-                  Cancel
+                  <option value="employee">Platform Employee</option>
+                  <option value="client">Client Organization</option>
+                </select>
+                <select
+                  value={newUser.role}
+                  onChange={(e) => setNewUser({ ...newUser, role: e.target.value })}
+                  style={{ background: "#f8fafc", border: "1px solid #cbd5e1", borderRadius: 6, padding: "8px 10px", fontSize: 12.5 }}
+                >
+                  {newUser.user_type === "employee" ? (
+                    <>
+                      <option value="super_admin">Super Admin</option>
+                      <option value="admin">Administrator</option>
+                      <option value="manager">Manager</option>
+                      <option value="sales">Sales Team</option>
+                    </>
+                  ) : (
+                    <>
+                      <option value="client_super_admin">Client Super Admin</option>
+                      <option value="client_admin">Client Admin</option>
+                      <option value="client_manager">Client Manager</option>
+                      <option value="client">Client Viewer</option>
+                    </>
+                  )}
+                </select>
+              </div>
+              <div style={{ display: "flex", gap: 8 }}>
+                <button type="submit" disabled={addingUser} style={{ background: "#0284c7", color: "#ffffff", border: "none", borderRadius: 7, padding: "8px 16px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>
+                  {addingUser ? "Provisioning..." : "Create & Send Access Email"}
                 </button>
-                <button
-                  type="submit"
-                  disabled={addingUser}
-                  style={{ background: "#ffffff", color: "#38bdf8", border: "none", borderRadius: 6, padding: "8px 20px", fontSize: 12.5, fontWeight: 700, cursor: addingUser ? "not-allowed" : "pointer" }}
-                >
-                  {addingUser ? "Provisioning..." : "Provision Access"}
+                <button type="button" onClick={() => setShowAddModal(false)} style={{ background: "#e2e8f0", color: "#0f172a", border: "none", borderRadius: 7, padding: "8px 14px", fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>
+                  Cancel
                 </button>
               </div>
             </form>
+          )}
+
+          <div style={{ background: "#ffffff", border: "1px solid #bae6fd", borderRadius: 12, overflow: "hidden" }}>
+            <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left" }}>
+              <thead>
+                <tr style={{ background: "#e0f2fe", borderBottom: "1px solid #bae6fd", fontSize: 11, color: "#0369a1", textTransform: "uppercase" }}>
+                  <th style={{ padding: "12px 14px" }}>User & Organization</th>
+                  <th style={{ padding: "12px 14px" }}>Type & Dashboard Role</th>
+                  <th style={{ padding: "12px 14px" }}>Status (Red/Grey/Green)</th>
+                  <th style={{ padding: "12px 14px" }}>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {loading ? (
+                  <tr><td colSpan={4} style={{ padding: 24, textAlign: "center", color: "#475569" }}>Loading access records...</td></tr>
+                ) : filteredUsers.length === 0 ? (
+                  <tr><td colSpan={4} style={{ padding: 24, textAlign: "center", color: "#64748b" }}>No users found.</td></tr>
+                ) : (
+                  filteredUsers.map((u) => {
+                    const isActive = u.status === "ACTIVE";
+                    return (
+                      <tr key={u.id} style={{ borderBottom: "1px solid #e2e8f0", fontSize: 13 }}>
+                        <td style={{ padding: "12px 14px" }}>
+                          <div style={{ fontWeight: 700 }}>{u.name}</div>
+                          <div style={{ fontSize: 11.5, color: "#475569" }}>{u.email} · {u.company_name}</div>
+                        </td>
+                        <td style={{ padding: "12px 14px" }}>
+                          <span style={{ background: "#e0f2fe", color: "#0369a1", padding: "3px 9px", borderRadius: 10, fontSize: 11.5, fontWeight: 700 }}>
+                            {u.role}
+                          </span>
+                        </td>
+                        <td style={{ padding: "12px 14px" }}>
+                          <span style={{
+                            background: isActive ? "rgba(22, 163, 74, 0.12)" : "rgba(220, 38, 38, 0.12)",
+                            color: isActive ? "#16a34a" : "#dc2626",
+                            padding: "3px 10px", borderRadius: 12, fontSize: 11.5, fontWeight: 700,
+                          }}>
+                            {u.status}
+                          </span>
+                        </td>
+                        <td style={{ padding: "12px 14px", display: "flex", gap: 8, flexWrap: "wrap" }}>
+                          <button
+                            disabled={actionLoadingId === u.id}
+                            onClick={() => handleToggleStatus(u)}
+                            style={{
+                              background: isActive ? "rgba(220, 38, 38, 0.1)" : "rgba(22, 163, 74, 0.1)",
+                              color: isActive ? "#dc2626" : "#16a34a",
+                              border: `1px solid ${isActive ? "#dc2626" : "#16a34a"}`,
+                              borderRadius: 6, padding: "5px 10px", fontSize: 11.5, fontWeight: 700, cursor: "pointer",
+                            }}
+                          >
+                            {isActive ? "Revoke Access" : "Grant Access"}
+                          </button>
+                          {u.user_type === "client" && (
+                            <button
+                              disabled={actionLoadingId === u.id}
+                              onClick={() => handleAllocateClientPanel(u)}
+                              style={{
+                                background: "#0284c7", color: "#ffffff", border: "none",
+                                borderRadius: 6, padding: "5px 10px", fontSize: 11.5, fontWeight: 600, cursor: "pointer",
+                              }}
+                            >
+                              Allocate Client Admin Panel
+                            </button>
+                          )}
+                        </td>
+                      </tr>
+                    );
+                  })
+                )}
+              </tbody>
+            </table>
+          </div>
+        </>
+      )}
+
+      {/* SUBTAB 2: Role-Based Feature Visibility Matrix */}
+      {subTab === "matrix" && (
+        <div style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: 18 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            <div style={{ fontSize: 11.5, fontWeight: 700, color: "#0369a1", textTransform: "uppercase", marginBottom: 4 }}>
+              Select Role Dashboard to Configure
+            </div>
+            {editableRoles.map((r) => (
+              <button
+                key={r.id}
+                onClick={() => setSelectedMatrixRole(r.id)}
+                style={{
+                  textAlign: "left",
+                  padding: "11px 14px",
+                  borderRadius: 9,
+                  background: selectedMatrixRole === r.id ? "#0284c7" : "#ffffff",
+                  color: selectedMatrixRole === r.id ? "#ffffff" : "#0f172a",
+                  border: `1px solid ${selectedMatrixRole === r.id ? "#0284c7" : "#bae6fd"}`,
+                  cursor: "pointer",
+                }}
+              >
+                <div style={{ fontSize: 13, fontWeight: 700 }}>{r.label}</div>
+                <div style={{ fontSize: 11, opacity: 0.85, marginTop: 2 }}>
+                  {(roleFeatures[r.id] || []).length} features enabled
+                </div>
+              </button>
+            ))}
+          </div>
+
+          <div style={{ background: "#ffffff", border: "1px solid #bae6fd", borderRadius: 12, padding: 22 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+              <div>
+                <h3 style={{ margin: 0, fontSize: 16, fontWeight: 700 }}>
+                  Features Visible to: <span style={{ color: "#0284c7" }}>{selectedMatrixRole}</span>
+                </h3>
+                <div style={{ fontSize: 12, color: "#475569", marginTop: 2 }}>
+                  Toggle which modules & tabs appear in this role's sidebar and Ask AuditAI navigator.
+                </div>
+              </div>
+              <button
+                onClick={handleSaveMatrix}
+                disabled={savingMatrix}
+                style={{ display: "flex", alignItems: "center", gap: 6, background: "#0284c7", color: "#ffffff", border: "none", borderRadius: 8, padding: "9px 18px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}
+              >
+                <Save size={14} /> {savingMatrix ? "Saving..." : "Save Role Visibility"}
+              </button>
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 10 }}>
+              {ALL_PLATFORM_FEATURES.map((feat) => {
+                const enabled = (roleFeatures[selectedMatrixRole] || []).includes(feat.id);
+                return (
+                  <label
+                    key={feat.id}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 10,
+                      padding: "10px 12px",
+                      borderRadius: 8,
+                      border: `1px solid ${enabled ? "#0284c7" : "#e2e8f0"}`,
+                      background: enabled ? "#f0f7ff" : "#f8fafc",
+                      cursor: "pointer",
+                      fontSize: 12.5,
+                      fontWeight: enabled ? 700 : 500,
+                    }}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={enabled}
+                      onChange={() => toggleFeatureInMatrix(feat.id)}
+                      style={{ accentColor: "#0284c7", width: 15, height: 15 }}
+                    />
+                    {feat.label}
+                  </label>
+                );
+              })}
+            </div>
           </div>
         </div>
       )}

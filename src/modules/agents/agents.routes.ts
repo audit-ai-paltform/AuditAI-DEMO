@@ -13,6 +13,9 @@ const router = Router();
 
 router.post('/', validateCreateAgent, asyncHandler(agentController.create));
 router.get('/', validateListAgents, asyncHandler(agentController.list));
+router.get('/inactivity-config', asyncHandler(agentController.getInactivityConfig));
+router.put('/inactivity-config', asyncHandler(agentController.updateInactivityConfig));
+router.post('/inactivity-sweep', asyncHandler(agentController.runInactivitySweep));
 router.get('/:id', validateGetAgentById, asyncHandler(agentController.getById));
 router.patch('/:id', validateUpdateAgent, asyncHandler(agentController.update));
 router.delete('/:id', validateDeleteAgent, asyncHandler(agentController.delete));

@@ -1900,6 +1900,39 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
         </div>
       </section>
 
+      {/* -------------------- 6B. Clients With Us Showcase (Managed by Admin) -------------------- */}
+      <section id="clients-with-us" style={{ maxWidth: 1320, margin: "0 auto", padding: "65px 24px", borderTop: "1px solid rgba(96, 165, 250, 0.2)" }}>
+        <div style={{ textAlign: "center", marginBottom: 38 }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(56, 189, 248, 0.1)", border: "1px solid rgba(56, 189, 248, 0.3)", color: "#38bdf8", padding: "4px 14px", borderRadius: 16, fontSize: 11, fontWeight: 700, letterSpacing: 0.6, textTransform: "uppercase", marginBottom: 12 }}>
+            Trusted Enterprise Network
+          </div>
+          <h2 style={{ fontSize: 32, fontWeight: 800, fontFamily: "Space Grotesk" }}>Clients With Us</h2>
+          <p style={{ fontSize: 14.5, color: "#bae6fd", maxWidth: 620, margin: "8px auto 0" }}>
+            High-velocity contact centers, fintech leaders, and healthcare BPOs running 100% automated QA on AuditAI Qalyzer.
+          </p>
+        </div>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 18 }}>
+          {(cms?.clientsWithUs || [
+            { id: "c1", name: "Acme Telephony Solutions", industry: "Fintech & Collections", seats: "250+ Agents", badge: "ISO Verified" },
+            { id: "c2", name: "Apex Global HealthCare", industry: "Healthcare BPO", seats: "180+ Agents", badge: "HIPAA Ready" },
+            { id: "c3", name: "NovaPay Financial Services", industry: "Digital Banking", seats: "400+ Agents", badge: "Enterprise Ultra" },
+            { id: "c4", name: "Vanguard Insurance Corp", industry: "Insurance Advisory", seats: "120+ Agents", badge: "Growth Pro" },
+          ]).filter((c) => c.active !== false).map((cl) => (
+            <div key={cl.id} style={{ background: "rgba(11, 29, 62, 0.8)", border: "1px solid rgba(96, 165, 250, 0.28)", borderRadius: 14, padding: 22, display: "flex", flexDirection: "column", justifyContent: "space-between", gap: 12 }}>
+              <div>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+                  <span style={{ fontSize: 10.5, fontWeight: 700, background: "rgba(56, 189, 248, 0.15)", color: "#38bdf8", padding: "3px 9px", borderRadius: 10 }}>{cl.badge}</span>
+                  <span style={{ fontSize: 11.5, color: "#7dd3fc", fontWeight: 600 }}>{cl.seats}</span>
+                </div>
+                <div style={{ fontSize: 17, fontWeight: 800, fontFamily: "Space Grotesk", color: "#ffffff" }}>{cl.name}</div>
+                <div style={{ fontSize: 12.5, color: "#bae6fd", marginTop: 4 }}>{cl.industry}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* -------------------- 7. Leadership & Engineering Team -------------------- */}
       <section id="team" style={{ maxWidth: 1320, margin: "0 auto", padding: "75px 24px", borderTop: "1px solid rgba(96, 165, 250, 0.2)" }}>
         <div style={{ textAlign: "center", marginBottom: 44 }}>

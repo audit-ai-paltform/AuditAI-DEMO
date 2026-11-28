@@ -456,6 +456,95 @@ Return ONLY raw JSON with no markdown code blocks:
   };
 
   /** POST /ai/test-providers — test connection to both Gemini and OpenRouter. */
+  /** POST /ai/ask-auditai — Role-aware Agentic Assistant ("Ask AuditAI"). */
+  public askAuditAI = async (req: Request, res: Response): Promise<Response> => {
+    const { message, role = 'super_admin', allowedTabs = [], context = {} } = req.body || {};
+    if (!message || typeof message !== 'string') {
+      return this.fail(res, 'Message is required', 400);
+    }
+
+    const systemPrompt = `You are "Ask AuditAI", an intelligent, friendly, and decisive enterprise AI assistant embedded in the AuditAI Qalyzer v2.0 platform.
+Current User Role: ${role}
+Available Dashboard Tabs for this User: ${JSON.stringify(allowedTabs)}
+Live Context: ${JSON.stringify(context)}
+
+You can:
+1. Answer any question about AuditAI, QA scores, Knowlarity CRM setup, SOPs, compliance flags, billing, or reports.
+2. Directly navigate the user to any allowed tab by setting "navigateTo": "<tab_id>".
+3. Execute admin/super-admin actions on their behalf by setting "action": "<action_name>" when requested (only if their role permits):
+   - "send_daily_report": Dispatches the daily executive report email now.
+   - "disable_inactive_agents": Runs the 24-48h inactivity auto-disable sweep on client-side agents.
+   - "open_reaudit": Navigates to Call Scores > Re-audit.
+   - "open_alerts": Navigates to Critical Alerts view.
+
+Return ONLY valid raw JSON:
+{
+  "reply": "Clear, concise, helpful answer in plain English",
+  "navigateTo": "tab_id or null",
+  "action": "action_name or null",
+  "suggestedFollowUps": ["short suggestion 1", "short suggestion 2"]
+}`;
+
+    try {
+      const aiRes = await dualAIProvider.generateStructuredJson(systemPrompt, message);
+      return this.ok(res, {
+        reply: String(aiRes.reply || 'I can help you navigate the platform or automate tasks.'),
+        navigateTo: aiRes.navigateTo || null,
+        action: aiRes.action || null,
+        suggestedFollowUps: Array.isArray(aiRes.suggestedFollowUps) ? aiRes.suggestedFollowUps : [],
+      });
+    } catch {
+      const q = message.toLowerCase();
+      let navigateTo: string | null = null;
+      let action: string | null = null;
+      let reply = `I'm **Ask AuditAI**! I can help you navigate your **${role.replace('_', ' ')}** workspace, explain Knowlarity CRM mapping, or run admin automations.`;
+
+      if (q.includes('call score') || q.includes('transcript') || q.includes('re-audit') || q.includes('reaudit') || q.includes('revalidation')) {
+        navigateTo = 'scores';
+        reply = 'Opening **Call Scores** (which includes Call Transcripts, Re-audit, and Revalidation Requests).';
+      } else if (q.includes('sop') || q.includes('parameter') || q.includes('audit config')) {
+        navigateTo = 'sop_parameters';
+        reply = 'Redirecting you to **SOP & Parameters** under Operations.';
+      } else if (q.includes('agent') && (q.includes('disable') || q.includes('inactive') || q.includes('24') || q.includes('48'))) {
+        navigateTo = 'agents';
+        action = 'disable_inactive_agents';
+        reply = 'Checking agent activity and running the **24–48h inactivity auto-disable sweep** in **Agent Mapping**.';
+      } else if (q.includes('agent')) {
+        navigateTo = 'agents';
+        reply = 'Opening **Agent Mapping** under Operations where you can edit processes, statuses, and 24–48h inactivity rules.';
+      } else if (q.includes('crm') || q.includes('knowlarity') || q.includes('webhook')) {
+        navigateTo = 'crm_setup';
+        reply = 'Opening **CRM Setup & Webhook Overview** under Settings & Infrastructure.';
+      } else if (q.includes('send') && q.includes('report')) {
+        action = 'send_daily_report';
+        navigateTo = 'reports';
+        reply = 'Dispatching the Executive Report email and opening **Reports** (Daily, Weekly & Monthly).';
+      } else if (q.includes('report') || q.includes('weekly') || q.includes('monthly')) {
+        navigateTo = 'reports';
+        reply = 'Opening **Reports** with Daily, Weekly, and Monthly analytics.';
+      } else if (q.includes('email')) {
+        navigateTo = 'admin_email';
+        reply = 'Opening the **Email Automation Studio** where you can edit email sections visually and preview them.';
+      } else if (q.includes('alert') || q.includes('flag')) {
+        navigateTo = 'alerts';
+        reply = 'Opening **Critical Alerts & Flags** from the Dashboard.';
+      } else if (q.includes('client') || q.includes('access') || q.includes('role') || q.includes('employee')) {
+        navigateTo = 'admin_access';
+        reply = 'Opening **Access & Role Governance** where you can manage Super Admin, Admin, Manager, Sales, and Client dashboards.';
+      } else if (q.includes('home') || q.includes('cms')) {
+        navigateTo = 'admin_home_cms';
+        reply = 'Opening **Home Page CMS Editor** (including the "Clients with us" section).';
+      }
+
+      return this.ok(res, {
+        reply,
+        navigateTo,
+        action,
+        suggestedFollowUps: ['Open Call Scores', 'Go to CRM Setup', 'Run 24-48h Agent Sweep'],
+      });
+    }
+  };
+
   public testProviders = async (_req: Request, res: Response): Promise<Response> => {
     try {
       const report = await dualAIProvider.probeDualProviders();

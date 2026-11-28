@@ -65,6 +65,22 @@ export class AgentController extends BaseController {
     await this.service.deleteAgent(id);
     return this.ok(res, { message: 'Agent deleted successfully' });
   };
+
+  public getInactivityConfig = async (_req: Request, res: Response): Promise<Response> => {
+    return this.ok(res, this.service.getInactivityConfig());
+  };
+
+  public updateInactivityConfig = async (req: Request, res: Response): Promise<Response> => {
+    const updated = this.service.updateInactivityConfig(req.body || {});
+    return this.ok(res, updated);
+  };
+
+  public runInactivitySweep = async (req: Request, res: Response): Promise<Response> => {
+    const tenantId = this.getTenantId(req, res);
+    const thresholdHours = req.body?.thresholdHours ? Number(req.body.thresholdHours) : undefined;
+    const result = await this.service.runInactivitySweep(tenantId || undefined, thresholdHours);
+    return this.ok(res, result);
+  };
 }
 
 export const agentController = new AgentController();
