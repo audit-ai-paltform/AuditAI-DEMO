@@ -626,8 +626,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
   return (
     <div style={{
       minHeight: "100vh",
-      backgroundColor: "#f0f7ff",
-      color: "#000000",
+      backgroundColor: "#F0F9FF",
+      color: "#0F172A",
       fontFamily: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif",
       position: "relative",
       overflowX: "hidden",
@@ -762,8 +762,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
               display: "flex",
               alignItems: "center",
               gap: 6,
-              background: "#0284c7",
-              color: "#000000",
+              background: "#E0F2FE",
+              color: "#0284C7",
               padding: "4px 11px",
               borderRadius: 9999,
               fontSize: 10.5,
@@ -784,8 +784,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
               letterSpacing: "0.01em",
             }}>
               <span>ISO 9001:2015 & ISO/IEC 27001 Certified Quality Platform</span>
-              <span style={{ width: 4, height: 4, borderRadius: "50%", background: "#0284c7" }} />
-              <span style={{ color: "#0284c7", fontWeight: 700 }}>SOC-2 Type II Verified</span>
+              <span style={{ width: 4, height: 4, borderRadius: "50%", background: "#059669" }} />
+              <span style={{ color: "#059669", background: "#ECFDF5", padding: "2px 8px", borderRadius: 999, fontWeight: 700 }}>SOC-2 Type II Verified</span>
             </div>
           </div>
 
@@ -798,9 +798,9 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
             maxWidth: 1040,
             margin: "0 auto 20px",
             letterSpacing: "-0.03em",
-            color: "#000000",
+            color: "#0F172A",
           }}>
-            Autonomous Call Quality Governance & <span style={{ color: "#0284c7" }}>Predictive Sales Intelligence</span>
+            Autonomous Call Quality Governance & <span style={{ background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Predictive Sales Intelligence</span>
           </h1>
 
           {/* Refined High-Contrast Subtitle */}
@@ -1029,8 +1029,8 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                   key={kIdx}
                   className="hero-kpi-card"
                   style={{
-                    background: "#ffffff",
-                    border: "1px solid #cfe4ff",
+                    background: "#FFFFFF",
+                    border: "1px solid #BAE6FD",
                     borderRadius: 14,
                     padding: "24px 20px",
                     boxShadow: "0 4px 16px rgba(2, 132, 199, 0.06)",
@@ -1049,7 +1049,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     left: 0,
                     right: 0,
                     height: 3,
-                    background: "linear-gradient(90deg, #38bdf8 0%, #2563eb 50%, #818cf8 100%)",
+                    background: "linear-gradient(90deg, #0284C7 0%, #2563EB 50%, #1D4ED8 100%)",
                   }} />
 
                   <div>
@@ -1059,20 +1059,20 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                         width: 34,
                         height: 34,
                         borderRadius: 8,
-                        background: "rgba(56, 189, 248, 0.14)",
-                        border: "1px solid rgba(56, 189, 248, 0.3)",
+                        background: "#E0F2FE",
+                        border: "1px solid #BAE6FD",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                       }}>
-                        <IconComp size={18} color="#38bdf8" />
+                        <IconComp size={18} color="#0284C7" />
                       </div>
                       <span style={{
                         fontSize: 10,
                         fontWeight: 800,
-                        color: kpi.tagColor,
-                        background: kpi.tagBg,
-                        border: `1px solid ${kpi.tagColor}44`,
+                        color: kpi.tagColor || "#059669",
+                        background: kpi.tagBg || "#ECFDF5",
+                        border: `1px solid ${kpi.tagColor || "#059669"}33`,
                         padding: "2px 8px",
                         borderRadius: 10,
                         letterSpacing: "0.06em",
@@ -1084,10 +1084,10 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
                     {/* Numeric Metric */}
                     <div style={{
                       fontSize: 38,
-                      fontWeight: 850,
-                      fontFamily: "'Space Grotesk', -apple-system, sans-serif",
+                      fontWeight: 800,
+                      fontFamily: "'Plus Jakarta Sans', -apple-system, sans-serif",
                       letterSpacing: "-0.03em",
-                      color: "#000000",
+                      color: "#0F172A",
                       lineHeight: 1,
                       marginBottom: 8,
                     }}>

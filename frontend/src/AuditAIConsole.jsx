@@ -44,32 +44,32 @@ import AdminUserActivityModule from "./components/AdminUserActivityModule";
 import AskAuditAIChatbot from "./components/AskAuditAIChatbot";
 
 /* ---------------------------------------------------------------- */
-/*  Design tokens — MOM Corporate Navy, Soft Sky-Blue & White UI    */
-/*  Status Colour Standard: Red = Risk, Grey = Neutral, Green = Good*/
+/*  Design tokens — Enterprise Sky-Blue (#F0F9FF) & Slate UI        */
 /* ---------------------------------------------------------------- */
 const C = {
-  bg: "#f4f8fc",          // Clean light ice-sky canvas (MOM doc page)
-  panel: "#ffffff",       // Crisp pure white cards & sidebar
-  panel2: "#eaf4fb",      // Soft light sky-blue info strips & alternating rows
-  panelHover: "#dceefa",  // Soft sky-blue hover highlight
-  border: "#cbd5e1",      // Clean corporate grey-blue border
-  borderSoft: "#dbe7f3",  // Soft sky divider
-  text: "#0f172a",        // Crisp near-black body text
-  muted: "#334155",       // Dark slate secondary text
-  faint: "#475569",       // Muted slate labels
-  white: "#ffffff",       // Pure white
-  black: "#0f172a",       // Near-black
-  navy: "#0c2d48",        // Corporate deep navy (MOM banner & table headers)
-  teal: "#0284c7",        // Sky-blue primary accent
-  tealSoft: "rgba(2, 132, 199, 0.12)",
-  red: "#dc2626",         // Red = Risk
-  redSoft: "rgba(220, 38, 38, 0.12)",
-  amber: "#64748b",       // Grey = Neutral
-  amberSoft: "rgba(100, 116, 139, 0.14)",
-  grey: "#64748b",        // Grey = Neutral
-  greySoft: "rgba(100, 116, 139, 0.14)",
-  green: "#16a34a",       // Green = Good
-  greenSoft: "rgba(22, 163, 74, 0.12)",
+  bg: "#F0F9FF",          // Primary Canvas (sky-50)
+  panel: "#FFFFFF",       // Elevated Card / Surface (Pure White)
+  panel2: "#E0F2FE",      // Subtle Tint / Secondary Container (sky-100)
+  panelHover: "#BAE6FD",  // Sky-200 hover state
+  border: "#BAE6FD",      // Card Borders & Dividers (sky-200)
+  borderSoft: "#CBD5E1",  // Hairline slate divider (slate-300)
+  text: "#0F172A",        // Primary Headlines & Ink (slate-900)
+  muted: "#334155",       // Body Copy & Subtitles (slate-700)
+  faint: "#64748B",       // Muted Labels & Captions (slate-500)
+  white: "#FFFFFF",       // Pure white
+  black: "#0F172A",       // Deep Slate Navy
+  teal: "#0284C7",        // Primary Brand / CTA Blue (sky-600)
+  blue: "#2563EB",        // Secondary Interactive Accent (blue-600)
+  ctaGradient: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
+  tealSoft: "#E0F2FE",    // sky-100 pill background
+  red: "#DC2626",         // Critical / Auto-Fail (red-600)
+  redSoft: "#FEF2F2",     // red-50
+  amber: "#D97706",       // Warning / At-Risk Leads (amber-600)
+  amberSoft: "#FFFBEB",   // amber-50
+  grey: "#64748B",        // Neutral (slate-500)
+  greySoft: "#F1F5F9",    // slate-100
+  green: "#059669",       // Success / Verified / SLA Active (emerald-600)
+  greenSoft: "#ECFDF5",   // emerald-50
 };
 
 const FONT_STYLE = `
@@ -81,8 +81,8 @@ const FONT_STYLE = `
 html, body, #root {
   margin: 0;
   padding: 0;
-  background-color: #f4f8fc;
-  color: #0f172a;
+  background-color: #F0F9FF;
+  color: #0F172A;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -91,14 +91,14 @@ html, body, #root {
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #f4f8fc;
+  background: #F0F9FF;
 }
 ::-webkit-scrollbar-thumb {
-  background: #94a3b8;
+  background: #BAE6FD;
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0284c7;
+  background: #0284C7;
 }
 
 @keyframes spin {
@@ -109,36 +109,36 @@ html, body, #root {
   animation: spin 1s linear infinite;
 }
 
-/* Clean light ice-sky canvas */
+/* Primary Canvas (Light Sky-Blue #F0F9FF) */
 .auditai-grid-bg {
-  background-color: #f4f8fc;
+  background-color: #F0F9FF;
 }
 
-/* MOM Reference Table Styling: Deep Navy Header + Sky-Blue Rule + Alternating Soft Sky Rows */
+/* Unified Enterprise Table Styling */
 table {
   width: 100%;
   border-collapse: collapse;
-  color: #0f172a;
+  color: #0F172A;
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 thead th {
-  background: #0c2d48;
-  color: #ffffff;
-  border-bottom: 2.5px solid #0ea5e9;
+  background: #E0F2FE;
+  color: #0F172A;
+  border-bottom: 1.5px solid #BAE6FD;
   font-weight: 700;
 }
 tbody tr:nth-child(even) {
-  background: #ffffff;
+  background: #FFFFFF;
 }
 tbody tr:nth-child(odd) {
-  background: #f8fbff;
+  background: #F8FAFC;
 }
 tbody td {
-  color: #0f172a;
-  border-bottom: 1px solid #dbe7f3;
+  color: #334155;
+  border-bottom: 1px solid #CBD5E1;
 }
 tbody tr:hover {
-  background: #eaf4fb;
+  background: #F0F9FF;
 }
 
 /* Modern Stylish Buttons */
@@ -5347,8 +5347,8 @@ export default function AuditAIConsole() {
 
         {/* Main Content Pane — scrolls independently of the sidebar */}
         <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", height: "100vh", overflow: "hidden" }}>
-          {/* Top Bar Header — MOM Corporate Deep Navy with Sky-Blue Accent Line */}
-          <div style={{ height: 58, flexShrink: 0, borderBottom: "3px solid #0ea5e9", background: "#0c2d48", padding: "0 20px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, boxShadow: "0 2px 10px rgba(12, 45, 72, 0.15)" }}>
+          {/* Top Bar Header — Crisp White with Sky-200 Border */}
+          <div style={{ height: 58, flexShrink: 0, borderBottom: "1px solid #BAE6FD", background: "#FFFFFF", padding: "0 20px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, boxShadow: "0 1px 4px rgba(15, 23, 42, 0.04)" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, minWidth: 0 }}>
               <button
                 type="button"
@@ -5356,9 +5356,9 @@ export default function AuditAIConsole() {
                 onClick={() => setMobileNavOpen((v) => !v)}
                 aria-label="Toggle navigation menu"
                 style={{
-                  background: "rgba(255, 255, 255, 0.12)",
-                  border: "1px solid rgba(255, 255, 255, 0.25)",
-                  color: "#ffffff",
+                  background: "#E0F2FE",
+                  border: "1px solid #BAE6FD",
+                  color: "#0284C7",
                   borderRadius: 10,
                   padding: "6px 8px",
                   cursor: "pointer",
@@ -5377,9 +5377,9 @@ export default function AuditAIConsole() {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: 5,
-                  background: fullscreenPane ? "#0ea5e9" : "rgba(255, 255, 255, 0.12)",
-                  border: "1px solid rgba(255, 255, 255, 0.25)",
-                  color: "#ffffff",
+                  background: fullscreenPane ? "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)" : "#E0F2FE",
+                  border: "1px solid #BAE6FD",
+                  color: fullscreenPane ? "#FFFFFF" : "#0284C7",
                   borderRadius: 999,
                   padding: "5px 12px",
                   fontSize: 11.5,
@@ -5392,20 +5392,20 @@ export default function AuditAIConsole() {
                 <span>{fullscreenPane ? "Minimize" : "Maximize"}</span>
               </button>
               <div style={{ display: "flex", alignItems: "center", gap: 6, minWidth: 0 }}>
-                <span style={{ color: "#bae6fd", fontSize: 12 }}>Workspace:</span>
-                <span style={{ color: "#ffffff", fontSize: 13, fontWeight: 700, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>NA Enterprise</span>
+                <span style={{ color: "#64748B", fontSize: 12 }}>Workspace:</span>
+                <span style={{ color: "#0F172A", fontSize: 13, fontWeight: 700, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>NA Enterprise</span>
               </div>
 
               {/* Architecture Badges */}
               <div className="auditai-badges-hide" style={{ alignItems: "center", gap: 6, display: sidebarCollapsed ? "none" : "flex" }}>
-                <span style={{ display: "inline-flex", alignItems: "center", gap: 4, background: "rgba(255, 255, 255, 0.10)", border: "1px solid rgba(14, 165, 233, 0.45)", borderRadius: 999, padding: "2px 9px", fontSize: 10.5, color: "#e0f2fe", fontWeight: 600, fontFamily: "JetBrains Mono" }}>
-                  <Shield size={11} color="#38bdf8" /> Auth DB
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 4, background: "#E0F2FE", border: "1px solid #BAE6FD", borderRadius: 999, padding: "2px 9px", fontSize: 10.5, color: "#0284C7", fontWeight: 600, fontFamily: "JetBrains Mono" }}>
+                  <Shield size={11} color="#0284C7" /> Auth DB
                 </span>
-                <span style={{ display: "inline-flex", alignItems: "center", gap: 4, background: "rgba(255, 255, 255, 0.10)", border: "1px solid rgba(14, 165, 233, 0.45)", borderRadius: 999, padding: "2px 9px", fontSize: 10.5, color: "#e0f2fe", fontWeight: 600, fontFamily: "JetBrains Mono" }}>
-                  <Database size={11} color="#38bdf8" /> Cloudflare D1
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 4, background: "#E0F2FE", border: "1px solid #BAE6FD", borderRadius: 999, padding: "2px 9px", fontSize: 10.5, color: "#0284C7", fontWeight: 600, fontFamily: "JetBrains Mono" }}>
+                  <Database size={11} color="#0284C7" /> Cloudflare D1
                 </span>
-                <span style={{ display: "inline-flex", alignItems: "center", gap: 4, background: "rgba(255, 255, 255, 0.10)", border: "1px solid rgba(14, 165, 233, 0.45)", borderRadius: 999, padding: "2px 9px", fontSize: 10.5, color: "#e0f2fe", fontWeight: 600, fontFamily: "JetBrains Mono" }}>
-                  <HardDrive size={11} color="#38bdf8" /> Cloudflare R2
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 4, background: "#E0F2FE", border: "1px solid #BAE6FD", borderRadius: 999, padding: "2px 9px", fontSize: 10.5, color: "#0284C7", fontWeight: 600, fontFamily: "JetBrains Mono" }}>
+                  <HardDrive size={11} color="#0284C7" /> Cloudflare R2
                 </span>
               </div>
             </div>
@@ -5419,9 +5419,9 @@ export default function AuditAIConsole() {
                   display: "flex",
                   alignItems: "center",
                   gap: 6,
-                  background: "#0ea5e9",
+                  background: "linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%)",
                   border: "none",
-                  color: "#ffffff",
+                  color: "#FFFFFF",
                   borderRadius: 8,
                   padding: "6px 14px",
                   fontSize: 12,
@@ -5429,7 +5429,7 @@ export default function AuditAIConsole() {
                   cursor: "pointer",
                 }}
               >
-                <Globe size={13} color="#ffffff" />
+                <Globe size={13} color="#FFFFFF" />
                 Live Public Site ↗
               </button>
 
@@ -5438,8 +5438,8 @@ export default function AuditAIConsole() {
                   display: "flex",
                   alignItems: "center",
                   gap: 8,
-                  background: "rgba(255, 255, 255, 0.10)",
-                  border: "1px solid rgba(255, 255, 255, 0.22)",
+                  background: "#F0F9FF",
+                  border: "1px solid #BAE6FD",
                   borderRadius: 20,
                   padding: "4px 12px 4px 6px",
                   fontSize: 12,
@@ -5450,8 +5450,8 @@ export default function AuditAIConsole() {
                     width: 22,
                     height: 22,
                     borderRadius: "50%",
-                    background: "#0ea5e9",
-                    color: "#ffffff",
+                    background: "#0284C7",
+                    color: "#FFFFFF",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -5461,7 +5461,7 @@ export default function AuditAIConsole() {
                 >
                   {currentUser?.full_name ? currentUser.full_name[0].toUpperCase() : "A"}
                 </div>
-                <span style={{ fontWeight: 600, color: "#ffffff", maxWidth: 120, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                <span style={{ fontWeight: 600, color: "#0F172A", maxWidth: 120, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                   {currentUser?.full_name || currentUser?.email || "Super Admin"}
                 </span>
                 <span
@@ -5472,8 +5472,8 @@ export default function AuditAIConsole() {
                     borderRadius: 10,
                     textTransform: "uppercase",
                     letterSpacing: 0.5,
-                    background: "#0ea5e9",
-                    color: "#ffffff",
+                    background: "#E0F2FE",
+                    color: "#0284C7",
                   }}
                 >
                   {(currentUser?.role === "admin" ? "super_admin" : currentUser?.role) || "SUPER_ADMIN"}
@@ -5487,9 +5487,9 @@ export default function AuditAIConsole() {
                   display: "flex",
                   alignItems: "center",
                   gap: 5,
-                  background: "rgba(255, 255, 255, 0.12)",
-                  border: "1px solid rgba(255, 255, 255, 0.25)",
-                  color: "#ffffff",
+                  background: "#FFFFFF",
+                  border: "1px solid #CBD5E1",
+                  color: "#0F172A",
                   borderRadius: 8,
                   padding: "6px 12px",
                   fontSize: 11.5,
@@ -5497,7 +5497,7 @@ export default function AuditAIConsole() {
                   cursor: "pointer",
                 }}
               >
-                <LogOut size={12} color="#38bdf8" />
+                <LogOut size={12} color="#2563EB" />
                 Switch / Auth
               </button>
             </div>
