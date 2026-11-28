@@ -626,7 +626,7 @@ export default function HomePage({ onOpenAdminLogin, onOpenClientLogin, onEnterC
   return (
     <div style={{
       minHeight: "100vh",
-      backgroundColor: "#eef6ff",
+      backgroundColor: "#f0f7ff",
       color: "#0f172a",
       fontFamily: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif",
       position: "relative",

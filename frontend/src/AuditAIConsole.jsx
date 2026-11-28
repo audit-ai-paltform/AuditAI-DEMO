@@ -44,31 +44,31 @@ import AdminUserActivityModule from "./components/AdminUserActivityModule";
 import AskAuditAIChatbot from "./components/AskAuditAIChatbot";
 
 /* ---------------------------------------------------------------- */
-/*  Design tokens — Corporate Light Sky Blue & Crisp Slate UI       */
+/*  Design tokens — Lighter Enterprise Sky Blue & Crisp Slate UI    */
 /*  Status Colour Standard: Red = Risk, Grey = Neutral, Green = Good*/
 /* ---------------------------------------------------------------- */
 const C = {
-  bg: "#eef6ff",          // Clean corporate light sky-blue canvas
-  panel: "#ffffff",       // Crisp pure white cards, sidebar & tables
-  panel2: "#f5faff",      // Subtle sky tint for table headers & inputs
-  panelHover: "#e0f0ff",  // Soft sky-blue hover highlight
-  border: "#cfe4ff",      // Clean corporate sky hairline border
-  borderSoft: "#e2eefc",  // Subtle light divider
-  text: "#0f172a",        // Deep corporate slate ink
+  bg: "#f0f7ff",          // Light sky-blue canvas
+  panel: "#ffffff",       // Crisp white cards, sidebar & tables
+  panel2: "#e0f2fe",      // Soft sky-blue elevated surface / table header
+  panelHover: "#bae6fd",  // Sky-blue hover highlight
+  border: "#bae6fd",      // Clean sky-blue border
+  borderSoft: "#e2e8f0",  // Soft slate divider
+  text: "#0f172a",        // Deep slate text
   muted: "#334155",       // Secondary slate text
-  faint: "#64748b",       // Muted slate labels
+  faint: "#64748b",       // Muted slate / grey
   white: "#ffffff",       // Pure white
   black: "#0f172a",       // Deep slate ink
-  teal: "#0284c7",        // Corporate sky-blue primary accent
-  tealSoft: "rgba(2, 132, 199, 0.10)",
+  teal: "#0284c7",        // Sky-blue accent
+  tealSoft: "rgba(2, 132, 199, 0.12)",
   red: "#dc2626",         // Red = Risk
-  redSoft: "rgba(220, 38, 38, 0.10)",
+  redSoft: "rgba(220, 38, 38, 0.12)",
   amber: "#64748b",       // Grey = Neutral
-  amberSoft: "rgba(100, 116, 139, 0.12)",
+  amberSoft: "rgba(100, 116, 139, 0.14)",
   grey: "#64748b",        // Grey = Neutral
-  greySoft: "rgba(100, 116, 139, 0.12)",
+  greySoft: "rgba(100, 116, 139, 0.14)",
   green: "#16a34a",       // Green = Good
-  greenSoft: "rgba(22, 163, 74, 0.10)",
+  greenSoft: "rgba(22, 163, 74, 0.12)",
 };
 
 const FONT_STYLE = `
@@ -80,7 +80,7 @@ const FONT_STYLE = `
 html, body, #root {
   margin: 0;
   padding: 0;
-  background-color: #eef6ff;
+  background-color: #f0f7ff;
   color: #0f172a;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -90,10 +90,10 @@ html, body, #root {
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #eef6ff;
+  background: #f0f7ff;
 }
 ::-webkit-scrollbar-thumb {
-  background: #93c5fd;
+  background: #bae6fd;
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -108,12 +108,12 @@ html, body, #root {
   animation: spin 1s linear infinite;
 }
 
-/* Complete corporate light sky-blue background */
+/* Lighter enterprise sky-blue canvas */
 .auditai-grid-bg {
-  background-color: #eef6ff;
+  background-color: #f0f7ff;
 }
 
-/* Unified Corporate Table Styling */
+/* Unified Enterprise Table Styling */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -121,17 +121,17 @@ table {
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 thead th {
-  background: #f5faff;
-  color: #1e3a5f;
-  border-bottom: 1.5px solid #cfe4ff;
+  background: #f0f7ff;
+  color: #0f172a;
+  border-bottom: 1.5px solid #bae6fd;
   font-weight: 700;
 }
 tbody td {
   color: #0f172a;
-  border-bottom: 1px solid #e2eefc;
+  border-bottom: 1px solid #e2e8f0;
 }
 tbody tr:hover {
-  background: #f5faff;
+  background: #f0f7ff;
 }
 
 /* Modern Stylish Buttons */
